@@ -1,0 +1,52 @@
+@import 'color.scss';
+@import 'variables';
+
+:host {
+  background-color: $light-white;
+  display: block;
+  height: 100vh;
+  width: 100vw;
+}
+
+.layout-base {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  overflow: hidden;
+}
+
+.app-sidebar {
+  width: fit-content;
+  z-index: map-get($layout-level, 'sidebar');
+}
+
+.router-outlet {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  width: 100%;
+  overflow: auto;
+}
+
+.app-footer {
+  text-align: center;
+}
+
+.nav {
+  overflow: hidden;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: $light-white;
+}
+
+.toast {
+  &-group {
+    position: absolute;
+    z-index: map-get($layout-level, 'toast');
+    bottom: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

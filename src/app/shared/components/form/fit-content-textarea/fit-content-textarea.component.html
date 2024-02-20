@@ -1,0 +1,9 @@
+<textarea
+  #tTextArea
+  [placeholder]="this.placeholder | translate"
+  [(ngModel)]="this.model"
+  [style.minHeight]="this.minHeight ? this.minHeight : '6rem'"
+  class="textarea w-100"
+  (ngModelChange)="this.resize(tTextArea)"
+  [disabled]="this.disabled"
+></textarea>

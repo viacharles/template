@@ -1,0 +1,41 @@
+<div class="multi-select p-relative">
+  <input #tInput class="d-none" type="checkbox" [id]="this.id" [(ngModel)]="this.showDropdown" [disabled]="this.disabled">
+  <label class="w-100 h-auto input d-flex border-grey-iron pe-pointer" [for]="this.id">
+    <div class="w-100 h-auto overflow-auto d-flex flex-wrap"
+    *ngIf="this.checkedOptions?.length;else tPlaceholder">
+      <div class="select-label p-relative d-flex align-items-end bg-green-middle text-white w-fit ml-1 text-nowrap"
+      *ngFor="let label of this.checkedOptions"
+      (click)="this.cancelSelect(label)">
+        {{label.nameI18n}}
+        <em class="icon-cancel p-absolute ml-1"></em>
+      </div>
+    </div>
+    <ng-template #tPlaceholder>
+      <p class="ml-3 text-grey-iron">{{this.placeholder}}</p>
+    </ng-template>
+    <em class="fas fa-caret-down p-absolute text-grey-black"></em>
+    <em class="icon-cancel-thick p-absolute text-grey-black fs-xs" *ngIf="this.checkedOptions?.length"
+    (click)="this.cancelAll($event)"></em>
+  </label>
+  <!-- dropdown -->
+  <form [formGroup]="this.form">
+    <div #tOptions *ngIf="this.showDropdown" class="dropdown p-absolute overflow-hide w-100 bg-white {{!this.optionsInDropdown?.length ? 'py-2' : ''}}">
+      <label class="w-100 p-1" *ngIf="!!this.optionsInDropdown?.length && this.hasFilter">
+        <input class="input w-100" type="text" [placeholder]="this.filterPlaceholder"
+          (blur)="this.filter($event)" (keyup)="this.filter($event)">
+      </label>
+      <div #tOptionContainer class="options overflow-auto" formArrayName="checks">
+        <!-- 無選項 -->
+        <div class="d-flex flex-row align-items-center py-2 pl-3" *ngIf="!this.optionsInDropdown?.length">
+          <p class="text-grey-iron">{{'沒有選項'}}</p>
+        </div>
+        <!-- 選項組 -->
+        <ng-container *ngFor="let option of this.optionsInDropdown;let index = index">
+          <div class=" {{option.show ? 'd-flex': 'd-none'}} flex-row align-items-center ">
+            <app-checkbox [id]="this.id + index" [formControlName]="index" [title]="option.nameI18n"></app-checkbox>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </form>
+</div>

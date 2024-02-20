@@ -1,0 +1,19 @@
+<span
+  #tBubbles
+  class="bubble rounded-circle bg-green-middle p-absolute"
+  *ngFor="let bubble of this.bubbles; let index = index"
+  [style.bottom]="bubble.y.diff"
+  [style.left]="bubble.x.diff"
+  [style.width]="bubble.size"
+  [style.height]="bubble.size"
+  [style.borderColor]="'rgba(' + bubble.color + ', 0.8)'"
+  [style.backgroundColor]="'rgba(' + bubble.color + ', 0.4)'"
+  (mousemove)="this.onMouseMove($event, bubble, index)"
+  (mouseleave)="this.onMouseLeave($event, index)"
+></span>
+<app-tooltip
+  *ngIf="this.showTooltip"
+  [innerHtml]="this.tooltip?.innerHtml ?? ''"
+  [borderColor]="this.tooltip?.borderColor ?? ''"
+  [position]="this.tooltip?.position"
+></app-tooltip>

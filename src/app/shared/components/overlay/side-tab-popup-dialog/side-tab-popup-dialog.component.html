@@ -1,0 +1,27 @@
+<div
+  class="side-tab p-fixed d-flex align-items-start bg-white"
+  [style.width]="this.width"
+  [class.expand]="this.isExpand"
+>
+  <button
+    class="p-absolute d-flex flex-column align-items-center justify-content-center h-27 w-14 bg-white pe-pointer"
+    (click)="this.isExpand = !this.isExpand"
+  >
+    <em
+      class="icon-arrow-{{
+        this.isExpand ? 'right' : 'left'
+      }} mb-2 text-grey-dark"
+    ></em>
+    <p class="wm-v-lr text-nowrap t-space-1 fs-xsm text-grey-dark">
+      {{ 'structure.record' | translate }}
+    </p>
+  </button>
+  <div class="h-100 d-flex flex-column">
+    <div
+      class="side-tab__header d-flex align-items-center justify-content-between"
+    >
+      <ng-content select="#header"></ng-content>
+    </div>
+    <ng-content select="#body"></ng-content>
+  </div>
+</div>

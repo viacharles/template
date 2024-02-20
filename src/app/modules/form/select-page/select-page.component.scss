@@ -1,0 +1,20 @@
+@import 'color';
+:host {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  
+  & > div:first-of-type {
+    flex-direction: row;
+    padding: 0 45px;
+  }
+  & > form {
+    width: 70%;
+  }
+  .background-section {
+    width: calc(100% - 47px);
+    padding-top: 0;
+    padding-right: 0;
+  }
+}

@@ -1,0 +1,14 @@
+<div
+  @fadeSlideInOut
+  class="{{
+    this.noDefaultStyle
+      ? 'd-flex align-items-center justify-content-center w-100 h-100'
+      : 'bg-white d-flex flex-column'
+  }} dialog-container position-fixed"
+  [style.padding]="this.padding === '' ? '1.25rem' : this.padding"
+>
+  <ng-content select="#body"></ng-content>
+  <div class="d-flex flex-row">
+    <ng-content select="#footer"></ng-content>
+  </div>
+</div>

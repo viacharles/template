@@ -1,0 +1,29 @@
+<ng-container
+  *ngFor="
+    let option of [
+      {text: 'xxxxx', isOther: false},
+      {text: 'ooooooo', isOther: false},
+      {text: 'ooooooo', isOther: false},
+      {text: '其他', isOther: true}
+    ];
+    let index = index
+  "
+>
+  <input
+    type="checkbox"
+    class="d-none"
+    [id]="index"
+    [name]="option.text"
+    [disabled]="false"
+  />
+  <label
+    class="h-14 d-flex align-items-center text-grey-black border-grey-light pe-pointer text-nowrap"
+    [for]="index"
+  >
+    <span class="check-area p-relative d-flex border-grey-middle fs-xsm mr-3"
+      ><em class="icon-confirmed p-absolute fs-sm"></em
+    ></span>
+    {{ option.text }}
+    <input type="text" class="input w-100 ml-3" *ngIf="option.isOther" />
+  </label>
+</ng-container>

@@ -1,0 +1,35 @@
+@import 'color';
+@import 'variables';
+:host {
+  display: flex;
+  position: relative;
+  width: 100%;
+  font-size: 1rem;
+}
+
+label {
+  input {
+    width: calc(100% - 20px);
+    border: none;
+    outline: none;
+  }
+  &:has(input:disabled) {
+    background-color: $grey-light;
+  }
+}
+
+.dropdown {
+  z-index: map-get($layout-level, 'important');
+  top: 3.2rem;
+  left: 0;
+  max-height: 15rem;
+  border: 1px solid $light-gray-2;
+  border-radius: 10px;
+  & li:hover {
+    background-color: $light-gray-3;
+  }
+}
+
+label {
+  margin-bottom: 0;
+}

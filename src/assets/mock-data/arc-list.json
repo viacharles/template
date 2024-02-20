@@ -1,0 +1,48 @@
+{
+  "architectureObjVoList": [
+      {
+          "systemName": "test22",
+          "systemId": "test22",
+          "apOwner": "test22",
+          "buDepartment": "test",
+          "partner": "test",
+          "purpose": "test",
+          "user": "test",
+          "scenario": "test",
+          "status": null,
+          "editor": "IrisTeng",
+          "creator": "IrisTeng",
+          "resizeImg": "",
+          "editDate": null,
+          "projectId": "c748fb3115d64b34824b10facd0a1503",
+          "basicDataUpdateDate": "2024-02-06 09:41:31",
+          "basicDataEditor": "IrisTeng",
+          "basicDataEditorEmail": "IrisTeng_site_admin@cathayholdings.com.tw",
+          "basicDataEditorId": "c1d8c04705759d8d474d0e9946907e11b69e17d08ca3f6e4be26f8e2870a76b1",
+          "tenantId": "fe08d4b2b7dca7e0873f5479ec4901d7e917225e03beb3ccfc154803db7154ea"
+      },
+      {
+          "systemName": "test",
+          "systemId": "test",
+          "apOwner": "test",
+          "buDepartment": "test",
+          "partner": "test",
+          "purpose": "test",
+          "user": "test",
+          "scenario": "test",
+          "status": "editing",
+          "editor": "Carol Chen",
+          "creator": "IrisTeng",
+          "resizeImg": "",
+          "editDate": "2024-02-05 11:39:50",
+          "projectId": "afc1e2f8fe2c4caa8b80855f4779a208",
+          "basicDataUpdateDate": "2024-02-01 15:37:07",
+          "basicDataEditor": null,
+          "basicDataEditorEmail": null,
+          "basicDataEditorId": null,
+          "tenantId": "fe08d4b2b7dca7e0873f5479ec4901d7e917225e03beb3ccfc154803db7154ea"
+      }
+  ],
+  "times": "0",
+  "docNum": "2"
+}

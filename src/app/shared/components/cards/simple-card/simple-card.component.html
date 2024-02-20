@@ -1,0 +1,43 @@
+<div class="simple-card w-100 p-4 bg-white p-relative">
+  <div
+    class="card__header d-flex justify-content-between fs-xsm fw-7 text-dark-gray-2 mb-3"
+  >
+    {{ this.title ?? '' | translate }}
+    <app-icon-dropdown *ngIf="this.showMenu" [config]="this.dropdownConfig">
+      <div id="button" class="d-flex flex-row align-items-center mt-2">
+        <span
+          class="d-flex rounded-circle w-2 h-2 bg-light-gray-1"
+          *ngFor="let dot of [1, 2, 3]"
+        ></span>
+      </div>
+      <ul id="content" class="py-2_5 mb-0">
+        <li
+          *ngFor="let option of this.options"
+          class="fw-7 px-3 py-1"
+          (click)="this.optionSelected.emit(option)"
+        >
+          <em class="{{ option.icon }} mr-2"></em>
+          {{ option.nameI18n | translate }}
+        </li>
+      </ul>
+    </app-icon-dropdown>
+  </div>
+  <div>
+    <ng-container
+      *ngIf="
+        this.status !== this.loadingStatusType.Error &&
+          this.status !== this.loadingStatusType.Empty;
+        else tEmpty
+      "
+    >
+      <ng-content></ng-content>
+    </ng-container>
+  </div>
+  <app-loading-overlay-section
+    [status]="this.status ?? this.loadingStatusType.Loading"
+  ></app-loading-overlay-section>
+</div>
+
+<ng-template #tEmpty>
+  <div class="h-20"></div>
+</ng-template>

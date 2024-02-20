@@ -1,0 +1,27 @@
+<div
+  class="toast w-fit d-flex flex-row align-items-center justify-content-between {{
+    this.type
+  }}"
+  [class.fade-up-out]="this.toast?.isHideAnim"
+>
+  <div class="d-flex flex-row align-items-center">
+    <em
+      class="fa fa-{{
+        this.iconCode
+      }} flex-row-center h-6 mr-3 fs-md rounded-circle"
+    ></em>
+    <div>
+      <h6 class="fs-lgx fw-7">
+        {{ (this.article ? this.article.title : '') | translate }}
+      </h6>
+      <p *ngIf="this.article?.content" class="mb-1 fs-xs lh-4 mt-1">
+        {{ this.article?.content }}
+      </p>
+    </div>
+  </div>
+  <div
+    *ngIf="this.type === this.contentType.Error"
+    class="x rounded-circle pe-auto"
+    (click)="this.close(this.toast)"
+  ></div>
+</div>

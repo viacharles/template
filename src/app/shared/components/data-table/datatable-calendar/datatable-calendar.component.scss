@@ -1,0 +1,94 @@
+@import 'variables';
+
+.title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #000;
+}
+
+table {
+  margin-top: 5px;
+  & th {
+    font-size: 12px;
+  }
+  tbody {
+    & td {
+      padding: 5px 5px;
+      font-size: 12px;
+      & div {
+        cursor: pointer;
+        width: 22px;
+        height: 22px;
+        min-width: 22px;
+        min-height: 22px;
+        color: #000;
+        border-radius: 7rem;
+        &:hover {
+          color: white;
+          background-color: #44b787;
+        }
+        &.disabled {
+          color: #a4a4a4;
+          background-color: unset;
+        }
+        &.selected {
+          color: white;
+          background-color: #44b787;
+        }
+      }
+    }
+  }
+}
+
+.month-toggle {
+  display: flex;
+  em {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    &:first-of-type {
+      padding-right: 2px;
+    }
+    &:last-of-type {
+      padding-left: 2px;
+    }
+    &:hover {
+      background-color: #e7e7e7;
+    }
+  }
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+  button {
+    padding: 4px 35px;
+    border-radius: 5px;
+    &:hover {
+      opacity: 0.8;
+    }
+    &:first-of-type {
+      color: #44b787;
+      border: 1px solid #44b787;
+      background-color: white;
+      margin-right: 8px;
+    }
+    &:last-of-type {
+      color: white;
+      border: 1px solid #44b787;
+      background-color: #44b787;
+      &:disabled {
+        color: #a4a4a4;
+        border: 1px solid #e7e7e7;
+        background-color: #e7e7e7;
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

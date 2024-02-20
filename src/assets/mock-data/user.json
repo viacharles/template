@@ -1,0 +1,14 @@
+{
+  "userId": "d937169707b8ce622d5d3a131012a3f035ff6b3a29ddd8ecc44a56094b0c81b9",
+  "tenantId": "fe08d4b2b7dca7e0873f5479ec4901d7e917225e03beb3ccfc154803db7154ea",
+  "name": "Carol Chen",
+  "email": "litongchen@cathayholdings.com.tw",
+  "status": "ACTIVE",
+  "enabled2fa": false,
+  "enabledNotifications": true,
+  "role": ["SITE_ADMIN", "TENANT_ADMIN", "COMMITTEE", "USER"],
+  "createdTime": "2022-06-16 15:35:20",
+  "lastUpdated": "2023-08-30 18:14:06",
+  "lastLogin": "2023-11-16 14:38:35",
+  "imageUrl": ""
+}

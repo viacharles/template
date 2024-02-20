@@ -1,0 +1,48 @@
+@import 'color';
+
+:host {
+  min-width: 150px;
+}
+
+input {
+  font-size: 1rem;
+  color: $deep-gray;
+  border: none;
+  outline: none;
+  &::placeholder {
+    font-size: 0.9rem;
+    color: $light-gray-1;
+  }
+}
+
+label {
+  position: relative;
+  margin-bottom: 0;
+  & > em {
+    position: absolute;
+    right: 48px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15px;
+    height: 15px;
+    padding-bottom: 1px;
+    font-size: 12px;
+    color: $light-gray-1;
+    border: 1px solid $light-gray-1;
+  }
+  & > div {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2.8rem;
+    border-left: 1px solid $light-gray-1;
+    em {
+      color: $light-gray-1;
+    }
+  }
+}

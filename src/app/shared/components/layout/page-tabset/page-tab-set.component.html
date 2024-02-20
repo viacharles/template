@@ -1,0 +1,26 @@
+<div class="tab-container my-3 pl-16 pr-28">
+  <table class="w-100">
+    <thead>
+      <tr>
+        <th *ngFor="let tab of this.tabs; let index = index">
+          <input
+            type="radio"
+            class="d-none"
+            [value]="index"
+            [id]="'tab' + index"
+            name="tabGroup"
+            [value]="index"
+            [checked]="index === 0"
+            [(ngModel)]="this.tabIndex"
+            (ngModelChange)="this.toggleIndex.emit($event)"
+          />
+          <label
+            class="w-100 bg-light-gray-5 text-center py-2 mb-0 fs-lg fw-5 pe-pointer"
+            [for]="'tab' + index"
+            >{{ tab.nameI18n | translate }}</label
+          >
+        </th>
+      </tr>
+    </thead>
+  </table>
+</div>

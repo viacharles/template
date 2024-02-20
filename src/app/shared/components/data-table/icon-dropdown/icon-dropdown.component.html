@@ -1,0 +1,19 @@
+<span
+  #tButton
+  class="pe-pointer d-flex justify-content-center w-7"
+  (click)="this.toggle($event)"
+>
+  <ng-content select="#button"></ng-content>
+  <div
+    #tDropdown
+    class="{{ this.isOpen ? 'show' : 'hide' }} align-{{
+      this.config?.positionStartX ?? 'center'
+    }}"
+    [style.top]="this.config?.positionY + 'px'"
+    [class.hideTail]="this.config?.hideTail"
+  >
+    <!-- <span class="x" (click)="this.isOpen = false"></span> -->
+    <ng-content select="#content"></ng-content>
+  </div>
+</span>
+<div *ngIf="this.isOpen" class="backdrop"></div>

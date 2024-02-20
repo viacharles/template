@@ -1,0 +1,13 @@
+
+<div class="d-flex flex-{{this.direction}} flex-wrap">
+  <ng-container *ngIf="!!this.options.length;else tNoData">
+      <app-checkbox 
+      *ngFor="let option of this.options;let index = index"
+      [title]="option.nameI18n" [id]="'checkbox' + this.id + index" [disabled]="this.disabled" [hasOtherInput]="index === this.options.length - 1 && this.hasOtherInput"></app-checkbox>
+  </ng-container>
+</div>
+
+<!-- 沒有選項 -->
+<ng-template #tNoData>
+  <app-checkbox [title]="'無資料'" [noData]="true"></app-checkbox>
+</ng-template>

@@ -1,0 +1,32 @@
+{
+  "docId": "5103bb83cef047128bff067ed2e26fe2",
+  "cabId": "202311160002",
+  "projectId": "c4d8619a51d54a56a7c024331f7f7214",
+  "questionVersion": "1.21.0",
+  "version": "1.0.0",
+  "status": "0",
+  "answers": null,
+  "projectName": "dasdasd",
+  "projectOwnerSectionNameCN": "dd",
+  "projectOwnerName": "dd",
+  "cab": "0",
+  "tenantCn": "國泰金控",
+  "tenantId": "fe08d4b2b7dca7e0873f5479ec4901d7e917225e03beb3ccfc154803db7154ea",
+  "createDate": "2023-11-16 16:17:17",
+  "editDate": "2023-11-16 16:17:17",
+  "reviewDate": null,
+  "submitDate": null,
+  "creator": {
+    "email": "litongchen@cathayholdings.com.tw",
+    "id": "d937169707b8ce622d5d3a131012a3f035ff6b3a29ddd8ecc44a56094b0c81b9",
+    "name": "Carol Chen",
+    "tenantId": null
+  },
+  "editor": {
+    "email": "litongchen@cathayholdings.com.tw",
+    "id": "d937169707b8ce622d5d3a131012a3f035ff6b3a29ddd8ecc44a56094b0c81b9",
+    "name": "Carol Chen",
+    "tenantId": null
+  },
+  "attachment": null
+}

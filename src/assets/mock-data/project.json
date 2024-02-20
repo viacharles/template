@@ -1,0 +1,351 @@
+{
+  "projectId": "607d63ebc26e40dba341347f6ae83399",
+  "questionTemplateId": "5w2vHgjLA7j7RA5t5Hfr",
+  "consult": null,
+  "editDate": "2023-12-05 13:47:29",
+  "isComplete": true,
+  "tenantId": null,
+  "tenantCn": null,
+  "editor": {
+      "email": "IrisTeng_site_admin@cathayholdings.com.tw",
+      "userId": "c1d8c04705759d8d474d0e9946907e11b69e17d08ca3f6e4be26f8e2870a76b1",
+      "userName": "IrisTeng",
+      "editDate": "2023-12-05 13:47:29"
+  },
+  "creator": {
+      "email": "IrisTeng@cathaysec.com.tw",
+      "userId": "994d178858144aaaee44ebb06ddd8f9f926b5cf51cae177b5d217828fd287781",
+      "userName": "證券瑞斯",
+      "createDate": "2023-10-18 14:13:57"
+  },
+  "answers": {
+      "4558bec4f8af42ee8570fbb0a76a2d0b": {
+          "value": [
+              "IrisTeng@cathaysec.com.tw"
+          ]
+      },
+      "713bb8fa84a9491897af3ab46d5a9544": {
+          "value": [
+              2
+          ]
+      },
+      "c048dbeb5e234736bcb547f816157b91": {
+          "value": [
+              1
+          ]
+      },
+      "61dc3eb15dfe474abff6f7cab610f67a": {
+          "value": [
+              1,
+              2
+          ]
+      },
+      "3a8093b991f54f44a182d8f17ab7cb49": {
+          "value": [
+              2
+          ]
+      },
+      "384096691ebb473aa803da919f18a9cd": {
+          "value": [
+              1
+          ]
+      },
+      "e5d639fdcaf84673bde9d6cadbc1320f": {
+          "value": [
+              2
+          ]
+      },
+      "9bf81ccc5e5046eaa511b0700ffd3be1": {
+          "value": [
+              "qqq"
+          ]
+      },
+      "b062c16dbba4479ca885f425e9002e7a": {
+          "value": [
+              1
+          ]
+      },
+      "ee82320ce0f94698aa108e68b8b8b92e": {
+          "value": [
+              2
+          ]
+      },
+      "7bef5ad597964ef68e2268a1a2af4384": {
+          "value": [
+              1
+          ]
+      },
+      "4a5a80e9faf046aab8c5828762a61b29": {
+          "value": [
+              2
+          ]
+      },
+      "f139671a6a704d2fb4fe956dc80ecfc0": {
+          "value": [
+              2
+          ]
+      },
+      "2d04629f7bf84981a09364610461996b": {
+          "value": [
+              "測試部"
+          ]
+      },
+      "bec7d95094e742ac811382afe7b42555": {
+          "value": [
+              1
+          ]
+      },
+      "ffb2ac66708541d989bce3af9cda513b": {
+          "value": [
+              1
+          ]
+      },
+      "850e0075179749658a7863b8b2c7c5eb": {
+          "value": [
+              1
+          ]
+      },
+      "02868c0905c94ce0b0c7caab53b67e5f": {
+          "value": [
+              1
+          ]
+      },
+      "a1e1ef32ff60495094069d10bfa3fd85": {
+          "value": [
+              1
+          ]
+      },
+      "c892fd7d8b5842fe90ac4ce2dc06e9f0": {
+          "value": [
+              2
+          ]
+      },
+      "4c9f3e3e05974d4d87d420a1338947f9": {
+          "value": [
+              1
+          ]
+      },
+      "0ecd8dcf8ec64a6fb4f9bd896889ac67": {
+          "value": [
+              1
+          ]
+      },
+      "511941a712084eba9c1bcceea26603d2": {
+          "value": [
+              1
+          ]
+      },
+      "6f3f871ec06041c68be3dbd3425b9945": {
+          "value": [
+              "test123"
+          ]
+      },
+      "a5d1fb90b444408cb8d95c14143d2813": {
+          "value": [
+              1,
+              2
+          ]
+      },
+      "23c0ba37405d4ebda7fa2bff656f3098": {
+          "value": [
+              2
+          ]
+      },
+      "7089120c9b2c475e9fa613b073718d4e": {
+          "value": [
+              1
+          ]
+      },
+      "e85648553d5544ab93838d1a299f450d": {
+          "value": [
+              "測試證券001"
+          ]
+      },
+      "60ce6cdaa7c84f94ac77666859a50efc": {
+          "value": [
+              1
+          ]
+      },
+      "f6e1b5fa27294b38bd1ca33794000df0": {
+          "value": [
+              2
+          ]
+      },
+      "078aae26c6854cf9bb2e33dd769a4ae3": {
+          "value": [
+              1
+          ]
+      },
+      "aa93468954324ed5bf3560259cf21be8": {
+          "value": [
+              1
+          ]
+      },
+      "923c91be4c9648d380677c373481f3c9": {
+          "value": [
+              1
+          ]
+      },
+      "84274128836447329749adbd534be191": {
+          "value": [
+              1
+          ]
+      },
+      "e392076aefc5422f994187f321c7e3a8": {
+          "value": [
+              2
+          ]
+      },
+      "fcc9bcbff0a442948011c78be48f6b28": {
+          "value": [
+              1
+          ]
+      },
+      "d043935c1e3540a7ac2c65f70322e944": {
+          "value": [
+              1
+          ]
+      },
+      "5b35458547bb40adab137712b2cca7c7": {
+          "value": [
+              1
+          ]
+      },
+      "332309dbef354cdd9c7009498aa17fa2": {
+          "value": [
+              1
+          ]
+      },
+      "85c0b79883264ae4b2d3a148b62cdfaa": {
+          "value": [
+              2
+          ]
+      },
+      "017a145d37d04340a94ccb93ba2ffdb8": {
+          "value": [
+              "TEST-SEC-001"
+          ]
+      },
+      "8b6cbcb02da048a3ac2b151e26ebaaaf": {
+          "value": [
+              2
+          ]
+      },
+      "59eaa880313e48fda1054669ed2be869": {
+          "value": [
+              1
+          ]
+      },
+      "83128327f2e44db78d27d2d498003bd8": {
+          "value": [
+              1
+          ]
+      }
+  },
+  "scores": [
+      {
+          "section": "Risk Level",
+          "sectionId": "caacfc6d8e684b9b9b84093057866068",
+          "originalScore": 270,
+          "originalRegular": 84,
+          "groups": [
+              {
+                  "groupName": "重大性",
+                  "groupId": "1d240faa8b53473e9feb7b04b4d7dad4",
+                  "originalScore": 114,
+                  "originalRegular": 87
+              },
+              {
+                  "groupName": "SLA",
+                  "groupId": "e47f83a5dd7742f88b27eb6369f49c22",
+                  "originalScore": 42,
+                  "originalRegular": 70
+              }
+          ]
+      },
+      {
+          "section": "Business Impact",
+          "sectionId": "7dffe7782c8a40dab6998f1fb639c46e",
+          "originalScore": 384,
+          "originalRegular": 87,
+          "groups": [
+              {
+                  "groupName": "業務規劃",
+                  "groupId": "d05a830cc606489c976b6ab2d2b81c43",
+                  "originalScore": 91,
+                  "originalRegular": 86
+              },
+              {
+                  "groupName": "上雲價值",
+                  "groupId": "706691a503fb4b4e8071828eb0a6385a",
+                  "originalScore": 202,
+                  "originalRegular": 87
+              }
+          ]
+      },
+      {
+          "section": "基本資訊",
+          "sectionId": "65b2fd2d74944849a6c75a3561301155",
+          "originalScore": 0,
+          "originalRegular": 0,
+          "groups": [
+              {
+                  "groupName": "基本資訊",
+                  "groupId": "86dd49e88bac409ca6fc8909adacb162",
+                  "originalScore": 0,
+                  "originalRegular": 0
+              }
+          ]
+      },
+      {
+          "section": "開發體驗(DX)",
+          "sectionId": "45a336411ec64fb684d91918c49c0bec",
+          "originalScore": 0,
+          "originalRegular": 0,
+          "groups": [
+              {
+                  "groupName": "開發體驗",
+                  "groupId": "22c721a571684db687b9213b1a9fa480",
+                  "originalScore": 0,
+                  "originalRegular": 0
+              }
+          ]
+      },
+      {
+          "section": "Technical Cost",
+          "sectionId": "e8a4123e5c734bc797c645a07eb66888",
+          "originalScore": 448,
+          "originalRegular": 60,
+          "groups": [
+              {
+                  "groupName": "技術架構",
+                  "groupId": "0453e6494da748a08a971fd5deaf0d94",
+                  "originalScore": 74,
+                  "originalRegular": 46
+              },
+              {
+                  "groupName": "系統要求",
+                  "groupId": "e55ea232e3fa479cac0b3b8b85fb2b9f",
+                  "originalScore": 92,
+                  "originalRegular": 92
+              },
+              {
+                  "groupName": "系統複雜度",
+                  "groupId": "e389dfb18ff74f3182ad9035f42071d8",
+                  "originalScore": 104,
+                  "originalRegular": 65
+              }
+          ]
+      }
+  ],
+  "result": {
+      "waveScore": 0.0172,
+      "waveLevel": "Wave1",
+      "system6r": [
+          {
+              "result6r": "Mantain"
+          }
+      ]
+  },
+  "complete": true
+}

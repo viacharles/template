@@ -1,0 +1,167 @@
+<div
+  class="nav-container h-100 {{ this.isMenuExpand ? 'isExpand' : 'isCollapse' }}"
+  style="user-select: none"
+>
+  <div class="expand-trigger-area h-100 w-10">
+    <div
+      class="expand-button d-flex align-items-center justify-content-center position-absolute pe-pointer rounded-circle"
+      (click)="this.expandMenu()"
+    >
+      <em class="fa fa-chevron-{{ this.isMenuExpand ? 'left' : 'right' }}"></em>
+    </div>
+  </div>
+  <div class="menu" *ngIf="this.showMenuContent">
+    <div class="nav-logo d-flex align-items-center justify-content-center">
+      <a tabindex="-1" class="pe-pointer" (click)="this.router.navigateByUrl('home')"
+        ><img [src]="'assets/img/template-icon.png'" alt=""></a>
+    </div>
+    <div
+      class="avatar d-flex flex-row py-4 pl-6"
+      *ngIf="this.tenantName || this.userName"
+    >
+      <img src="assets/img/avatar.png" />
+      <div class="d-flex flex-column justify-content-center">
+        <!-- <p class="fs-md fw-7 text-grey-black">{{ this.tenantName }}</p> -->
+        <p class="fs-xsm text-grey-dark">{{ this.userName }}</p>
+      </div>
+    </div>
+    <!-- 登入頁 menu -->
+    <ul
+      class="pt-{{ this.tenantName && this.userName ? '2' : '5' }}"
+      *ngIf="!(this.authService.isLoggedIn$ | async); else tNaveMenu"
+    >
+      <ng-container
+        *ngFor="
+          let section of this.loginMenu | keyvalue: asIsOrder;
+          let index = index
+        "
+      >
+        <li>
+          <div>
+            <input
+              #tInput
+              class="d-none"
+              type="radio"
+              [formControl]="this.menuForm"
+              [value]="this.getUrlWithVersion('/' + section.value.path)"
+              [id]="'sidebar-'+index"
+            />
+            <label
+              class="d-flex flex-row align-items-center justify-content-between w-100 h-12 pl-7 fw-6 pe-pointer"
+              [for]="'sidebar-'+index"
+              [class.hasPath]="section.value.path !== undefined"
+              (click)="this.toggleMenu(section.key)"
+            >
+              <div class="flex-row-start">
+                <em
+                  *ngIf="section.value.icon"
+                  class="{{ section.value.icon }} mr-2_5"
+                ></em>
+                <p class="text-grey-dark text-break fs-xsm">
+                  {{ section.value.title | translate }}
+                </p>
+              </div>
+            </label>
+          </div>
+        </li>
+      </ng-container>
+    </ul>
+    <!-- nav menu -->
+    <ng-template #tNaveMenu>
+      <ul
+        class="main scroll-bar text-grey-dark"
+        *ngIf="this.authService.isLoggedIn$ | async"
+      >
+        <ng-container
+          *ngFor="
+            let section of this.mainMenu | keyvalue: asIsOrder;
+            let index = index
+          "
+        >
+          <li *ngIf="this.showParentItem(section.value)">
+            <div>
+              <input
+                #input
+                class="d-none"
+                type="radio"
+                [formControl]="this.menuForm"
+                [value]="
+                  this.getUrlWithVersion(
+                    section.value.path ? '/' + section.value.path : section.key
+                  )
+                "
+                [id]="'sidebar-'+index"
+              />
+              <label
+                class="main__item d-flex flex-row align-items-center justify-content-between w-100 h-11 px-6 fw-6 pe-pointer"
+                [for]="'sidebar-'+index"
+                [class.hasPath]="section.value.path !== undefined"
+                (click)="this.toggleMenu(section.key)"
+              >
+                <div class="flex-row-start">
+                  <em
+                    *ngIf="section.value.icon"
+                    class="{{ section.value.icon }}"
+                  ></em>
+                  <p class="text-break fs-xsm fw-7">
+                    {{ section.value.title | translate }}
+                  </p>
+                </div>
+                <em
+                  *ngIf="section.value.subMenu"
+                  class="icon-arrow-right text-grey-black"
+                  [class.isExpand]="section.value.isExpand"
+                ></em>
+              </label>
+            </div>
+            <ul class="sub">
+              <ng-container
+                *ngFor="
+                  let item of section.value.subMenu | keyvalue: asIsOrder;
+                  let subIndex = index
+                "
+              >
+                <li
+                  *ngIf="hasRole(item.value.roles)"
+                  class="menu-item {{
+                    section.value.isExpand ? 'expand' : 'collapse'
+                  }}"
+                >
+                  <input
+                    class="d-none"
+                    type="radio"
+                    [formControl]="this.menuForm"
+                    [value]="this.getUrlWithVersion('/' + item.value.path)"
+                    [id]="index + '-' + subIndex"
+                  />
+                  <label
+                    class="flex-row-start w-100 h-11 pl-{{
+                      this.isMenuExpand ? '10' : '7'
+                    }} fw-6 pe-pointer"
+                    [for]="index + '-' + subIndex"
+                    [class.hasPath]="item.value.path !== undefined"
+                    (click)="
+                      this.toggleMenu(
+                        section.key,
+                        item.key,
+                        item.value.functionMark
+                      )
+                    "
+                  >
+                    <em
+                      *ngIf="item.value.icon"
+                      class="{{ item.value.icon }} mr-2_5"
+                    ></em>
+                    <p class="text-break fs-xsm">
+                      {{ item.value.title | translate }}
+                    </p>
+                  </label>
+                </li>
+              </ng-container>
+            </ul>
+          </li>
+        </ng-container>
+      </ul>
+    </ng-template>
+  </div>
+</div>

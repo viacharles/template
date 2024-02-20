@@ -1,0 +1,26 @@
+@import 'color';
+.tab-container {
+  border-bottom: 1px solid $light-gray-2;
+
+  th {
+    padding: 0 1.5rem;
+
+    &:first-of-type {
+      padding-left: 0;
+    }
+
+    &:last-of-type {
+      padding-right: 0;
+    }
+
+    label {
+      color: $light-gray-1;
+      transition: 0.2s;
+    }
+
+    input:checked + label {
+      background-color: $green-middle;
+      color: $white;
+    }
+  }
+}

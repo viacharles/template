@@ -1,0 +1,14 @@
+:host {
+  &>div:first-of-type {
+    margin-top: -7px;
+    &> div {
+      &>input {
+        width: 9rem;
+        height: 2rem;
+        margin: 2px 2px 2px 5px;
+        border-radius: 5px;
+    }
+    }
+  }
+}
+

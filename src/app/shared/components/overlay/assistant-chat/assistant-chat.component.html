@@ -1,0 +1,47 @@
+<div class="chat-container d-flex flex-column align-items-end">
+  <div
+    #tChatRoom
+    class="chat-room bg-white w-76 h-76 hideChatRoom overflow-auto"
+  >
+    <div class="d-flex align-items-center justify-content-center h-10">
+      <p class="fs-md fw-7">雲端小顧問</p>
+      <div
+        class="collaps-icon d-flex align-items-center justify-content-center w-10 h-10 text-center pe-pointer"
+        (click)="hideChatRoom(true)"
+      >
+        <em class="d-flex"></em>
+      </div>
+    </div>
+    <div #tMessagesContainer class="d-flex flex-column p-3 scroll-bar">
+      <div
+        #tMessage
+        *ngFor="let paragraph of this.paragraphs"
+        class="paragraph__{{
+          paragraph.isSelf ? 'self' : 'official'
+        }} d-flex flex-column"
+      >
+        <div class="fs-xs py-1 px-3 w-fit">{{ paragraph.text }}</div>
+        <div
+          *ngIf="paragraph.options && paragraph.options.length > 0"
+          class="paragraph__options d-flex flex-wrap pb-2"
+        >
+          <div
+            *ngFor="let option of paragraph.options"
+            (click)="this.responseOptionDesc(option)"
+            class="fs-xs py-1 px-3 mt-1 mr-1 pe-pointer"
+          >
+            {{ option.title }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    #tIcon
+    class="icon w-16 h-16 mt-2 pe-pointer"
+    (click)="hideChatRoom(false)"
+    *ngIf="this.paragraphs.length > 0"
+  >
+    <img class="" src="assets/img/logo-ico-lg.png" />
+  </div>
+</div>

@@ -1,0 +1,1401 @@
+{
+  "questionTemplateDocId": "940030ac1975433ea09b40ea00579c1f",
+  "questionTemplateId": null,
+  "createDate": "2023-10-16 18:13:35",
+  "editDate": null,
+  "version": "1.0.0",
+  "groups": [
+    {
+      "order": 1,
+      "section": "專案團隊檢核項目",
+      "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+      "name": "雲端服務之適當性",
+      "id": "cdef84de752f4b3db3b4d79d9ee83215",
+      "questions": {
+        "2c41025cac6840f5aeadc080b8c31745": {
+          "desc": null,
+          "order": 1,
+          "cab": 3,
+          "shortTitleEN": null,
+          "shortTitleCN": "預算評估符合專案發展",
+          "longTitleEN": null,
+          "longTitleCN": "預算評估符合專案發展",
+          "disabled": false,
+          "answerGroup": {
+            "A": {
+              "type": "select",
+              "required": 3,
+              "disabled": false,
+              "title": null,
+              "className": null,
+              "placeholder": null,
+              "hideExpression": [
+                {
+                  "value": null,
+                  "key": ""
+                }
+              ],
+              "config": null,
+              "options": [
+                {
+                  "label": "符合",
+                  "value": 1,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "不符合",
+                  "value": 2,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "不適用",
+                  "value": 3,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                }
+              ]
+            }
+          }
+        },
+        "c75e079787ab42fc8d8a7a5d6cd3e6e0": {
+          "desc": null,
+          "order": 0,
+          "cab": 3,
+          "shortTitleEN": null,
+          "shortTitleCN": "雲端服務提供商",
+          "longTitleEN": null,
+          "longTitleCN": "雲端服務提供商",
+          "disabled": false,
+          "answerGroup": {
+            "A": {
+              "type": "multiselect",
+              "required": 3,
+              "disabled": false,
+              "title": null,
+              "className": null,
+              "placeholder": null,
+              "hideExpression": [
+                {
+                  "value": null,
+                  "key": ""
+                }
+              ],
+              "config": null,
+              "options": [
+                {
+                  "label": "AWS",
+                  "value": 1,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "GCP",
+                  "value": 2,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "Azure",
+                  "value": 3,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "其他",
+                  "value": 4,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "order": 2,
+      "section": "專案團隊檢核項目",
+      "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+      "name": "雲端服務之一般通用安全性",
+      "id": "d4a22df8b60741cf80f47428fdb0ea3b",
+      "questions": {
+        "498edaad5d2a4d13a4cd759651d33fe1": {
+          "desc": "網路傳輸協定是否使用 HTTPS 並採用 SSL 加密 TLS 1.2(含)以上版本、檔案傳輸是否使用 SFTP 或 FTPS 或更安全加密傳輸方式",
+          "order": 3,
+          "cab": 3,
+          "shortTitleEN": null,
+          "shortTitleCN": "資料傳輸保護機制說明",
+          "longTitleEN": null,
+          "longTitleCN": "資料傳輸保護機制說明",
+          "disabled": false,
+          "answerGroup": {
+            "A": {
+              "type": "select",
+              "required": 3,
+              "disabled": false,
+              "title": null,
+              "className": null,
+              "placeholder": null,
+              "hideExpression": [
+                {
+                  "value": null,
+                  "key": ""
+                }
+              ],
+              "config": null,
+              "options": [
+                {
+                  "label": "符合",
+                  "value": 1,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "不符合",
+                  "value": 2,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "不適用",
+                  "value": 3,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                }
+              ]
+            }
+          }
+        },
+        "03f88dd7ba70480fbbfbb78abbd3ed8f": {
+          "desc": "稽核軌跡留存(AP/DB/OS)、稽核軌跡統一收容、特權帳號稽核規機覆核、稽核軌跡歷程分析。並設計文件的定期審閱流程。",
+          "order": 5,
+          "cab": 3,
+          "shortTitleEN": null,
+          "shortTitleCN": "稽核軌跡留存機制設計說明",
+          "longTitleEN": null,
+          "longTitleCN": "稽核軌跡留存機制設計說明",
+          "disabled": false,
+          "answerGroup": {
+            "A": {
+              "type": "select",
+              "required": 3,
+              "disabled": false,
+              "title": null,
+              "className": null,
+              "placeholder": null,
+              "hideExpression": [
+                {
+                  "value": null,
+                  "key": ""
+                }
+              ],
+              "config": null,
+              "options": [
+                {
+                  "label": "符合",
+                  "value": 1,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "不符合",
+                  "value": 2,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "不適用",
+                  "value": 3,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                }
+              ]
+            }
+          }
+        },
+        "272dd29f1167468da2a43e1f22bf6e3b": {
+          "desc": "請說明服務提供對象、例如：客戶、子公司、外部廠商...等",
+          "order": 0,
+          "cab": 3,
+          "shortTitleEN": null,
+          "shortTitleCN": "系統是否有提供對外開放服務或僅提供內部使用",
+          "longTitleEN": null,
+          "longTitleCN": "系統是否有提供對外開放服務或僅提供內部使用",
+          "disabled": false,
+          "answerGroup": {
+            "A": {
+              "type": "multiselect",
+              "required": 3,
+              "disabled": false,
+              "title": null,
+              "className": null,
+              "placeholder": null,
+              "hideExpression": [
+                {
+                  "value": null,
+                  "key": ""
+                }
+              ],
+              "config": null,
+              "options": [
+                {
+                  "label": "國泰金控",
+                  "value": 1,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "國泰金融集團子公司",
+                  "value": 2,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "外部廠商",
+                  "value": 3,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "國泰集團客戶",
+                  "value": 4,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "其他",
+                  "value": 5,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                }
+              ]
+            }
+          }
+        },
+        "2d5c09b892a14211aa6bd8c9f0996f2f": {
+          "desc": "建立金鑰管理機制與管理策略、資料加密機制...等等設計說明",
+          "order": 2,
+          "cab": 3,
+          "shortTitleEN": null,
+          "shortTitleCN": "依據系統類型設計資料保護機制，並定期或於必要時執行審視與變更",
+          "longTitleEN": null,
+          "longTitleCN": "依據系統類型設計資料保護機制，並定期或於必要時執行審視與變更",
+          "disabled": false,
+          "answerGroup": {
+            "A": {
+              "type": "select",
+              "required": 3,
+              "disabled": false,
+              "title": null,
+              "className": null,
+              "placeholder": null,
+              "hideExpression": [
+                {
+                  "value": null,
+                  "key": ""
+                }
+              ],
+              "config": null,
+              "options": [
+                {
+                  "label": "符合",
+                  "value": 1,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "不符合",
+                  "value": 2,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "不適用",
+                  "value": 3,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                }
+              ]
+            }
+          }
+        },
+        "1be0ca85bf014a06995e16e070ebf245": {
+          "desc": "啟用 Cloud Armor",
+          "order": 4,
+          "cab": 3,
+          "shortTitleEN": null,
+          "shortTitleCN": "外部資安防護機制說明",
+          "longTitleEN": null,
+          "longTitleCN": "外部資安防護機制與監控說明",
+          "disabled": false,
+          "answerGroup": {
+            "A": {
+              "type": "multiselect",
+              "required": 3,
+              "disabled": false,
+              "title": null,
+              "className": null,
+              "placeholder": null,
+              "hideExpression": [
+                {
+                  "value": null,
+                  "key": ""
+                }
+              ],
+              "config": null,
+              "options": [
+                {
+                  "label": "WAF 防護",
+                  "value": 1,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "DDoS 防護",
+                  "value": 2,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "其他",
+                  "value": 3,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                }
+              ]
+            }
+          }
+        },
+        "521efd77b2d340d2ad7b58c02b5acb3f": {
+          "desc": "如無法修復，請提出例外申請需求說明",
+          "order": 6,
+          "cab": 2,
+          "shortTitleEN": null,
+          "shortTitleCN": "完成系統安全性檢核並修復中/高風險因子",
+          "longTitleEN": null,
+          "longTitleCN": "完成系統安全性檢核並修復中/高風險因子",
+          "disabled": false,
+          "answerGroup": {
+            "A": {
+              "type": "multiselect",
+              "required": 2,
+              "disabled": false,
+              "title": "檢查項目",
+              "className": null,
+              "placeholder": null,
+              "hideExpression": [
+                {
+                  "value": null,
+                  "key": ""
+                }
+              ],
+              "config": null,
+              "options": [
+                {
+                  "label": "主機弱點掃描",
+                  "value": 1,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "程式弱點掃描",
+                  "value": 2,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "對外主機滲透測試檢測",
+                  "value": 3,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "APP 檢測",
+                  "value": 4,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "符合",
+                  "value": 1,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "不符合",
+                  "value": 2,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "不適用",
+                  "value": 3,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                }
+              ]
+            },
+            "B": {
+              "type": "select",
+              "required": 2,
+              "disabled": false,
+              "title": null,
+              "className": null,
+              "placeholder": null,
+              "hideExpression": [
+                {
+                  "value": null,
+                  "key": ""
+                }
+              ],
+              "config": null,
+              "options": [
+                {
+                  "label": "主機弱點掃描",
+                  "value": 1,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "程式弱點掃描",
+                  "value": 2,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "對外主機滲透測試檢測",
+                  "value": 3,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "APP 檢測",
+                  "value": 4,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "符合",
+                  "value": 1,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "不符合",
+                  "value": 2,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "不適用",
+                  "value": 3,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                }
+              ]
+            }
+          }
+        },
+        "2c487ee09d324fb197ddf9464d1ef012": {
+          "desc": "請說明資料來源，例如：來自於子公司的員工資料檔",
+          "order": 1,
+          "cab": 3,
+          "shortTitleEN": null,
+          "shortTitleCN": "系統是否有串接金控的資料源",
+          "longTitleEN": null,
+          "longTitleCN": "系統是否有串接金控的資料源",
+          "disabled": false,
+          "answerGroup": {
+            "A": {
+              "type": "select",
+              "required": 3,
+              "disabled": false,
+              "title": null,
+              "className": null,
+              "placeholder": null,
+              "hideExpression": [
+                {
+                  "value": null,
+                  "key": ""
+                }
+              ],
+              "config": null,
+              "options": [
+                {
+                  "label": "有",
+                  "value": 1,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "無",
+                  "value": 2,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "其他",
+                  "value": 3,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "order": 3,
+      "section": "專案團隊檢核項目",
+      "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+      "name": "系統管理權限檢視",
+      "id": "e2e60d370edc44b2965531631b4ce9ee",
+      "questions": {
+        "43757e23a0d14bc6aa5d8417c9dba3d2": {
+          "desc": "存取權限控管、SingleSignOn、多因子認證或採用生物特徵辨識技術",
+          "order": 1,
+          "cab": 3,
+          "shortTitleEN": null,
+          "shortTitleCN": "是否具備身份驗證方式",
+          "longTitleEN": null,
+          "longTitleCN": "是否具備身份驗證方式",
+          "disabled": false,
+          "answerGroup": {
+            "A": {
+              "type": "select",
+              "required": 3,
+              "disabled": false,
+              "title": null,
+              "className": null,
+              "placeholder": null,
+              "hideExpression": [
+                {
+                  "value": null,
+                  "key": ""
+                }
+              ],
+              "config": null,
+              "options": [
+                {
+                  "label": "符合",
+                  "value": 1,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "不符合",
+                  "value": 2,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "不適用",
+                  "value": 3,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                }
+              ]
+            }
+          }
+        },
+        "e79757be3e654b1c83d10bdb038b6bf0": {
+          "desc": null,
+          "order": 0,
+          "cab": 3,
+          "shortTitleEN": null,
+          "shortTitleCN": "應依實際需求及授權，以最小權限原則開放。明確區隔雲端帳號角色和責任的設計(R&R)",
+          "longTitleEN": null,
+          "longTitleCN": "應依實際需求及授權，以最小權限原則開放。明確區隔雲端帳號角色和責任的設計(R&R)",
+          "disabled": false,
+          "answerGroup": {
+            "A": {
+              "type": "select",
+              "required": 3,
+              "disabled": false,
+              "title": null,
+              "className": null,
+              "placeholder": null,
+              "hideExpression": [
+                {
+                  "value": null,
+                  "key": ""
+                }
+              ],
+              "config": null,
+              "options": [
+                {
+                  "label": "符合",
+                  "value": 1,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "不符合",
+                  "value": 2,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "不適用",
+                  "value": 3,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "order": 4,
+      "section": "專案團隊檢核項目",
+      "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+      "name": "虛擬機器影像檔之安全設定",
+      "id": "789c5ed5fd2f461c8aff9f8b07fdedfd",
+      "questions": {
+        "6e24ffe048074793944aa74b05dedafd": {
+          "desc": null,
+          "order": 0,
+          "cab": 2,
+          "shortTitleEN": null,
+          "shortTitleCN": "說明影像檔OS，並說明使用版本",
+          "longTitleEN": null,
+          "longTitleCN": "說明影像檔OS，並說明使用版本",
+          "disabled": false,
+          "answerGroup": {
+            "A": {
+              "type": "select",
+              "required": 2,
+              "disabled": false,
+              "title": null,
+              "className": null,
+              "placeholder": null,
+              "hideExpression": [
+                {
+                  "value": null,
+                  "key": ""
+                }
+              ],
+              "config": null,
+              "options": [
+                {
+                  "label": "雲端服務提供商所提供的影像檔",
+                  "value": 1,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "其他",
+                  "value": 2,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "order": 5,
+      "section": "專案團隊檢核項目",
+      "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+      "name": "Container 影像檔之安全設定",
+      "id": "4e58bf65d98a4c42913dffbd8c7ddf0e",
+      "questions": {
+        "bde4d0e26f7a4c6b92c3437da1f640ed": {
+          "desc": null,
+          "order": 0,
+          "cab": 2,
+          "shortTitleEN": null,
+          "shortTitleCN": "說明影像檔OS，並說明使用版本",
+          "longTitleEN": null,
+          "longTitleCN": "說明影像檔OS，並說明使用版本",
+          "disabled": false,
+          "answerGroup": {
+            "A": {
+              "type": "select",
+              "required": 2,
+              "disabled": false,
+              "title": null,
+              "className": null,
+              "placeholder": null,
+              "hideExpression": [
+                {
+                  "value": null,
+                  "key": ""
+                }
+              ],
+              "config": null,
+              "options": [
+                {
+                  "label": "RedHat",
+                  "value": 1,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "Debain",
+                  "value": 2,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "Fedora CoreOS",
+                  "value": 3,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "Ubuntu",
+                  "value": 4,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "其他",
+                  "value": 5,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                }
+              ]
+            }
+          }
+        },
+        "03477dfb4c6a488e830ed889f8ae72d1": {
+          "desc": null,
+          "order": 1,
+          "cab": 2,
+          "shortTitleEN": null,
+          "shortTitleCN": "使用的影像檔內的開源組件無商用疑慮",
+          "longTitleEN": null,
+          "longTitleCN": "使用的影像檔內的開源組件無商用疑慮",
+          "disabled": false,
+          "answerGroup": {
+            "A": {
+              "type": "select",
+              "required": 2,
+              "disabled": false,
+              "title": null,
+              "className": null,
+              "placeholder": null,
+              "hideExpression": [
+                {
+                  "value": null,
+                  "key": ""
+                }
+              ],
+              "config": null,
+              "options": [
+                {
+                  "label": "符合",
+                  "value": 1,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "不符合",
+                  "value": 2,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "不適用",
+                  "value": 3,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "order": 6,
+      "section": "專案團隊檢核項目",
+      "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+      "name": "架構面設計",
+      "id": "fde24b4d737e4b4bb1f6d5594c48e92d",
+      "questions": {
+        "07d70b3f7c3c4b01a2291a55374146d8": {
+          "desc": null,
+          "order": 0,
+          "cab": 3,
+          "shortTitleEN": null,
+          "shortTitleCN": "以評估採用 HA(High Availability) 或是 DR(Disaster Recovery) 架構",
+          "longTitleEN": null,
+          "longTitleCN": "以評估採用 HA(High Availability) 或是 DR(Disaster Recovery) 架構",
+          "disabled": false,
+          "answerGroup": {
+            "A": {
+              "type": "multiselect",
+              "required": 3,
+              "disabled": false,
+              "title": null,
+              "className": null,
+              "placeholder": null,
+              "hideExpression": [
+                {
+                  "value": null,
+                  "key": ""
+                }
+              ],
+              "config": null,
+              "options": [
+                {
+                  "label": "HA",
+                  "value": 1,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "DR",
+                  "value": 2,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "不適用",
+                  "value": 3,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "order": 7,
+      "section": "專案團隊檢核項目",
+      "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+      "name": "涉及客戶或機敏資料",
+      "id": "60702b68304443c38746b44aaa0bd07f",
+      "questions": {
+        "8addbd69e1a54fd781a194f6dbe518bc": {
+          "desc": null,
+          "order": 2,
+          "cab": 2,
+          "shortTitleEN": null,
+          "shortTitleCN": "應檢視各種 Key / Credentials 權限，包含其保護方式 (Principle of Least Privilege, POLP)",
+          "longTitleEN": null,
+          "longTitleCN": "應檢視各種 Key / Credentials 權限，包含其保護方式 (Principle of Least Privilege, POLP)",
+          "disabled": false,
+          "answerGroup": {
+            "A": {
+              "type": "select",
+              "required": 2,
+              "disabled": false,
+              "title": null,
+              "className": null,
+              "placeholder": null,
+              "hideExpression": [
+                {
+                  "value": "1",
+                  "key": "cad57fdafad24cea8d359ed1d6f3e0aa"
+                },
+                {
+                  "value": "",
+                  "key": "cad57fdafad24cea8d359ed1d6f3e0aa"
+                }
+              ],
+              "config": null,
+              "options": [
+                {
+                  "label": "符合",
+                  "value": 1,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "不符合",
+                  "value": 2,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "不適用",
+                  "value": 3,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                }
+              ]
+            }
+          }
+        },
+        "cad57fdafad24cea8d359ed1d6f3e0aa": {
+          "desc": null,
+          "order": 0,
+          "cab": 3,
+          "shortTitleEN": null,
+          "shortTitleCN": "專案是否涉及機敏資料及客戶資料",
+          "longTitleEN": null,
+          "longTitleCN": "專案是否涉及機敏資料及客戶資料",
+          "disabled": false,
+          "answerGroup": {
+            "A": {
+              "type": "select",
+              "required": 3,
+              "disabled": false,
+              "title": null,
+              "className": null,
+              "placeholder": null,
+              "hideExpression": [
+                {
+                  "value": null,
+                  "key": ""
+                }
+              ],
+              "config": null,
+              "options": [
+                {
+                  "label": "是 (請完成下方評估)",
+                  "value": 1,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "否 (可以越過本大題)",
+                  "value": 2,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                }
+              ]
+            }
+          }
+        },
+        "f3842cbc00fd4e1db0dd82ace63f0f90": {
+          "desc": "如：建立個人資料之隱碼、遮罩、加密、浮水印、存取軌跡等安全機制",
+          "order": 1,
+          "cab": 3,
+          "shortTitleEN": null,
+          "shortTitleCN": "客戶資料加密或代碼化機制",
+          "longTitleEN": null,
+          "longTitleCN": "客戶資料加密或代碼化機制",
+          "disabled": false,
+          "answerGroup": {
+            "A": {
+              "type": "select",
+              "required": 3,
+              "disabled": false,
+              "title": null,
+              "className": null,
+              "placeholder": null,
+              "hideExpression": [
+                {
+                  "value": "1",
+                  "key": "cad57fdafad24cea8d359ed1d6f3e0aa"
+                },
+                {
+                  "value": "",
+                  "key": "cad57fdafad24cea8d359ed1d6f3e0aa"
+                }
+              ],
+              "config": null,
+              "options": [
+                {
+                  "label": "符合",
+                  "value": 1,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "不符合",
+                  "value": 2,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "不適用",
+                  "value": 3,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "order": 8,
+      "section": "專案團隊檢核項目",
+      "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+      "name": "備份與緊急應變計畫",
+      "id": "363525278c3e4331ba6740960e874b41",
+      "questions": {
+        "c31978f10d6145e9830ffd6af355e56e": {
+          "desc": null,
+          "order": 1,
+          "cab": 2,
+          "shortTitleEN": null,
+          "shortTitleCN": "備份資料復原有無時限需求？有無額外復原管控步驟？",
+          "longTitleEN": null,
+          "longTitleCN": "備份資料復原有無時限需求？有無額外復原管控步驟？",
+          "disabled": false,
+          "answerGroup": {
+            "A": {
+              "type": "select",
+              "required": 2,
+              "disabled": false,
+              "title": null,
+              "className": null,
+              "placeholder": null,
+              "hideExpression": [
+                {
+                  "value": null,
+                  "key": ""
+                }
+              ],
+              "config": null,
+              "options": [
+                {
+                  "label": "符合",
+                  "value": 1,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "不符合",
+                  "value": 2,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "不適用",
+                  "value": 3,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                }
+              ]
+            }
+          }
+        },
+        "67d7a7939bb84850ba3ae3d22841ee34": {
+          "desc": null,
+          "order": 2,
+          "cab": 2,
+          "shortTitleEN": null,
+          "shortTitleCN": "是否已建立雲端的緊急應變/回復計畫",
+          "longTitleEN": null,
+          "longTitleCN": "是否已建立雲端的緊急應變/回復計畫",
+          "disabled": false,
+          "answerGroup": {
+            "A": {
+              "type": "select",
+              "required": 2,
+              "disabled": false,
+              "title": null,
+              "className": null,
+              "placeholder": null,
+              "hideExpression": [
+                {
+                  "value": null,
+                  "key": ""
+                }
+              ],
+              "config": null,
+              "options": [
+                {
+                  "label": "符合",
+                  "value": 1,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "不符合",
+                  "value": 2,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "不適用",
+                  "value": 3,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                }
+              ]
+            }
+          }
+        },
+        "580d96a904a545cb97a97020acfcfa4e": {
+          "desc": null,
+          "order": 0,
+          "cab": 2,
+          "shortTitleEN": null,
+          "shortTitleCN": "已建立備份機制 (服務可重建於其他 CSP or 地端環境)",
+          "longTitleEN": null,
+          "longTitleCN": "已建立備份機制 (服務可重建於其他 CSP or 地端環境)",
+          "disabled": false,
+          "answerGroup": {
+            "A": {
+              "type": "multiselect",
+              "required": 2,
+              "disabled": false,
+              "title": null,
+              "className": null,
+              "placeholder": null,
+              "hideExpression": [
+                {
+                  "value": null,
+                  "key": ""
+                }
+              ],
+              "config": null,
+              "options": [
+                {
+                  "label": "Snapshot",
+                  "value": 1,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "Data",
+                  "value": 2,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "其他",
+                  "value": 3,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "符合",
+                  "value": 1,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "不符合",
+                  "value": 2,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "不適用",
+                  "value": 3,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "order": 9,
+      "section": "專案團隊檢核項目",
+      "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+      "name": "金控維運",
+      "id": "db3f81a1036f4e64acc700eaaab4ae69",
+      "questions": {
+        "5250b8725ac64e7787f2d7980df613da": {
+          "desc": null,
+          "order": 1,
+          "cab": 2,
+          "shortTitleEN": null,
+          "shortTitleCN": "是否完成功能測試、壓力測試、混沌測試(option)",
+          "longTitleEN": null,
+          "longTitleCN": "是否完成功能測試、壓力測試、混沌測試(option)",
+          "disabled": false,
+          "answerGroup": {
+            "A": {
+              "type": "select",
+              "required": 2,
+              "disabled": false,
+              "title": null,
+              "className": null,
+              "placeholder": null,
+              "hideExpression": [
+                {
+                  "value": null,
+                  "key": ""
+                }
+              ],
+              "config": null,
+              "options": [
+                {
+                  "label": "符合",
+                  "value": 1,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "不符合",
+                  "value": 2,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "不適用",
+                  "value": 3,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                }
+              ]
+            }
+          }
+        },
+        "e4f30563bb2f4c53a45f1c984b1a1381": {
+          "desc": null,
+          "order": 0,
+          "cab": 3,
+          "shortTitleEN": null,
+          "shortTitleCN": "金控雲端運維科「雲端運維評估檢查表事項",
+          "longTitleEN": null,
+          "longTitleCN": "金控雲端運維科「雲端運維評估檢查表事項",
+          "disabled": false,
+          "answerGroup": {
+            "A": {
+              "type": "select",
+              "required": 3,
+              "disabled": false,
+              "title": null,
+              "className": null,
+              "placeholder": null,
+              "hideExpression": [
+                {
+                  "value": null,
+                  "key": ""
+                }
+              ],
+              "config": null,
+              "options": [
+                {
+                  "label": "符合",
+                  "value": 1,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "不符合",
+                  "value": 2,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "不適用",
+                  "value": 3,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "order": 10,
+      "section": "專案團隊檢核項目",
+      "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+      "name": "其他",
+      "id": "a4b86494eb1d4daabf6a7f07458fc287",
+      "questions": {
+        "9eb0954423bc48a7b750533b5df9a5c1": {
+          "desc": "若涉及子公司業務，在 CAB2 時應完成相關子公司相關法要求報主管機關作業",
+          "order": 1,
+          "cab": 2,
+          "shortTitleEN": null,
+          "shortTitleCN": "依主管機關要求查核作業？",
+          "longTitleEN": null,
+          "longTitleCN": "依主管機關要求查核作業？",
+          "disabled": false,
+          "answerGroup": {
+            "A": {
+              "type": "select",
+              "required": 2,
+              "disabled": false,
+              "title": null,
+              "className": null,
+              "placeholder": null,
+              "hideExpression": [
+                {
+                  "value": null,
+                  "key": ""
+                }
+              ],
+              "config": null,
+              "options": [
+                {
+                  "label": "符合",
+                  "value": 1,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "不符合",
+                  "value": 2,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "不適用",
+                  "value": 3,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                }
+              ]
+            }
+          }
+        },
+        "c106dcd507724d9ea76f7be75c1d89bf": {
+          "desc": null,
+          "order": 0,
+          "cab": 3,
+          "shortTitleEN": null,
+          "shortTitleCN": "已充分評估符合相關內外部法令法規要求",
+          "longTitleEN": null,
+          "longTitleCN": "已充分評估符合相關內外部法令法規要求",
+          "disabled": false,
+          "answerGroup": {
+            "A": {
+              "type": "select",
+              "required": 3,
+              "disabled": false,
+              "title": null,
+              "className": null,
+              "placeholder": null,
+              "hideExpression": [
+                {
+                  "value": null,
+                  "key": ""
+                }
+              ],
+              "config": null,
+              "options": [
+                {
+                  "label": "符合",
+                  "value": 1,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "不符合",
+                  "value": 2,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                },
+                {
+                  "label": "不適用",
+                  "value": 3,
+                  "reportHighLight": false,
+                  "reportAdvice": null
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ]
+}

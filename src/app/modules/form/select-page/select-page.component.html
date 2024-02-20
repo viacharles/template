@@ -1,0 +1,73 @@
+<div class="d-flex flex-column justify-content-center w-100">
+  <div class="page-header p-relative fs-xxl">
+    <app-bread-crumbs></app-bread-crumbs>
+    {{ 'nav.select' | translate }}
+  </div>
+</div>
+<div class="background-section pb-40 pt-3">
+  <!-- 下拉單選 -->
+  <app-normal-select-presentation-section [options]="this.options"></app-normal-select-presentation-section>
+  <!-- 下拉多選 -->
+  <app-presentation-section [title]="'下拉多選'" [tabName]="'\< app-multi-select >'">
+    <div id="config">
+      <app-toggle></app-toggle>
+    </div>
+    <ul class="d-flex flex-row flex-wrap">
+      <li class="d-flex align-items-start mr-4 mb-3">
+        <p class="w-12 mr-3 mt-3 text-nowrap">預設</p>
+        <app-multi-select class="w-56" [options]="this.options" [id]="'multi-select-enable'"
+          [hasFilter]="true"></app-multi-select>
+      </li>
+      <li class="d-flex align-items-center mr-4 mb-3">
+        <p class="w-12 mr-3 text-nowrap">不啟用</p>
+        <app-multi-select class="w-56" [options]="this.options" [id]="'multi-select-disable'"
+          [disabled]="true"></app-multi-select>
+      </li>
+      <li class="d-flex align-items-center  mb-3">
+        <p class="w-12 mr-3 text-nowrap">無資料</p>
+        <app-multi-select class="w-56" [options]="[]" [id]="'multi-select-no-data'"></app-multi-select>
+      </li>
+    </ul>
+  </app-presentation-section>
+  <!-- 核取方塊 -->
+  <app-presentation-section [title]="'核取方塊'" [tabName]="'\< app-checkbox-set >'">
+    <div class="w-40p d-flex align-items-start">
+      <p class="w-12 mr-3 text-nowrap">預設</p>
+      <app-checkbox-set [options]="this.options" [id]="'checkbox-enable'" [hasOtherInput]="true" ></app-checkbox-set>
+    </div>
+    <div class="w-40p d-flex align-items-start">
+      <p class="w-12 mr-3 text-nowrap">不啟用</p>
+      <app-checkbox-set [options]="this.options" [disabled]="true" [id]="'checkbox-disabled'" [hasOtherInput]="true" ></app-checkbox-set>
+    </div>
+    <div class="w-20p d-flex align-items-start">
+      <p class="w-12 mr-3 text-nowrap">無資料</p>
+      <app-checkbox-set [options]="[]" [id]="'checkbox-no-data'"></app-checkbox-set>
+    </div>
+  </app-presentation-section>
+  <!-- 單選按鈕  -->
+  <app-presentation-section [title]="'單選按鈕'" [tabName]="'\< app-radio >'">
+    <div class="w-40p d-flex align-items-start">
+      <p class="w-12 mr-3 text-nowrap">預設</p>
+      <app-radio [options]="this.options" [hasOtherInput]="true" [memo]="'其他說明'"></app-radio>
+    </div>
+    <div class="w-40p d-flex align-items-start">
+      <p class="w-12 mr-3 text-nowrap">不啟用</p>
+      <app-radio [options]="this.options" [disabled]="true" [hasOtherInput]="true" [memo]="'其他說明'"></app-radio>
+    </div>
+    <div class="w-20p d-flex align-items-start">
+      <p class="w-12 mr-3 text-nowrap">無資料</p>
+      <app-radio [options]="[]" [noData]="true"></app-radio>
+    </div>
+  </app-presentation-section>
+  <!-- 日期選擇器  -->
+  <app-presentation-section [title]="'日期選擇器'" [tabName]="'\< app-date-picker >'">
+    <div class="w-30p d-flex align-items-start">
+      <p class="w-12 mr-3 text-nowrap">單點</p>
+      <app-date-picker ></app-date-picker>
+    </div>
+    <div class="w-30p d-flex align-items-start">
+      <p class="w-12 mr-3 text-nowrap">期間</p>
+      <app-date-picker ></app-date-picker>
+    </div>
+  </app-presentation-section>
+</div>

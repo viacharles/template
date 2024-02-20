@@ -1,0 +1,195 @@
+<section class="w-100">
+  <div #tHead class="head virtual">
+    <img src="assets/img/logo.png" />
+    <div class="head-nav">
+      <ul class="d-flex align-items-center">
+        <li *ngIf="!(isLoggedIn$ | async)" class="login">
+          <button
+            class="btn-round bg-green-middle text-white fs-xsm d-flex align-items-center text-nowrap mr-2"
+            (click)="this.callSso()"
+          >
+            <em class="icon-user-solid fs-xsm mr-2_5"></em
+            >{{ 'nav.login' | translate }}
+          </button>
+        </li>
+        <li class="text-green-middle mr-2" *ngIf="isLoggedIn$ | async">
+          <a
+            class="btn-projects btn-round-line border-green-middle text-green-middle fs-xsm"
+            routerLink="/data-table"
+          >
+            {{ 'nav.projects-list-overview' | translate }}</a
+          >
+        </li>
+        <li class="d-flex align-items-center">
+          <em class="icon-triangle fs-xsm"></em>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- cover -->
+  <section class="cover p-relative d-flex w-100">
+    <div class="cover__text">
+      <div class="w-100">
+        <h2 class="title">Cloud Ready Platform</h2>
+        <h2 class="title">國泰雲端轉型平台</h2>
+      </div>
+      <div class="w-100">
+        <h4 class="subtitle">一站式滿足國泰集團四大上雲情境</h4>
+        <h4 class="subtitle">結合GAI技術加速自動化</h4>
+      </div>
+      <p class="content">
+        Cloud Ready Platform
+        為打造大規模上雲而生的自動化平台，一站式滿足國泰集團從技能學習、系統評估、架構設計、環境實作測試等四大上雲情境所需。<br />
+        <br />
+        平台亦結合 Generative AI
+        技術，首推雲端顧問Chatbot，並致力將各情境之雲端顧問服務自動化，持續加速集團上雲旅程。
+      </p>
+      <button
+        class="btn-round bg-green-middle text-white fs-xsm d-flex align-items-center px-8 py-2_5"
+        (click)="clickGo()"
+      >
+        立即前往<em class="icon-arrow-right-round fs-lg ml-3"></em>
+      </button>
+    </div>
+    <div class="cover__img">
+      <img class="cover__img__8" src="assets/img/index/8.png" />
+      <img class="cover__img__3" src="assets/img/index/3.png" />
+      <img class="cover__img__11" src="assets/img/index/11.png" />
+      <img class="cover__img__7" src="assets/img/index/7.png" />
+      <img class="cover__img__10" src="assets/img/index/10.png" />
+      <img class="cover__img__6" src="assets/img/index/6.png" />
+      <img class="cover__img__5" src="assets/img/index/5.png" />
+      <img class="cover__img__9" src="assets/img/index/9.png" />
+      <img class="cover__img__2" src="assets/img/index/2.png" />
+      <img class="cover__img__1" src="assets/img/index/1.png" />
+      <img class="cover__img__4" src="assets/img/index/4.png" />
+    </div>
+  </section>
+  <!-- 目標願景 -->
+  <section class="section w-100 d-flex flex-column align-items-center mt-40">
+    <div #tAnim1 class="opa-0 d-flex flex-column align-items-center">
+      <h4 class="subtitle">
+        {{ (isLoggedIn$ | async) ? 'Application' : 'Service' }}
+      </h4>
+      <h2 class="title">
+        {{ (isLoggedIn$ | async) ? '目標願景' : '服務內容' }}
+      </h2>
+    </div>
+    <p #tAnim2 class="content opa-0 mt-4">
+      {{
+        (isLoggedIn$ | async)
+          ? '提供集團雲端轉型相關工具，加速自助上雲旅程'
+          : '為打造大規模上雲而生的自動化平台，一站式滿足國泰集團雲端轉型所需'
+      }}
+    </p>
+    <ul #tAnim3 class="section__1 opa-0 d-flex mt-9">
+      <li class="d-flex align-items-start mt-3">
+        <img src="assets/img/index/s-1-1.png" />
+        <div class="d-flex flex-column mt-5 ml-2">
+          <h4 class="subtitle">
+            {{ (isLoggedIn$ | async) ? '專案目的' : '目標願景' }}
+          </h4>
+          <p class="content">
+            {{
+              (isLoggedIn$ | async)
+                ? '提供子公司上雲相關工具，'
+                : '提供集團雲端轉型相關工具，'
+            }}<br />
+            加速自助上雲旅程
+          </p>
+        </div>
+      </li>
+      <li class="d-flex align-items-start mt-3">
+        <img src="assets/img/index/s-1-2.png" />
+        <div class="d-flex flex-column mt-5 ml-2">
+          <h4 class="subtitle">需求用戶</h4>
+          <p class="content">
+            國泰金控 | 國泰世華銀行 | 國泰人壽<br />
+            國泰產險 | 國泰證券<br />
+            及國泰集團相關事業體
+          </p>
+        </div>
+      </li>
+    </ul>
+    <div class="section__2 d-flex justify-content-center align-items-center">
+      <div #tAnim4 class="opa-0 d-flex flex-column ml-4">
+        <h4 class="subtitle mb-1">四大上雲情境</h4>
+        <ul class="flex-wrap d-flex">
+          <li>
+            <p class="content">知識學習 Learning</p>
+          </li>
+          <li>
+            <p class="content">架構設計 Design</p>
+          </li>
+          <li>
+            <p class="content">評估分析 Assessment</p>
+          </li>
+          <li>
+            <p class="content">環境實作 Implement</p>
+          </li>
+        </ul>
+      </div>
+      <div #tAnim5 class="img opa-0 p-relative">
+        <img src="assets/img/index/s-2.png" />
+        <span class="img__text-1 p-absolute fw-7 text-green-middle"
+          >環境<br />實作</span
+        >
+        <span class="img__text-2 p-absolute fw-7 text-green-middle"
+          >架構<br />設計</span
+        >
+        <span class="img__text-3 p-absolute fw-7 text-green-middle"
+          >知識<br />學習</span
+        >
+        <span class="img__text-4 p-absolute fw-7 text-green-middle"
+          >評估<br />分析</span
+        >
+      </div>
+    </div>
+    <div class="section__3 d-flex justify-content-center align-items-center">
+      <img #tAnim6 class="opa-0" src="assets/img/index/s-3.png" />
+      <div #tAnim7 class="opa-0 d-flex flex-column mt-5 ml-4">
+        <h4 class="subtitle mb-2">五大解決方案</h4>
+        <ul class="d-flex flex-column">
+          <li>
+            <p class="content">雲端顧問即時諮詢 Cloud AI Mentor</p>
+          </li>
+          <li>
+            <p class="content">全方位上雲評估 Omni Assessment</p>
+          </li>
+          <li>
+            <p class="content">上雲戰情分析 War Room Dashboard</p>
+          </li>
+          <li>
+            <p class="content">架構決策紀錄 Architecture Decision Record</p>
+          </li>
+          <li>
+            <p class="content">雲端環境建置 Cloud Environment Setup</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="section__4">
+      <div
+        #tAnim8
+        class="text opa-0 w-100 d-flex flex-column justify-content-center align-items-center"
+      >
+        <h4 class="subtitle">Contact us</h4>
+        <h2 class="title">聯絡我們</h2>
+        <p class="content">
+          更多有關 Cloud Ready Platform 國泰雲端轉型平台的信息或獲取支援。
+        </p>
+        <p class="content">我們樂意回答您的問題並提供必要的協助。</p>
+        <button
+          class="btn-round bg-green-middle text-white fs-xsm d-flex align-items-center px-8 py-2_5"
+        >
+          <a
+            class="d-flex align-items-center"
+            href="mailto:litongchen@cathayholdings.com.tw"
+            >立即聯絡<em class="icon-arrow-right-round fs-lg ml-3"></em
+          ></a>
+        </button>
+      </div>
+      <div #tAnim9 class="bg-img opa-0 w-100 h-100"></div>
+    </div>
+  </section>
+</section>

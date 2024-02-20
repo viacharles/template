@@ -1,0 +1,64 @@
+@import 'color';
+.side-tab {
+  transition: 0.3s ease;
+
+  height: 100%;
+  right: 0;
+  top: 105px;
+  transform: translateX(100%);
+  filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.1));
+  &:hover {
+    filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.2));
+  }
+  &.expand {
+    transform: translateX(0);
+  }
+  .no-data {
+    em {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 1.4rem;
+      width: 1.4rem;
+      border-radius: 50%;
+      border: 2px solid $green-middle;
+    }
+  }
+  &__header {
+    padding: 1.25rem;
+    border-bottom: 1px solid $grey-light;
+  }
+  ul {
+    width: 300px;
+    height: calc(100% - 170px);
+    border-bottom: 1px solid $grey-light;
+    li {
+      padding: 0.75rem 1.25rem 0.75rem 3rem;
+      &:hover {
+        background-color: $grey-light;
+      }
+      p:first-of-type {
+        line-height: 1.25rem;
+      }
+    }
+  }
+  & > button {
+
+    left: 0;
+    transform: translateX(-100%);
+    outline: none;
+    border: none;
+    border-radius: 10px 0 0 10px;
+    &:hover {
+      em,
+      p {
+        color: $white;
+      }
+      background-color: $green-middle !important;
+    }
+  }
+}
+
+p {
+  margin-bottom: 0;
+}

@@ -1,0 +1,48 @@
+<div class="w-100 position-relative">
+  <div 
+    class="show-field w-100 h-12 form-control d-flex justify-content-between align-items-center position-relative"
+    (click)="this.open()"
+    [class.disabled]="this.disabled"
+  >
+    <p class="text-nowrap overflow-auto text-left w-100 text-grey-{{this.currentOption?.nameI18n ? 'black' : 'iron'}}">
+      {{ this.currentOption?.nameI18n ?? this.placeholder | translate }}
+    </p>
+    <em class="fas fa-caret-down position-absolute text-grey-black"></em>
+  </div>
+  <!-- dropdown -->
+  <ul
+    #tDropDown
+    *ngIf="this.isOpen"
+    class="dropdown w-100 position-absolute overflow-auto bg-white py-2"
+  >
+    <li
+      class="w-100 px-3 py-1 mb-0 align-middle"
+      *ngIf="this.options.length === 0"
+    >
+      {{ 'common.no-select-item' | translate }}
+    </li>
+    <li
+      class="w-100 px-3 py-1 mb-0 align-middle"
+      *ngIf="this.enableAll"
+      [value]=""
+      (click)="this.selectOption()"
+    >
+      {{ 'common.all' | translate }}
+    </li>
+    <li *ngFor="let option of this.options; let index = index">
+      <input
+        type="radio"
+        class="d-none"
+        [value]="option.code"
+        [id]="'select' + index"
+        name="select"
+        (click)="this.selectOption(option)"
+      />
+      <label
+        [for]="'select' + index"
+        class="w-100 px-3 py-1 mb-0 align-middle"
+        >{{ option.nameI18n | translate }}</label
+      >
+    </li>
+  </ul>
+</div>

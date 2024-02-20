@@ -1,0 +1,18 @@
+  <button class="button-last"
+  [disabled]="this.currentPage === 0"
+  (click)="this.change(false)">
+    <em class="icon-arrow-left"></em>
+    <p>{{'common.last-page' | translate}}</p>
+  </button>
+  <ul>
+    <li *ngFor="let page of this.pages;let index=index">
+      <input type="radio" class="d-none" [(ngModel)]="this.currentPage" (ngModelChange)="this.pageChange.emit($event)" [value]="index" [id]="'page-'+index">
+      <label [for]="'page-'+index">{{index + 1}}</label>
+    </li>
+  </ul>
+  <button class="button-next"
+  [disabled]="this.currentPage === (this.pages.length - 1)"
+  (click)="this.change(true)">
+    <p>{{'common.next-page' | translate}}</p>
+    <em class="icon-arrow-right"></em>
+  </button>

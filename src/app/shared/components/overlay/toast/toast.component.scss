@@ -1,0 +1,81 @@
+@import 'color';
+@import 'animation';
+:host {
+  display: flex;
+  transition: 0.3s ease-out;
+}
+.toast {
+  pointer-events: all;
+  max-width: unset;
+  padding: 0.875rem 1.739rem 0.812rem 1.81rem;
+  color: $white;
+  border-radius: 0.625rem;
+  animation: fade-up-in 0.3s ease forwards;
+  &.success {
+    background-color: $green-middle;
+  }
+  &.error {
+    background-color: $red-middle;
+  }
+  &.inform {
+    background-color: $yellow-middle;
+  }
+  &.warn {
+    background-color: #efad49;
+  }
+  &.fade-up-out {
+    animation: fade-up-out 0.3s ease forwards;
+  }
+  & > div:first-child {
+    min-width: 350px;
+    max-width: 400px;
+    & > em {
+      min-width: 1.5rem;
+      border: 2px solid $white;
+    }
+    h6 {
+      margin-bottom: 0;
+    }
+  }
+  p {
+    color: $white;
+  }
+}
+
+.x {
+  cursor: pointer;
+  position: relative;
+  min-width: 27px;
+  height: 27px;
+  transition: 0.3s ease;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    &:before,
+    &:after {
+      opacity: 1;
+    }
+  }
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    opacity: 0.7;
+    transform: rotate(45deg);
+  }
+  &:before {
+    top: 2px;
+    left: -1px;
+    border-top: 2px solid $white;
+    border-radius: 2px;
+    transform-origin: left;
+  }
+  &:after {
+    top: 3px;
+    left: -8px;
+    border-right: 2px solid $white;
+    border-radius: 2px;
+    transform-origin: right;
+  }
+}

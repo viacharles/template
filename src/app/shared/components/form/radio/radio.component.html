@@ -1,0 +1,26 @@
+<div class="host" [style.marginTop]="this.groupMarginTop">
+  <ng-container *ngFor="let option of this.options; let index = index">
+    <input type="radio" class="d-none" [disabled]="this.disabled" [id]="'radio-' + this.name + '-' + index"
+      [checked]="option.code + '' === this.model + ''" [value]="option.code" (click)="this.check($event)" name="radio"
+      [name]="this.name" />
+    <label class="d-flex align-items-start pe-pointer" [for]="'radio-' + this.name + '-' + index"
+      [style.minWidth]="this.minWidth" [style.width]="this.minWidth" [style.marginTop]="this.itemMarginTop"
+      [class.disabled]="this.disabled">
+      <span class="click-area border-grey-iron p-relative" [class.error]="this.isError"></span>
+      <p class="fs-md text-wrap text-grey-black ml-2">
+        {{ option.nameI18n | translate }}
+      </p>
+      <input type="text" class="input ml-2" [placeholder]="'cab.comment-send-placeholder' | translate"
+        *ngIf="index === this.options.length - 1 && this.hasOtherInput" [disabled]="this.disabled"
+        (input)="this.onOther($event)" id="otherInput" [value]="this.memo" />
+    </label>
+  </ng-container>
+  <!-- 無資料 -->
+  <div class="d-flex align-items-start pe-pointer" *ngIf="this.noData">
+    <span class="click-area border-grey-iron p-relative" >
+      <em class="icon-minus"></em>
+    </span>
+    <p class="fs-md text-wrap text-grey-iron ml-2">{{'無資料'}}</p>
+  </div>
+  
+</div>

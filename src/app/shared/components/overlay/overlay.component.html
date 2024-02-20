@@ -1,0 +1,12 @@
+<!-- dialogs -->
+<ng-container *ngFor="let dialog of this.currentDialogs">
+  <div class="dialogs dialogs__backdrop position-absolute w-100 h-100">
+    <ng-template
+      @fadeSlideInOut
+      *ngComponentOutlet="dialog.component; injector: dialog.injector"
+    ></ng-template>
+  </div>
+</ng-container>
+
+<!-- assist-chat -->
+<app-assistant-chat></app-assistant-chat>

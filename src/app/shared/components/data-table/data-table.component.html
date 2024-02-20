@@ -1,0 +1,240 @@
+<div #tScrollContainer class="scroll-container">
+  <div class="h-2" *ngIf="!this.config?.hideTopScrollBar">
+    <div #tTrack class="scroll-track opacity-0">
+      <div #tThumb class="scroll-thumb opacity-0" (mousedown)="this.startScroll($event)"
+        [style.transform]="this.thumbTransform"></div>
+    </div>
+  </div>
+  <div #tTableContainer class="table-container scroll-bar" [class.enableScrollY]="this.config?.pageSize === undefined"
+    [style.maxHeight]="this.config?.maxHeight" (scroll)="this.scroll($event)">
+    <table #tTable>
+      <thead>
+        <tr >
+          <th class="row-check" *ngIf="this.config?.hasRowSelection">
+            <input #tSelectAll type="checkbox" id="select-all" (change)="
+                this.selectAllRows($event, tTable, this.rowsBeforeChunk)
+              " />
+            <label for="select-all">
+            </label>
+          </th>
+          <ng-container *ngFor="let column of this.headColumns; let headerIndex = index">
+            <th #tThs [class.title]="headerIndex === 0" [class.showFrontShadow]="this.showFrontShadow(tTableContainer)"
+              [style.backgroundColor]="this.config?.themeColor"
+              (click)="this.removeAllSameOrderColumnsStyle(headerIndex)"
+              (mouseenter)="headerIndex !== 0 ? this.setAllSameOrderColumnsStyle(headerIndex + (this.config?.hasRowSelection ? 1 : 0)) : null"
+              (mouseleave)="headerIndex !== 0 ? this.removeAllSameOrderColumnsStyle(headerIndex + (this.config?.hasRowSelection ? 1 : 0)) : null">
+              <div class="th-layout justify-content-{{
+                  column.headerConfig?.titleAlign
+                }}">
+                <h6>{{ column.label }}</h6>
+                <app-icon-dropdown *ngIf="
+                    (column.hasFilter !== false || column.hasSort !== false) &&
+                    this.data.length > 0
+                  " [config]="{
+                    positionStartX:
+                      headerIndex + 1 === this.headColumns.length
+                        ? 'end'
+                        : headerIndex === 0
+                          ? 'start'
+                          : 'center'
+                  }">
+                  <em id="button">
+                    <ng-template [ngTemplateOutlet]="
+                        this.showSortIcon(column) ? tSortIcon : tFilterIcon
+                      " [ngTemplateOutletContext]="
+                        this.showSortIcon(column)
+                          ? {sortCode: this.sortConfig?.sortCode}
+                          : {column: column}
+                      "></ng-template>
+                  </em>
+                  <div id="content">
+                    <div class="sort" *ngIf="column.hasSort !== false">
+                      <h5>{{ this.text.sort }}</h5>
+                      <ul>
+                        <li *ngFor="
+                            let option of [
+                              {name: 'A -> Z', code: 'asc'},
+                              {name: 'Z -> A', code: 'desc'}
+                            ];
+                            let index = index
+                          " (click)="this.sort(column.code, option.code)">
+                          <input #tSortButtons type="radio" [id]="'sort' + column.code + index" name="sort" />
+                          <label [for]="'sort' + column.code + index">{{
+                            option.name
+                            }}</label>
+                        </li>
+                      </ul>
+                    </div>
+                    <div #tFilter class="filter" *ngIf="!!column.hasFilter">
+                      <div class="filter__title">
+                        <h5>{{ this.text.filter }}</h5>
+                        <div>
+                          <p (click)="
+                            this.checkAll(true, column, tFilter, headerIndex)
+                          ">
+                            {{ this.text.all }}
+                          </p>
+                          <p (click)="
+                            this.checkAll(false, column, tFilter, headerIndex)
+                          ">
+                            {{ this.text.clear }}
+                          </p>
+                        </div>
+                      </div>
+                      <ul>
+                        <li *ngFor="
+                            let option of column.filterOptions;
+                            let optionIndex = index
+                          ">
+                          <input #tFilterCheckboxes type="checkbox" [id]="'filter' + column.code + optionIndex"
+                            [name]="'filter' + column.code + optionIndex" [checked]="option.checked" (change)="
+                              this.collectFilterOption(
+                                $event,
+                                option.name,
+                                column.code,
+                                this.filterCollection,
+                                headerIndex
+                              )
+                            " />
+                          <label [for]="'filter' + column.code + optionIndex">{{
+                            option.name
+                            }}</label>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </app-icon-dropdown>
+              </div>
+            </th>
+          </ng-container>
+        </tr>
+      </thead>
+      <tbody #tBody>
+        <ng-container *ngFor="let row of this.getDisplayRows; let rowIndex = index">
+          <tr #tTdTrs @upInCompressOut *ngIf="row.show" class="{{ this.showBackdrop ? 'disableHover' : 'enableHover' }}">
+            <td #tBodyCheckBox class="row-check" *ngIf="this.config?.hasRowSelection">
+              <input type="checkbox" [id]="'select-row' + rowIndex" [checked]="this.isAllRowsSelect"
+                (change)="this.selectRow($event, row)" />
+              <label [for]="'select-row' + rowIndex"></label>
+            </td>
+            <ng-container *ngFor="let column of row.columns; let columnIndex = index">
+              <td (mouseenter)="columnIndex !== 0 ? this.setAllSameOrderColumnsStyle(columnIndex + (this.config?.hasRowSelection ? 1 : 0)) : null"
+                (mouseleave)="columnIndex !== 0 ? this.removeAllSameOrderColumnsStyle(columnIndex + (this.config?.hasRowSelection ? 1 : 0)) : null"
+                [class.title]="columnIndex === 0" [style.max-width]="column.fixedWidth"
+                [style.width]="column.fixedWidth" [style.min-width]="column.fixedWidth" class="{{ column.customClass }}"
+                [style]="column.style" (click)="this.showBackdrop ? null : this.rowClick.emit(row.key)">
+                <div class="main-text">
+                  <!-- 自訂 -->
+                  <div class="w-100" *ngIf="column.customTemplate" [innerHTML]="column.customTemplate"></div>
+                  <!-- 多項文字 -->
+                  <div class="w-100" *ngIf="
+                      !column.customTemplate &&
+                      column.fontMulti &&
+                      column.fontMulti(column.value).length > 0 &&
+                      !column.formElement?.type
+                    ">
+                    <span *ngFor="let font of column.fontMulti(column.value)"
+                      [style.color]="this.getColor(font.value, font?.color)" [style.fontWeight]="font?.weight"
+                      [style.fontSize]="font?.size">
+                      {{ font.value }}
+                    </span>
+                  </div>
+                  <!-- 單文字 -->
+                  <p class="text w-100" *ngIf="
+                      !column.customTemplate &&
+                      !(
+                        column.fontMulti &&
+                        column.fontMulti(column.value).length > 0
+                      ) &&
+                      !column.formElement?.type
+                    " [style.color]="column?.font?.color" [style.fontWeight]="column?.font?.weight"
+                    [style.fontSize]="column?.font?.size">
+                    {{ column.value }}
+                    <span class="hover-tooltip" *ngIf="column.tooltip?.showExpression"
+                      [style.backgroundColor]="column.font?.color ?? '#635D5D'">
+                      <p>{{ column.tooltip?.textExpression }}</p>
+                    </span>
+                  </p>
+                  <!-- date-picker -->
+                  <app-datatable-date-picker *ngIf="
+                      !column.customTemplate &&
+                      column.formElement?.type === 'datepicker'
+                    " (selectDate)="
+                      this.onSelectDate({date: $event, rowKey: row.key})
+                    " (calendarShow)="this.onShowCalendar($event)" (cancel)="this.cancelCalendar()"
+                    [positionX]="column.formElement?.position" [positionY]="
+                      this.getDisplayRows.length > 3
+                        ? rowIndex >= this.getDisplayRows.length - 2
+                          ? 'top'
+                          : 'middle'
+                        : 'middle'
+                    " [value]="column.value">
+                    {{ column.value }}</app-datatable-date-picker>
+                  <em *ngIf="column.iconTooltip?.showExpression" class="{{ column.iconTooltip?.type }}">
+                    !
+                    <span>{{ column.iconTooltip?.text }}</span>
+                  </em>
+                </div>
+                <p class="des" *ngIf="column.desCode" [style.color]="column?.font?.color">
+                  {{ column.valueDes }}
+                </p>
+                <span #tFrontShadow class="frontShadow" [class.showFrontShadow]="
+                    this.showFrontShadow(tTableContainer)
+                  " *ngIf="rowIndex === 0 && columnIndex === 0"></span>
+              </td>
+            </ng-container>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+  <span [class.end-shadow]="this.showEndShadow(tTableContainer)"></span>
+</div>
+
+<div class="footer">
+  <app-datatable-pagination [pages]="this.rowsChunk" [currentPage]="0"
+  *ngIf="this.config?.pageSize"
+  (pageChange)="this.pageChange($event)">
+  </app-datatable-pagination>
+  <div class="count-label ml-3" *ngIf="!this.hideNoData">
+    <p>
+      {{ this.config?.countLabel || this.text.showCount }}:
+      {{ this.rowsBeforeChunk.length }}
+    </p>
+  </div>
+
+</div>
+
+
+
+<div class="backdrop" [class.show]="this.showBackdrop" (click)="this.closeOverlay()"></div>
+
+<div *ngIf="this.rowsBeforeChunk.length === 0 && !this.hideNoData" class="no-projects-message p-absolute">
+  <div>
+    <img [src]="this.noDataImgUrl" />
+    <p>{{ this.noDataWarn }}</p>
+  </div>
+</div>
+
+
+
+<div class="loader" *ngIf="this.isLoading">
+  <p>{{ this.text.loading }}</p>
+  <div></div>
+</div>
+
+<ng-template #tFilterIcon let-column="column">
+  <div class="filter-icon" [class.hasFilter]="this.hasOptionsModified(column)">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</ng-template>
+
+<ng-template #tSortIcon let-sortCode="sortCode">
+  <em id="sort-icon" [class.desc]="sortCode === 'desc'">
+    <span>A</span>
+    <span>Z</span>
+    <span class="arrow"></span>
+  </em>
+</ng-template>

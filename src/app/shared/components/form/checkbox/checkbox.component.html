@@ -1,0 +1,12 @@
+<input class="d-none" type="checkbox" [(ngModel)]="this.model" [id]="this.id"
+  (ngModelChange)="this.notifyValueChange(this.model)" [disabled]="this.disabled">
+<label class="d-flex align-items-start pr-2 pe-pointer" [class.noData]="this.noData" [for]="this.id">
+  <div class="checkbox d-flex align-items-center justify-content-center mx-3 mt-1">
+    <em class="icon-check-thick"></em>
+    <em class="icon-minus" *ngIf="this.noData"></em>
+  </div>
+  <p *ngIf="this.title">{{this.title | translate}}</p>
+  <!-- 其他說明欄位 -->
+  <input type="text" class="input" [placeholder]="'cab.comment-send-placeholder' | translate" *ngIf="this.hasOtherInput"
+    [disabled]="this.disabled" (input)="this.onOther($event)" id="otherInput" [value]="this.memo" />
+</label>

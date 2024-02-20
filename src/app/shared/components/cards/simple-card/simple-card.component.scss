@@ -1,0 +1,37 @@
+:host {
+  display: flex;
+}
+.simple-card {
+  cursor: default;
+  margin: 0.35rem;
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1);
+  &:hover {
+    transition: 0.3s;
+    box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.1);
+  }
+  & > div:last-of-type {
+    height: calc(100% - 35px);
+  }
+}
+
+#button {
+  span {
+    margin-right: 0.15rem;
+  }
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+#content {
+  li {
+    width: 8.4375rem;
+    &:hover {
+      background-color: #e6e6e6;
+    }
+    em {
+      color: #999999;
+    }
+    color: #898989;
+  }
+}

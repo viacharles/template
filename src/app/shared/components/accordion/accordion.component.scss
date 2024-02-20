@@ -1,0 +1,43 @@
+@import 'color';
+
+.accord {
+  &__container {
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  &__header {
+    cursor: pointer;
+    min-height: 2rem;
+
+    &:hover {
+      background-color: $light-gray-3;
+    }
+
+    i {
+      transition: 0.5s;
+    }
+
+    &--collapse {
+      i {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+
+  &__content {
+    &--collapse {
+      overflow-y: auto;
+      animation: collapse 0.5s forwards;
+    }
+  }
+}
+
+@keyframes collapse {
+  from {
+    max-height: 100vh;
+  }
+
+  to {
+    max-height: 0;
+  }
+}

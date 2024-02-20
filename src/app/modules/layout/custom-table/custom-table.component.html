@@ -1,0 +1,32 @@
+<div>
+  <table (change)="selectUpdate()">
+    <thead>
+      <tr>
+        <th style="margin-right: 10px">
+          <input
+            type="checkbox"
+            [(ngModel)]="masterSelected"
+            (change)="checkUncheckAll()"
+          />
+        </th>
+        <th *ngFor="let label of displayedLabels">
+          <mat-card class="header-card"> {{ label }} </mat-card>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of filterUserList; let i = index">
+        <td style="margin-right: 10px">
+          <input type="checkbox" value="i" [(ngModel)]="check_list[i]" />
+        </td>
+        <td *ngFor="let column of displayedColumns; let i = index">
+          <mat-card class="content-card">{{ user[column] }} </mat-card>
+          <p *ngIf="i !== 3"></p>
+          <p class="timestamp" *ngIf="i === 3">
+            最後更新: {{ user['lastUpdated'] ? user['lastUpdated'] : 'N/A' }}
+          </p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

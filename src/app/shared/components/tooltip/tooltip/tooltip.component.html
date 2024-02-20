@@ -1,0 +1,17 @@
+<div
+  #tTooltip
+  class="d-flex flex-column p-2 text-deep-gray fw-5 text-nowrap opacity-{{
+    this.topDiff && this.leftDiff ? '1' : '0'
+  }}"
+  [innerHTML]="this.innerHtml | safeHtml"
+  [style.borderColor]="'rgba(' + this.borderColor + ', 0.8)'"
+  [style.top]="this.topDiff"
+  [style.left]="this.leftDiff"
+  [style.transform]="
+    'translate(' + this.position?.isLeft
+      ? '50%'
+      : '-50%,' + this.position?.isTop
+        ? '50%'
+        : '-50%)'
+  "
+></div>

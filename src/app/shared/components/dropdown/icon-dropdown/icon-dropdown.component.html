@@ -1,0 +1,13 @@
+<span class="pe-pointer" (click)="this.isOpen = !this.isOpen">
+  <ng-content select="#button"></ng-content>
+  <div
+    class="{{
+      this.isOpen ? 'show show-' + (this.config?.positionY ?? 'middle') : ''
+    }} align-{{ this.config?.positionStartX ?? 'center' }}"
+    [style.top]="this.config?.positionY + 'px'"
+    [class.hideTail]="this.config?.hideTail"
+    [style.borderRadius]="this.config?.borderRadius"
+  >
+    <ng-content select="#content"></ng-content>
+  </div>
+</span>

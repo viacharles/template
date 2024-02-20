@@ -1,0 +1,26 @@
+:host {
+  div {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    div {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      height: 95%;
+      width: 90%;
+      em {
+        position: absolute;
+      }
+    }
+  }
+}
+
+img {
+  max-height: 100%;
+}

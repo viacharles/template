@@ -1,0 +1,7300 @@
+[
+  {
+    "docId": "0357c5fcc9bb487d84dd27232a726231",
+    "cabId": "202311140008",
+    "projectId": "0f85f3fc4a3847108fcc046b6fe655c4",
+    "questionVersion": "1.14.1",
+    "version": "1.0.0",
+    "status": "2",
+    "answers": {
+      "1be0ca85bf014a06995e16e070ebf245": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "521efd77b2d340d2ad7b58c02b5acb3f": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          },
+          "B": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "03477dfb4c6a488e830ed889f8ae72d1": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "4e58bf65d98a4c42913dffbd8c7ddf0e"
+      },
+      "498edaad5d2a4d13a4cd759651d33fe1": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "bde4d0e26f7a4c6b92c3437da1f640ed": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "4e58bf65d98a4c42913dffbd8c7ddf0e"
+      },
+      "c31978f10d6145e9830ffd6af355e56e": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "363525278c3e4331ba6740960e874b41"
+      },
+      "c106dcd507724d9ea76f7be75c1d89bf": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "a4b86494eb1d4daabf6a7f07458fc287"
+      },
+      "f3842cbc00fd4e1db0dd82ace63f0f90": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "60702b68304443c38746b44aaa0bd07f"
+      },
+      "580d96a904a545cb97a97020acfcfa4e": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          },
+          "B": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "363525278c3e4331ba6740960e874b41"
+      },
+      "e4f30563bb2f4c53a45f1c984b1a1381": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "db3f81a1036f4e64acc700eaaab4ae69"
+      },
+      "9eb0954423bc48a7b750533b5df9a5c1": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "a4b86494eb1d4daabf6a7f07458fc287"
+      },
+      "272dd29f1167468da2a43e1f22bf6e3b": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "6e24ffe048074793944aa74b05dedafd": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "789c5ed5fd2f461c8aff9f8b07fdedfd"
+      },
+      "43757e23a0d14bc6aa5d8417c9dba3d2": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "e2e60d370edc44b2965531631b4ce9ee"
+      },
+      "cad57fdafad24cea8d359ed1d6f3e0aa": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "60702b68304443c38746b44aaa0bd07f"
+      },
+      "e79757be3e654b1c83d10bdb038b6bf0": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "e2e60d370edc44b2965531631b4ce9ee"
+      },
+      "2c487ee09d324fb197ddf9464d1ef012": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "5250b8725ac64e7787f2d7980df613da": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "db3f81a1036f4e64acc700eaaab4ae69"
+      },
+      "03f88dd7ba70480fbbfbb78abbd3ed8f": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "8addbd69e1a54fd781a194f6dbe518bc": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "60702b68304443c38746b44aaa0bd07f"
+      },
+      "2d5c09b892a14211aa6bd8c9f0996f2f": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "67d7a7939bb84850ba3ae3d22841ee34": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "363525278c3e4331ba6740960e874b41"
+      },
+      "2c41025cac6840f5aeadc080b8c31745": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "cdef84de752f4b3db3b4d79d9ee83215"
+      },
+      "07d70b3f7c3c4b01a2291a55374146d8": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "fde24b4d737e4b4bb1f6d5594c48e92d"
+      },
+      "c75e079787ab42fc8d8a7a5d6cd3e6e0": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "cdef84de752f4b3db3b4d79d9ee83215"
+      }
+    },
+    "projectName": "關聯專案c",
+    "projectOwnerSectionNameCN": "專案負責科c",
+    "projectOwnerName": "專案負責人c",
+    "cab": "0",
+    "tenantCn": "國泰金控",
+    "tenantId": "fe08d4b2b7dca7e0873f5479ec4901d7e917225e03beb3ccfc154803db7154ea",
+    "createDate": "2023-11-14 15:33:53",
+    "editDate": "2023-11-14 15:34:39",
+    "reviewDate": "2023-11-18",
+    "submitDate": "2023-11-14 15:34:39",
+    "creator": {
+      "email": "IrisTeng@cathayholdings.com.tw",
+      "id": "0fa724ac959e7baad0e6f233849097f747796a0a06b0e27e2bdfe48f0914de99",
+      "name": "IrisTeng",
+      "tenantId": null
+    },
+    "editor": {
+      "email": "IrisTeng@cathayholdings.com.tw",
+      "id": "0fa724ac959e7baad0e6f233849097f747796a0a06b0e27e2bdfe48f0914de99",
+      "name": "IrisTeng",
+      "tenantId": null
+    },
+    "attachment": [
+      {
+        "file": "3690f5587b7c41a49c476ff9cce772b8",
+        "uploadDate": "2023-11-14 15:34:39"
+      }
+    ]
+  },
+  {
+    "docId": "04a67830dd5240b7b438a9f9f75f2981",
+    "cabId": "202311140008",
+    "projectId": "0f85f3fc4a3847108fcc046b6fe655c4",
+    "questionVersion": "1.14.1",
+    "version": "1.0.0",
+    "status": "2",
+    "answers": {
+      "1be0ca85bf014a06995e16e070ebf245": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "521efd77b2d340d2ad7b58c02b5acb3f": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          },
+          "B": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "03477dfb4c6a488e830ed889f8ae72d1": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "4e58bf65d98a4c42913dffbd8c7ddf0e"
+      },
+      "498edaad5d2a4d13a4cd759651d33fe1": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "bde4d0e26f7a4c6b92c3437da1f640ed": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "4e58bf65d98a4c42913dffbd8c7ddf0e"
+      },
+      "c31978f10d6145e9830ffd6af355e56e": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "363525278c3e4331ba6740960e874b41"
+      },
+      "c106dcd507724d9ea76f7be75c1d89bf": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "a4b86494eb1d4daabf6a7f07458fc287"
+      },
+      "f3842cbc00fd4e1db0dd82ace63f0f90": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "60702b68304443c38746b44aaa0bd07f"
+      },
+      "580d96a904a545cb97a97020acfcfa4e": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          },
+          "B": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "363525278c3e4331ba6740960e874b41"
+      },
+      "e4f30563bb2f4c53a45f1c984b1a1381": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "db3f81a1036f4e64acc700eaaab4ae69"
+      },
+      "9eb0954423bc48a7b750533b5df9a5c1": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "a4b86494eb1d4daabf6a7f07458fc287"
+      },
+      "272dd29f1167468da2a43e1f22bf6e3b": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "6e24ffe048074793944aa74b05dedafd": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "789c5ed5fd2f461c8aff9f8b07fdedfd"
+      },
+      "43757e23a0d14bc6aa5d8417c9dba3d2": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "e2e60d370edc44b2965531631b4ce9ee"
+      },
+      "cad57fdafad24cea8d359ed1d6f3e0aa": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "60702b68304443c38746b44aaa0bd07f"
+      },
+      "e79757be3e654b1c83d10bdb038b6bf0": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "e2e60d370edc44b2965531631b4ce9ee"
+      },
+      "2c487ee09d324fb197ddf9464d1ef012": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "5250b8725ac64e7787f2d7980df613da": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "db3f81a1036f4e64acc700eaaab4ae69"
+      },
+      "03f88dd7ba70480fbbfbb78abbd3ed8f": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "8addbd69e1a54fd781a194f6dbe518bc": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "60702b68304443c38746b44aaa0bd07f"
+      },
+      "2d5c09b892a14211aa6bd8c9f0996f2f": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "67d7a7939bb84850ba3ae3d22841ee34": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "363525278c3e4331ba6740960e874b41"
+      },
+      "2c41025cac6840f5aeadc080b8c31745": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "cdef84de752f4b3db3b4d79d9ee83215"
+      },
+      "07d70b3f7c3c4b01a2291a55374146d8": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "fde24b4d737e4b4bb1f6d5594c48e92d"
+      },
+      "c75e079787ab42fc8d8a7a5d6cd3e6e0": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "cdef84de752f4b3db3b4d79d9ee83215"
+      }
+    },
+    "projectName": "關聯專案c",
+    "projectOwnerSectionNameCN": "專案負責科c",
+    "projectOwnerName": "專案負責人c",
+    "cab": "0",
+    "tenantCn": "國泰金控",
+    "tenantId": "fe08d4b2b7dca7e0873f5479ec4901d7e917225e03beb3ccfc154803db7154ea",
+    "createDate": "2023-11-14 15:33:53",
+    "editDate": "2023-11-14 15:34:39",
+    "reviewDate": "2023-11-18",
+    "submitDate": "2023-11-14 15:34:39",
+    "creator": {
+      "email": "IrisTeng@cathayholdings.com.tw",
+      "id": "0fa724ac959e7baad0e6f233849097f747796a0a06b0e27e2bdfe48f0914de99",
+      "name": "IrisTeng",
+      "tenantId": null
+    },
+    "editor": {
+      "email": "IrisTeng@cathayholdings.com.tw",
+      "id": "0fa724ac959e7baad0e6f233849097f747796a0a06b0e27e2bdfe48f0914de99",
+      "name": "IrisTeng",
+      "tenantId": null
+    },
+    "attachment": [
+      {
+        "file": "3690f5587b7c41a49c476ff9cce772b8",
+        "uploadDate": "2023-11-14 15:34:39"
+      }
+    ]
+  },
+  {
+    "docId": "0df8fcbd9a6c41d6a3261963bb859b21",
+    "cabId": "202311140001",
+    "projectId": "81d531e57a0748d7ae7951fbf68a9b53",
+    "questionVersion": "1.14.0",
+    "version": "1.0.0",
+    "status": "0",
+    "answers": null,
+    "projectName": "adadas",
+    "projectOwnerSectionNameCN": "ss",
+    "projectOwnerName": "ddd",
+    "cab": "0",
+    "tenantCn": "國泰金控",
+    "tenantId": "fe08d4b2b7dca7e0873f5479ec4901d7e917225e03beb3ccfc154803db7154ea",
+    "createDate": "2023-11-14 09:28:03",
+    "editDate": "2023-11-14 09:28:03",
+    "reviewDate": null,
+    "submitDate": null,
+    "creator": {
+      "email": "litongchen@cathayholdings.com.tw",
+      "id": "d937169707b8ce622d5d3a131012a3f035ff6b3a29ddd8ecc44a56094b0c81b9",
+      "name": "Carol Chen",
+      "tenantId": null
+    },
+    "editor": {
+      "email": "litongchen@cathayholdings.com.tw",
+      "id": "d937169707b8ce622d5d3a131012a3f035ff6b3a29ddd8ecc44a56094b0c81b9",
+      "name": "Carol Chen",
+      "tenantId": null
+    },
+    "attachment": null
+  },
+  {
+    "docId": "130cd2f7a41b4fba89e4507bd20c14f3",
+    "cabId": "202311140009",
+    "projectId": "c0a738e40b1746b9bf12d8c475c99622",
+    "questionVersion": "1.14.1",
+    "version": "1.0.0",
+    "status": "2",
+    "answers": {
+      "1be0ca85bf014a06995e16e070ebf245": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "521efd77b2d340d2ad7b58c02b5acb3f": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          },
+          "B": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "03477dfb4c6a488e830ed889f8ae72d1": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "4e58bf65d98a4c42913dffbd8c7ddf0e"
+      },
+      "498edaad5d2a4d13a4cd759651d33fe1": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "bde4d0e26f7a4c6b92c3437da1f640ed": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "4e58bf65d98a4c42913dffbd8c7ddf0e"
+      },
+      "c31978f10d6145e9830ffd6af355e56e": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "363525278c3e4331ba6740960e874b41"
+      },
+      "c106dcd507724d9ea76f7be75c1d89bf": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "a4b86494eb1d4daabf6a7f07458fc287"
+      },
+      "f3842cbc00fd4e1db0dd82ace63f0f90": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "60702b68304443c38746b44aaa0bd07f"
+      },
+      "580d96a904a545cb97a97020acfcfa4e": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          },
+          "B": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "363525278c3e4331ba6740960e874b41"
+      },
+      "e4f30563bb2f4c53a45f1c984b1a1381": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "db3f81a1036f4e64acc700eaaab4ae69"
+      },
+      "9eb0954423bc48a7b750533b5df9a5c1": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "a4b86494eb1d4daabf6a7f07458fc287"
+      },
+      "272dd29f1167468da2a43e1f22bf6e3b": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "6e24ffe048074793944aa74b05dedafd": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "789c5ed5fd2f461c8aff9f8b07fdedfd"
+      },
+      "43757e23a0d14bc6aa5d8417c9dba3d2": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "e2e60d370edc44b2965531631b4ce9ee"
+      },
+      "cad57fdafad24cea8d359ed1d6f3e0aa": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "60702b68304443c38746b44aaa0bd07f"
+      },
+      "e79757be3e654b1c83d10bdb038b6bf0": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "e2e60d370edc44b2965531631b4ce9ee"
+      },
+      "2c487ee09d324fb197ddf9464d1ef012": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "5250b8725ac64e7787f2d7980df613da": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "db3f81a1036f4e64acc700eaaab4ae69"
+      },
+      "03f88dd7ba70480fbbfbb78abbd3ed8f": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "8addbd69e1a54fd781a194f6dbe518bc": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "60702b68304443c38746b44aaa0bd07f"
+      },
+      "2d5c09b892a14211aa6bd8c9f0996f2f": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "67d7a7939bb84850ba3ae3d22841ee34": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "363525278c3e4331ba6740960e874b41"
+      },
+      "2c41025cac6840f5aeadc080b8c31745": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "cdef84de752f4b3db3b4d79d9ee83215"
+      },
+      "07d70b3f7c3c4b01a2291a55374146d8": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "fde24b4d737e4b4bb1f6d5594c48e92d"
+      },
+      "c75e079787ab42fc8d8a7a5d6cd3e6e0": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "cdef84de752f4b3db3b4d79d9ee83215"
+      }
+    },
+    "projectName": "關聯專案v",
+    "projectOwnerSectionNameCN": "專案負責科v",
+    "projectOwnerName": "專案負責人v",
+    "cab": "0",
+    "tenantCn": "國泰金控",
+    "tenantId": "fe08d4b2b7dca7e0873f5479ec4901d7e917225e03beb3ccfc154803db7154ea",
+    "createDate": "2023-11-14 15:40:02",
+    "editDate": "2023-11-14 15:40:51",
+    "reviewDate": "2023-11-23",
+    "submitDate": "2023-11-14 15:40:51",
+    "creator": {
+      "email": "IrisTeng@cathayholdings.com.tw",
+      "id": "0fa724ac959e7baad0e6f233849097f747796a0a06b0e27e2bdfe48f0914de99",
+      "name": "IrisTeng",
+      "tenantId": null
+    },
+    "editor": {
+      "email": "IrisTeng@cathayholdings.com.tw",
+      "id": "0fa724ac959e7baad0e6f233849097f747796a0a06b0e27e2bdfe48f0914de99",
+      "name": "IrisTeng",
+      "tenantId": null
+    },
+    "attachment": [
+      {
+        "file": "5ecbf9c6757341debf7ed0a3c2cec526",
+        "uploadDate": "2023-11-14 15:40:51"
+      }
+    ]
+  },
+  {
+    "docId": "133dcc3fa96c4bc5b0a0139ee9611f4a",
+    "cabId": "202311150002",
+    "projectId": "94c9a8dbbd18488093a0e632034d9711",
+    "questionVersion": "1.14.1",
+    "version": "1.0.0",
+    "status": "0",
+    "answers": null,
+    "projectName": "關聯專案",
+    "projectOwnerSectionNameCN": "專案負責科",
+    "projectOwnerName": "專案負責人",
+    "cab": "0",
+    "tenantCn": "國泰金控",
+    "tenantId": "fe08d4b2b7dca7e0873f5479ec4901d7e917225e03beb3ccfc154803db7154ea",
+    "createDate": "2023-11-15 14:03:07",
+    "editDate": "2023-11-15 14:03:07",
+    "reviewDate": null,
+    "submitDate": null,
+    "creator": {
+      "email": "IrisTeng@cathayholdings.com.tw",
+      "id": "0fa724ac959e7baad0e6f233849097f747796a0a06b0e27e2bdfe48f0914de99",
+      "name": "IrisTeng",
+      "tenantId": null
+    },
+    "editor": {
+      "email": "IrisTeng@cathayholdings.com.tw",
+      "id": "0fa724ac959e7baad0e6f233849097f747796a0a06b0e27e2bdfe48f0914de99",
+      "name": "IrisTeng",
+      "tenantId": null
+    },
+    "attachment": null
+  },
+  {
+    "docId": "22eed534145f4cfa85c3445faa74de35",
+    "cabId": "202311140006",
+    "projectId": "aa74b2223cb94981825c0e839b3a69f8",
+    "questionVersion": "1.14.1",
+    "version": "1.0.0",
+    "status": "1",
+    "answers": {
+      "1be0ca85bf014a06995e16e070ebf245": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "521efd77b2d340d2ad7b58c02b5acb3f": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          },
+          "B": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "03477dfb4c6a488e830ed889f8ae72d1": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "4e58bf65d98a4c42913dffbd8c7ddf0e"
+      },
+      "498edaad5d2a4d13a4cd759651d33fe1": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "bde4d0e26f7a4c6b92c3437da1f640ed": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "4e58bf65d98a4c42913dffbd8c7ddf0e"
+      },
+      "c31978f10d6145e9830ffd6af355e56e": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "363525278c3e4331ba6740960e874b41"
+      },
+      "c106dcd507724d9ea76f7be75c1d89bf": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "a4b86494eb1d4daabf6a7f07458fc287"
+      },
+      "f3842cbc00fd4e1db0dd82ace63f0f90": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "60702b68304443c38746b44aaa0bd07f"
+      },
+      "580d96a904a545cb97a97020acfcfa4e": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          },
+          "B": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "363525278c3e4331ba6740960e874b41"
+      },
+      "e4f30563bb2f4c53a45f1c984b1a1381": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "db3f81a1036f4e64acc700eaaab4ae69"
+      },
+      "9eb0954423bc48a7b750533b5df9a5c1": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "a4b86494eb1d4daabf6a7f07458fc287"
+      },
+      "272dd29f1167468da2a43e1f22bf6e3b": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "6e24ffe048074793944aa74b05dedafd": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "789c5ed5fd2f461c8aff9f8b07fdedfd"
+      },
+      "43757e23a0d14bc6aa5d8417c9dba3d2": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "e2e60d370edc44b2965531631b4ce9ee"
+      },
+      "cad57fdafad24cea8d359ed1d6f3e0aa": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "60702b68304443c38746b44aaa0bd07f"
+      },
+      "e79757be3e654b1c83d10bdb038b6bf0": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "e2e60d370edc44b2965531631b4ce9ee"
+      },
+      "2c487ee09d324fb197ddf9464d1ef012": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "5250b8725ac64e7787f2d7980df613da": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "db3f81a1036f4e64acc700eaaab4ae69"
+      },
+      "03f88dd7ba70480fbbfbb78abbd3ed8f": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "8addbd69e1a54fd781a194f6dbe518bc": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "60702b68304443c38746b44aaa0bd07f"
+      },
+      "2d5c09b892a14211aa6bd8c9f0996f2f": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "67d7a7939bb84850ba3ae3d22841ee34": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "363525278c3e4331ba6740960e874b41"
+      },
+      "2c41025cac6840f5aeadc080b8c31745": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "cdef84de752f4b3db3b4d79d9ee83215"
+      },
+      "07d70b3f7c3c4b01a2291a55374146d8": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "fde24b4d737e4b4bb1f6d5594c48e92d"
+      },
+      "c75e079787ab42fc8d8a7a5d6cd3e6e0": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "cdef84de752f4b3db3b4d79d9ee83215"
+      }
+    },
+    "projectName": "關聯專案q",
+    "projectOwnerSectionNameCN": "專案負責科q",
+    "projectOwnerName": "專案負責人q",
+    "cab": "0",
+    "tenantCn": "國泰金控",
+    "tenantId": "fe08d4b2b7dca7e0873f5479ec4901d7e917225e03beb3ccfc154803db7154ea",
+    "createDate": "2023-11-14 15:26:52",
+    "editDate": "2023-11-14 15:27:47",
+    "reviewDate": null,
+    "submitDate": "2023-11-14 15:27:47",
+    "creator": {
+      "email": "IrisTeng_chairman@cathayholdings.com.tw",
+      "id": "cc5d8c40ce63b2d8379df44d359dedda0b71b5a2142c3268bde94ae3598569c8",
+      "name": "瑞絲主席",
+      "tenantId": null
+    },
+    "editor": {
+      "email": "IrisTeng_chairman@cathayholdings.com.tw",
+      "id": "cc5d8c40ce63b2d8379df44d359dedda0b71b5a2142c3268bde94ae3598569c8",
+      "name": "瑞絲主席",
+      "tenantId": null
+    },
+    "attachment": [
+      {
+        "file": "4a6cabda4e3d44898bfa0265ab391fba",
+        "uploadDate": "2023-11-14 15:27:47"
+      }
+    ]
+  },
+  {
+    "docId": "34eb314219544f2ea9a4bf3ac71afed2",
+    "cabId": "202311140006",
+    "projectId": "aa74b2223cb94981825c0e839b3a69f8",
+    "questionVersion": "1.14.1",
+    "version": "1.0.0",
+    "status": "1",
+    "answers": {
+      "1be0ca85bf014a06995e16e070ebf245": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "521efd77b2d340d2ad7b58c02b5acb3f": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          },
+          "B": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "03477dfb4c6a488e830ed889f8ae72d1": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "4e58bf65d98a4c42913dffbd8c7ddf0e"
+      },
+      "498edaad5d2a4d13a4cd759651d33fe1": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "bde4d0e26f7a4c6b92c3437da1f640ed": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "4e58bf65d98a4c42913dffbd8c7ddf0e"
+      },
+      "c31978f10d6145e9830ffd6af355e56e": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "363525278c3e4331ba6740960e874b41"
+      },
+      "c106dcd507724d9ea76f7be75c1d89bf": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "a4b86494eb1d4daabf6a7f07458fc287"
+      },
+      "f3842cbc00fd4e1db0dd82ace63f0f90": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "60702b68304443c38746b44aaa0bd07f"
+      },
+      "580d96a904a545cb97a97020acfcfa4e": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          },
+          "B": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "363525278c3e4331ba6740960e874b41"
+      },
+      "e4f30563bb2f4c53a45f1c984b1a1381": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "db3f81a1036f4e64acc700eaaab4ae69"
+      },
+      "9eb0954423bc48a7b750533b5df9a5c1": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "a4b86494eb1d4daabf6a7f07458fc287"
+      },
+      "272dd29f1167468da2a43e1f22bf6e3b": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "6e24ffe048074793944aa74b05dedafd": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "789c5ed5fd2f461c8aff9f8b07fdedfd"
+      },
+      "43757e23a0d14bc6aa5d8417c9dba3d2": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "e2e60d370edc44b2965531631b4ce9ee"
+      },
+      "cad57fdafad24cea8d359ed1d6f3e0aa": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "60702b68304443c38746b44aaa0bd07f"
+      },
+      "e79757be3e654b1c83d10bdb038b6bf0": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "e2e60d370edc44b2965531631b4ce9ee"
+      },
+      "2c487ee09d324fb197ddf9464d1ef012": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "5250b8725ac64e7787f2d7980df613da": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "db3f81a1036f4e64acc700eaaab4ae69"
+      },
+      "03f88dd7ba70480fbbfbb78abbd3ed8f": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "8addbd69e1a54fd781a194f6dbe518bc": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "60702b68304443c38746b44aaa0bd07f"
+      },
+      "2d5c09b892a14211aa6bd8c9f0996f2f": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "67d7a7939bb84850ba3ae3d22841ee34": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "363525278c3e4331ba6740960e874b41"
+      },
+      "2c41025cac6840f5aeadc080b8c31745": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "cdef84de752f4b3db3b4d79d9ee83215"
+      },
+      "07d70b3f7c3c4b01a2291a55374146d8": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "fde24b4d737e4b4bb1f6d5594c48e92d"
+      },
+      "c75e079787ab42fc8d8a7a5d6cd3e6e0": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "cdef84de752f4b3db3b4d79d9ee83215"
+      }
+    },
+    "projectName": "關聯專案q",
+    "projectOwnerSectionNameCN": "專案負責科q",
+    "projectOwnerName": "專案負責人q",
+    "cab": "0",
+    "tenantCn": "國泰金控",
+    "tenantId": "fe08d4b2b7dca7e0873f5479ec4901d7e917225e03beb3ccfc154803db7154ea",
+    "createDate": "2023-11-14 15:26:52",
+    "editDate": "2023-11-14 15:27:47",
+    "reviewDate": null,
+    "submitDate": "2023-11-14 15:27:47",
+    "creator": {
+      "email": "IrisTeng_chairman@cathayholdings.com.tw",
+      "id": "cc5d8c40ce63b2d8379df44d359dedda0b71b5a2142c3268bde94ae3598569c8",
+      "name": "瑞絲主席",
+      "tenantId": null
+    },
+    "editor": {
+      "email": "IrisTeng_chairman@cathayholdings.com.tw",
+      "id": "cc5d8c40ce63b2d8379df44d359dedda0b71b5a2142c3268bde94ae3598569c8",
+      "name": "瑞絲主席",
+      "tenantId": null
+    },
+    "attachment": [
+      {
+        "file": "4a6cabda4e3d44898bfa0265ab391fba",
+        "uploadDate": "2023-11-14 15:27:47"
+      }
+    ]
+  },
+  {
+    "docId": "42736cfe10444d17b0175a7507c36aa9",
+    "cabId": "202311160001",
+    "projectId": "b93611b3763543df81eafe65ea3b8b87",
+    "questionVersion": "1.21.0",
+    "version": "1.0.0",
+    "status": "0",
+    "answers": {
+      "7f217ab434a946bbb742e488c541752f": {
+        "values": {
+          "A": {
+            "value": "ererere",
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "824d662b83e748e68c674edb48142cf1",
+        "groupId": "2fe8f14bb00b4982bda59fb2b4854034"
+      },
+      "1be0ca85bf014a06995e16e070ebf245": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "521efd77b2d340d2ad7b58c02b5acb3f": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          },
+          "B": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "d456d3930a1e43659816b5acf48b635d": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "789c5ed5fd2f461c8aff9f8b07fdedfd"
+      },
+      "7839395d929a4d0193b5138a7aee6969": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "b2525eb33e8d4476bc059391ad20b093"
+      },
+      "cef109f6352a42beba478064f27f14f0": {
+        "values": {
+          "A": {
+            "value": "1",
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "824d662b83e748e68c674edb48142cf1",
+        "groupId": "2fe8f14bb00b4982bda59fb2b4854034"
+      },
+      "70b7ec8d989e4548872e67e951409027": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "b2525eb33e8d4476bc059391ad20b093"
+      },
+      "ecad8de7b9024c6e8758141e26b52468": {
+        "values": {
+          "A": {
+            "value": "1",
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "824d662b83e748e68c674edb48142cf1",
+        "groupId": "2fe8f14bb00b4982bda59fb2b4854034"
+      },
+      "2c8dacb01c00481e92443723abf0e0ae": {
+        "values": {
+          "A": {
+            "value": "dedwdd",
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "824d662b83e748e68c674edb48142cf1",
+        "groupId": "2fe8f14bb00b4982bda59fb2b4854034"
+      },
+      "ec928a3ab82d44a190c2a74376353333": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "fde24b4d737e4b4bb1f6d5594c48e92d"
+      },
+      "7670cfd4bb2c4f459aea0f13005fda23": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "5af5b5fc0c1b4a5185f628880704ee4b"
+      },
+      "b6d13ad1cbff4d019206b21e5885e2c6": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "fde24b4d737e4b4bb1f6d5594c48e92d"
+      },
+      "89eb40331ba54df5b83e0308839cf9bd": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "fde24b4d737e4b4bb1f6d5594c48e92d"
+      },
+      "6bf2a6cb77e74c988eca4cfb7f51da81": {
+        "values": {
+          "A": {
+            "value": "rer",
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "824d662b83e748e68c674edb48142cf1",
+        "groupId": "2fe8f14bb00b4982bda59fb2b4854034"
+      },
+      "422d2274a32d454fb62ee7aaae41920c": {
+        "values": {
+          "A": {
+            "value": "2023/11/11",
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "824d662b83e748e68c674edb48142cf1",
+        "groupId": "2fe8f14bb00b4982bda59fb2b4854034"
+      },
+      "35bc67a8592e4c96bf71b86232a16aad": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "fde24b4d737e4b4bb1f6d5594c48e92d"
+      },
+      "e0d244a654dd4f5fb560833ab49c24a8": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "fde24b4d737e4b4bb1f6d5594c48e92d"
+      },
+      "272dd29f1167468da2a43e1f22bf6e3b": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "6e24ffe048074793944aa74b05dedafd": {
+        "values": {
+          "A": {
+            "value": 2,
+            "memo": "4-1 說明影像檔OS，並說明使用版本"
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "789c5ed5fd2f461c8aff9f8b07fdedfd"
+      },
+      "ef5194ac31c7403abc8b6be253e31c98": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "5af5b5fc0c1b4a5185f628880704ee4b"
+      },
+      "43757e23a0d14bc6aa5d8417c9dba3d2": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "e2e60d370edc44b2965531631b4ce9ee"
+      },
+      "ca3077ae3f4d48888af7b34a3e829ef5": {
+        "values": {
+          "A": {
+            "value": "dedwdd",
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "824d662b83e748e68c674edb48142cf1",
+        "groupId": "2fe8f14bb00b4982bda59fb2b4854034"
+      },
+      "e79757be3e654b1c83d10bdb038b6bf0": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "e2e60d370edc44b2965531631b4ce9ee"
+      },
+      "d1849a219ebd4930a5c73155f7c25433": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "b2525eb33e8d4476bc059391ad20b093"
+      },
+      "29c543edc15f425f99376796daa8a5b1": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "421a8ad7d0dd45c589f8820f5b6613f0"
+      },
+      "c630061562584bf6ac9660a4dfd36eb9": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "421a8ad7d0dd45c589f8820f5b6613f0"
+      },
+      "a9151a52f2314c2e803a022639b1b54e": {
+        "values": {
+          "A": {
+            "value": "ere",
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "824d662b83e748e68c674edb48142cf1",
+        "groupId": "2fe8f14bb00b4982bda59fb2b4854034"
+      },
+      "31885c4596424d73a93a5e05fdc7675b": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "b2525eb33e8d4476bc059391ad20b093"
+      },
+      "1cd17542718e426b92bc58dcae7797fd": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "b2525eb33e8d4476bc059391ad20b093"
+      },
+      "7a9c90e4ad66473ab7277a063000c512": {
+        "values": {
+          "A": {
+            "value": "2023/11/07",
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "824d662b83e748e68c674edb48142cf1",
+        "groupId": "2fe8f14bb00b4982bda59fb2b4854034"
+      },
+      "03f88dd7ba70480fbbfbb78abbd3ed8f": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "8addbd69e1a54fd781a194f6dbe518bc": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "cd9a4221b0944efc82b9a1ccfa1ee9b9": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "af11ce747ddc49dd984002da6dcbc8a0"
+      },
+      "10baf98753b14271aa00b988b943949d": {
+        "values": {
+          "A": {
+            "value": "reer",
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "824d662b83e748e68c674edb48142cf1",
+        "groupId": "2fe8f14bb00b4982bda59fb2b4854034"
+      },
+      "5d732ed23563402dac8392c40843f0a9": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "af11ce747ddc49dd984002da6dcbc8a0"
+      },
+      "2c41025cac6840f5aeadc080b8c31745": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "cdef84de752f4b3db3b4d79d9ee83215"
+      },
+      "b6027c164d8f44c1b64236debe07e9d7": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "b2525eb33e8d4476bc059391ad20b093"
+      },
+      "3eab6befe97d46b9b9ced1a06260b21c": {
+        "values": {
+          "A": {
+            "value": "ddw",
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "824d662b83e748e68c674edb48142cf1",
+        "groupId": "2fe8f14bb00b4982bda59fb2b4854034"
+      },
+      "07d70b3f7c3c4b01a2291a55374146d8": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "fde24b4d737e4b4bb1f6d5594c48e92d"
+      },
+      "9554c727e8414770830932fc8a308ae8": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          },
+          "B": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "421a8ad7d0dd45c589f8820f5b6613f0"
+      },
+      "c75e079787ab42fc8d8a7a5d6cd3e6e0": {
+        "values": {
+          "A": {
+            "value": [1, 4],
+            "memo": "1-1 雲端服務提供商*"
+          }
+        },
+        "remark": [
+          {
+            "content": "1-1 雲端服務提供商*",
+            "name": "Carol Chen",
+            "editDate": "2023-11-16 15:09:32"
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "cdef84de752f4b3db3b4d79d9ee83215"
+      }
+    },
+    "projectName": "asasas11",
+    "projectOwnerSectionNameCN": "sasa",
+    "projectOwnerName": "saas",
+    "cab": "0",
+    "tenantCn": "國泰金控",
+    "tenantId": "fe08d4b2b7dca7e0873f5479ec4901d7e917225e03beb3ccfc154803db7154ea",
+    "createDate": "2023-11-16 14:15:19",
+    "editDate": "2023-11-16 15:09:32",
+    "reviewDate": null,
+    "submitDate": null,
+    "creator": {
+      "email": "litongchen@cathayholdings.com.tw",
+      "id": "d937169707b8ce622d5d3a131012a3f035ff6b3a29ddd8ecc44a56094b0c81b9",
+      "name": "Carol Chen",
+      "tenantId": null
+    },
+    "editor": {
+      "email": "litongchen@cathayholdings.com.tw",
+      "id": "d937169707b8ce622d5d3a131012a3f035ff6b3a29ddd8ecc44a56094b0c81b9",
+      "name": "Carol Chen",
+      "tenantId": null
+    },
+    "attachment": [
+      {
+        "file": "ce7bf37a370548758d381673efa235ae",
+        "uploadDate": "2023-11-16 15:09:32"
+      }
+    ]
+  },
+  {
+    "docId": "7fd8315ef2e043149f1104c2d80731d6",
+    "cabId": "202311140005",
+    "projectId": "b128f769b18042ccb9d8facf1890e2c9",
+    "questionVersion": "1.14.1",
+    "version": "1.0.0",
+    "status": "1",
+    "answers": {
+      "1be0ca85bf014a06995e16e070ebf245": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "521efd77b2d340d2ad7b58c02b5acb3f": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          },
+          "B": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "03477dfb4c6a488e830ed889f8ae72d1": {
+        "values": {
+          "A": {
+            "value": 2,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "4e58bf65d98a4c42913dffbd8c7ddf0e"
+      },
+      "498edaad5d2a4d13a4cd759651d33fe1": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "bde4d0e26f7a4c6b92c3437da1f640ed": {
+        "values": {
+          "A": {
+            "value": 2,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "4e58bf65d98a4c42913dffbd8c7ddf0e"
+      },
+      "c31978f10d6145e9830ffd6af355e56e": {
+        "values": {
+          "A": {
+            "value": 2,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "363525278c3e4331ba6740960e874b41"
+      },
+      "c106dcd507724d9ea76f7be75c1d89bf": {
+        "values": {
+          "A": {
+            "value": 2,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "a4b86494eb1d4daabf6a7f07458fc287"
+      },
+      "f3842cbc00fd4e1db0dd82ace63f0f90": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "60702b68304443c38746b44aaa0bd07f"
+      },
+      "580d96a904a545cb97a97020acfcfa4e": {
+        "values": {
+          "A": {
+            "value": [2],
+            "memo": ""
+          },
+          "B": {
+            "value": 2,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "363525278c3e4331ba6740960e874b41"
+      },
+      "e4f30563bb2f4c53a45f1c984b1a1381": {
+        "values": {
+          "A": {
+            "value": 2,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "db3f81a1036f4e64acc700eaaab4ae69"
+      },
+      "9eb0954423bc48a7b750533b5df9a5c1": {
+        "values": {
+          "A": {
+            "value": 2,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "a4b86494eb1d4daabf6a7f07458fc287"
+      },
+      "272dd29f1167468da2a43e1f22bf6e3b": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "6e24ffe048074793944aa74b05dedafd": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "789c5ed5fd2f461c8aff9f8b07fdedfd"
+      },
+      "43757e23a0d14bc6aa5d8417c9dba3d2": {
+        "values": {
+          "A": {
+            "value": 2,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "e2e60d370edc44b2965531631b4ce9ee"
+      },
+      "cad57fdafad24cea8d359ed1d6f3e0aa": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "60702b68304443c38746b44aaa0bd07f"
+      },
+      "e79757be3e654b1c83d10bdb038b6bf0": {
+        "values": {
+          "A": {
+            "value": 2,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "e2e60d370edc44b2965531631b4ce9ee"
+      },
+      "2c487ee09d324fb197ddf9464d1ef012": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "5250b8725ac64e7787f2d7980df613da": {
+        "values": {
+          "A": {
+            "value": 2,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "db3f81a1036f4e64acc700eaaab4ae69"
+      },
+      "03f88dd7ba70480fbbfbb78abbd3ed8f": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "8addbd69e1a54fd781a194f6dbe518bc": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "60702b68304443c38746b44aaa0bd07f"
+      },
+      "2d5c09b892a14211aa6bd8c9f0996f2f": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "67d7a7939bb84850ba3ae3d22841ee34": {
+        "values": {
+          "A": {
+            "value": 2,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "363525278c3e4331ba6740960e874b41"
+      },
+      "2c41025cac6840f5aeadc080b8c31745": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "cdef84de752f4b3db3b4d79d9ee83215"
+      },
+      "07d70b3f7c3c4b01a2291a55374146d8": {
+        "values": {
+          "A": {
+            "value": [2],
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "fde24b4d737e4b4bb1f6d5594c48e92d"
+      },
+      "c75e079787ab42fc8d8a7a5d6cd3e6e0": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "cdef84de752f4b3db3b4d79d9ee83215"
+      }
+    },
+    "projectName": "wwwwww111",
+    "projectOwnerSectionNameCN": "www",
+    "projectOwnerName": "qw",
+    "cab": "0",
+    "tenantCn": "國泰金控",
+    "tenantId": "fe08d4b2b7dca7e0873f5479ec4901d7e917225e03beb3ccfc154803db7154ea",
+    "createDate": "2023-11-14 15:20:59",
+    "editDate": "2023-11-14 15:22:39",
+    "reviewDate": null,
+    "submitDate": "2023-11-14 15:22:39",
+    "creator": {
+      "email": "litongchen@cathayholdings.com.tw",
+      "id": "d937169707b8ce622d5d3a131012a3f035ff6b3a29ddd8ecc44a56094b0c81b9",
+      "name": "Carol Chen",
+      "tenantId": null
+    },
+    "editor": {
+      "email": "litongchen@cathayholdings.com.tw",
+      "id": "d937169707b8ce622d5d3a131012a3f035ff6b3a29ddd8ecc44a56094b0c81b9",
+      "name": "Carol Chen",
+      "tenantId": null
+    },
+    "attachment": [
+      {
+        "file": "0c784eb1cc71452da255d79b63339625",
+        "uploadDate": "2023-11-14 15:22:39"
+      }
+    ]
+  },
+  {
+    "docId": "9974b78f89aa4ad4857d0784a921c9ca",
+    "cabId": "202311150001",
+    "projectId": "512acc465c3849a7a9b71dc5d13f9a64",
+    "questionVersion": "1.14.1",
+    "version": "1.0.0",
+    "status": "0",
+    "answers": {
+      "7f217ab434a946bbb742e488c541752f": {
+        "values": {
+          "A": {
+            "value": "eee",
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": null,
+        "groupId": null
+      },
+      "1be0ca85bf014a06995e16e070ebf245": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "521efd77b2d340d2ad7b58c02b5acb3f": {
+        "values": {
+          "A": {
+            "value": [],
+            "memo": ""
+          },
+          "B": {
+            "value": "",
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "d456d3930a1e43659816b5acf48b635d": {
+        "values": {
+          "A": {
+            "value": "",
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": null,
+        "groupId": null
+      },
+      "7839395d929a4d0193b5138a7aee6969": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": null,
+        "groupId": null
+      },
+      "cef109f6352a42beba478064f27f14f0": {
+        "values": {
+          "A": {
+            "value": "1",
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": null,
+        "groupId": null
+      },
+      "70b7ec8d989e4548872e67e951409027": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": null,
+        "groupId": null
+      },
+      "ecad8de7b9024c6e8758141e26b52468": {
+        "values": {
+          "A": {
+            "value": "1",
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": null,
+        "groupId": null
+      },
+      "2c8dacb01c00481e92443723abf0e0ae": {
+        "values": {
+          "A": {
+            "value": "eee",
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": null,
+        "groupId": null
+      },
+      "ec928a3ab82d44a190c2a74376353333": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": null,
+        "groupId": null
+      },
+      "7670cfd4bb2c4f459aea0f13005fda23": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": null,
+        "groupId": null
+      },
+      "b6d13ad1cbff4d019206b21e5885e2c6": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": null,
+        "groupId": null
+      },
+      "89eb40331ba54df5b83e0308839cf9bd": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": null,
+        "groupId": null
+      },
+      "6bf2a6cb77e74c988eca4cfb7f51da81": {
+        "values": {
+          "A": {
+            "value": "e",
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": null,
+        "groupId": null
+      },
+      "422d2274a32d454fb62ee7aaae41920c": {
+        "values": {
+          "A": {
+            "value": "2023/11/06",
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": null,
+        "groupId": null
+      },
+      "35bc67a8592e4c96bf71b86232a16aad": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": null,
+        "groupId": null
+      },
+      "e0d244a654dd4f5fb560833ab49c24a8": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": null,
+        "groupId": null
+      },
+      "272dd29f1167468da2a43e1f22bf6e3b": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "6e24ffe048074793944aa74b05dedafd": {
+        "values": {
+          "A": {
+            "value": "",
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "789c5ed5fd2f461c8aff9f8b07fdedfd"
+      },
+      "ef5194ac31c7403abc8b6be253e31c98": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": null,
+        "groupId": null
+      },
+      "43757e23a0d14bc6aa5d8417c9dba3d2": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "e2e60d370edc44b2965531631b4ce9ee"
+      },
+      "ca3077ae3f4d48888af7b34a3e829ef5": {
+        "values": {
+          "A": {
+            "value": "eee",
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": null,
+        "groupId": null
+      },
+      "e79757be3e654b1c83d10bdb038b6bf0": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "e2e60d370edc44b2965531631b4ce9ee"
+      },
+      "d1849a219ebd4930a5c73155f7c25433": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": null,
+        "groupId": null
+      },
+      "29c543edc15f425f99376796daa8a5b1": {
+        "values": {
+          "A": {
+            "value": "",
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": null,
+        "groupId": null
+      },
+      "c630061562584bf6ac9660a4dfd36eb9": {
+        "values": {
+          "A": {
+            "value": "",
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": null,
+        "groupId": null
+      },
+      "a9151a52f2314c2e803a022639b1b54e": {
+        "values": {
+          "A": {
+            "value": "",
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": null,
+        "groupId": null
+      },
+      "31885c4596424d73a93a5e05fdc7675b": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": null,
+        "groupId": null
+      },
+      "1cd17542718e426b92bc58dcae7797fd": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": null,
+        "groupId": null
+      },
+      "7a9c90e4ad66473ab7277a063000c512": {
+        "values": {
+          "A": {
+            "value": "2023/11/13",
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": null,
+        "groupId": null
+      },
+      "03f88dd7ba70480fbbfbb78abbd3ed8f": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "8addbd69e1a54fd781a194f6dbe518bc": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "60702b68304443c38746b44aaa0bd07f"
+      },
+      "cd9a4221b0944efc82b9a1ccfa1ee9b9": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": null,
+        "groupId": null
+      },
+      "10baf98753b14271aa00b988b943949d": {
+        "values": {
+          "A": {
+            "value": "ee",
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": null,
+        "groupId": null
+      },
+      "5d732ed23563402dac8392c40843f0a9": {
+        "values": {
+          "A": {
+            "value": "",
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": null,
+        "groupId": null
+      },
+      "2c41025cac6840f5aeadc080b8c31745": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "cdef84de752f4b3db3b4d79d9ee83215"
+      },
+      "b6027c164d8f44c1b64236debe07e9d7": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": null,
+        "groupId": null
+      },
+      "3eab6befe97d46b9b9ced1a06260b21c": {
+        "values": {
+          "A": {
+            "value": "eee",
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": null,
+        "groupId": null
+      },
+      "07d70b3f7c3c4b01a2291a55374146d8": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "fde24b4d737e4b4bb1f6d5594c48e92d"
+      },
+      "9554c727e8414770830932fc8a308ae8": {
+        "values": {
+          "A": {
+            "value": [],
+            "memo": ""
+          },
+          "B": {
+            "value": "",
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": null,
+        "groupId": null
+      },
+      "c75e079787ab42fc8d8a7a5d6cd3e6e0": {
+        "values": {
+          "A": {
+            "value": [1, 4],
+            "memo": "wewewe"
+          }
+        },
+        "remark": [
+          {
+            "content": "wewewwe",
+            "name": "Carol Chen",
+            "editDate": "2023-11-16 13:53:12"
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "cdef84de752f4b3db3b4d79d9ee83215"
+      }
+    },
+    "projectName": "aasas",
+    "projectOwnerSectionNameCN": "asasas",
+    "projectOwnerName": "ddssdds",
+    "cab": "0",
+    "tenantCn": "國泰金控",
+    "tenantId": "fe08d4b2b7dca7e0873f5479ec4901d7e917225e03beb3ccfc154803db7154ea",
+    "createDate": "2023-11-15 10:47:41",
+    "editDate": "2023-11-16 13:53:12",
+    "reviewDate": null,
+    "submitDate": null,
+    "creator": {
+      "email": "litongchen@cathayholdings.com.tw",
+      "id": "d937169707b8ce622d5d3a131012a3f035ff6b3a29ddd8ecc44a56094b0c81b9",
+      "name": "Carol Chen",
+      "tenantId": null
+    },
+    "editor": {
+      "email": "litongchen@cathayholdings.com.tw",
+      "id": "d937169707b8ce622d5d3a131012a3f035ff6b3a29ddd8ecc44a56094b0c81b9",
+      "name": "Carol Chen",
+      "tenantId": null
+    },
+    "attachment": [
+      {
+        "file": "4a955495a8d042d085367678f55f1056",
+        "uploadDate": "2023-11-16 13:53:12"
+      }
+    ]
+  },
+  {
+    "docId": "a4a59d070e1d46edbd744080ec6fa250",
+    "cabId": "202311140004",
+    "projectId": "bc04a0398844481cb9ded56587cd86af",
+    "questionVersion": "1.14.1",
+    "version": "1.0.0",
+    "status": "1",
+    "answers": {
+      "1be0ca85bf014a06995e16e070ebf245": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "521efd77b2d340d2ad7b58c02b5acb3f": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          },
+          "B": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "03477dfb4c6a488e830ed889f8ae72d1": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "4e58bf65d98a4c42913dffbd8c7ddf0e"
+      },
+      "498edaad5d2a4d13a4cd759651d33fe1": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "bde4d0e26f7a4c6b92c3437da1f640ed": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "4e58bf65d98a4c42913dffbd8c7ddf0e"
+      },
+      "c31978f10d6145e9830ffd6af355e56e": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "363525278c3e4331ba6740960e874b41"
+      },
+      "c106dcd507724d9ea76f7be75c1d89bf": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "a4b86494eb1d4daabf6a7f07458fc287"
+      },
+      "f3842cbc00fd4e1db0dd82ace63f0f90": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "60702b68304443c38746b44aaa0bd07f"
+      },
+      "580d96a904a545cb97a97020acfcfa4e": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          },
+          "B": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "363525278c3e4331ba6740960e874b41"
+      },
+      "e4f30563bb2f4c53a45f1c984b1a1381": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "db3f81a1036f4e64acc700eaaab4ae69"
+      },
+      "9eb0954423bc48a7b750533b5df9a5c1": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "a4b86494eb1d4daabf6a7f07458fc287"
+      },
+      "272dd29f1167468da2a43e1f22bf6e3b": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "6e24ffe048074793944aa74b05dedafd": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "789c5ed5fd2f461c8aff9f8b07fdedfd"
+      },
+      "43757e23a0d14bc6aa5d8417c9dba3d2": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "e2e60d370edc44b2965531631b4ce9ee"
+      },
+      "cad57fdafad24cea8d359ed1d6f3e0aa": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "60702b68304443c38746b44aaa0bd07f"
+      },
+      "e79757be3e654b1c83d10bdb038b6bf0": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "e2e60d370edc44b2965531631b4ce9ee"
+      },
+      "2c487ee09d324fb197ddf9464d1ef012": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "5250b8725ac64e7787f2d7980df613da": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "db3f81a1036f4e64acc700eaaab4ae69"
+      },
+      "03f88dd7ba70480fbbfbb78abbd3ed8f": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "8addbd69e1a54fd781a194f6dbe518bc": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "60702b68304443c38746b44aaa0bd07f"
+      },
+      "2d5c09b892a14211aa6bd8c9f0996f2f": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "67d7a7939bb84850ba3ae3d22841ee34": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "363525278c3e4331ba6740960e874b41"
+      },
+      "2c41025cac6840f5aeadc080b8c31745": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "cdef84de752f4b3db3b4d79d9ee83215"
+      },
+      "07d70b3f7c3c4b01a2291a55374146d8": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "fde24b4d737e4b4bb1f6d5594c48e92d"
+      },
+      "c75e079787ab42fc8d8a7a5d6cd3e6e0": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "cdef84de752f4b3db3b4d79d9ee83215"
+      }
+    },
+    "projectName": "wqwewewe",
+    "projectOwnerSectionNameCN": "eew",
+    "projectOwnerName": "weweew",
+    "cab": "0",
+    "tenantCn": "國泰金控",
+    "tenantId": "fe08d4b2b7dca7e0873f5479ec4901d7e917225e03beb3ccfc154803db7154ea",
+    "createDate": "2023-11-14 15:06:12",
+    "editDate": "2023-11-14 15:07:05",
+    "reviewDate": null,
+    "submitDate": "2023-11-14 15:07:05",
+    "creator": {
+      "email": "litongchen@cathayholdings.com.tw",
+      "id": "d937169707b8ce622d5d3a131012a3f035ff6b3a29ddd8ecc44a56094b0c81b9",
+      "name": "Carol Chen",
+      "tenantId": null
+    },
+    "editor": {
+      "email": "litongchen@cathayholdings.com.tw",
+      "id": "d937169707b8ce622d5d3a131012a3f035ff6b3a29ddd8ecc44a56094b0c81b9",
+      "name": "Carol Chen",
+      "tenantId": null
+    },
+    "attachment": [
+      {
+        "file": "dcdcdfd619f045e698a67b80d9cfe982",
+        "uploadDate": "2023-11-14 15:07:05"
+      }
+    ]
+  },
+  {
+    "docId": "ac3d900bd18144668b094362489472b6",
+    "cabId": "202311140007",
+    "projectId": "1096971124614a9486bc539e68604a1b",
+    "questionVersion": "1.14.1",
+    "version": "1.0.0",
+    "status": "1",
+    "answers": {
+      "1be0ca85bf014a06995e16e070ebf245": {
+        "values": {
+          "A": {
+            "value": [2],
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "521efd77b2d340d2ad7b58c02b5acb3f": {
+        "values": {
+          "A": {
+            "value": [2],
+            "memo": ""
+          },
+          "B": {
+            "value": 2,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "03477dfb4c6a488e830ed889f8ae72d1": {
+        "values": {
+          "A": {
+            "value": 2,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "4e58bf65d98a4c42913dffbd8c7ddf0e"
+      },
+      "498edaad5d2a4d13a4cd759651d33fe1": {
+        "values": {
+          "A": {
+            "value": 2,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "bde4d0e26f7a4c6b92c3437da1f640ed": {
+        "values": {
+          "A": {
+            "value": 2,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "4e58bf65d98a4c42913dffbd8c7ddf0e"
+      },
+      "c31978f10d6145e9830ffd6af355e56e": {
+        "values": {
+          "A": {
+            "value": 2,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "363525278c3e4331ba6740960e874b41"
+      },
+      "c106dcd507724d9ea76f7be75c1d89bf": {
+        "values": {
+          "A": {
+            "value": 2,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "a4b86494eb1d4daabf6a7f07458fc287"
+      },
+      "f3842cbc00fd4e1db0dd82ace63f0f90": {
+        "values": {
+          "A": {
+            "value": 2,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "60702b68304443c38746b44aaa0bd07f"
+      },
+      "580d96a904a545cb97a97020acfcfa4e": {
+        "values": {
+          "A": {
+            "value": [2],
+            "memo": ""
+          },
+          "B": {
+            "value": 2,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "363525278c3e4331ba6740960e874b41"
+      },
+      "e4f30563bb2f4c53a45f1c984b1a1381": {
+        "values": {
+          "A": {
+            "value": 2,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "db3f81a1036f4e64acc700eaaab4ae69"
+      },
+      "9eb0954423bc48a7b750533b5df9a5c1": {
+        "values": {
+          "A": {
+            "value": 2,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "a4b86494eb1d4daabf6a7f07458fc287"
+      },
+      "272dd29f1167468da2a43e1f22bf6e3b": {
+        "values": {
+          "A": {
+            "value": [2],
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "6e24ffe048074793944aa74b05dedafd": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "789c5ed5fd2f461c8aff9f8b07fdedfd"
+      },
+      "43757e23a0d14bc6aa5d8417c9dba3d2": {
+        "values": {
+          "A": {
+            "value": 2,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "e2e60d370edc44b2965531631b4ce9ee"
+      },
+      "cad57fdafad24cea8d359ed1d6f3e0aa": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "60702b68304443c38746b44aaa0bd07f"
+      },
+      "e79757be3e654b1c83d10bdb038b6bf0": {
+        "values": {
+          "A": {
+            "value": 2,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "e2e60d370edc44b2965531631b4ce9ee"
+      },
+      "2c487ee09d324fb197ddf9464d1ef012": {
+        "values": {
+          "A": {
+            "value": 2,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "5250b8725ac64e7787f2d7980df613da": {
+        "values": {
+          "A": {
+            "value": 2,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "db3f81a1036f4e64acc700eaaab4ae69"
+      },
+      "03f88dd7ba70480fbbfbb78abbd3ed8f": {
+        "values": {
+          "A": {
+            "value": 2,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "8addbd69e1a54fd781a194f6dbe518bc": {
+        "values": {
+          "A": {
+            "value": 2,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "60702b68304443c38746b44aaa0bd07f"
+      },
+      "2d5c09b892a14211aa6bd8c9f0996f2f": {
+        "values": {
+          "A": {
+            "value": 2,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "67d7a7939bb84850ba3ae3d22841ee34": {
+        "values": {
+          "A": {
+            "value": 2,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "363525278c3e4331ba6740960e874b41"
+      },
+      "2c41025cac6840f5aeadc080b8c31745": {
+        "values": {
+          "A": {
+            "value": 2,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "cdef84de752f4b3db3b4d79d9ee83215"
+      },
+      "07d70b3f7c3c4b01a2291a55374146d8": {
+        "values": {
+          "A": {
+            "value": [2],
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "fde24b4d737e4b4bb1f6d5594c48e92d"
+      },
+      "c75e079787ab42fc8d8a7a5d6cd3e6e0": {
+        "values": {
+          "A": {
+            "value": [2],
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "cdef84de752f4b3db3b4d79d9ee83215"
+      }
+    },
+    "projectName": "testtt",
+    "projectOwnerSectionNameCN": "testtt",
+    "projectOwnerName": "testtt",
+    "cab": "0",
+    "tenantCn": "國泰金控",
+    "tenantId": "fe08d4b2b7dca7e0873f5479ec4901d7e917225e03beb3ccfc154803db7154ea",
+    "createDate": "2023-11-14 15:29:23",
+    "editDate": "2023-11-14 15:29:59",
+    "reviewDate": null,
+    "submitDate": "2023-11-14 15:29:59",
+    "creator": {
+      "email": "IrisTeng_chairman@cathayholdings.com.tw",
+      "id": "cc5d8c40ce63b2d8379df44d359dedda0b71b5a2142c3268bde94ae3598569c8",
+      "name": "瑞絲主席",
+      "tenantId": null
+    },
+    "editor": {
+      "email": "IrisTeng_chairman@cathayholdings.com.tw",
+      "id": "cc5d8c40ce63b2d8379df44d359dedda0b71b5a2142c3268bde94ae3598569c8",
+      "name": "瑞絲主席",
+      "tenantId": null
+    },
+    "attachment": [
+      {
+        "file": "8207917ec64e4268980790839fa6bb7d",
+        "uploadDate": "2023-11-14 15:29:59"
+      }
+    ]
+  },
+  {
+    "docId": "b6935016fbf04f3d9141690891f47930",
+    "cabId": "202311140003",
+    "projectId": "26840cb78cb945958d2fec7dbef03991",
+    "questionVersion": "1.14.1",
+    "version": "1.0.0",
+    "status": "0",
+    "answers": null,
+    "projectName": "wqdqwswq",
+    "projectOwnerSectionNameCN": "wq",
+    "projectOwnerName": "qwqw",
+    "cab": "0",
+    "tenantCn": "國泰金控",
+    "tenantId": "fe08d4b2b7dca7e0873f5479ec4901d7e917225e03beb3ccfc154803db7154ea",
+    "createDate": "2023-11-14 15:05:58",
+    "editDate": "2023-11-14 15:05:58",
+    "reviewDate": null,
+    "submitDate": null,
+    "creator": {
+      "email": "litongchen@cathayholdings.com.tw",
+      "id": "d937169707b8ce622d5d3a131012a3f035ff6b3a29ddd8ecc44a56094b0c81b9",
+      "name": "Carol Chen",
+      "tenantId": null
+    },
+    "editor": {
+      "email": "litongchen@cathayholdings.com.tw",
+      "id": "d937169707b8ce622d5d3a131012a3f035ff6b3a29ddd8ecc44a56094b0c81b9",
+      "name": "Carol Chen",
+      "tenantId": null
+    },
+    "attachment": null
+  },
+  {
+    "docId": "b9a2a10608b7470b9325162b3c838c76",
+    "cabId": "202311130001",
+    "projectId": "3d83dfc8245f450d8221ac6755135740",
+    "questionVersion": "1.14.0",
+    "version": "1.0.0",
+    "status": "4",
+    "answers": {
+      "1be0ca85bf014a06995e16e070ebf245": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "521efd77b2d340d2ad7b58c02b5acb3f": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          },
+          "B": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "03477dfb4c6a488e830ed889f8ae72d1": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "4e58bf65d98a4c42913dffbd8c7ddf0e"
+      },
+      "498edaad5d2a4d13a4cd759651d33fe1": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "bde4d0e26f7a4c6b92c3437da1f640ed": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "4e58bf65d98a4c42913dffbd8c7ddf0e"
+      },
+      "c31978f10d6145e9830ffd6af355e56e": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "363525278c3e4331ba6740960e874b41"
+      },
+      "c106dcd507724d9ea76f7be75c1d89bf": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "a4b86494eb1d4daabf6a7f07458fc287"
+      },
+      "f3842cbc00fd4e1db0dd82ace63f0f90": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "60702b68304443c38746b44aaa0bd07f"
+      },
+      "580d96a904a545cb97a97020acfcfa4e": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          },
+          "B": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "363525278c3e4331ba6740960e874b41"
+      },
+      "e4f30563bb2f4c53a45f1c984b1a1381": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "db3f81a1036f4e64acc700eaaab4ae69"
+      },
+      "9eb0954423bc48a7b750533b5df9a5c1": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "a4b86494eb1d4daabf6a7f07458fc287"
+      },
+      "272dd29f1167468da2a43e1f22bf6e3b": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "6e24ffe048074793944aa74b05dedafd": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "789c5ed5fd2f461c8aff9f8b07fdedfd"
+      },
+      "43757e23a0d14bc6aa5d8417c9dba3d2": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "e2e60d370edc44b2965531631b4ce9ee"
+      },
+      "cad57fdafad24cea8d359ed1d6f3e0aa": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "60702b68304443c38746b44aaa0bd07f"
+      },
+      "e79757be3e654b1c83d10bdb038b6bf0": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "e2e60d370edc44b2965531631b4ce9ee"
+      },
+      "2c487ee09d324fb197ddf9464d1ef012": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "5250b8725ac64e7787f2d7980df613da": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "db3f81a1036f4e64acc700eaaab4ae69"
+      },
+      "03f88dd7ba70480fbbfbb78abbd3ed8f": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "8addbd69e1a54fd781a194f6dbe518bc": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "60702b68304443c38746b44aaa0bd07f"
+      },
+      "2d5c09b892a14211aa6bd8c9f0996f2f": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "67d7a7939bb84850ba3ae3d22841ee34": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "363525278c3e4331ba6740960e874b41"
+      },
+      "2c41025cac6840f5aeadc080b8c31745": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "cdef84de752f4b3db3b4d79d9ee83215"
+      },
+      "07d70b3f7c3c4b01a2291a55374146d8": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "fde24b4d737e4b4bb1f6d5594c48e92d"
+      },
+      "c75e079787ab42fc8d8a7a5d6cd3e6e0": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "cdef84de752f4b3db3b4d79d9ee83215"
+      }
+    },
+    "projectName": "XXSX",
+    "projectOwnerSectionNameCN": "cxcxccx",
+    "projectOwnerName": "xczcZX",
+    "cab": "0",
+    "tenantCn": "國泰金控",
+    "tenantId": "fe08d4b2b7dca7e0873f5479ec4901d7e917225e03beb3ccfc154803db7154ea",
+    "createDate": "2023-11-13 17:47:09",
+    "editDate": "2023-11-13 17:47:47",
+    "reviewDate": "2023-11-10",
+    "submitDate": "2023-11-13 17:47:47",
+    "creator": {
+      "email": "litongchen@cathayholdings.com.tw",
+      "id": "d937169707b8ce622d5d3a131012a3f035ff6b3a29ddd8ecc44a56094b0c81b9",
+      "name": "Carol Chen",
+      "tenantId": null
+    },
+    "editor": {
+      "email": "litongchen@cathayholdings.com.tw",
+      "id": "d937169707b8ce622d5d3a131012a3f035ff6b3a29ddd8ecc44a56094b0c81b9",
+      "name": "Carol Chen",
+      "tenantId": null
+    },
+    "attachment": [
+      {
+        "file": "fb43240ea59b4803a7676ad0c8900a7b",
+        "uploadDate": "2023-11-13 17:47:47"
+      }
+    ]
+  },
+  {
+    "docId": "d9e3da35a7ce41a59dddf115cf120048",
+    "cabId": "202311140010",
+    "projectId": "f9c0f0f11da041918567a8d20be5e5b1",
+    "questionVersion": "1.14.1",
+    "version": "1.0.0",
+    "status": "0",
+    "answers": null,
+    "projectName": "saadsd22",
+    "projectOwnerSectionNameCN": "as",
+    "projectOwnerName": "ds",
+    "cab": "0",
+    "tenantCn": "國泰金控",
+    "tenantId": "fe08d4b2b7dca7e0873f5479ec4901d7e917225e03beb3ccfc154803db7154ea",
+    "createDate": "2023-11-14 17:14:32",
+    "editDate": "2023-11-14 17:14:32",
+    "reviewDate": null,
+    "submitDate": null,
+    "creator": {
+      "email": "litongchen@cathayholdings.com.tw",
+      "id": "d937169707b8ce622d5d3a131012a3f035ff6b3a29ddd8ecc44a56094b0c81b9",
+      "name": "Carol Chen",
+      "tenantId": null
+    },
+    "editor": {
+      "email": "litongchen@cathayholdings.com.tw",
+      "id": "d937169707b8ce622d5d3a131012a3f035ff6b3a29ddd8ecc44a56094b0c81b9",
+      "name": "Carol Chen",
+      "tenantId": null
+    },
+    "attachment": null
+  },
+  {
+    "docId": "e1d1a0f2b3424ae4a8036cf5a00f1a5f",
+    "cabId": "202311140005",
+    "projectId": "b128f769b18042ccb9d8facf1890e2c9",
+    "questionVersion": "1.14.1",
+    "version": "1.0.0",
+    "status": "1",
+    "answers": {
+      "1be0ca85bf014a06995e16e070ebf245": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "521efd77b2d340d2ad7b58c02b5acb3f": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          },
+          "B": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "03477dfb4c6a488e830ed889f8ae72d1": {
+        "values": {
+          "A": {
+            "value": 2,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "4e58bf65d98a4c42913dffbd8c7ddf0e"
+      },
+      "498edaad5d2a4d13a4cd759651d33fe1": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "bde4d0e26f7a4c6b92c3437da1f640ed": {
+        "values": {
+          "A": {
+            "value": 2,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "4e58bf65d98a4c42913dffbd8c7ddf0e"
+      },
+      "c31978f10d6145e9830ffd6af355e56e": {
+        "values": {
+          "A": {
+            "value": 2,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "363525278c3e4331ba6740960e874b41"
+      },
+      "c106dcd507724d9ea76f7be75c1d89bf": {
+        "values": {
+          "A": {
+            "value": 2,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "a4b86494eb1d4daabf6a7f07458fc287"
+      },
+      "f3842cbc00fd4e1db0dd82ace63f0f90": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "60702b68304443c38746b44aaa0bd07f"
+      },
+      "580d96a904a545cb97a97020acfcfa4e": {
+        "values": {
+          "A": {
+            "value": [2],
+            "memo": ""
+          },
+          "B": {
+            "value": 2,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "363525278c3e4331ba6740960e874b41"
+      },
+      "e4f30563bb2f4c53a45f1c984b1a1381": {
+        "values": {
+          "A": {
+            "value": 2,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "db3f81a1036f4e64acc700eaaab4ae69"
+      },
+      "9eb0954423bc48a7b750533b5df9a5c1": {
+        "values": {
+          "A": {
+            "value": 2,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "a4b86494eb1d4daabf6a7f07458fc287"
+      },
+      "272dd29f1167468da2a43e1f22bf6e3b": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "6e24ffe048074793944aa74b05dedafd": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "789c5ed5fd2f461c8aff9f8b07fdedfd"
+      },
+      "43757e23a0d14bc6aa5d8417c9dba3d2": {
+        "values": {
+          "A": {
+            "value": 2,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "e2e60d370edc44b2965531631b4ce9ee"
+      },
+      "cad57fdafad24cea8d359ed1d6f3e0aa": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "60702b68304443c38746b44aaa0bd07f"
+      },
+      "e79757be3e654b1c83d10bdb038b6bf0": {
+        "values": {
+          "A": {
+            "value": 2,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "e2e60d370edc44b2965531631b4ce9ee"
+      },
+      "2c487ee09d324fb197ddf9464d1ef012": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "5250b8725ac64e7787f2d7980df613da": {
+        "values": {
+          "A": {
+            "value": 2,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "db3f81a1036f4e64acc700eaaab4ae69"
+      },
+      "03f88dd7ba70480fbbfbb78abbd3ed8f": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "8addbd69e1a54fd781a194f6dbe518bc": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "60702b68304443c38746b44aaa0bd07f"
+      },
+      "2d5c09b892a14211aa6bd8c9f0996f2f": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "67d7a7939bb84850ba3ae3d22841ee34": {
+        "values": {
+          "A": {
+            "value": 2,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "363525278c3e4331ba6740960e874b41"
+      },
+      "2c41025cac6840f5aeadc080b8c31745": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "cdef84de752f4b3db3b4d79d9ee83215"
+      },
+      "07d70b3f7c3c4b01a2291a55374146d8": {
+        "values": {
+          "A": {
+            "value": [2],
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "fde24b4d737e4b4bb1f6d5594c48e92d"
+      },
+      "c75e079787ab42fc8d8a7a5d6cd3e6e0": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "cdef84de752f4b3db3b4d79d9ee83215"
+      }
+    },
+    "projectName": "wwwwww111",
+    "projectOwnerSectionNameCN": "www",
+    "projectOwnerName": "qw",
+    "cab": "0",
+    "tenantCn": "國泰金控",
+    "tenantId": "fe08d4b2b7dca7e0873f5479ec4901d7e917225e03beb3ccfc154803db7154ea",
+    "createDate": "2023-11-14 15:20:59",
+    "editDate": "2023-11-14 15:22:39",
+    "reviewDate": null,
+    "submitDate": "2023-11-14 15:22:39",
+    "creator": {
+      "email": "litongchen@cathayholdings.com.tw",
+      "id": "d937169707b8ce622d5d3a131012a3f035ff6b3a29ddd8ecc44a56094b0c81b9",
+      "name": "Carol Chen",
+      "tenantId": null
+    },
+    "editor": {
+      "email": "litongchen@cathayholdings.com.tw",
+      "id": "d937169707b8ce622d5d3a131012a3f035ff6b3a29ddd8ecc44a56094b0c81b9",
+      "name": "Carol Chen",
+      "tenantId": null
+    },
+    "attachment": [
+      {
+        "file": "0c784eb1cc71452da255d79b63339625",
+        "uploadDate": "2023-11-14 15:22:39"
+      }
+    ]
+  },
+  {
+    "docId": "ed41628dee9d43daafeebdc462f4cbf2",
+    "cabId": "202311140007",
+    "projectId": "1096971124614a9486bc539e68604a1b",
+    "questionVersion": "1.14.1",
+    "version": "1.0.0",
+    "status": "1",
+    "answers": {
+      "1be0ca85bf014a06995e16e070ebf245": {
+        "values": {
+          "A": {
+            "value": [2],
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "521efd77b2d340d2ad7b58c02b5acb3f": {
+        "values": {
+          "A": {
+            "value": [2],
+            "memo": ""
+          },
+          "B": {
+            "value": 2,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "03477dfb4c6a488e830ed889f8ae72d1": {
+        "values": {
+          "A": {
+            "value": 2,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "4e58bf65d98a4c42913dffbd8c7ddf0e"
+      },
+      "498edaad5d2a4d13a4cd759651d33fe1": {
+        "values": {
+          "A": {
+            "value": 2,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "bde4d0e26f7a4c6b92c3437da1f640ed": {
+        "values": {
+          "A": {
+            "value": 2,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "4e58bf65d98a4c42913dffbd8c7ddf0e"
+      },
+      "c31978f10d6145e9830ffd6af355e56e": {
+        "values": {
+          "A": {
+            "value": 2,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "363525278c3e4331ba6740960e874b41"
+      },
+      "c106dcd507724d9ea76f7be75c1d89bf": {
+        "values": {
+          "A": {
+            "value": 2,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "a4b86494eb1d4daabf6a7f07458fc287"
+      },
+      "f3842cbc00fd4e1db0dd82ace63f0f90": {
+        "values": {
+          "A": {
+            "value": 2,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "60702b68304443c38746b44aaa0bd07f"
+      },
+      "580d96a904a545cb97a97020acfcfa4e": {
+        "values": {
+          "A": {
+            "value": [2],
+            "memo": ""
+          },
+          "B": {
+            "value": 2,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "363525278c3e4331ba6740960e874b41"
+      },
+      "e4f30563bb2f4c53a45f1c984b1a1381": {
+        "values": {
+          "A": {
+            "value": 2,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "db3f81a1036f4e64acc700eaaab4ae69"
+      },
+      "9eb0954423bc48a7b750533b5df9a5c1": {
+        "values": {
+          "A": {
+            "value": 2,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "a4b86494eb1d4daabf6a7f07458fc287"
+      },
+      "272dd29f1167468da2a43e1f22bf6e3b": {
+        "values": {
+          "A": {
+            "value": [2],
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "6e24ffe048074793944aa74b05dedafd": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "789c5ed5fd2f461c8aff9f8b07fdedfd"
+      },
+      "43757e23a0d14bc6aa5d8417c9dba3d2": {
+        "values": {
+          "A": {
+            "value": 2,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "e2e60d370edc44b2965531631b4ce9ee"
+      },
+      "cad57fdafad24cea8d359ed1d6f3e0aa": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "60702b68304443c38746b44aaa0bd07f"
+      },
+      "e79757be3e654b1c83d10bdb038b6bf0": {
+        "values": {
+          "A": {
+            "value": 2,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "e2e60d370edc44b2965531631b4ce9ee"
+      },
+      "2c487ee09d324fb197ddf9464d1ef012": {
+        "values": {
+          "A": {
+            "value": 2,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "5250b8725ac64e7787f2d7980df613da": {
+        "values": {
+          "A": {
+            "value": 2,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "db3f81a1036f4e64acc700eaaab4ae69"
+      },
+      "03f88dd7ba70480fbbfbb78abbd3ed8f": {
+        "values": {
+          "A": {
+            "value": 2,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "8addbd69e1a54fd781a194f6dbe518bc": {
+        "values": {
+          "A": {
+            "value": 2,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "60702b68304443c38746b44aaa0bd07f"
+      },
+      "2d5c09b892a14211aa6bd8c9f0996f2f": {
+        "values": {
+          "A": {
+            "value": 2,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "67d7a7939bb84850ba3ae3d22841ee34": {
+        "values": {
+          "A": {
+            "value": 2,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "363525278c3e4331ba6740960e874b41"
+      },
+      "2c41025cac6840f5aeadc080b8c31745": {
+        "values": {
+          "A": {
+            "value": 2,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "cdef84de752f4b3db3b4d79d9ee83215"
+      },
+      "07d70b3f7c3c4b01a2291a55374146d8": {
+        "values": {
+          "A": {
+            "value": [2],
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "fde24b4d737e4b4bb1f6d5594c48e92d"
+      },
+      "c75e079787ab42fc8d8a7a5d6cd3e6e0": {
+        "values": {
+          "A": {
+            "value": [2],
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "cdef84de752f4b3db3b4d79d9ee83215"
+      }
+    },
+    "projectName": "testtt",
+    "projectOwnerSectionNameCN": "testtt",
+    "projectOwnerName": "testtt",
+    "cab": "0",
+    "tenantCn": "國泰金控",
+    "tenantId": "fe08d4b2b7dca7e0873f5479ec4901d7e917225e03beb3ccfc154803db7154ea",
+    "createDate": "2023-11-14 15:29:23",
+    "editDate": "2023-11-14 15:29:59",
+    "reviewDate": null,
+    "submitDate": "2023-11-14 15:29:59",
+    "creator": {
+      "email": "IrisTeng_chairman@cathayholdings.com.tw",
+      "id": "cc5d8c40ce63b2d8379df44d359dedda0b71b5a2142c3268bde94ae3598569c8",
+      "name": "瑞絲主席",
+      "tenantId": null
+    },
+    "editor": {
+      "email": "IrisTeng_chairman@cathayholdings.com.tw",
+      "id": "cc5d8c40ce63b2d8379df44d359dedda0b71b5a2142c3268bde94ae3598569c8",
+      "name": "瑞絲主席",
+      "tenantId": null
+    },
+    "attachment": [
+      {
+        "file": "8207917ec64e4268980790839fa6bb7d",
+        "uploadDate": "2023-11-14 15:29:59"
+      }
+    ]
+  },
+  {
+    "docId": "fcf789e437444a7083972e4dbc69c452",
+    "cabId": "202311140004",
+    "projectId": "bc04a0398844481cb9ded56587cd86af",
+    "questionVersion": "1.14.1",
+    "version": "1.0.0",
+    "status": "1",
+    "answers": {
+      "1be0ca85bf014a06995e16e070ebf245": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "521efd77b2d340d2ad7b58c02b5acb3f": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          },
+          "B": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "03477dfb4c6a488e830ed889f8ae72d1": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "4e58bf65d98a4c42913dffbd8c7ddf0e"
+      },
+      "498edaad5d2a4d13a4cd759651d33fe1": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "bde4d0e26f7a4c6b92c3437da1f640ed": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "4e58bf65d98a4c42913dffbd8c7ddf0e"
+      },
+      "c31978f10d6145e9830ffd6af355e56e": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "363525278c3e4331ba6740960e874b41"
+      },
+      "c106dcd507724d9ea76f7be75c1d89bf": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "a4b86494eb1d4daabf6a7f07458fc287"
+      },
+      "f3842cbc00fd4e1db0dd82ace63f0f90": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "60702b68304443c38746b44aaa0bd07f"
+      },
+      "580d96a904a545cb97a97020acfcfa4e": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          },
+          "B": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "363525278c3e4331ba6740960e874b41"
+      },
+      "e4f30563bb2f4c53a45f1c984b1a1381": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "db3f81a1036f4e64acc700eaaab4ae69"
+      },
+      "9eb0954423bc48a7b750533b5df9a5c1": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "a4b86494eb1d4daabf6a7f07458fc287"
+      },
+      "272dd29f1167468da2a43e1f22bf6e3b": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "6e24ffe048074793944aa74b05dedafd": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "789c5ed5fd2f461c8aff9f8b07fdedfd"
+      },
+      "43757e23a0d14bc6aa5d8417c9dba3d2": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "e2e60d370edc44b2965531631b4ce9ee"
+      },
+      "cad57fdafad24cea8d359ed1d6f3e0aa": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "60702b68304443c38746b44aaa0bd07f"
+      },
+      "e79757be3e654b1c83d10bdb038b6bf0": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "e2e60d370edc44b2965531631b4ce9ee"
+      },
+      "2c487ee09d324fb197ddf9464d1ef012": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "5250b8725ac64e7787f2d7980df613da": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "db3f81a1036f4e64acc700eaaab4ae69"
+      },
+      "03f88dd7ba70480fbbfbb78abbd3ed8f": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "8addbd69e1a54fd781a194f6dbe518bc": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "60702b68304443c38746b44aaa0bd07f"
+      },
+      "2d5c09b892a14211aa6bd8c9f0996f2f": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "d4a22df8b60741cf80f47428fdb0ea3b"
+      },
+      "67d7a7939bb84850ba3ae3d22841ee34": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "363525278c3e4331ba6740960e874b41"
+      },
+      "2c41025cac6840f5aeadc080b8c31745": {
+        "values": {
+          "A": {
+            "value": 1,
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "cdef84de752f4b3db3b4d79d9ee83215"
+      },
+      "07d70b3f7c3c4b01a2291a55374146d8": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "fde24b4d737e4b4bb1f6d5594c48e92d"
+      },
+      "c75e079787ab42fc8d8a7a5d6cd3e6e0": {
+        "values": {
+          "A": {
+            "value": [1],
+            "memo": ""
+          }
+        },
+        "remark": [
+          {
+            "content": "",
+            "name": null,
+            "editDate": null
+          }
+        ],
+        "sectionId": "faf94eff45a646e5a8e6bf7810a8293b",
+        "groupId": "cdef84de752f4b3db3b4d79d9ee83215"
+      }
+    },
+    "projectName": "wqwewewe",
+    "projectOwnerSectionNameCN": "eew",
+    "projectOwnerName": "weweew",
+    "cab": "0",
+    "tenantCn": "國泰金控",
+    "tenantId": "fe08d4b2b7dca7e0873f5479ec4901d7e917225e03beb3ccfc154803db7154ea",
+    "createDate": "2023-11-14 15:06:12",
+    "editDate": "2023-11-14 15:07:05",
+    "reviewDate": null,
+    "submitDate": "2023-11-14 15:07:05",
+    "creator": {
+      "email": "litongchen@cathayholdings.com.tw",
+      "id": "d937169707b8ce622d5d3a131012a3f035ff6b3a29ddd8ecc44a56094b0c81b9",
+      "name": "Carol Chen",
+      "tenantId": null
+    },
+    "editor": {
+      "email": "litongchen@cathayholdings.com.tw",
+      "id": "d937169707b8ce622d5d3a131012a3f035ff6b3a29ddd8ecc44a56094b0c81b9",
+      "name": "Carol Chen",
+      "tenantId": null
+    },
+    "attachment": [
+      {
+        "file": "dcdcdfd619f045e698a67b80d9cfe982",
+        "uploadDate": "2023-11-14 15:07:05"
+      }
+    ]
+  },
+  {
+    "docId": "fe87f3d489c54ad09925c58b15155f3d",
+    "cabId": "202311140002",
+    "projectId": "298e0ee4e43244df82a871ae62016ab0",
+    "questionVersion": "1.14.0",
+    "version": "1.0.0",
+    "status": "0",
+    "answers": null,
+    "projectName": "sdsd",
+    "projectOwnerSectionNameCN": "ff",
+    "projectOwnerName": "f",
+    "cab": "0",
+    "tenantCn": "國泰金控",
+    "tenantId": "fe08d4b2b7dca7e0873f5479ec4901d7e917225e03beb3ccfc154803db7154ea",
+    "createDate": "2023-11-14 09:31:59",
+    "editDate": "2023-11-14 09:31:59",
+    "reviewDate": null,
+    "submitDate": null,
+    "creator": {
+      "email": "litongchen@cathayholdings.com.tw",
+      "id": "d937169707b8ce622d5d3a131012a3f035ff6b3a29ddd8ecc44a56094b0c81b9",
+      "name": "Carol Chen",
+      "tenantId": null
+    },
+    "editor": {
+      "email": "litongchen@cathayholdings.com.tw",
+      "id": "d937169707b8ce622d5d3a131012a3f035ff6b3a29ddd8ecc44a56094b0c81b9",
+      "name": "Carol Chen",
+      "tenantId": null
+    },
+    "attachment": null
+  }
+]

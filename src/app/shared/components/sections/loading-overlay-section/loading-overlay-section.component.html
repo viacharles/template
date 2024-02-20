@@ -1,0 +1,10 @@
+<div class="loader">
+  <em
+    class="icon-exclamation warn-icon d-flex align-items-center justify-content-center h-5 w-5 fw-7 fs-xs rounded-circle mb-1"
+    *ngIf="this.status === this.statusType.Error"
+  ></em>
+  <div *ngIf="this.status === this.statusType.Loading"></div>
+  <p class="text-nowrap fw-5" *ngIf="this.showText">
+    {{ this.des | translate }}
+  </p>
+</div>

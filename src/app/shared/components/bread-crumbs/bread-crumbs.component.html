@@ -1,0 +1,11 @@
+<ul class="d-flex">
+  <li
+    *ngFor="let crumb of this.pathList; let index = index"
+    class="fw-4 fs-sm text-grey-iron pe-pointer"
+  >
+    <a (click)="this.goTo(crumb.path)">
+      {{ 'nav.' + crumb.textI18n | translate }}
+    </a>
+    <em class="mr-2 ml-1 fs-sm" *ngIf="index !== this.pathList.length - 1">/</em>
+  </li>
+</ul>

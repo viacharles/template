@@ -1,0 +1,10 @@
+@import 'color';
+
+.filter-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  span {
+    border-bottom: 1.5px solid $deep-gray;
+  }
+}

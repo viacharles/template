@@ -1,0 +1,12 @@
+div {
+  pointer-events: none;
+  position: fixed;
+  width: auto;
+  height: auto;
+  color: #898989;
+  border: 2px solid;
+  background-color: rgba(255, 255, 255, 0.7);
+  &:first-child {
+    padding-bottom: 0.4rem;
+  }
+}

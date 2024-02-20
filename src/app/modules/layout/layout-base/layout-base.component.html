@@ -1,0 +1,15 @@
+<div #tLayout class="layout-base flex-{{ this.showSidebar ? 'row' : 'column' }}">
+  <app-sidebar #tSidebar class="app-sidebar position-relative" *ngIf="this.showSidebar"
+    (resize)="this.menuResize($event)"></app-sidebar>
+  <div #tNav class="nav">
+    <div #tRouterOutlet class="router-outlet" [class.fullHeight]="!this.showNav" (scroll)="this.mainScroll($event)">
+      <div class="h-100 w-100">
+        <router-outlet></router-outlet>
+      </div>
+      <app-footer class="app-footer" *ngIf="!this.hideFooter"></app-footer>
+    </div>
+    <div class="toast-group">
+      <app-toast *ngFor="let toast of this.currentToasts" [toast]="toast"></app-toast>
+    </div>
+  </div>
+</div>

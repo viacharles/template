@@ -1,0 +1,19 @@
+<img
+  class="{{ this.fillDirection === 'height' ? 'h' : 'w' }}-100 {{
+    this.fillDirection === 'height' ? 'w' : 'h'
+  }}-auto"
+  [src]="this.imgUrl"
+/>
+<div
+  class="no-projects-message p-absolute w-66 d-flex {{
+    this.type === 'normal' ? 'flex-column py-10' : 'flex-row py-3'
+  }} align-items-center justify-content-center text-green"
+>
+  <em
+    class="icon-exclamation warn-icon d-flex align-items-center justify-content-center h-5 w-5 fw-7 fs-xs rounded-circle {{
+      this.type === 'normal' ? 'mb-1' : 'mr-3'
+    }}"
+    [class.mb-2]="this.type === 'normal'"
+  ></em>
+  <span class="text-green text-center">{{ this.i18nCode | translate }}</span>
+</div>

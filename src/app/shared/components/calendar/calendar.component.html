@@ -1,0 +1,44 @@
+<div class="d-flex flex-column">
+  <div class="d-flex flex-row align-items-center justify-content-between p-1">
+    <div class="title">{{ this.title }}</div>
+    <div class="month-toggle">
+      <em
+        *ngIf="!this.thisMonthLimit"
+        class="fas fa-angle-left"
+        (click)="switch(0, -1)"
+      ></em>
+      <em
+        *ngIf="!this.thisMonthLimit"
+        class="fas fa-angle-right ml-3"
+        (click)="switch(0, 1)"
+      ></em>
+    </div>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th
+          class="text-center align-middle h-9"
+          *ngFor="let day of ['一', '二', '三', '四', '五', '六', '日']"
+        >
+          {{ day }}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let week of this.datesInMonth">
+        <td class="text-center align-middle" *ngFor="let date of week">
+          <div
+            class="h-7 w-100 d-flex align-items-center justify-content-center"
+            [class.disabled]="!this.isInThisMonth(date)"
+            [class.selected]="date === this.selectedDate"
+            (mouseenter)="this.hover(date)"
+            (click)="this.isInThisMonth(date) ? this.onSelect(date) : null"
+          >
+            {{ date | date: 'd' }}
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

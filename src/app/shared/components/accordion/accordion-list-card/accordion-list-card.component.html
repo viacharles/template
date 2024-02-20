@@ -1,0 +1,53 @@
+<div class="host-container pe-pointer" (click)="this.open = !this.open">
+  <header class="d-flex align-items-center">
+    <em
+      class="icon-arrow-down fs-lgx fw-5 text-green-middle mr-5"
+      [class.open]="this.open"
+    ></em>
+    <div class="w-100 d-flex justify-content-between p-relative mr-17">
+      <p *ngIf="!this.card?.header?.innerHTML; else tHead">
+        {{ this.card?.header?.title ?? '' | translate }}
+      </p>
+      <button
+        class="form-mode-label d-flex align-items-center hover-{{
+          this.card?.header?.button?.hoverColor
+        }} pe-pointer"
+        *ngIf="this.card?.header?.button?.color"
+        (click)="this.function($event)"
+      >
+        <em
+          class="icon-{{ this.card?.header?.button?.iconCode }} text-{{
+            this.card?.header?.button?.color
+          }} mb-0 ml-3 fs-lgxx pe-pointer"
+        ></em>
+        <p
+          class="text-{{
+            this.card?.header?.button?.color
+          }} text-nowrap ml-2 mb-0 fs-xsm"
+        >
+          {{ this.card?.header?.button?.text ?? '' | translate }}
+        </p>
+      </button>
+    </div>
+  </header>
+  <ul
+    class="pl-10 mt-2 {{ this.open ? 'open' : 'close' }}"
+    *ngIf="!!this.card?.list?.length"
+  >
+    <ng-container *ngFor="let item of this.card?.list">
+      <li class="mt-2" @downInCompressOut *ngIf="this.open">
+        <p *ngIf="!item.innerHTML; else tBody">{{ item.content }}</p>
+        <ng-template #tBody>
+          <div [innerHTML]="item.innerHTML ?? '' | safeHtml"></div>
+        </ng-template>
+      </li>
+    </ng-container>
+  </ul>
+</div>
+
+<ng-template #tHead>
+  <div
+    class="w-100"
+    [innerHTML]="this.card?.header?.innerHTML ?? '' | safeHtml"
+  ></div>
+</ng-template>

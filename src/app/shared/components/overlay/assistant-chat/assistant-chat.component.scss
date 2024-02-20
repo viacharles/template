@@ -1,0 +1,99 @@
+@import 'variables';
+@import 'color';
+.icon {
+  pointer-events: all;
+  opacity: 0.8;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.chat-container {
+  position: absolute;
+  z-index: map-get($layout-level, 'overlay');
+  right: 11px;
+  bottom: 60px;
+
+  .collaps-icon {
+    position: absolute;
+    right: 11px;
+    top: 0;
+    opacity: 1;
+    &:hover {
+      opacity: 0.8;
+    }
+    em {
+      background-color: $deep-gray;
+      width: 20px;
+      height: 3px;
+      border-radius: 2px;
+    }
+  }
+
+  .chat-room {
+    pointer-events: all;
+    transition: 0.3s;
+    transform-origin: bottom right;
+    border-radius: 20px;
+    filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.15));
+    & > div:first-of-type {
+      border-bottom: 1px solid $light-gray-2;
+    }
+    & > div:nth-child(2) {
+      overflow-y: auto;
+      height: calc(100% - 40px);
+      padding-bottom: 1rem !important;
+    }
+    .paragraph {
+      &__self {
+        align-items: end;
+        & > div:first-of-type {
+          white-space: normal;
+          word-break: break-word;
+          max-width: 95%;
+          margin-top: 0.8rem;
+          font-size: 0.875rem;
+          color: $white;
+          background-color: $green-middle;
+          border-radius: 15px 15px 0 15px;
+        }
+      }
+      &__official {
+        align-items: start;
+        & > div:first-of-type {
+          white-space: normal;
+          word-break: break-word;
+          max-width: 95%;
+          margin-top: 0.8rem;
+          font-size: 0.875rem;
+          color: $deep-gray;
+          background-color: #e3e1e1;
+          border-radius: 15px 15px 15px 0;
+        }
+      }
+      &__options {
+        div {
+          max-width: 95%;
+          color: $green-middle;
+          font-size: 0.875rem;
+          background-color: transparent;
+          border: 1px solid $green-middle;
+          border-radius: 15px;
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+      }
+    }
+    &.hideChatRoom {
+      transition: 0.3s;
+      transform: scale(0);
+      opacity: 0;
+    }
+  }
+}
+
+p,
+pre {
+  margin-bottom: 0;
+}

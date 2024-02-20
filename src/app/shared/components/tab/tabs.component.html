@@ -1,0 +1,50 @@
+<div
+  class="tab-container mt-2_5 mb-3 {{
+    this.containerPadding ? '' : 'pl-4 pr-20'
+  }}"
+  [style.padding]="this.containerPadding"
+>
+  <ul class="w-100 d-flex flex-wrap pb-0 mb-0">
+    <li
+      *ngFor="let tab of this.tabs; let index = index"
+      class="{{ this.isEvenlyDistribute ? 'isEvenly' : 'notEvent' }}"
+    >
+      <ng-container *ngIf="!tab.hide">
+        <input
+          type="radio"
+          class="d-none"
+          [value]="tab.value"
+          [id]="'tab' + index"
+          name="tabGroup"
+          [(ngModel)]="this.model"
+        />
+        <label
+          class="w-90p h-100 d-flex align-items-center justify-content-{{
+            this.tabTextAlign
+          }} text-{{
+            this.tabTextAlign
+          }} py-2_5 mb-0 fs-xsm fw-7 pe-pointer mx-2"
+          [style.padding]="this.tabPadding ?? '0 0'"
+          [style.width]="this.tabWidth ?? 'auto'"
+          (click)="this.toggle(tab)"
+          [for]="'tab' + index"
+        >
+          <div
+            class="text d-flex align-items-center"
+            *ngIf="!tab.innerHTML; else tInnerHtml"
+          >
+            {{ tab.titleI18n | translate }}
+            <em class="{{ tab.iconClasses }}" *ngIf="tab.iconClasses"></em>
+          </div>
+        </label>
+        <ng-template #tInnerHtml>
+          <div
+            @upInCompressOut
+            [innerHTML]="tab.innerHTML | safeHtml"
+            *ngIf="tab.innerHTML"
+          ></div>
+        </ng-template>
+      </ng-container>
+    </li>
+  </ul>
+</div>

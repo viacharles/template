@@ -1,0 +1,12 @@
+<app-dialog-container [noDefaultStyle]="true">
+  <div id="body">
+    <div>
+      <img #tImg @fadeInOut [src]="this.data.url" />
+      <em
+        #tCancelButton
+        class="icon-cancel p-absolute fs-xxxl pe-pointer text-white"
+        (click)="this.close()"
+      ></em>
+    </div>
+  </div>
+</app-dialog-container>

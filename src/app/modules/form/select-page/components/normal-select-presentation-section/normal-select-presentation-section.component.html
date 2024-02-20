@@ -1,0 +1,27 @@
+<app-presentation-section title="下拉單選" [tabName]="'\< app-select >'">
+  <!-- <form id="config" class="d-flex flex-row" [formGroup]="this.configForm">
+    <div class="d-flex flex-row align-items-center mr-2">
+      不啟用
+      <app-toggle class="ml-1" formControlName="disable" [id]="'disable'"></app-toggle>
+    </div>
+    <div class="d-flex flex-row align-items-center">
+      無資料
+      <app-toggle  class="ml-1" formControlName="disable" [id]="'disable'"></app-toggle>
+    </div>
+  </form> -->
+  <ul class="d-flex flex-row flex-wrap">
+    <li class="d-flex flex-row align-items-center text-grey-iron mr-5 mb-3">
+      <p class="w-12">{{'預設' | translate}}</p>
+      <app-select class="w-40 ml-3" [options]="this.options"></app-select>
+    </li>
+    <li class="d-flex flex-row align-items-center text-grey-iron mr-5 mb-3">
+      <p class="w-12">{{'不啟用' | translate}}</p>
+      <app-select class="w-40 ml-3" [options]="this.options" [disabled]="true"></app-select>
+    </li>
+    <li class="d-flex flex-row align-items-center text-grey-iron mr-5 mb-3">
+      <p class="w-12">{{'無資料' | translate}}</p>
+      <app-select class="w-40 ml-3" [options]="[]"></app-select>
+    </li>
+  </ul>
+
+</app-presentation-section>

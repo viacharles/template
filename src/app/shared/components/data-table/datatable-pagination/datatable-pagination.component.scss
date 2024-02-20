@@ -1,0 +1,84 @@
+@import "color";
+
+:host {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+button {
+  outline: none;
+  border: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #6d6d6d;
+  font-weight: normal;
+  border-radius: 4rem;
+  background-color: transparent;
+  &:disabled {
+    opacity: 0.4;
+    &:hover {
+      background-color: transparent;
+    }
+  }
+  &.button {
+   
+    &-last {
+      padding-right: 0.6rem;
+
+      em {
+        margin-right: 0.3rem;
+      }
+    }
+
+    &-next {
+      padding-left: 0.6rem;
+
+      em {
+        margin-left: 0.3rem;
+      }
+    }
+  }
+
+  em {
+    font-size: 0.9rem;
+  }
+
+  &:hover {
+    color: $grey-black;
+    background: #eaeaea;
+  }
+}
+
+label {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  color: #6d6d6d;
+  border-radius: 50%;
+
+  &:hover {
+    font-weight: 600;
+    color: $grey-black;
+    background: #eaeaea;
+  }
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  margin: 0 0.5rem;
+}
+
+input {
+  display: none;
+
+  &:checked+label {
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
+}

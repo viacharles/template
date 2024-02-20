@@ -1,0 +1,28 @@
+@import 'variables';
+@import 'color';
+
+.dialog-container {
+  z-index: map-get($layout-level, 'dialog');
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  width: inherit;
+}
+.warn-dialog {
+  transition: 0.5s;
+  position: fixed;
+  z-index: map-get($layout-level, 'overlay');
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(90%);
+  background-color: $white;
+  border-radius: 20px;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.15);
+  .warn-icon {
+    line-height: 20px;
+    color: $yellow-middle;
+    background-color: transparent;
+    border: 6px solid $yellow-middle;
+  }
+}

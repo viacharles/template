@@ -1,0 +1,50 @@
+@import 'variables';
+@import 'color';
+
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form-control {
+  cursor: pointer;
+  width: 140px;
+  height: 3rem;
+  border-radius: 10px;
+  border: 1px solid $grey-iron;
+  &.disabled {
+    cursor: auto;
+    background-color: $grey-light;
+    em {
+      color: $grey-iron;
+    }
+  }
+  &.error {
+    border: 1px solid $red-middle;
+    em {
+      color: $red-middle;
+    }
+  }
+  em {
+    color: $green-middle;
+  }
+}
+.calendar-container {
+  z-index: 70;
+  top: 36px;
+  left: 0;
+  padding: 18px 24px;
+  border-radius: 0 0 14px 14px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  background-color: $white;
+  border-radius: 5px;
+}
+
+h5 {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+h5 {
+  margin-bottom: 0;
+}

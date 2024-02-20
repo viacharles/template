@@ -1,0 +1,23 @@
+<div class="position-relative mb-1">
+  <div
+    class="form-control d-flex align-items-center justify-content-between"
+    [class.inValid]="this.isInValid"
+    (click)="this.showCalendar()"
+  >
+    <h5 class="{{ this.model ? 'has-value' : 'placeholder' }}">
+      {{ this.model || 'YYYY/MM/DD' }}
+    </h5>
+    <em class="icon-calendar"></em>
+  </div>
+  <div
+    #tCalendarContainer
+    *ngIf="this.show"
+    class="calendar-container position-absolute bg-gray-white"
+  >
+    <app-datatable-calendar
+      (select)="this.select($event)"
+      (cancel)="this.cancel.emit()"
+      [thisMonthLimit]="this.thisMonthLimit"
+    ></app-datatable-calendar>
+  </div>
+</div>

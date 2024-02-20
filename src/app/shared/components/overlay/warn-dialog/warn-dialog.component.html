@@ -1,0 +1,40 @@
+<app-dialog-container>
+  <div id="body" class="d-flex flex-column align-items-center">
+    <em
+      class="icon d-flex align-items-center justify-content-center icon-{{
+        this.icon.iconCode
+      }} fs-lgx"
+      [style.border]="'3.5px solid ' + this.icon.color"
+    ></em>
+    <p
+      class="text-center fw-5 mb-7"
+      *ngIf="!this.data.innerHTML; else tInnerHTML"
+    >
+      {{ this.data.title ?? '' | translate }}
+    </p>
+    <ng-template #tInnerHTML>
+      <div
+        class="text-center fw-5 mb-7"
+        [innerHTML]="this.data.innerHTML! | safeHtml"
+      ></div>
+    </ng-template>
+    <div id="buttons" class="d-flex justify-content-center align-items-center">
+      <button
+        (click)="this.cancel()"
+        class="{{
+          this.data.buttons?.cancel?.classes ?? 'btn-flat btn-normal'
+        }} w-42_5 mr-7"
+      >
+        {{ this.data.buttons?.cancel?.text ?? 'common.cancel' | translate }}
+      </button>
+      <button
+        (click)="this.confirm()"
+        class="{{
+          this.data.buttons?.confirm?.classes ?? 'btn-flat bg-green-middle'
+        }} w-42_5"
+      >
+        {{ this.data.buttons?.confirm?.text ?? 'common.confirm' | translate }}
+      </button>
+    </div>
+  </div>
+</app-dialog-container>

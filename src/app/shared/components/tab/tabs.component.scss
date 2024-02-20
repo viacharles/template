@@ -1,0 +1,46 @@
+@import 'color';
+.tab-container {
+  border-bottom: 1px solid $grey-middle;
+  input:checked {
+    & + label {
+      & p,
+      div {
+        color: $green-middle !important;
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 3px;
+        width: 100%;
+        color: $green-middle;
+        background-color: $green-middle;
+      }
+    }
+  }
+  li {
+    &.isEvenly {
+      flex: 1;
+    }
+    label {
+      position: relative;
+      width: auto;
+      &:hover {
+        background-color: $grey-middle;
+        ::ng-deep p {
+          color: $green-middle !important;
+        }
+      }
+      &:first-of-type {
+        margin-left: 0 !important;
+      }
+      em {
+        border-radius: 50%;
+      }
+    }
+  }
+}
+p {
+  margin: 0;
+}

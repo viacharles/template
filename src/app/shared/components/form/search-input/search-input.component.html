@@ -1,0 +1,20 @@
+<label class="input w-100" for="search-input">
+  <input
+    #tInput
+    type="search"
+    class="pl-3 mr-3 h-11 w-100"
+    type="text"
+    id="search-input"
+    [placeholder]="this.placeholder"
+    (keyup)="this.input($event, tInput.value)"
+    [(ngModel)]="this.model"
+  />
+  <em
+    *ngIf="tInput.value"
+    class="fa fa-times h-5 w-5 rounded-circle mr-2"
+    (click)="this.clear()"
+  ></em>
+  <div class="h-100 w-12" (click)="this.search.emit(this.model)">
+    <em class="fa fa-search"></em>
+  </div>
+</label>
