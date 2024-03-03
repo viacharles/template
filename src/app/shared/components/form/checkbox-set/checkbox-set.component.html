@@ -1,13 +1,24 @@
 
 <div class="d-flex flex-{{this.direction}} flex-wrap">
   <ng-container *ngIf="!!this.options.length;else tNoData">
-      <app-checkbox 
-      *ngFor="let option of this.options;let index = index"
-      [title]="option.nameI18n" [id]="'checkbox' + this.id + index" [disabled]="this.disabled" [hasOtherInput]="index === this.options.length - 1 && this.hasOtherInput"></app-checkbox>
+      <app-checkbox
+      *ngFor="let option of this.checkboxes;let index = index"
+      [option]="option"
+      [name]="'checkbox-' + this.name"
+      [id]="this.name+'-'+index"
+      [disabled]="this.disabled"
+      [isError]="this.isError"
+      [checked]="option.isSelect"
+      [memo]="this.memo"
+      (memoChange)="this.memoChange.emit($event)"
+      (change)="this.change(option.code)"
+      ></app-checkbox>
   </ng-container>
 </div>
+  <!-- 錯誤訊息 -->
+  <div class="error-message" *ngIf="this.errorMessage && this.isError">{{this.errorMessage}}</div>
 
 <!-- 沒有選項 -->
 <ng-template #tNoData>
-  <app-checkbox [title]="'無資料'" [noData]="true"></app-checkbox>
+  <app-checkbox [option]="{name: '無資料', code: ''}" [noData]="true" [name]="'checkbox-' + this.name"></app-checkbox>
 </ng-template>

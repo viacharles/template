@@ -5,17 +5,26 @@
   &>input {
     &+label {
       box-sizing: border-box;
-      padding: 0.25rem 1.9375rem 0.25rem 0.25rem;
+      padding: 0.1rem 1.9375rem 0.1rem 0.25rem;
+      border: 1px solid $grey-iron;
+      border-radius: var(--form-radius-m);
 
       &>em {
         &:first-of-type {
-          top: 3px;
-          right: 14px;
+          top: 50%;
+          right: 13px;
+          font-size: 1.2rem;
+          transform: translateY(-50%) scaleX(0.7);
+          &.up {
+            top: -1px;
+            right: 13px;
+            transform: translateX(0) scaleX(0.7);
+          }
         }
 
         &:nth-of-type(2) {
           transform: scale(0.7);
-          top: 21px;
+          top: 17px;
           right: 5px;
           width: 26px;
           height: 26px;
@@ -23,42 +32,78 @@
           display: flex;
           align-items: center;
           justify-content: center;
+          transition: 0.2s;
 
           &:hover {
-            background: var(--primary-background-hover);
+            transform: scale(0.6);
+            background-color: var(--primary-background-hover);
+            color: $grey-black;
           }
         }
       }
     }
 
     &:checked+label {
-      border: 1.5px solid $green-middle
-    }
-
-    &:not(:disabled):hover+label {
-      border: 1.5px solid var(--primary-color);
+      border-top: 1px solid $green-middle;
+      border-left: 1px solid $green-middle;
+      border-right: 1px solid $green-middle;
     }
 
     &:disabled+label {
       cursor: default;
       background-color: $grey-light;
     }
+
+    &:not(:disabled) + label:hover {
+      border-top: 1px solid var(--primary-color);
+      border-right: 1px solid var(--primary-color);
+      border-left: 1px solid var(--primary-color);
+      border-bottom-width: 2px;
+    }
+    &:not(:disabled)+label.error {
+      border-color: var(--warn-color);
+      &:hover {
+        background-color: var(--warn-background-hover);
+        border-width: 1.5px;
+      }
+    }
   }
 
   &>label:first-of-type {
-    min-height: 48px;
+    min-height: 44px;
 
     .select-label {
-      padding: 0 0.2rem 0.15rem 0.2rem;
-      height: 2.1875rem;
+      padding: 0 0.3rem 0.15rem 0.3rem;
+      height: 2rem;
+      min-width: 2rem;
       margin: 0.1rem;
-      border-radius: 6px;
+      border-radius: 6px 0 6px 6px;
+      background-color: $white;
+      &:hover {
+        border-color: var(--primary-color);
+        background-color: var(--primary-background-hover);
+        color: var(--primary-background-hover);
+        span {
+          display: flex;
+        }
+      }
 
-      .icon-cancel {
-        top: 9px;
-        right: 2px;
+      em {
+        top: 7px;
+        right: 1.5px;
         font-size: 10px;
-        transform: scale(0.6) translate(3px, -14px);
+        transform: scale(0.5) translate(3px, -14px);
+      }
+
+      span {
+        display: none;
+        z-index: map-get($layout-level, 'cover' );
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 16px;
+        color: $grey-dark;
+        background-color: var(--primary-background-hover);
       }
     }
   }
@@ -70,11 +115,14 @@
   left: 50%;
   transform: translateX(-50%);
   border: 1px solid $grey-iron;
-  border-radius: 0 0 var(--form-radius) var(--form-radius);
+  border-radius: 0 0 var(--form-radius-m) var(--form-radius-m);
   filter: drop-shadow(1px 2px 2px rgba(0, 0, 0, 0.2));
 
   &>label {
     border-bottom: 1px solid $grey-middle;
+    &:hover {
+      border-bottom: 1.5px solid var(--primary-color);
+    }
 
     input, input:hover, input:focus {
       border: none !important;
@@ -84,10 +132,12 @@
   & .options {
     max-height: 15rem;
 
-    &>div {
+    &>label {
       padding-bottom: 6px !important;
+      padding-top: 0.5rem;
+      padding-left: 0.3rem;
       &:last-of-type {
-        border-radius: 0 0 var(--form-radius) var(--form-radius);
+        border-radius: 0 0 var(--form-radius-m) var(--form-radius-m);
       }
       &:hover {
         background: var(--primary-background-hover);

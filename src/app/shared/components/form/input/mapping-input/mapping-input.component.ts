@@ -14,7 +14,7 @@ import {IOption} from '@utilities/interface/common.interface';
 export class MappingInputComponent extends CustomForm implements OnChanges {
   @Output() select = new EventEmitter();
   @Output() touch = new EventEmitter();
-  @Input() optionSource: IOption[] = [];
+  @Input() optionSource: IOption<string>[] = [];
   @Input() placeholder = 'cab.basic-question-placeholder';
   @Input() enableAll = false;
   @Input() isError = false;

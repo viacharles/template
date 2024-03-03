@@ -1,5 +1,5 @@
 import {HttpHeaders} from '@angular/common/http';
-import {ELoadingStatus} from '@utilities/enum/common.enum';
+import {ELoadingStatus, ESort} from '@utilities/enum/common.enum';
 
 export interface IArticle {
   title: string;
@@ -49,10 +49,12 @@ export interface IApiError<T = any> {
 /** 顏色字串 */
 export type IColorString = string;
 
-export interface IOption<T = string> {
+/** 選項通用 */
+export interface IOption<T = (string | number)> {
   code: T;
-  nameI18n: string;
+  name: string;
   icon?: string;
+  isSelect?: boolean,
   [key: string]: any;
 }
 
@@ -107,4 +109,18 @@ export interface IFile {
   name: string;
   id: string;
   status: ELoadingStatus;
+}
+
+/** 範圍日期 : yyyy/MM/dd */
+export interface IRangeDate {
+  start: string,
+  end: string,
+}
+
+/**
+ * @description 排序結果
+ */
+export interface ISortResult<T> {
+  data: T[],
+  type: ESort,
 }

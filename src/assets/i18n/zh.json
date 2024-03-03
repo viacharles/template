@@ -100,7 +100,6 @@
     "need-register": "需先註冊",
     "no-auth-redirect-home": "無權限造訪，將跳轉至首頁"
   },
-
   "nav": {
     "home": "首頁",
     "accounts": "會員管理",
@@ -150,48 +149,35 @@
     "file": "上傳/下載",
     "calendar": "日曆",
     "input": "輸入欄位",
-    "data-driven-form": "資料生成表單"
+    "data-driven-form": "動態生成表單",
+    "form": "表單元組件"
   },
-  "login": {
-    "email": "電子信箱",
-    "password": "密碼",
-    "remember": "記住電子信箱",
-    "forgot": "忘記密碼?",
-    "submit": "登入",
-    "invalid_format": "無效的電子郵件格式",
-    "invalid_length": "密碼長度應至少8碼以上",
-    "response_error": "登入失敗",
-    "type_email": "請輸入您的註冊信箱",
-    "send_email": "發送更改密碼信件",
-    "forget": "忘記密碼",
-    "not_exist": "查無資料",
-    "resetPassword": "重新設定密碼",
-    "resetPasswordComplete": "密碼更改已完成 請以新密碼重新登入",
-    "forgetConfirm": "密碼更改信件已寄送完成 請點選信件連結重新設定密碼",
-    "passwordMatch": "您輸入的密碼與新密碼不相同，請重新輸入",
-    "passwordPattern": "密碼格式需為英數字8碼以上，且至少包含一個英文及數字",
-    "changePasswordThreeMonth": "您的密碼已達三個月未更新，請立即更新密碼",
-    "resetPasswordOTPExperied": "作業逾時，將跳轉回至首頁",
-    "user-basic-info": "會員基本資料",
-    "get-user-info-fail": "使用者資料下載失敗"
+  "form": {
+    "item-1": "選項一",
+    "item-2": "選項二",
+    "item-3": "選項三",
+    "item-4": "選項四",
+    "item-5": "選項五",
+    "item-6": "選項六",
+    "item-7": "選項七",
+    "item-8": "選項八"
   },
-  "password": {
-    "newPassword": "新密碼",
-    "confirmPassword": "再次輸入新密碼",
-    "confirmNew": "確認新密碼",
-    "originalPassword": "原始密碼"
+  "field": {
+    "field.select": "單選下拉選單",
+    "field.multiselect": "多選下拉選單",
+    "field.radio": "單選按鈕",
+    "field.toggle": "切換開關",
+    "field.checkbox": "核取方塊",
+    "field.textarea": "多行文字輸入框",
+    "field.input": "輸入欄",
+    "field.datepicker": "日期選取器",
+    "field.datepicker-range": "範圍日期選取器"
   },
-  "register": {
-    "sign-up": "會員註冊",
-    "submit": "註冊",
-    "completeOtp": "會員註冊已完成。請登入使用",
-    "completeSelf": "會員註冊已完成。請等候核准",
-    "name": "姓名",
-    "password": "密碼",
-    "confirm-password": "確認密碼",
-    "passwordMatch": "您輸入的密碼與確認密碼不相同，請重新輸入"
+  "error": {
+    "required": "必填"
   },
   "cab": {
+    "group-type": "分組樣式",
     "docId": "簽核單號",
     "templateVersion": "問卷版本號",
     "projectVersion": "簽核單版本號",
@@ -292,7 +278,7 @@
     "chairman-secretary": "主席秘書",
     "set-schedule": "排程",
     "pass-but-required": "通過但需補件",
-    "basic-info": "基本資料",
+    "basic-info": "基本樣式",
     "answer-status-draft": "初審內容",
     "answer-status-supplement": "補件說明",
     "add-supplement-des": "增加補件說明",
@@ -319,7 +305,7 @@
     "output-tenant-projects": "下載此租戶所有專案",
     "table-app-name": "商店名稱",
     "table-6r": "經營策略",
-    "table-wave": "基礎完成",
+    "table-wave": "完成進度",
     "table-biz-impact": "業務複雜",
     "table-tech-cost": "估算成本",
     "table-risk-level": "風險程度",
@@ -533,12 +519,19 @@
     "select-file-tip1": "請選擇 JPEG, PNG, GIF 檔案",
     "select-file-tip2": "檔案大小不超過 1MB"
   },
-  "validators": {
+  "validator": {
     "form-invalid": "還有欄位錯誤，請檢查一下",
-    "maxLength": "字數需少於",
+    "max-length": "字數需少於",
+    "min-length": "字數需多於",
+    "max-min-length": "字數需介於之間",
+    "max-items": "項目數需少於",
+    "min-items": "項目數需多於",
+    "max-min-items": "項目數需介於之間",
     "maxCharLength": "字符數需少於",
-    "cath-email": "請輸入國泰email",
-    "required": "必填"
+    "email": "請輸入email",
+    "required": "必填",
+    "number-only": "限數字",
+    "en-number-only": " 限英數"
   },
   "questions": {
     "report": "建議報告",
@@ -561,7 +554,7 @@
     "report-title-Business": "商業價值 Business Impact",
     "report-title-Technical": "技術成本 Technical Cost",
     "report-title-Risk": "風險等級 Risk Level",
-    "report-chart-title-wave": "基礎完成 Wave",
+    "report-chart-title-wave": "完成進度 Wave",
     "report-chart-title-6r": "遷移方式 6R",
     "report-content-biz": "商業價值指的是該系統對於組織的業務重要程度，以及地端系統搬遷至雲端系統能發揮多少雲端特性，綜合兩者形成的價值，分數越低表示商業價值越低，分數越高則表示商業價值越高，此系統商業價值的總加權得分為 ${score}，與其他系統比較等級為 ${levelText}，以下紅字列出商業價值較高的項目細節供參考：",
     "report-content-tech": "技術成本指的是地端系統搬遷至雲端系統的技術實作成本，會因系統架構、系統要求、系統複雜度而有所影響，分數越低表示上雲需投入的資源與成本越低，分數越高則表示上雲需投入的資源與成本越高，此系統技術成本的總加權得分為 ${score}，與其他系統比較等級為 ${levelText}，以下紅字列出技術成本較高的項目細節供參考：",
@@ -585,6 +578,6 @@
     "resend": "重新問一次"
   },
   "footer": {
-    "copyright": "2024 | 昌霖 TEMPLATE SAMPLE"
+    "copyright": "Copyright©2024 | 昌霖 TEMPLATE SAMPLE"
   }
 }

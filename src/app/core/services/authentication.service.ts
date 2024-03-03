@@ -79,6 +79,7 @@ export class AuthenticationService {
       this.storage.get('session'), // login-session token
       this.storage.get('token'), // access/refresh token
     ]).pipe(
+      take(1),
       map(val => {
         const result = {session: val[0] || '', token: val[1] || ''} as {
           session: string;
@@ -110,6 +111,7 @@ export class AuthenticationService {
           'x-access-token': token,
         });
         return this.http.post<any>('/api/auth/refresh', '', { headers }).pipe(
+          take(1),
           tap({
             next: resp => {
               if (!environment.production) {

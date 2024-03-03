@@ -6,8 +6,14 @@
       : 'bg-white d-flex flex-column'
   }} dialog-container position-fixed"
   [style.padding]="this.padding === '' ? '1.25rem' : this.padding"
+  [style.width]="this.width ? this.width : 'inherit'"
+  [style.max-width]="this.maxWidth ? this.maxWidth : 'inherit'"
+  [style.min-width]="this.minWidth ? this.minWidth : 'inherit'"
 >
+<ng-content select="#title"></ng-content>
+<div class="overflow-auto">
   <ng-content select="#body"></ng-content>
+</div>
   <div class="d-flex flex-row">
     <ng-content select="#footer"></ng-content>
   </div>

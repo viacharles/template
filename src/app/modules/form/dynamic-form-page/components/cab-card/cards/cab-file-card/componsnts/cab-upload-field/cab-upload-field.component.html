@@ -1,0 +1,78 @@
+<div
+  class="question-card__upload d-flex align-items-center justify-content-center text-center border-grey-light px-3 mx-8"
+  [class.error]="
+    this.fileControl.invalid && this.cabForm.touched && this.isCompleteClicked
+  "
+>
+  <div class="d-flex flex-column align-items-center">
+    <p
+      class="fs-sm text-grey-iron"
+      *ngIf="!this.isLastFileError && !this.latestFile.value.fileName"
+    >
+      {{ 'cab.upload-size-limit' | translate }}
+    </p>
+    <a
+      class="text-start text-grey-black text-break"
+      [href]="
+        this.isFileSavedLocal ? this.latestFile.value.url : 'javascript:void(0)'
+      "
+      [download]="this.latestFile.value.fileName"
+      (click)="
+        !this.isFileSavedLocal
+          ? this.onDownloadFile.emit({
+              event: $event,
+              file: this.latestFile.value.file
+            })
+          : null
+      "
+      *ngIf="this.latestFile?.get('fileName')?.value"
+      >{{ this.latestFile.get('fileName')?.value }}</a
+    >
+    <div
+      class="d-flex flex-column align-items-center"
+      *ngIf="this.isLastFileError"
+    >
+      <em class="icon-exclamation-round text-green-middle mb-2"></em>
+      <p class="text-green-middle" *ngIf="this.latestFile.value.isSizeError">
+        {{ 'cab.error-size-plz-reupload' | translate }}
+      </p>
+      <p class="text-green-middle" *ngIf="this.latestFile.value.isTypeError">
+        {{ 'cab.error-type-plz-reupload' | translate }}
+      </p>
+    </div>
+    <div class="d-flex align-items-center mt-5">
+      <button
+        class="btn-flat btn-normal text-green-middle border-green-middle h-10 fs-xsm px-5 mr-2"
+        (click)="onDownloadTempFile.emit()"
+      >
+        {{ 'cab.basic-btn-download-temp' | translate }}
+      </button>
+      <input
+        type="file"
+        accept=".ppt, .pptx, .pdf"
+        class="d-none"
+        id="upload"
+        (change)="this.onUpload.emit($event)"
+      />
+      <label
+        class="btn-flat d-flex align-items-center justify-content-center bg-green-middle w-30 h-10 fs-xsm px-5 mb-0 pe-pointer"
+        for="upload"
+        *ngIf="!this.latestFile.value.fileName"
+        ><em class="icon-upload text-white mr-2"></em
+        >{{
+          (!this.latestFile.get('url')?.value
+            ? 'cab.upload-ppt'
+            : 'cab.reupload'
+          ) | translate
+        }}</label
+      >
+      <button
+        class="btn-flat btn-normal text-grey-iron border-grey-iron w-30 h-10 fs-xsm px-5"
+        (click)="this.onClearFile.emit()"
+        *ngIf="this.latestFile.value.fileName"
+      >
+        {{ 'cab.delete-file' | translate }}
+      </button>
+    </div>
+  </div>
+</div>

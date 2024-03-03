@@ -15,7 +15,7 @@ import {
   SimpleChanges,
   Renderer2,
 } from '@angular/core';
-import {BehaviorSubject, Observable, Subscription} from 'rxjs';
+import {BehaviorSubject, Observable, Subscription, take, timer} from 'rxjs';
 import {IColorString} from '@utilities/interface/common.interface';
 import {DomSanitizer, SafeHtml} from '@angular/platform-browser';
 import {animate, style, transition, trigger} from '@angular/animations';
@@ -178,15 +178,13 @@ export class DataTableComponent
             this.filterCollection
           ),
           this.sortConfig
-        ), 
+        ),
         this.config?.pageSize
       );
       const FilterValued = this.isFilterValued();
       this.filterValued.emit(FilterValued);
       this.storeOrClearFilter(!FilterValued);
-      setTimeout(() => {
-        this.setFrontShadowHeight();
-      }, 1000);
+      timer(1000).pipe(take(1)).subscribe(() => this.setFrontShadowHeight());
     });
     const Search = this.search$.subscribe(text => {
       this.searchText = text;
@@ -273,10 +271,7 @@ export class DataTableComponent
         searchText: this.searchText,
         filters: this.filterCollection,
       });
-      console.log('aa-setFrontShadowHeight')
-      setTimeout(() => {
-        this.setFrontShadowHeight();
-      }, 1000);
+      timer(1000).pipe(take(1)).subscribe(() => this.setFrontShadowHeight());
     };
   }
 
@@ -286,9 +281,10 @@ export class DataTableComponent
 
   public onSelectDate({date, rowKey}: IDatePickerResult): void {
     this.selectDate.emit({date, rowKey});
-    setTimeout(() => {
+    timer(100).pipe(take(1)).subscribe(() => {
       this.showBackdrop = false;
-    }); // 點擊事件結束後再開啟 row click 功能
+      // 點擊事件結束後再開啟 row click 功能
+    });
   }
 
   public onShowCalendar(show: boolean): void {
@@ -303,11 +299,11 @@ export class DataTableComponent
 
   public cancelCalendar(): void {
     this.showBackdrop = false;
-    setTimeout(() => (this.overlayCount = this.overlayCount - 1)); // 點擊事件結束後再開啟 row click 功能
+    timer(100).pipe(take(1)).subscribe(() => (this.overlayCount = this.overlayCount - 1));// 點擊事件結束後再開啟 row click 功能
   }
 
   private initScrollBar(): void {
-    setTimeout(() => {
+    timer(500).pipe(take(1)).subscribe(() => {
       if (this.tTrack && this.tThumb) {
         this.contentWidth =
           this.tTableContainer!.nativeElement.scrollWidth - 15;
@@ -319,7 +315,7 @@ export class DataTableComponent
           20
         );
         this.tThumb!.nativeElement.style.width = `${this.thumbWidth}px`;
-        setTimeout(() => {
+        timer(200).pipe(take(1)).subscribe(() => {
           this.renderer.addClass(
             this.tThumb!.nativeElement,
             this.thumbWidth === this.trackWidth ? 'd-none' : 'd-flex'
@@ -338,22 +334,22 @@ export class DataTableComponent
           );
           this.renderer.removeClass(this.tThumb!.nativeElement, 'opacity-0');
           this.renderer.removeClass(this.tTrack!.nativeElement, 'opacity-0');
-        }, 200);
+        });
       }
-    }, 500);
+    });
   }
 
   /** custom scroll */
-  public startScroll(event: MouseEvent): void {
-    event.preventDefault();
+  public startScroll(startEvent: MouseEvent): void {
+    startEvent.preventDefault();
     if (this.tTrack) {
       const Thumb = this.tThumb!.nativeElement;
       const Track = this.tTrack.nativeElement;
       const Content = this.tTableContainer!.nativeElement;
-      const StartX = event.clientX - Thumb.getBoundingClientRect().left;
-      const mousemoveListener = (event: MouseEvent) => {
+      const StartX = startEvent.clientX - Thumb.getBoundingClientRect().left;
+      const mousemoveListener = (moveEvent: MouseEvent) => {
         const scrollLeft =
-          (event.clientX - Track.getBoundingClientRect().left - StartX) *
+          (moveEvent.clientX - Track.getBoundingClientRect().left - StartX) *
           (this.contentWidth / Track.clientWidth);
         Content.scrollLeft = scrollLeft;
         const TranslateX = scrollLeft * (Track.clientWidth / this.contentWidth);
@@ -498,7 +494,7 @@ export class DataTableComponent
           this.isLoading = true;
         }
         this.loadMore();
-        setTimeout(() => this.setFrontShadowHeight(), 1000);
+        timer(1000).pipe(take(1)).subscribe(() => this.setFrontShadowHeight());
       }
     } else {
       this.isLoading = false;
@@ -963,7 +959,7 @@ export class DataTableComponent
   }
 
   public showEndShadow(container: HTMLDivElement): boolean {
-    return container? 
+    return container?
       (container.scrollWidth - container.clientWidth) - container.scrollLeft > 5
       : false;
   }

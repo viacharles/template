@@ -1,10 +1,11 @@
 import {environment} from 'src/environments/environment';
 import {UnSubOnDestroy} from '@utilities/abstract/unSubOnDestroy.abstract';
 import {
+  EIndividualPages,
   ELogin,
   EMenuItemFunctionMark,
 } from '@utilities/enum/router.enum';
-import {UntypedFormControl} from '@angular/forms';
+import {FormGroup, UntypedFormControl} from '@angular/forms';
 import {MenuMap, LoginMap} from '@utilities/map/router.map';
 import {
   AfterViewInit,
@@ -16,7 +17,7 @@ import {
   Renderer2,
 } from '@angular/core';
 import {ActivatedRoute, Event, NavigationEnd, Router} from '@angular/router';
-import {filter, forkJoin, takeUntil, timer} from 'rxjs';
+import {filter, forkJoin, take, takeUntil, timer} from 'rxjs';
 import {StorageMap} from '@ngx-pwa/local-storage';
 import {AuthenticationService} from '@core/services/authentication.service';
 import {EModule} from '@utilities/enum/router.enum';
@@ -26,6 +27,8 @@ import {LayoutService} from '@shared/service/layout.service';
 import {HttpHelper} from '@utilities/helper/http.helper';
 import {OverlayService} from '@shared/service/overlay.service';
 import {WarnDialogComponent} from '@shared/components/overlay/warn-dialog/warn-dialog.component';
+import { KeyValue } from '@angular/common';
+import { Base } from '@utilities/base/base';
 
 @Component({
   selector: 'app-sidebar',
@@ -33,7 +36,7 @@ import {WarnDialogComponent} from '@shared/components/overlay/warn-dialog/warn-d
   styleUrls: ['./sidebar.component.scss'],
 })
 export class SidebarComponent
-  extends UnSubOnDestroy
+  extends Base
   implements OnInit, AfterViewInit
 {
   @Output() resize = new EventEmitter<number>();
@@ -67,6 +70,7 @@ export class SidebarComponent
   public showMenuContent = true;
   private resizeObserver?: ResizeObserver;
   private warningBeforeNavigate = '';
+  public mainMenuForm = new FormGroup({});
   public readonly version = environment.versionSubtext;
 
   constructor(
@@ -81,17 +85,19 @@ export class SidebarComponent
     private self: ElementRef
   ) {
     super();
-    this.activeRoute = router.routerState.snapshot.url;
+    this.activeRoute = router.routerState.snapshot.url.split('?')[0];
     this.checkConditions();
     this.router.events
-      .pipe(filter((event: Event) => event instanceof NavigationEnd))
+      .pipe(
+        takeUntil(this.onDestroy$),
+        filter((event: Event) => event instanceof NavigationEnd))
       .subscribe((event: Event) => {
-        this.activeRoute = (event as any).url;
+        this.activeRoute = (event as any).url.split('?')[0];
         this.checkConditions();
       });
   }
 
-  ngOnInit(): void {
+  protected override onInitBase(): void {
     this.authService._isLoggedIn;
     this.$layout.warningBeforeNavigate$
       .pipe(takeUntil(this.onDestroy$))
@@ -111,9 +117,10 @@ export class SidebarComponent
     this.router.events.pipe(takeUntil(this.onDestroy$)).subscribe(_ => {
       this.afterPageChanged();
     });
+
   }
 
-  ngAfterViewInit(): void {
+  protected override afterViewInitBase(): void {
     this.resizeObserver = this.$window.generateResizeObserver(entry => {
       this.resize.emit(entry.contentRect.width);
     });
@@ -124,6 +131,10 @@ export class SidebarComponent
     this.resizeObserver?.disconnect();
   }
 
+  public isEnable(keyValue: KeyValue<EModule | string, IMenuParams>): boolean {
+    return keyValue.value.path !== undefined || keyValue.value.functionMark !== undefined
+  }
+
   public expandMenu(): void {
     if (this.isMenuExpand) {
       this.isMenuExpand = false;
@@ -132,6 +143,11 @@ export class SidebarComponent
       this.isMenuExpand = true;
       timer(200).subscribe(_ => (this.showMenuContent = true));
     };
+  }
+
+  /** menu 項目是否為當前頁面path */
+  public isCurrentPage(path?: string): boolean {
+    return '/'+path === this.activeRoute;
   }
 
   private changeBackgroundColor(): void {
@@ -217,7 +233,6 @@ export class SidebarComponent
   }
 
   checkConditions() {
-    // console.log(this.activeRoute);
     this.authService.isLoggedIn().subscribe(authenticated => {
       if (authenticated) {
         forkJoin([
@@ -228,7 +243,7 @@ export class SidebarComponent
           this.userData = data[0];
           this.tenantData = data[1];
           const lang = data[2];
-          this.userName = this.userData;
+          this.userName = this.userData.name;
           this.tenantName =
             lang === 'en'
               ? this.tenantData.tenantNameEn

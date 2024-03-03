@@ -47,14 +47,6 @@ export const FormMenuMap = new Map<EFormPages, IMenuParams>([
     },
   ],
   [
-    EFormPages.Calendar,
-    {
-      title: 'nav.calendar',
-      icon: 'icon-calendar',
-      path: `${EModule.Form}/${EFormPages.Calendar}`,
-    },
-  ],
-  [
     EFormPages.File,
     {
       title: 'nav.file',
@@ -63,11 +55,11 @@ export const FormMenuMap = new Map<EFormPages, IMenuParams>([
     },
   ],
   [
-    EFormPages.DataDrivenForm,
+    EFormPages.DynamicForm,
     {
       title: 'nav.data-driven-form',
       icon: 'icon-questionnaire',
-      path: `${EModule.Form}/${EFormPages.DataDrivenForm}`,
+      path: `${EModule.Form}/${EFormPages.DynamicForm}`,
     },
   ],
 ]);
@@ -77,7 +69,7 @@ export const MenuMap = new Map<EModule, IMenuParams>([
   [
     EModule.Form,
     {
-      title: 'nav.portfolio',
+      title: 'nav.form',
       isExpand: false,
       subMenu: FormMenuMap
     },
@@ -85,7 +77,7 @@ export const MenuMap = new Map<EModule, IMenuParams>([
   [
     EModule.Table,
     {
-      title: 'nav.cloud-assessment',
+      title: 'nav.data-table',
       isExpand: false,
       path: `${EModule.Table}`
     },

@@ -47,11 +47,28 @@ export function fadeEnterAndHideOut(
   return trigger('fadeInOut', [
     transition(':enter', [
       style({opacity: 0}),
-      animate('300ms ease-in-out', style({opacity: 1})),
+      animate('100ms ease-in-out', style({opacity: 1})),
     ]),
     transition(':leave', [
       style({opacity: 1}),
-      animate('0ms', style({opacity: 0})),
+      animate('200ms', style({opacity: 0})),
+    ]),
+  ]);
+}
+
+/** 淡入+放大 淡出+縮小
+ */
+export function fadeEnterAndHideOutSmaller(
+  OccurDelay?: number
+): AnimationTriggerMetadata {
+  return trigger('fadeInOutSize', [
+    transition(':enter', [
+      style({opacity: 0.5, transform: 'scale(0.95)'}),
+      animate('50ms ease-in-out', style({opacity: 1, transform: 'scale(1)'})),
+    ]),
+    transition(':leave', [
+      style({opacity: 1, transform: 'scale(1)'}),
+      animate('50ms', style({opacity: 0.5, transform: 'scale(0.95)'})),
     ]),
   ]);
 }
@@ -110,6 +127,20 @@ export function downFadeInAndCompressOut(): AnimationTriggerMetadata {
     transition(':leave', [
       style({opacity: 1, transform: 'scale(100%, 100%)'}),
       animate('0ms', style({opacity: 0, transform: 'scale(90%, 100%)'})),
+    ]),
+  ]);
+}
+
+/** 垂直 縮消失/長出現  */
+export function verticalShortenOut(): AnimationTriggerMetadata {
+  return trigger('verticalShortenOut', [
+    transition(':enter', [
+      style({opacity: 0, height: 0}),
+      animate('100ms', style({opacity: 1, height: 'auto'})),
+    ]),
+    transition(':leave', [
+      style({opacity: 1, height: 'auto'}),
+      animate('100ms', style({opacity: 0, height: 0})),
     ]),
   ]);
 }

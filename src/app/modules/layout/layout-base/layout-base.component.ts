@@ -7,15 +7,15 @@ import {
   Renderer2,
   ViewChild,
 } from '@angular/core';
-import {Event, NavigationEnd, Router} from '@angular/router';
-import {LayoutService} from '@shared/service/layout.service';
-import {OverlayService} from '@shared/service/overlay.service';
-import {WindowService} from '@shared/service/window.service';
-import {UnSubOnDestroy} from '@utilities/abstract/unSubOnDestroy.abstract';
-import { EAssistantPages, EFormPages, EModule } from '@utilities/enum/router.enum';
-import {IToast} from '@utilities/interface/overlay.interface';
-import {Toast} from '@utilities/model/toast.model';
-import {takeUntil} from 'rxjs';
+import { Event, NavigationEnd, Router } from '@angular/router';
+import { LayoutService } from '@shared/service/layout.service';
+import { OverlayService } from '@shared/service/overlay.service';
+import { WindowService } from '@shared/service/window.service';
+import { UnSubOnDestroy } from '@utilities/abstract/unSubOnDestroy.abstract';
+import { EAssistantPages, EFormPages, EIndividualPages, EModule } from '@utilities/enum/router.enum';
+import { IToast } from '@utilities/interface/overlay.interface';
+import { Toast } from '@utilities/model/toast.model';
+import { takeUntil } from 'rxjs';
 
 @Component({
   templateUrl: './layout-base.component.html',
@@ -23,18 +23,24 @@ import {takeUntil} from 'rxjs';
 })
 export class LayoutBaseComponent
   extends UnSubOnDestroy
-  implements OnInit, AfterViewInit, DoCheck
-{
-  @ViewChild('tNav', {static: true}) tNav!: ElementRef;
-  @ViewChild('tRouterOutlet', {static: true}) tRouterOutlet!: ElementRef;
-  @ViewChild('tLayout', {static: true}) tLayout!: ElementRef;
+  implements OnInit, AfterViewInit {
+  @ViewChild('tNav', { static: true }) tNav!: ElementRef;
+  @ViewChild('tRouterOutlet', { static: true }) tRouterOutlet!: ElementRef;
+  @ViewChild('tLayout', { static: true }) tLayout!: ElementRef;
   @ViewChild('tSidebar') tSidebar?: ElementRef<HTMLElement>;
+
+
+  /** 需隱藏 sidebar 的頁面列表 */
+  private readonly sidebarHidePages: string[] = [
+    `${EIndividualPages.Home}`,
+  ]
   /** 需隱藏 footer 的頁面 */
   private hideFooterList = [`${EAssistantPages.Chat}`, `${EModule.Form}/${EFormPages.Select}`];
 
   public showSidebar = false;
   public hideFooter = false;
-  showNav = false;
+  /** 顯示主功能區 */
+  showMain = false;
 
   constructor(
     public $window: WindowService,
@@ -44,32 +50,26 @@ export class LayoutBaseComponent
     private renderer: Renderer2
   ) {
     super();
+    this.subscribeHideSidebar();
     this.router.events
       .pipe(takeUntil(this.onDestroy$))
       .subscribe((routeEvent: Event) => {
         if (routeEvent instanceof NavigationEnd) {
-          const path = routeEvent.urlAfterRedirects.replace('/^\/|\/$/g', '').split('?')[0]; //ex: form/select
-          console.log('aa-path', path)
+          const path = routeEvent.urlAfterRedirects.replace(/^\/+|\/+$/g, '').split('?')[0]; //ex: form/select
           this.hideFooterByPath(path);
+          this.hideSidebarByPath(path);
+
           if (path === 'home') {
-            this.showNav = false;
+            this.showMain = false;
             this.renderer.setStyle(this.tNav.nativeElement, 'width', `100vw`);
           } else if (/^login\/resetPassword\/([^\/]+)\/([^\/]+)$/.test(path)) {
-            this.showNav = false;
+            this.showMain = false;
           } else {
-            this.showNav = true;
+            this.showMain = true;
           }
         }
       });
-    this.$layout.hideSidebar$.pipe(takeUntil(this.onDestroy$)).subscribe(is => {
-      this.showSidebar = !is;
-      if (is) {
-        setTimeout(() => {
-          // 等sidebarWidthSubject跑完
-          this.$layout.sidebarWidthSubject.next(0);
-        });
-      }
-    });
+
     this.$layout.hideFooter$.pipe(takeUntil(this.onDestroy$)).subscribe(is => {
       this.hideFooter = is;
     })
@@ -98,16 +98,22 @@ export class LayoutBaseComponent
     this.windowResizeObserver.observe(this.tLayout.nativeElement);
   }
 
-  ngDoCheck(): void {
-    this.showSidebar = this.showNav;
-    if (!this.showSidebar) {
-      this.renderer.setStyle(this.tNav.nativeElement, 'width', '100vw');
-    }
-  }
-
   /** 依頁面隱藏 footer  */
   private hideFooterByPath(targetPath: string): void {
     this.hideFooter = this.hideFooterList.some(path => targetPath === path);
+  }
+  /** 依頁面隱藏 sidebar */
+  private hideSidebarByPath(path: string): void {
+      this.$layout.hideSidebarSubject.next(this.sidebarHidePages.some(pagePath => pagePath === path))
+  }
+  /** 訂閱 hideSidebar$ */
+  private subscribeHideSidebar(): void {
+    this.$layout.hideSidebar$.pipe(takeUntil(this.onDestroy$)).subscribe(is => {
+      this.showSidebar = !is;
+      if (is) {
+        this.menuResize(0);
+      };
+    });
   }
 
   /** 當 menu 寬度改變時 */
@@ -115,7 +121,7 @@ export class LayoutBaseComponent
     this.renderer.setStyle(
       this.tNav.nativeElement,
       'width',
-      this.showSidebar ? `calc(100vw - ${width}px)` : '100vw'
+      this.tSidebar ? `calc(100vw - ${width}px)` : '100vw'
     );
     this.$layout.sidebarWidthSubject.next(width + 15); // 開關按鈕 15px
   }

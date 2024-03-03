@@ -12,6 +12,7 @@ import {
   CustomForm,
   getFormProvider,
 } from '@utilities/abstract/customForm.abstract';
+import { take, timer } from 'rxjs';
 
 @Component({
   selector: 'app-fit-content-textarea',
@@ -25,9 +26,12 @@ export class FitContentTextareaComponent
 {
   @ViewChild('tTextArea') tTextArea?: ElementRef<HTMLTextAreaElement>;
   @Input() placeholder = 'common.question-basic-content-placeholder';
+  @Input() errorMessage?: string
   @Input() minHeight = '';
   @Input() show?: boolean;
   @Input() clear?: boolean;
+  @Input() override disabled = false;
+  @Input() isError = false;
 
   constructor(
     private selfElem: ElementRef,
@@ -37,7 +41,6 @@ export class FitContentTextareaComponent
   }
 
   public override model = '';
-  public override disabled = false;
   public preReserveHeight?: number;
 
   ngOnChanges({show, clear}: SimpleChanges): void {
@@ -52,7 +55,7 @@ export class FitContentTextareaComponent
 
   ngAfterViewInit(): void {
     if (this.show) {
-      setTimeout(() => this.setHeightByShow('ngAfterViewInit'));
+      timer(1000).pipe(take(1)).subscribe(() => this.setHeightByShow('ngAfterViewInit'));
     }
   }
 

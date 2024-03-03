@@ -1,0 +1,38 @@
+<div class="host" [style.marginTop]="this.groupMarginTop">
+  <ng-container *ngFor="let option of this.options; let index = index">
+    <app-radio
+    [option]="option"
+    [name]="'radio-' + this.name"
+    [id]="this.name+'-'+index"
+    [disabled]="this.disabled"
+    [isError]="this.isError"
+    [checked]="option.isSelect"
+    [memo]="this.memo"
+    (memoChange)="this.memoChange.emit($event)"
+    (change)="this.change(option.code)"
+    ></app-radio>
+    <!-- <input type="radio" class="d-none" [disabled]="this.disabled" [class.error]="this.isError" [id]="'radio-' + this.name + '-' + index"
+      [checked]="option.code + '' === this.model + ''" [value]="option.code" (click)="this.check($event)" name="radio"
+      [name]="this.name" />
+    <label class="d-flex align-items-start pe-pointer" [for]="'radio-' + this.name + '-' + index"
+      [style.minWidth]="this.minWidth" [style.marginTop]="this.itemMarginTop">
+      <span class="click-area border-grey-iron p-relative"></span>
+      <div class="d-flex flex-wrap">
+        <p class="fs-md text-wrap text-grey-black ml-2" [class.hasMemo]="option.hasMemo">
+          {{ option.name | translate }}
+        </p>
+        <input type="text" class="input ml-2" [placeholder]="(option.memoPlaceholder ? option.memoPlaceholder : 'cab.comment-send-placeholder') | translate"
+          *ngIf="option.hasMemo" [disabled]="this.disabled || this.isMemoDisabled"
+          (input)="this.onOther($event)" id="otherInput" [value]="this.memo" />
+      </div> -->
+    <!-- </label> -->
+  </ng-container>
+    <!-- 錯誤訊息 -->
+    <div class="error-message" *ngIf="this.errorMessage && this.isError">{{this.errorMessage}}</div>
+  <!-- 無資料 -->
+  <div class="d-flex align-items-start" *ngIf="this.noData">
+    <span class="click-area border-grey-iron p-relative">
+      <em class="icon-minus"></em>
+    </span>
+    <p class="fs-md text-wrap text-grey-iron ml-2">{{'無資料'}}</p>
+  </div>

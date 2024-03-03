@@ -1,22 +1,26 @@
-import {Directive, OnInit} from '@angular/core';
+import {Directive, SimpleChanges} from '@angular/core';
 import {RouterService} from '@shared/service/router.service';
-import {UnSubOnDestroy} from '@utilities/abstract/unSubOnDestroy.abstract';
 import {IRouterHistory} from '@utilities/interface/common.interface';
 import {takeUntil} from 'rxjs';
+import { Base } from './base';
 
 @Directive()
-export abstract class BasePage extends UnSubOnDestroy implements OnInit {
+export abstract class BasePage extends Base {
   constructor(public $router: RouterService) {
     super();
   }
   /** 是否回復filter & sort */
   public revertFilter = false;
 
-  ngOnInit(): void {
+  protected override onInitBase(): void {
     this.$router.history$
-      .pipe(takeUntil(this.onDestroy$))
-      .subscribe(histories => this.handleHistory(histories));
+    .pipe(takeUntil(this.onDestroy$))
+    .subscribe(histories => this.handleHistory(histories));
     this.onInit();
+  }
+
+  protected override onChangeBase(changes: SimpleChanges): void {
+    this.onChange(changes)
   }
 
   private handleHistory(histories: IRouterHistory[]): void {
@@ -26,4 +30,5 @@ export abstract class BasePage extends UnSubOnDestroy implements OnInit {
   }
 
   protected onInit(): void {}
+  protected onChange(changes: SimpleChanges): void {}
 }

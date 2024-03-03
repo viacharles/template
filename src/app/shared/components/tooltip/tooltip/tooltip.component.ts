@@ -7,6 +7,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import {IPosition} from '@utilities/interface/common.interface';
+import { take, timer } from 'rxjs';
 @Component({
   selector: 'app-tooltip',
   templateUrl: './tooltip.component.html',
@@ -38,15 +39,15 @@ export class TooltipComponent implements AfterViewInit, OnChanges {
   }
 
   ngOnChanges(): void {
-    setTimeout(() => {
+    timer(0).pipe(take(1)).subscribe(() => {
       this.topDiff =
-        (this.position?.isTop
-          ? this.position!.y
-          : this.position!.y - this.selfHeight) + 'px';
-      this.leftDiff =
-        (this.position?.isLeft
-          ? this.position!.x
-          : this.position!.x - this.selfWidth) + 'px';
-    }, 0);
+      (this.position?.isTop
+        ? this.position!.y
+        : this.position!.y - this.selfHeight) + 'px';
+    this.leftDiff =
+      (this.position?.isLeft
+        ? this.position!.x
+        : this.position!.x - this.selfWidth) + 'px';
+    });
   }
 }

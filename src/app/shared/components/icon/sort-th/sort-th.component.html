@@ -1,0 +1,11 @@
+<div class="d-flex flex-row align-items-center">
+  <p class="mr-2 text-gray-500">
+    <ng-content><!-- 文字：標題文字 --></ng-content>
+  </p>
+  <div class="d-flex flex-column">
+    <div class="position-relative overflow-hidden h-2 w-3"><em class="fas fa-caret-up position-absolute h-2 w-3 text-gray-300"
+      (click)="toSort(this.target||'', this.sortType.Desc)"></em></div>
+    <div class="position-relative overflow-hidden h-2 w-3"><em class="fas fa-caret-down position-absolute h-2 w-3 text-gray-300"
+      (click)="toSort(this.target||'', this.sortType.Asc)"></em></div>
+  </div>
+</div>

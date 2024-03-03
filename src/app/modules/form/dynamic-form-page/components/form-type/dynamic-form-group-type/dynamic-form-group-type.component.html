@@ -1,0 +1,100 @@
+<div @fadeInOut>
+  <ng-container *ngFor="let group of this.page?.groups; let groupIndex = index">
+    <section class="question-card mt-6 pt-3 bg-white" *ngIf="group.questions.length !== 0" [formGroup]="group.form">
+      <div class="question-card__header">
+        <div class="d-flex align-items-center px-8 pb-3 p-relative">
+          <em class="complete icon-circle fw-7 h-8 w-8 bg-green-light text-center" *ngIf="group.form.valid"></em>
+          <em class="d-flex align-items-center justify-content-center mr-2_5 fs-lgx fw-4" *ngIf="!group.form.valid">{{
+            group.order }}</em>
+          <h4 class="fs-lg fw-4 text-grey-iron">{{ group.name }}</h4>
+        </div>
+      </div>
+      <ul class="question-card__question d-flex flex-wrap">
+        <ng-container *ngFor="let question of group.questions; let questionIndex = index">
+          <ng-container *ngIf="question.show">
+            <li class="pt-1 pb-3 px-8 w-50p" *ngIf="question" [class.error]="
+                question.form.invalid &&
+                this.form?.touched &&
+                this.isCompleteClicked
+              " [formGroup]="question.form">
+              <div class="d-flex flex-column">
+                <div class="d-flex text-grey-black">
+                  <p class="text-grey-dark text-nowrap fw-7">{{ group?.order }}<span class="mx-0_5">-</span>{{
+                    question.order + 1 }}</p>
+                  <div class="d-flex flex-column ml-3">
+                    <span class="fs-lg text-grey-dark"><span class="text-red-middle"
+                        *ngIf="this.isQuestionRequired(question)">*</span>{{ question.title }}</span>
+                    <p class="fs-xsm text-grey-dark mt-1" *ngIf="question.description">
+                      {{ question.description }}
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <ul class="question-card__option-group mt-1 mb-3">
+                <ng-container *ngFor="
+                    let SubQuestion of question.SubQuestionGroup;
+                    let SubQuestionIndex = index
+                  ">
+                  <li class="d-flex flex-column align-items-start pl-6 ml-8" *ngIf="SubQuestion.show"
+                    [formGroup]="SubQuestion.form">
+                    <!-- <p class="fs-md text-grey-black mt-3 mb-2" *ngIf="SubQuestion.title">
+                      {{ SubQuestion.title }}
+                    </p> -->
+                    <ng-container [ngSwitch]="SubQuestion.type">
+                      <!-- 單選 radio -->
+                      <app-radio-set *ngSwitchCase="this.fieldType.Radio" class="w-100" formControlName="value"
+                        [options]="SubQuestion.optionsForNormal"
+                        [isError]="SubQuestion.form.invalid && this.form!.touched && this.isCompleteClicked"
+                        [name]="(question?.questionId ?? '') + '-' + SubQuestionIndex"
+                        [memo]="SubQuestion.form.get('memo')?.value"
+                        (memoChange)="SubQuestion.form.get('memo')?.setValue($event)"></app-radio-set>
+                      <!-- 單選 select -->
+                      <app-select *ngSwitchCase="this.fieldType.Select" class="w-100 mt-2" formControlName="value"
+                        [options]="SubQuestion.optionsForNormal" [placeholder]="SubQuestion.placeholder??'請選擇'"
+                        (memoChange)="SubQuestion.form.get('memo')?.setValue($event)"></app-select>
+                      <!-- 多選 checkbox -->
+                      <app-checkbox-set *ngSwitchCase="this.fieldType.Checkbox" class="w-100" formControlName="value"
+                        [options]="SubQuestion.optionsForNormal" [hasOtherInput]="this.hasMemo(SubQuestion)"
+                        [memo]="SubQuestion.form.get('memo')?.value" [name]="question.questionId + SubQuestion.answerId"
+                        [isError]="SubQuestion.form.invalid && this.form!.touched && this.isCompleteClicked"
+                        (memoChange)="SubQuestion.form.get('memo')?.setValue($event)"></app-checkbox-set>
+                      <!-- 多選 multi select -->
+                      <app-multi-select *ngSwitchCase="this.fieldType.MultiSelect" class="w-100 mt-2"
+                        formControlName="value" [id]="question.title??''" [options]="SubQuestion.optionsForNormal"
+                        [placeholder]="SubQuestion.placeholder??'可多選'" [hasFilter]="true"></app-multi-select>
+                      <!-- date picker -->
+                      <app-date-picker *ngSwitchCase="this.fieldType.DatePicker" class="h-11 w-100"
+                        formControlName="value"
+                        [isError]="SubQuestion.form.invalid && this.form!.touched && this.isCompleteClicked"
+                        position="right" valeFontSize="1rem" [isDisabled]="SubQuestion.form.disabled">
+                      </app-date-picker>
+                      <!-- date picker range -->
+                      <app-date-picker *ngSwitchCase="this.fieldType.DatePickerRange" class="h-11 w-100"
+                        formControlName="value" [isRange]="true"
+                        [isError]="SubQuestion.form.invalid && this.form!.touched && this.isCompleteClicked"
+                        position="right" valeFontSize="1rem" [isDisabled]="SubQuestion.form.disabled">
+                      </app-date-picker>
+                      <!-- 輸入欄 -->
+                      <app-input *ngSwitchCase="this.fieldType.Input" class="w-100" formControlName="value"
+                        [placeholder]="SubQuestion.placeholder ?? '請輸入內容文字'"
+                        [isError]="SubQuestion.form.invalid && this.form!.touched && this.isCompleteClicked"></app-input>
+                      <!-- textarea -->
+                      <app-fit-content-textarea *ngSwitchCase="this.fieldType.TextArea" class="w-80p"
+                        formControlName="value"
+                        [isError]="SubQuestion.form.invalid && this.form!.touched && this.isCompleteClicked"></app-fit-content-textarea>
+                    </ng-container>
+                  </li>
+                </ng-container>
+              </ul>
+              <!-- <app-cab-remark formControlName="remark" [fieldStatus]="
+                  question.form.controls['remark'].value.fieldStatus
+                " [answerStatus]="this.answerStatus" [progressStatus]="this.progressStatus" (ngModelChange)="
+                  this.onRemarkValueChange($event, question.questionId)
+                " [submitBody]="this.submitBody" [questionId]="question.questionId"></app-cab-remark> -->
+            </li>
+          </ng-container>
+        </ng-container>
+      </ul>
+    </section>
+  </ng-container>
+</div>

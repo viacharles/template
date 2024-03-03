@@ -9,21 +9,21 @@ import {
   Renderer2,
 } from '@angular/core';
 import {ActivatedRoute, Router, Event, NavigationEnd} from '@angular/router';
-import {BsModalService} from 'ngx-bootstrap/modal';
 import {TranslateService} from '@core/services/translate.service';
 import {UsersService} from '@core/services/users.service';
 import {environment} from 'src/environments/environment';
 import {MatLegacySnackBar as MatSnackBar} from '@angular/material/legacy-snack-bar';
 import {OverlayService} from '@shared/service/overlay.service';
-import {ERole} from '@utilities/enum/common.enum';
 import { EIndividualPages} from '@utilities/enum/router.enum';
+import { take, takeUntil, timer } from 'rxjs';
+import { UnSubOnDestroy } from '@utilities/abstract/unSubOnDestroy.abstract';
 
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss'],
 })
-export class FooterComponent implements OnInit {
+export class FooterComponent extends UnSubOnDestroy implements OnInit {
   @ViewChild('tText') tText?: ElementRef<HTMLElement>;
 
   showFull = true;
@@ -34,7 +34,6 @@ export class FooterComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private modalService: BsModalService,
     private userService: UsersService,
     private translateService: TranslateService,
     private http: HttpClient,
@@ -44,7 +43,8 @@ export class FooterComponent implements OnInit {
     private snackBar: MatSnackBar,
     private selfElem: ElementRef<HTMLElement>
   ) {
-    this.router.events.subscribe((event: Event) => {
+    super();
+    this.router.events.pipe(takeUntil(this.onDestroy$)).subscribe((event: Event) => {
       if (event instanceof NavigationEnd) {
         const path = event.urlAfterRedirects.replace('/^\/|\/$/', '').split('?')[0];
         this.setStyleByPath(path);
@@ -85,9 +85,7 @@ export class FooterComponent implements OnInit {
           'backgroundColor',
           'white'
         );
-        setTimeout(() => {
-          this.renderer.removeClass(this.tText?.nativeElement, 'mt-8');
-        }, 0);
+        timer(100).pipe(take(1)).subscribe(() => this.renderer.removeClass(this.tText?.nativeElement, 'mt-8'));
         break;
       default:
         this.renderer.setStyle(
@@ -95,9 +93,7 @@ export class FooterComponent implements OnInit {
           'backgroundColor',
           '#FAFAFA'
         );
-        setTimeout(() => {
-          this.renderer.addClass(this.tText?.nativeElement, 'mt-8');
-        }, 0);
+        timer(100).pipe(take(1)).subscribe(() => this.renderer.addClass(this.tText?.nativeElement, 'mt-8'));
         this.showFull = false;
         break;
     }

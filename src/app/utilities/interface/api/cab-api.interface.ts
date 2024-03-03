@@ -1,15 +1,12 @@
 import {
-  EFieldType,
   ECabFormProcess,
   ERole,
   EUserStatus,
   EFieldStatus,
 } from '@utilities/enum/common.enum';
-import {
-  ECabFormSubmitType,
-  ECabAnswerStatus,
-} from 'src/app/modules/cab/shared/enum/cab.enum';
 import {IOption} from '../common.interface';
+import { ECabAnswerStatus, ECabFormSubmitType } from 'src/app/modules/form/dynamic-form-page/shared/enum/cab.enum';
+import { EErrorMessage, EFieldType } from '@utilities/enum/form.enum';
 
 export interface ICabBasicInfoReq {
   projectName: string;
@@ -52,12 +49,12 @@ export interface ICabAnswer {
 
 export interface ICabQuestionValue {
   [key: string]: // questionId
-  ICabValue;
+  ICabValue[];
 }
 
 export interface ICabValue {
-  value: string | string[];
-  memo: string | null;
+  value: string | number;
+  memo: string[] | null;
 }
 
 export interface ICabEditor {
@@ -107,7 +104,7 @@ export interface ICabSupplementReq {
 
 export interface ICabApplicationAnswerReqAnswers {
   [key: string]: {
-    values: ICabValue;
+    values: ICabValue[];
   };
 }
 
@@ -171,12 +168,9 @@ export interface ICabQuestion {
     order: number;
     cab: number;
     description: string | null;
-    shortTitleEN: string;
-    shortTitleCN: string;
-    longTitleEN: string;
-    longTitleCN: string;
+    title: string;
     disabled: boolean;
-    answerGroup: ICabQuestionAnswerGroup;
+    SubQuestionGroup: {[key: string]: ICabQuestionSubQuestion};
   };
 }
 
@@ -213,8 +207,7 @@ export interface ICabQuestionConfig {
   };
 }
 
-export interface ICabQuestionAnswerGroup {
-  [key: string]: {
+export interface ICabQuestionSubQuestion {
     type: EFieldType;
     required: boolean;
     disabled: boolean;
@@ -224,8 +217,14 @@ export interface ICabQuestionAnswerGroup {
     optionsForNormal?: IOption[] | null;
     className?: string | null;
     hideExpression?: ICabQuestionHideExpression[];
+    validation?: IDynamicFromValidator[];
     config?: ICabQuestionConfig;
-  };
+}
+
+export interface IDynamicFromValidator {
+  type: EErrorMessage,
+  value?: number[] | null,
+  regex?: string | null,
 }
 
 export interface ICabQuestionOption {

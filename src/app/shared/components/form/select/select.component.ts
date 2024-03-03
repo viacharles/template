@@ -14,7 +14,7 @@ import {
 } from '@angular/core';
 import {WindowService} from '@shared/service/window.service';
 import {IOption} from '@utilities/interface/common.interface';
-import {takeUntil} from 'rxjs';
+import {take, takeUntil, timer} from 'rxjs';
 
 @Component({
   selector: 'app-select',
@@ -22,7 +22,7 @@ import {takeUntil} from 'rxjs';
   styleUrls: ['./select.component.scss'],
   providers: [getFormProvider(SelectComponent)],
 })
-export class SelectComponent<T extends IOption>
+export class SelectComponent<T extends IOption<string>>
   extends CustomForm<string>
   implements OnInit
 {
@@ -33,6 +33,8 @@ export class SelectComponent<T extends IOption>
   @Input() enableAll = false;
   @Input() dropDownDirection?: 'above' | 'below' = 'below';
   @Input() override disabled = false;
+  @Input() errorMessage?: string;
+  @Input() isError?: boolean;
 
   constructor(
     private selfElem: ElementRef,
@@ -58,7 +60,7 @@ export class SelectComponent<T extends IOption>
 
   public open() {
     this.isOpen = this.disabled ? false : !this.isOpen;
-    setTimeout(() => this.setDropdownPosition()); // 等 dropdown render 完成
+    timer(100).pipe(take(1)).subscribe(() => this.setDropdownPosition()); // 等 dropdown render 完成
   }
 
   /** 選擇選項 */

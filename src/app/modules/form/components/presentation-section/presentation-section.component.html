@@ -1,7 +1,10 @@
     <div class="d-flex flex-row">
-      <div class="title w-100 d-flex flex-row align-items-center py-1 mb-8">
-        <p class="px-2">{{this.title}}</p>
-        <button class="btn-flat d-flex align-items-center text-white bg-green-middle py-1 px-2 w-fit pe-pointer" *ngIf="this.tabName">{{this.tabName}}</button>
+      <div class="d-flex align-items-center w-100 py-1 mb-8">
+        <div class="title d-flex flex-row align-items-center mr-2">
+          <p class="px-2">{{this.title}}</p>
+          <button class="btn-flat d-flex align-items-center text-white bg-green-middle py-1 px-2 w-fit pe-pointer" *ngIf="this.tabName">{{this.tabName}}</button>
+        </div>
+        <p *ngIf="!!this.des" class=" text-black">{{this.des}}</p>
       </div>
       <form>
         <ng-content select="#config"></ng-content>

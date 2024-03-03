@@ -1,6 +1,6 @@
 <div class="simple-card w-100 p-4 bg-white p-relative">
   <div
-    class="card__header d-flex justify-content-between fs-xsm fw-7 text-dark-gray-2 mb-3"
+    class="card__header d-flex justify-content-between fs-xsm fw-7 mb-3"
   >
     {{ this.title ?? '' | translate }}
     <app-icon-dropdown *ngIf="this.showMenu" [config]="this.dropdownConfig">
@@ -17,7 +17,7 @@
           (click)="this.optionSelected.emit(option)"
         >
           <em class="{{ option.icon }} mr-2"></em>
-          {{ option.nameI18n | translate }}
+          {{ option.name | translate }}
         </li>
       </ul>
     </app-icon-dropdown>

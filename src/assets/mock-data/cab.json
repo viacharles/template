@@ -21,7 +21,7 @@
           "longTitleEN": null,
           "longTitleCN": "預算評估符合專案發展",
           "disabled": false,
-          "answerGroup": {
+          "SubQuestionGroup": {
             "A": {
               "type": "select",
               "required": 3,
@@ -68,7 +68,7 @@
           "longTitleEN": null,
           "longTitleCN": "雲端服務提供商",
           "disabled": false,
-          "answerGroup": {
+          "SubQuestionGroup": {
             "A": {
               "type": "multiselect",
               "required": 3,
@@ -130,7 +130,7 @@
           "longTitleEN": null,
           "longTitleCN": "資料傳輸保護機制說明",
           "disabled": false,
-          "answerGroup": {
+          "SubQuestionGroup": {
             "A": {
               "type": "select",
               "required": 3,
@@ -177,7 +177,7 @@
           "longTitleEN": null,
           "longTitleCN": "稽核軌跡留存機制設計說明",
           "disabled": false,
-          "answerGroup": {
+          "SubQuestionGroup": {
             "A": {
               "type": "select",
               "required": 3,
@@ -224,7 +224,7 @@
           "longTitleEN": null,
           "longTitleCN": "系統是否有提供對外開放服務或僅提供內部使用",
           "disabled": false,
-          "answerGroup": {
+          "SubQuestionGroup": {
             "A": {
               "type": "multiselect",
               "required": 3,
@@ -283,7 +283,7 @@
           "longTitleEN": null,
           "longTitleCN": "依據系統類型設計資料保護機制，並定期或於必要時執行審視與變更",
           "disabled": false,
-          "answerGroup": {
+          "SubQuestionGroup": {
             "A": {
               "type": "select",
               "required": 3,
@@ -330,7 +330,7 @@
           "longTitleEN": null,
           "longTitleCN": "外部資安防護機制與監控說明",
           "disabled": false,
-          "answerGroup": {
+          "SubQuestionGroup": {
             "A": {
               "type": "multiselect",
               "required": 3,
@@ -377,7 +377,7 @@
           "longTitleEN": null,
           "longTitleCN": "完成系統安全性檢核並修復中/高風險因子",
           "disabled": false,
-          "answerGroup": {
+          "SubQuestionGroup": {
             "A": {
               "type": "multiselect",
               "required": 2,
@@ -507,7 +507,7 @@
           "longTitleEN": null,
           "longTitleCN": "系統是否有串接金控的資料源",
           "disabled": false,
-          "answerGroup": {
+          "SubQuestionGroup": {
             "A": {
               "type": "select",
               "required": 3,
@@ -563,7 +563,7 @@
           "longTitleEN": null,
           "longTitleCN": "是否具備身份驗證方式",
           "disabled": false,
-          "answerGroup": {
+          "SubQuestionGroup": {
             "A": {
               "type": "select",
               "required": 3,
@@ -610,7 +610,7 @@
           "longTitleEN": null,
           "longTitleCN": "應依實際需求及授權，以最小權限原則開放。明確區隔雲端帳號角色和責任的設計(R&R)",
           "disabled": false,
-          "answerGroup": {
+          "SubQuestionGroup": {
             "A": {
               "type": "select",
               "required": 3,
@@ -666,7 +666,7 @@
           "longTitleEN": null,
           "longTitleCN": "說明影像檔OS，並說明使用版本",
           "disabled": false,
-          "answerGroup": {
+          "SubQuestionGroup": {
             "A": {
               "type": "select",
               "required": 2,
@@ -716,7 +716,7 @@
           "longTitleEN": null,
           "longTitleCN": "說明影像檔OS，並說明使用版本",
           "disabled": false,
-          "answerGroup": {
+          "SubQuestionGroup": {
             "A": {
               "type": "select",
               "required": 2,
@@ -775,7 +775,7 @@
           "longTitleEN": null,
           "longTitleCN": "使用的影像檔內的開源組件無商用疑慮",
           "disabled": false,
-          "answerGroup": {
+          "SubQuestionGroup": {
             "A": {
               "type": "select",
               "required": 2,
@@ -831,7 +831,7 @@
           "longTitleEN": null,
           "longTitleCN": "以評估採用 HA(High Availability) 或是 DR(Disaster Recovery) 架構",
           "disabled": false,
-          "answerGroup": {
+          "SubQuestionGroup": {
             "A": {
               "type": "multiselect",
               "required": 3,
@@ -887,7 +887,7 @@
           "longTitleEN": null,
           "longTitleCN": "應檢視各種 Key / Credentials 權限，包含其保護方式 (Principle of Least Privilege, POLP)",
           "disabled": false,
-          "answerGroup": {
+          "SubQuestionGroup": {
             "A": {
               "type": "select",
               "required": 2,
@@ -938,7 +938,7 @@
           "longTitleEN": null,
           "longTitleCN": "專案是否涉及機敏資料及客戶資料",
           "disabled": false,
-          "answerGroup": {
+          "SubQuestionGroup": {
             "A": {
               "type": "select",
               "required": 3,
@@ -979,7 +979,7 @@
           "longTitleEN": null,
           "longTitleCN": "客戶資料加密或代碼化機制",
           "disabled": false,
-          "answerGroup": {
+          "SubQuestionGroup": {
             "A": {
               "type": "select",
               "required": 3,
@@ -1039,7 +1039,7 @@
           "longTitleEN": null,
           "longTitleCN": "備份資料復原有無時限需求？有無額外復原管控步驟？",
           "disabled": false,
-          "answerGroup": {
+          "SubQuestionGroup": {
             "A": {
               "type": "select",
               "required": 2,
@@ -1086,7 +1086,7 @@
           "longTitleEN": null,
           "longTitleCN": "是否已建立雲端的緊急應變/回復計畫",
           "disabled": false,
-          "answerGroup": {
+          "SubQuestionGroup": {
             "A": {
               "type": "select",
               "required": 2,
@@ -1133,7 +1133,7 @@
           "longTitleEN": null,
           "longTitleCN": "已建立備份機制 (服務可重建於其他 CSP or 地端環境)",
           "disabled": false,
-          "answerGroup": {
+          "SubQuestionGroup": {
             "A": {
               "type": "multiselect",
               "required": 2,
@@ -1207,7 +1207,7 @@
           "longTitleEN": null,
           "longTitleCN": "是否完成功能測試、壓力測試、混沌測試(option)",
           "disabled": false,
-          "answerGroup": {
+          "SubQuestionGroup": {
             "A": {
               "type": "select",
               "required": 2,
@@ -1254,7 +1254,7 @@
           "longTitleEN": null,
           "longTitleCN": "金控雲端運維科「雲端運維評估檢查表事項",
           "disabled": false,
-          "answerGroup": {
+          "SubQuestionGroup": {
             "A": {
               "type": "select",
               "required": 3,
@@ -1310,7 +1310,7 @@
           "longTitleEN": null,
           "longTitleCN": "依主管機關要求查核作業？",
           "disabled": false,
-          "answerGroup": {
+          "SubQuestionGroup": {
             "A": {
               "type": "select",
               "required": 2,
@@ -1357,7 +1357,7 @@
           "longTitleEN": null,
           "longTitleCN": "已充分評估符合相關內外部法令法規要求",
           "disabled": false,
-          "answerGroup": {
+          "SubQuestionGroup": {
             "A": {
               "type": "select",
               "required": 3,

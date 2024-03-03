@@ -1,0 +1,10 @@
+<input
+class="input w-100 {{this.size}}"
+[ngModel]="this.model"
+[type]="this.type"
+[disabled]="this.disabled"
+[placeholder]="this.placeholder"
+[class.error]="this.isError"
+(keyup)="this.input($event)">
+<!-- 錯誤訊息 -->
+<div class="error-message" *ngIf="this.errorMessage && this.isError">{{this.errorMessage}}</div>

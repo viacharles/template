@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IOption } from '@utilities/interface/common.interface';
+import { IDynamicOption } from '@utilities/interface/form.interface';
 /**
  * @description 醫師排班(單一班次)
  * @param doctorNo:醫師代碼
@@ -29,74 +29,74 @@ export interface ISingleDoctorSchedule {
 })
 export class SelectPageComponent {
 
-  public options: IOption<string>[] = [
+  public options: IDynamicOption<string>[] = [
     {
       code: '0',
-      nameI18n: '小町當',
+      name: '小町當',
     },
     {
       code: '1',
-      nameI18n: '瓜牛帶我去散步',
+      name: '瓜牛帶我去散步',
     },
     {
       code: '2',
-      nameI18n: '亞洲最大梗圖專門網站。提供每日有趣梗圖',
+      name: '亞洲最大梗圖專門網站。提供每日有趣梗圖',
     },
     {
       code: '3',
-      nameI18n: '中英夾雜的比較 high class 嗎？',
+      name: '中英夾雜的比較 high class 嗎？',
     },
     {
       code: '4',
-      nameI18n: '「不好意思，我明天的 schedule 滿了，讓我 book 後天的時間好嗎？」',
+      name: '「不好意思，我明天的 schedule 滿了，讓我 book 後天的時間好嗎？」',
     },
     {
       code: '5',
-      nameI18n: '項目六',
+      name: '項目六',
     },
     {
       code: '6',
-      nameI18n: '項目六',
+      name: '項目六',
     },
     {
       code: '7',
-      nameI18n: '項目8⃣️',
+      name: '項目吧',
     },
     {
       code: '8',
-      nameI18n: '項目九',
+      name: '項目九',
     },
     {
       code: '9',
-      nameI18n: '項目10',
+      name: '項目10',
     },
     {
       code: '10',
-      nameI18n: '項目十一',
+      name: '項目十一',
     },
     {
       code: '11',
-      nameI18n: '項目12',
+      name: '項目12',
     },
     {
       code: '12',
-      nameI18n: '項目1333333333333333333333333333',
+      name: '項目1333333333333333333333333333',
     },
     {
       code: '13',
-      nameI18n: '項目十四',
+      name: '項目十四',
     },
     {
       code: '14',
-      nameI18n: '項目15',
+      name: '項目15',
     },
     {
       code: '15',
-      nameI18n: ' 最後一項',
+      name: ' 最後一項',
     },
   ];
 
-  public schedule = 
+  public schedule =
     {
       doctorNo: '001',
       doctorName: '項目一',

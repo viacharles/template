@@ -15,7 +15,7 @@ import {
 export class PageTabSetComponent implements OnChanges {
   /** 跳至第幾個tab */
   @Input() callToggle = 0;
-  @Input() tabs?: {nameI18n: string}[];
+  @Input() tabs?: {name: string}[];
   @Output() toggleIndex = new EventEmitter<number>();
 
   public tabIndex = 0;

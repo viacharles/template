@@ -8,5 +8,6 @@ import { Component, Input } from '@angular/core';
 export class PresentationSectionComponent {
   @Input() title = '';
   @Input() tabName = '';
+  @Input() des = '';
 
 }

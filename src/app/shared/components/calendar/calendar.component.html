@@ -1,24 +1,25 @@
-<div class="d-flex flex-column">
-  <div class="d-flex flex-row align-items-center justify-content-between p-1">
-    <div class="title">{{ this.title }}</div>
+<!-- 日模式 -->
+<ng-container class="d-flex flex-column" *ngIf="this.isDateType; else tMonthType">
+  <div class="month-type d-flex flex-row align-items-center justify-content-between p-1">
     <div class="month-toggle">
       <em
         *ngIf="!this.thisMonthLimit"
-        class="fas fa-angle-left"
+        class="fas fa-angle-left text-grey-dark fs-lgxx pe-pointer"
         (click)="switch(0, -1)"
       ></em>
+      <div class="title ml-3 p-1" [class.isRange]="this.isRange" (click)="this.isRange ? null : this.toYearType($event)">{{ this.title }}</div>
       <em
         *ngIf="!this.thisMonthLimit"
-        class="fas fa-angle-right ml-3"
+        class="fas fa-angle-right text-grey-dark fs-lgxx ml-3 pe-pointer"
         (click)="switch(0, 1)"
       ></em>
     </div>
   </div>
-  <table>
+  <table class="month-type">
     <thead>
       <tr>
         <th
-          class="text-center align-middle h-9"
+          class="text-center align-middle text-grey-iron h-9"
           *ngFor="let day of ['一', '二', '三', '四', '五', '六', '日']"
         >
           {{ day }}
@@ -30,10 +31,13 @@
         <td class="text-center align-middle" *ngFor="let date of week">
           <div
             class="h-7 w-100 d-flex align-items-center justify-content-center"
-            [class.disabled]="!this.isInThisMonth(date)"
+            [class.start-selected]="this.isRange && this.selectRange.start === date"
+            [class.between]="this.isBetween(date)"
+            [class.end-hovered]="this.selectRange.start && this.hoverDate === date"
+            [class.disabled]="(!this.isInThisMonth(date)) || this.isBeforeStart(date)"
             [class.selected]="date === this.selectedDate"
-            (mouseenter)="this.hover(date)"
-            (click)="this.isInThisMonth(date) ? this.onSelect(date) : null"
+            (mouseenter)="this.selectRange.start ? this.hover(date) : null"
+            (click)="this.isInThisMonth(date) ? this.onSelectDate(date) : null"
           >
             {{ date | date: 'd' }}
           </div>
@@ -41,4 +45,38 @@
       </tr>
     </tbody>
   </table>
-</div>
+</ng-container>
+<!-- 月模式 -->
+<ng-template #tMonthType>
+  <div class="year-type d-flex flex-row align-items-center justify-content-between p-1">
+    <div class="month-toggle">
+      <em
+        *ngIf="!this.thisMonthLimit"
+        class="fas fa-angle-left text-grey-dark fs-lgxx pe-pointer"
+        (click)="switch(-1, 0)"
+      ></em>
+      <div class="title ml-3 p-1">{{ this.title | slice: 0:4 }}</div>
+      <em
+        *ngIf="!this.thisMonthLimit"
+        class="fas fa-angle-right text-grey-dark fs-lgxx ml-3 pe-pointer"
+        (click)="switch(1, 0)"
+      ></em>
+    </div>
+  </div>
+  <table class="year-type w-100">
+    <tbody>
+      <tr *ngFor="let months of this.yearMonths">
+        <td class="text-center align-middle" *ngFor="let month of months">
+          <div
+            class="d-flex align-items-center justify-content-center"
+            [class.selected]="month === this.selectedMonth"
+            (mouseenter)="this.hover(month)"
+            (click)="this.onSelectMonth($event, month)"
+          >
+            {{ month  }} 月
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</ng-template>

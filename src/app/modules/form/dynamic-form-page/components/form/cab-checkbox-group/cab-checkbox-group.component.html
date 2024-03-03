@@ -1,0 +1,57 @@
+<!-- 草稿 -->
+<ul class="draft d-flex flex-column w-100" *ngIf="
+    +this.progressStatus! !== this.progress.RequiredForApprove;
+    else tRequiredTemp
+  ">
+  <li class="draft__checkboxGroup d-flex w-100" *ngFor="let options of this.optionLinesView; let lineIndex = index">
+    <ng-container *ngFor="let option of options; let optionIndex = index">
+      <ng-container *ngIf="option; else tEmptySpace">
+        <input type="checkbox" class="d-none" [id]="this.id + '' + optionIndex + '' + lineIndex" [name]="option.label"
+          [disabled]="false" [value]="option.value" (change)="this.change(option.value)"
+          [checked]="this.isChecked(option.value)" />
+        <label class="h-14 d-flex align-items-center bg-white text-grey-black pe-pointer text-nowrap"
+          [class.emptyClo]="!option" [for]="this.id + '' + optionIndex + '' + lineIndex">
+          <span class="check-area {{
+              this.isMulti ? 'check' : 'radio'
+            }} p-relative d-flex border-grey-middle fs-xsm mr-3"><em class="{{
+                this.isMulti ? 'icon-confirmed' : ''
+              }} p-absolute fs-sm"></em></span>
+          <p class="d-flex align-items-center text-grey-black overflow-auto h-14 fs-xsm">
+            {{ option.label }}
+          </p>
+          <input type="text" class="input w-100 ml-3" [placeholder]="'common.input-text-placeholder' | translate"
+            *ngIf="option.memo" (input)="this.onMemoChange($event)" [value]="this.memo"
+            [disabled]="!this.isOtherFieldChecked(options)" />
+        </label>
+      </ng-container>
+    </ng-container>
+  </li>
+</ul>
+<!-- 待補件 -->
+<ng-template #tRequiredTemp>
+  <ul class="requiredForApprove d-flex w-100">
+    <li class="requiredForApprove__checkboxGroup d-flex mr-3"
+      *ngFor="let options of this.optionLinesView; let lineIndex = index">
+      <ng-container *ngFor="let option of options; let optionIndex = index">
+        <ng-container *ngIf="option">
+          <input type="checkbox" class="d-none" [id]="this.id + '' + optionIndex + '' + lineIndex" [name]="option.label"
+            [disabled]="false" *ngIf="this.isChecked(option.value)" [disabled]="true" [value]="option.value"
+            [checked]="this.isChecked(option.value)" />
+          <label class="h-6 d-flex align-items-center bg-white text-grey-black pe-pointer text-nowrap mb-3"
+            *ngIf="this.isChecked(option.value)" [for]="this.id + '' + optionIndex + '' + lineIndex">
+            <em
+              class="icon-confirmed d-flex align-items-center justify-content-center text-green-middle bg-green-light fs-xsm"></em>
+            {{ option.label }}
+            <p class="ml-3 text-grey-black pe-auto" *ngIf="option.memo">
+              {{ this.memo }}
+            </p>
+          </label>
+        </ng-container>
+      </ng-container>
+    </li>
+  </ul>
+</ng-template>
+
+<ng-template #tEmptySpace>
+  <div class="h-14 d-flex bg-white border-grey-light"></div>
+</ng-template>

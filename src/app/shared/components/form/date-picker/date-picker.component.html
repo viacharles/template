@@ -1,35 +1,20 @@
-<div class="position-relative mb-1">
-  <div
-    class="form-control d-flex align-items-center justify-content-between"
-    [class.disabled]="this.isDisabled"
-    [class.error]="this.isError"
-    (click)="this.showCalendar()"
-  >
-    <h5
-      class="has-value"
-      [style.fontSize]="this.valueFontSize"
-      *ngIf="this.model; else tPlaceholder"
-    >
-      {{ this.model }}
+<div class="position-relative mb-1 w-100">
+  <div class="input w-100 d-flex align-items-center justify-content-between" [class.disabled]="this.isDisabled"
+    [class.error]="this.isError" (click)="this.showCalendar()">
+    <h5 class="has-value" [style.fontSize]="this.valueFontSize" *ngIf="this.model; else tPlaceholder">
+      {{this.model}}
     </h5>
     <ng-template #tPlaceholder>
-      <p
-        class="text-grey-iron fs-xsm mb-0"
-        [style.fontSize]="this.placeholderFontSize"
-      >
-        YYYY/MM/DD
-      </p></ng-template
-    >
-    <em class="icon-calendar"></em>
+      <p class="text-grey-iron fs-xsm mb-0" [style.fontSize]="this.placeholderFontSize">
+        {{ this.placeholder }}
+      </p>
+    </ng-template>
+    <div class="d-flex">
+      @if (this.model) { <em class="cancel icon-cancel-thick" (click)="this.clear($event)"></em> }
+      @else { <em class="icon-calendar no-func"></em> }
+    </div>
   </div>
-  <div
-    #tCalendarContainer
-    *ngIf="this.show"
-    class="calendar-container position-absolute bg-gray-white"
-  >
-    <app-calendar
-      (select)="this.select($event)"
-      [thisMonthLimit]="this.thisMonthLimit"
-    ></app-calendar>
+  <div #tCalendarContainer @fadeInOutSize *ngIf="this.show" class="calendar-container position-absolute bg-gray-white">
+    <app-calendar (select)="this.select($event)" [isRange]="this.isRange"></app-calendar>
   </div>
 </div>

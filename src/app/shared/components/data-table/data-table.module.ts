@@ -16,21 +16,15 @@ import { TranslateModule } from '@ngx-translate/core';
     DataTableDatePickerComponent,
     DataTableCalendarComponent,
     DataTablePaginationComponent,
+    DataTableComponent
   ],
   exports: [
     TableIconDropdownComponent,
     DataTableComponent,
     DataTableDatePickerComponent,
+    DataTableComponent,
   ],
   imports: [CommonModule, ReactiveFormsModule, FormsModule, TranslateModule],
 })
 export class DataTableModule {
-  constructor(@Optional() @SkipSelf() parentModule: BrowserAnimationsModule) {
-    /** 檢測 root module 是否支援 animations */
-    if (!parentModule) {
-      (DataTableModule as any).decorators[0].imports.push(
-        BrowserAnimationsModule
-      );
-    }
-  }
 }

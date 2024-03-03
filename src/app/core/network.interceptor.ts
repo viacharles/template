@@ -1,4 +1,4 @@
-import {filter, takeUntil} from 'rxjs';
+import {filter, take, takeUntil} from 'rxjs';
 import {Injectable} from '@angular/core';
 import {
   HttpRequest,
@@ -41,6 +41,7 @@ export class NetworkInterceptor implements HttpInterceptor {
     return next.handle(request).pipe(
       takeUntil(
         this.router.events.pipe(
+          take(1),
           // 換頁時取消api
           filter(event => {
             return event instanceof NavigationStart && event.id !== 1;

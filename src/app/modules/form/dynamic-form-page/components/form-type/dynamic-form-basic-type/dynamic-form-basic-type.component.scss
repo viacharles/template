@@ -1,0 +1,36 @@
+@import 'color';
+.question-card {
+  border-radius: 10px;
+  box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.04);
+  &__question {
+    & > li {
+      div:first-of-type {
+        min-width: 150px;
+      }
+    }
+  }
+
+  &__option-group {
+    width: calc(100% - 1.6rem);
+    li {
+      padding-left: 1rem;
+    }
+  }
+}
+
+p,
+h4,
+h5,
+ul,
+label {
+  margin-bottom: 0;
+}
+
+app-select, app-multi-select, app-date-picker {
+  max-width: 400px;
+  min-width: 260px;
+}
+app-radio, app-checkbox-set, input {
+  max-width: 854px;
+  min-width: 260px;
+}

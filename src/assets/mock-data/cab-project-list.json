@@ -463,10 +463,22 @@
       "name": "IrisTeng",
       "tenantId": null
     },
+    "trigger":
+      {
+        "name": "小明",
+        "departmentCn": "大兄弟",
+        "departmentEn": "Big Bro",
+        "sectionCn": "櫃檯",
+        "sectionEn": "front"
+      },
     "attachment": [
       {
         "file": "3690f5587b7c41a49c476ff9cce772b8",
-        "uploadDate": "2023-11-14 15:34:39"
+        "uploadDate": "2023-11-14 15:34:39",
+        "departmentCn": "大兄弟",
+        "departmentEn": "Big Bro",
+        "sectionCn": "櫃檯",
+        "sectionEn": "front"
       }
     ]
   },
@@ -934,10 +946,22 @@
       "name": "IrisTeng",
       "tenantId": null
     },
+    "trigger":
+      {
+        "name": "小明",
+        "departmentCn": "大兄弟",
+        "departmentEn": "Big Bro",
+        "sectionCn": "櫃檯",
+        "sectionEn": "front"
+      },
     "attachment": [
       {
         "file": "3690f5587b7c41a49c476ff9cce772b8",
-        "uploadDate": "2023-11-14 15:34:39"
+        "uploadDate": "2023-11-14 15:34:39",
+        "departmentCn": "大兄弟",
+        "departmentEn": "Big Bro",
+        "sectionCn": "櫃檯",
+        "sectionEn": "front"
       }
     ]
   },
@@ -971,6 +995,14 @@
       "name": "Carol Chen",
       "tenantId": null
     },
+    "trigger":
+      {
+        "name": "小明",
+        "departmentCn": "大兄弟",
+        "departmentEn": "Big Bro",
+        "sectionCn": "櫃檯",
+        "sectionEn": "front"
+      },
     "attachment": null
   },
   {
@@ -1437,10 +1469,22 @@
       "name": "IrisTeng",
       "tenantId": null
     },
+    "trigger":
+      {
+        "name": "小明",
+        "departmentCn": "大兄弟",
+        "departmentEn": "Big Bro",
+        "sectionCn": "櫃檯",
+        "sectionEn": "front"
+      },
     "attachment": [
       {
         "file": "5ecbf9c6757341debf7ed0a3c2cec526",
-        "uploadDate": "2023-11-14 15:40:51"
+        "uploadDate": "2023-11-14 15:40:51",
+        "departmentCn": "大兄弟",
+        "departmentEn": "Big Bro",
+        "sectionCn": "櫃檯",
+        "sectionEn": "front"
       }
     ]
   },
@@ -1474,6 +1518,14 @@
       "name": "IrisTeng",
       "tenantId": null
     },
+    "trigger":
+      {
+        "name": "小明",
+        "departmentCn": "大兄弟",
+        "departmentEn": "Big Bro",
+        "sectionCn": "櫃檯",
+        "sectionEn": "front"
+      },
     "attachment": null
   },
   {
@@ -1940,10 +1992,22 @@
       "name": "瑞絲主席",
       "tenantId": null
     },
+    "trigger":
+      {
+        "name": "小明",
+        "departmentCn": "大兄弟",
+        "departmentEn": "Big Bro",
+        "sectionCn": "櫃檯",
+        "sectionEn": "front"
+      },
     "attachment": [
       {
         "file": "4a6cabda4e3d44898bfa0265ab391fba",
-        "uploadDate": "2023-11-14 15:27:47"
+        "uploadDate": "2023-11-14 15:27:47",
+        "departmentCn": "大兄弟",
+        "departmentEn": "Big Bro",
+        "sectionCn": "櫃檯",
+        "sectionEn": "front"
       }
     ]
   },
@@ -2411,10 +2475,22 @@
       "name": "瑞絲主席",
       "tenantId": null
     },
+    "trigger":
+      {
+        "name": "小明",
+        "departmentCn": "大兄弟",
+        "departmentEn": "Big Bro",
+        "sectionCn": "櫃檯",
+        "sectionEn": "front"
+      },
     "attachment": [
       {
         "file": "4a6cabda4e3d44898bfa0265ab391fba",
-        "uploadDate": "2023-11-14 15:27:47"
+        "uploadDate": "2023-11-14 15:27:47",
+        "departmentCn": "大兄弟",
+        "departmentEn": "Big Bro",
+        "sectionCn": "櫃檯",
+        "sectionEn": "front"
       }
     ]
   },
@@ -3154,10 +3230,22 @@
       "name": "Carol Chen",
       "tenantId": null
     },
+    "trigger":
+      {
+        "name": "小明",
+        "departmentCn": "大兄弟",
+        "departmentEn": "Big Bro",
+        "sectionCn": "櫃檯",
+        "sectionEn": "front"
+      },
     "attachment": [
       {
         "file": "ce7bf37a370548758d381673efa235ae",
-        "uploadDate": "2023-11-16 15:09:32"
+        "uploadDate": "2023-11-16 15:09:32",
+        "departmentCn": "大兄弟",
+        "departmentEn": "Big Bro",
+        "sectionCn": "櫃檯",
+        "sectionEn": "front"
       }
     ]
   },
@@ -3625,10 +3713,22 @@
       "name": "Carol Chen",
       "tenantId": null
     },
+    "trigger":
+      {
+        "name": "小明",
+        "departmentCn": "大兄弟",
+        "departmentEn": "Big Bro",
+        "sectionCn": "櫃檯",
+        "sectionEn": "front"
+      },
     "attachment": [
       {
         "file": "0c784eb1cc71452da255d79b63339625",
-        "uploadDate": "2023-11-14 15:22:39"
+        "uploadDate": "2023-11-14 15:22:39",
+        "departmentCn": "大兄弟",
+        "departmentEn": "Big Bro",
+        "sectionCn": "櫃檯",
+        "sectionEn": "front"
       }
     ]
   },
@@ -4368,10 +4468,22 @@
       "name": "Carol Chen",
       "tenantId": null
     },
+    "trigger":
+      {
+        "name": "小明",
+        "departmentCn": "大兄弟",
+        "departmentEn": "Big Bro",
+        "sectionCn": "櫃檯",
+        "sectionEn": "front"
+      },
     "attachment": [
       {
         "file": "4a955495a8d042d085367678f55f1056",
-        "uploadDate": "2023-11-16 13:53:12"
+        "uploadDate": "2023-11-16 13:53:12",
+        "departmentCn": "大兄弟",
+        "departmentEn": "Big Bro",
+        "sectionCn": "櫃檯",
+        "sectionEn": "front"
       }
     ]
   },
@@ -4839,10 +4951,22 @@
       "name": "Carol Chen",
       "tenantId": null
     },
+    "trigger":
+      {
+        "name": "小明",
+        "departmentCn": "大兄弟",
+        "departmentEn": "Big Bro",
+        "sectionCn": "櫃檯",
+        "sectionEn": "front"
+      },
     "attachment": [
       {
         "file": "dcdcdfd619f045e698a67b80d9cfe982",
-        "uploadDate": "2023-11-14 15:07:05"
+        "uploadDate": "2023-11-14 15:07:05",
+        "departmentCn": "大兄弟",
+        "departmentEn": "Big Bro",
+        "sectionCn": "櫃檯",
+        "sectionEn": "front"
       }
     ]
   },
@@ -5310,10 +5434,22 @@
       "name": "瑞絲主席",
       "tenantId": null
     },
+    "trigger":
+      {
+        "name": "小明",
+        "departmentCn": "大兄弟",
+        "departmentEn": "Big Bro",
+        "sectionCn": "櫃檯",
+        "sectionEn": "front"
+      },
     "attachment": [
       {
         "file": "8207917ec64e4268980790839fa6bb7d",
-        "uploadDate": "2023-11-14 15:29:59"
+        "uploadDate": "2023-11-14 15:29:59",
+        "departmentCn": "大兄弟",
+        "departmentEn": "Big Bro",
+        "sectionCn": "櫃檯",
+        "sectionEn": "front"
       }
     ]
   },
@@ -5347,6 +5483,14 @@
       "name": "Carol Chen",
       "tenantId": null
     },
+    "trigger":
+      {
+        "name": "小明",
+        "departmentCn": "大兄弟",
+        "departmentEn": "Big Bro",
+        "sectionCn": "櫃檯",
+        "sectionEn": "front"
+      },
     "attachment": null
   },
   {
@@ -5813,10 +5957,22 @@
       "name": "Carol Chen",
       "tenantId": null
     },
+    "trigger":
+      {
+        "name": "小明",
+        "departmentCn": "大兄弟",
+        "departmentEn": "Big Bro",
+        "sectionCn": "櫃檯",
+        "sectionEn": "front"
+      },
     "attachment": [
       {
         "file": "fb43240ea59b4803a7676ad0c8900a7b",
-        "uploadDate": "2023-11-13 17:47:47"
+        "uploadDate": "2023-11-13 17:47:47",
+        "departmentCn": "大兄弟",
+        "departmentEn": "Big Bro",
+        "sectionCn": "櫃檯",
+        "sectionEn": "front"
       }
     ]
   },
@@ -5850,6 +6006,14 @@
       "name": "Carol Chen",
       "tenantId": null
     },
+    "trigger":
+      {
+        "name": "小明",
+        "departmentCn": "大兄弟",
+        "departmentEn": "Big Bro",
+        "sectionCn": "櫃檯",
+        "sectionEn": "front"
+      },
     "attachment": null
   },
   {
@@ -6316,10 +6480,22 @@
       "name": "Carol Chen",
       "tenantId": null
     },
+    "trigger":
+      {
+        "name": "小明",
+        "departmentCn": "大兄弟",
+        "departmentEn": "Big Bro",
+        "sectionCn": "櫃檯",
+        "sectionEn": "front"
+      },
     "attachment": [
       {
         "file": "0c784eb1cc71452da255d79b63339625",
-        "uploadDate": "2023-11-14 15:22:39"
+        "uploadDate": "2023-11-14 15:22:39",
+        "departmentCn": "大兄弟",
+        "departmentEn": "Big Bro",
+        "sectionCn": "櫃檯",
+        "sectionEn": "front"
       }
     ]
   },
@@ -6787,10 +6963,22 @@
       "name": "瑞絲主席",
       "tenantId": null
     },
+    "trigger":
+      {
+        "name": "小明",
+        "departmentCn": "大兄弟",
+        "departmentEn": "Big Bro",
+        "sectionCn": "櫃檯",
+        "sectionEn": "front"
+      },
     "attachment": [
       {
         "file": "8207917ec64e4268980790839fa6bb7d",
-        "uploadDate": "2023-11-14 15:29:59"
+        "uploadDate": "2023-11-14 15:29:59",
+        "departmentCn": "大兄弟",
+        "departmentEn": "Big Bro",
+        "sectionCn": "櫃檯",
+        "sectionEn": "front"
       }
     ]
   },
@@ -7258,10 +7446,22 @@
       "name": "Carol Chen",
       "tenantId": null
     },
+    "trigger":
+      {
+        "name": "小明",
+        "departmentCn": "大兄弟",
+        "departmentEn": "Big Bro",
+        "sectionCn": "櫃檯",
+        "sectionEn": "front"
+      },
     "attachment": [
       {
         "file": "dcdcdfd619f045e698a67b80d9cfe982",
-        "uploadDate": "2023-11-14 15:07:05"
+        "uploadDate": "2023-11-14 15:07:05",
+        "departmentCn": "大兄弟",
+        "departmentEn": "Big Bro",
+        "sectionCn": "櫃檯",
+        "sectionEn": "front"
       }
     ]
   },
@@ -7295,6 +7495,14 @@
       "name": "Carol Chen",
       "tenantId": null
     },
+    "trigger":
+      {
+        "name": "小明",
+        "departmentCn": "大兄弟",
+        "departmentEn": "Big Bro",
+        "sectionCn": "櫃檯",
+        "sectionEn": "front"
+      },
     "attachment": null
   }
 ]

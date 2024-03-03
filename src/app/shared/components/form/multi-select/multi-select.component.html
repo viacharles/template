@@ -1,19 +1,20 @@
 <div class="multi-select p-relative">
   <input #tInput class="d-none" type="checkbox" [id]="this.id" [(ngModel)]="this.showDropdown" [disabled]="this.disabled">
-  <label class="w-100 h-auto input d-flex border-grey-iron pe-pointer" [for]="this.id">
+  <label class="w-100 h-auto input d-flex pe-pointer" [class.error]="this.isError" [for]="this.id" >
     <div class="w-100 h-auto overflow-auto d-flex flex-wrap"
-    *ngIf="this.checkedOptions?.length;else tPlaceholder">
-      <div class="select-label p-relative d-flex align-items-end bg-green-middle text-white w-fit ml-1 text-nowrap"
+    *ngIf="!!this.checkedOptions?.length; else tPlaceholder">
+    <!-- 已選取的項目 -->
+      <div class="select-label p-relative d-flex align-items-end text-grey-black border-grey-iron w-fit ml-1 text-nowrap"
       *ngFor="let label of this.checkedOptions"
-      (click)="this.cancelSelect(label)">
-        {{label.nameI18n}}
-        <em class="icon-cancel p-absolute ml-1"></em>
+      (click)="this.cancelSelect(label, $event)">
+        {{label.name}}
+        <span class="p-absolute">移除</span>
       </div>
     </div>
     <ng-template #tPlaceholder>
       <p class="ml-3 text-grey-iron">{{this.placeholder}}</p>
     </ng-template>
-    <em class="fas fa-caret-down p-absolute text-grey-black"></em>
+    <em class="fas fa-caret-down p-absolute text-grey-black" [class.up]="this.checkedOptions?.length"></em>
     <em class="icon-cancel-thick p-absolute text-grey-black fs-xs" *ngIf="this.checkedOptions?.length"
     (click)="this.cancelAll($event)"></em>
   </label>
@@ -31,11 +32,13 @@
         </div>
         <!-- 選項組 -->
         <ng-container *ngFor="let option of this.optionsInDropdown;let index = index">
-          <div class=" {{option.show ? 'd-flex': 'd-none'}} flex-row align-items-center ">
-            <app-checkbox [id]="this.id + index" [formControlName]="index" [title]="option.nameI18n"></app-checkbox>
-          </div>
+          <label class=" {{option.show ? 'd-flex': 'd-none'}} flex-row align-items-center pe-pointer" [for]="this.id + index">
+            <app-checkbox [id]="this.id + index" [name]="this.id" [formControlName]="index" [option]="option" [checked]="option.isSelect"></app-checkbox>
+          </label>
         </ng-container>
       </div>
     </div>
   </form>
+  <!-- 錯誤訊息 -->
+  <div class="error-message" *ngIf="this.errorMessage && this.isError">{{this.errorMessage}}</div>
 </div>

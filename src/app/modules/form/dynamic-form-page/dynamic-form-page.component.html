@@ -1,0 +1,228 @@
+<div class="d-flex flex-column justify-content-center w-100">
+  <div class="header-container">
+    <div>
+      <div class="page-header mb-0">
+        <p class="text-grey-black">
+          {{ this.cab?.projectName ?? 'common.project-name' | translate }}
+        </p>
+      </div>
+    </div>
+    <form class="w-100p d-flex">
+      <div class="d-flex flex-row flex-wrap align-items-center justify-content-start w-100">
+        <button type="button"
+          class="btn-flat-line border-green-middle w-42_5 d-flex flex-row justify-content-center align-items-center my-2 text-nowrap"
+          (click)="this.onTempSave()">
+          {{
+          (this.cab &&
+          this.cab.status &&
+          +this.cab.status === this.progressStatus.Draft
+          ? 'cab.save-temp'
+          : 'cab.save-supplement-temp'
+          ) | translate
+          }}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="d-flex align-items-center justify-content-between mt-5">
+  <div class="d-flex align-items-center">
+    <h5 class="fs-lgx">{{ 'cab.question-title' | translate }}</h5>
+    <div class="d-flex align-items-center ml-3" *ngIf="
+        this.cab?.form?.invalid &&
+        this.cab?.form?.touched &&
+        this.isCompleteClicked
+      ">
+      <em class="page-icon icon-exclamation d-flex align-items-center justify-content-center text-white"></em>
+      <p class="text-red-middle fs-xsm ml-1">
+        {{ 'cab.form-undone-error' | translate }}
+      </p>
+    </div>
+  </div>
+  <h5 class="fs-lgx" *ngIf="
+      this.cab && +this.cab!.status! !== this.progressStatus.RequiredForApprove
+    ">
+    {{ 'cab.undone-1' | translate
+    }}<span class="text-red-middle mx-0_5">{{ this.unfinishedFieldCount }}</span>{{ 'cab.undone-2' | translate }}
+  </h5>
+</div>
+<div *ngIf="this.cab?.form" class="background-section pb-2" [formGroup]="this.cab!.form">
+  <app-tabs [tabs]="this.tabs" [isEvenlyDistribute]="false" [tabPadding]="'0 20px'" [tabTextAlign]="'start'"
+    [tabWidth]="'180px'" [formControl]="this.tabForm" [containerPadding]="'0 0'"></app-tabs>
+  <ng-container [ngSwitch]="+this.tabForm.value!" *ngFor="let page of this.question_pages; let pageIndex = index">
+    <ng-container *ngSwitchCase="+pageIndex">
+      <ng-container [ngSwitch]="+page.styleType">
+        <!-- tab : 一般樣式 -->
+        <app-dynamic-form-group-type *ngSwitchCase="+this.pagType.Default" [page]="page" [form]="this.cab?.form"
+          [isCompleteClicked]="this.isCompleteClicked" [progressStatus]="this.cab?.status" [pageIndex]="pageIndex"
+          [answerStatus]="
+            this.cab &&
+            this.cab.status &&
+            +this.cab.status === this.progressStatus.Draft
+              ? this.answerStatus.Draft
+              : this.answerStatus.RequiredForApprove
+          " [submitBody]="this.getBody" (valueChange)="this.onFormValeChange($event)"
+          (remarkValueChange)="this.onRemarkValueChange($event)"></app-dynamic-form-group-type>
+
+        <!-- tab : 基本資料樣式 -->
+        <app-dynamic-form-basic-type *ngSwitchCase="+this.pagType.BasicInfo" [page]="page" [form]="this.cab?.form"
+          [isCompleteClicked]="this.isCompleteClicked" [pageIndex]="pageIndex"
+          (valueChange)="this.onFormValeChange($event)"></app-dynamic-form-basic-type>
+      </ng-container>
+      <!-- 檔案卡 -->
+      <section class="question-card mt-6 py-6 bg-white" *ngIf="
+          this.question_pages
+            ? pageIndex === this.question_pages.length - 1
+            : false
+        ">
+        <div class="question-card__header">
+          <div class="d-flex align-items-center px-8 pb-3">
+            <em class="complete icon-confirmed h-8 w-8 bg-green-light mr-2_5 text-center"
+              *ngIf="this.fileControl?.valid"></em>
+            <em class="d-flex align-items-center justify-content-center mr-2_5 fs-xs fw-7"
+              *ngIf="!this.fileControl?.valid">{{
+              this.question_pages![pageIndex].groups[
+              this.question_pages![pageIndex].groups.length - 1
+              ].order + 1
+              }}</em>
+            <h4>{{ 'cab.upload-ppt' | translate }}</h4>
+          </div>
+        </div>
+        <!-- 檔案卡 : 草稿 -->
+        <app-cab-upload-field *ngIf="
+            +this.cab!.status! !== this.progressStatus.RequiredForApprove;
+            else tRequiredTemp
+          " class="my-6 mx-8" [question_pages]="this.question_pages" [pageIndex]="pageIndex"
+          [fileControl]="this.fileControl" [isCompleteClicked]="this.isCompleteClicked"
+          [isLastFileError]="this.isLastFileError" [isFileSavedLocal]="this.isFileSavedLocal" [cabForm]="this.cab!.form"
+          (onDownloadTempFile)="this.downloadFileTemp()" (onDownloadFile)="this.downloadFile($event)"
+          (onUpload)="this.upload($event)" (onClearFile)="this.clearFile()"></app-cab-upload-field>
+
+        <!-- 檔案卡 : 補件 -->
+        <ng-template #tRequiredTemp>
+          <div
+            class="requiredForApprove question-card__upload d-flex flex-column align-items-center justify-content-center mx-8"
+            [class.error]="
+              this.fileControl.invalid &&
+              this.cab?.form?.touched &&
+              this.isCompleteClicked
+            ">
+            <div class="w-100 d-flex flex-column">
+              <p class="w-100 text-start text-grey-black fs-md mb-2">
+                {{ 'cab.upload-result' | translate }}
+              </p>
+              <ul class="mb-3">
+                <li class="d-flex flex-column" *ngFor="let file of this.cab?.form?.get('attachment')?.value">
+                  <ng-container *ngIf="
+                      file.fileName &&
+                      (file.fieldStatus !== undefined
+                        ? +file.fieldStatus !== this.fieldStatus.Inputting
+                        : true) &&
+                      (this.isOnProgressAnswer(file.type)
+                        ? !this.isFileInputting
+                        : true)
+                    ">
+                    <div class="d-flex">
+                      <label class="bg-{{
+                          this.isOnProgressAnswer(file.type)
+                            ? 'green-light'
+                            : 'grey-middle'
+                        }} text-{{
+                          this.isOnProgressAnswer(file.type)
+                            ? 'green-middle'
+                            : 'grey-dark'
+                        }} fs-xs mr-2 py-0_5 px-1 mb-0_5">{{
+                        (+file.type === this.answerStatus.Draft
+                        ? 'cab.answer-status-draft'
+                        : 'cab.answer-status-supplement'
+                        ) | translate
+                        }}</label>
+                      <div class="d-flex align-items-center">
+                        <p class="fs-xs d-flex align-items-center">
+                          {{ this.getEditorInfo(file) }}
+                        </p>
+                        <em class="icon-trash text-green-middle ml-2 pe-pointer"
+                          *ngIf="this.isOnProgressAnswer(file.type)" (click)="this.clearFile()"></em>
+                      </div>
+                    </div>
+                    <div class="link w d-flex align-items-start text-green-middle mt-1_5 mb-1_5" *ngIf="file.fileName">
+                      <em class="icon-download fs-xs mt-1 mr-2 pe-pointer" (click)="
+                          !this.isFileSavedLocal
+                            ? this.downloadFile({
+                                event: $event,
+                                file: this.latestFile.value.file
+                              })
+                            : null
+                        "></em>
+                      <a class="text-start text-green-middle text-break fs-xsm pe-pointer" (click)="
+                          !this.isFileSavedLocal
+                            ? this.downloadFile({
+                                event: $event,
+                                file: this.latestFile.value.file
+                              })
+                            : null
+                        " [href]="
+                          this.isFileSavedLocal
+                            ? this.latestFile.value.url
+                            : 'javascript:void(0)'
+                        " [download]="this.latestFile.value.fileName">{{ file.fileName }}</a>
+                    </div>
+                  </ng-container>
+                </li>
+              </ul>
+              <button
+                class="btn-flat btn-normal h-10 d-flex align-items-center text-green-middle border-green-middle fw-7 fs-xsm mb-2"
+                *ngIf="
+                  !this.isFileInputting &&
+                  !this.isAlreadyHasFile(this.latestFile.value)
+                " (click)="this.openSupplementUpload()">
+                <em class="icon-add mr-1"></em>
+                {{ 'cab.add-supplement-des' | translate }}
+              </button>
+              <div class="w-100" *ngIf="this.isFileInputting">
+                <p class="w-100 text-start text-grey-black mb-2">
+                  {{ 'cab.remark-supplement' | translate }}
+                </p>
+                <app-cab-upload-field [question_pages]="this.question_pages" [pageIndex]="pageIndex"
+                  [fileControl]="this.fileControl" [isCompleteClicked]="this.isCompleteClicked"
+                  [isLastFileError]="this.isLastFileError" [isFileSavedLocal]="this.isFileSavedLocal"
+                  [cabForm]="this.cab!.form" (onDownloadTempFile)="this.downloadFileTemp()"
+                  (onDownloadFile)="this.downloadFile($event)" (onUpload)="this.upload($event)"
+                  (onClearFile)="this.clearFile()"></app-cab-upload-field>
+                <!-- <div class="w-100 d-flex justify-content-end mt-2">
+                  <button class="btn-flat btn-normal  text-green-middle border-green-middle w-30 h-10" (click)="this.cancel()">{{"common.cancel" | translate}}</button>
+                  <button class="btn-flat bg-green-middle text-white w-30 h-10 ml-3" (click)="this.putFileWithProject()">{{"common.send" | translate}}</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </section>
+    </ng-container>
+  </ng-container>
+
+  <div class="w-100 d-flex justify-content-end mt-6">
+    <button class="btn-flat btn-normal text-green-middle border-green-middle w-30 h-10 fs-xsm px-5" *ngIf="
+        this.tabForm && this.tabForm.value !== null && +this.tabForm.value !== 0
+      " (click)="
+        this.tabForm &&
+          this.tabForm.value !== null &&
+          this.tabForm.setValue(+this.tabForm.value - 1)
+      ">
+      {{ 'common.last-page' | translate }}
+    </button>
+    <button class="btn-flat bg-green-middle w-30 h-10 fs-xsm px-5 ml-2" *ngIf="!this.isLastPage" (click)="
+        this.tabForm &&
+          this.tabForm.value !== null &&
+          this.tabForm.setValue(+this.tabForm.value + 1)
+      ">
+      {{ 'common.next-page' | translate }}
+    </button>
+    <button class="btn-flat bg-green-middle w-30 h-10 fs-xsm px-5 ml-2" *ngIf="this.isLastPage" (click)="this.submit()">
+      {{ 'common.complete' | translate }}
+    </button>
+  </div>
+</div>
+
+<app-go-top-button (click)="this.$window.scrollToTopSubject.next()"></app-go-top-button>

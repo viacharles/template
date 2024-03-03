@@ -1,20 +1,23 @@
-import {DatePipe} from '@angular/common';
-import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {UnSubOnDestroy} from '@utilities/abstract/unSubOnDestroy.abstract';
-import {TimeHelper} from '@utilities/helper/time-helper';
+import { DatePipe } from '@angular/common';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { UnSubOnDestroy } from '@utilities/abstract/unSubOnDestroy.abstract';
+import { TimeHelper } from '@utilities/helper/time-helper';
+import { IRangeDate } from '@utilities/interface/common.interface';
 import moment from 'moment';
-import {BehaviorSubject, takeUntil} from 'rxjs';
+import { BehaviorSubject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-calendar',
   templateUrl: './calendar.component.html',
   styleUrls: ['./calendar.component.scss'],
 })
-export class CalendarComponent extends UnSubOnDestroy {
+export class CalendarComponent extends UnSubOnDestroy implements OnInit {
+  /** 是否為範圍選取 */
+  @Input() isRange = false;
   /** 是否只限本月 */
   @Input() thisMonthLimit = false;
   /** 選取的日期 */
-  @Output() select = new EventEmitter<string>();
+  @Output() select = new EventEmitter<string | IRangeDate>();
 
   constructor(private datePipe: DatePipe) {
     super();
@@ -22,6 +25,7 @@ export class CalendarComponent extends UnSubOnDestroy {
 
   /** 月內7天分一組的日期數字 */
   public datesInMonth: string[][] = [];
+  public yearMonths: string[][] = [];
   /** 日曆目前的月份 */
   public current = new Date().toISOString();
   /** 日曆目前的月份訂閱主題 */
@@ -31,8 +35,17 @@ export class CalendarComponent extends UnSubOnDestroy {
   /** hover到的日期 */
   public hoverDate = '';
   public selectedDate = '';
+  public selectedMonth = '';
+  /** 選取的範圍日期 */
+  public selectRange = {
+    start: '',
+    end: '',
+  };
+  /** 日期模式 */
+  public isDateType = true;
+  private readonly format = 'yyyy/MM/dd';
 
-  get title(): string { 
+  get title(): string {
     const current = this.current.split('/');
     return `${current[0]}年${current[1]}月`;
   }
@@ -40,10 +53,8 @@ export class CalendarComponent extends UnSubOnDestroy {
   ngOnInit(): void {
     this.current$.pipe(takeUntil(this.onDestroy$)).subscribe(date => {
       this.current = date;
-      this.datesInMonth = this.chunkByNumber(
-        this.getDatesInMonth(this.current),
-        7
-      );
+      this.datesInMonth = this.chunkByNumber(this.getDatesInMonth(this.current), 7);
+      this.yearMonths = this.chunkByNumber(this.getMonths(), 3)
     });
     this.switch(0, 0);
   }
@@ -56,9 +67,41 @@ export class CalendarComponent extends UnSubOnDestroy {
     this.hoverDate = date;
   }
 
-  public onSelect(date: string) {
-    this.selectedDate = this.datePipe.transform(date, 'yyyy/MM/dd') as string;
-    this.select.emit(this.selectedDate);
+  public isBetween(date: string): boolean {
+    const start = TimeHelper.formatMoment(this.selectRange.start);
+    const hover = TimeHelper.formatMoment(this.hoverDate);
+    return TimeHelper.formatMoment(date).isBetween(start, hover);
+  }
+
+  public isBeforeStart(date: string): boolean {
+    return TimeHelper.formatMoment(this.selectRange.start).isAfter(TimeHelper.formatMoment(date))
+  }
+
+  public onSelectDate(date: string) {
+    this.selectedDate = date;
+    if (this.isRange) {
+      if (!this.selectRange.start) {
+        this.selectRange.start = this.selectedDate;
+      } else if (this.selectRange.start === this.selectedDate) {
+        this.selectRange.start = '';
+      } else {
+        this.selectRange.end = this.selectedDate;
+        this.select.emit(this.selectRange);
+      };
+    } else {
+      this.select.emit(this.selectedDate);
+    };
+  }
+
+  public onSelectMonth(event: Event, month: string) {
+    event.stopPropagation();
+    this.isDateType = !this.isDateType;
+    this.switch(0, (+month) - (new Date(this.current).getMonth() + 1));
+  }
+
+  public toYearType(event: Event): void {
+    event.stopPropagation();
+    this.isDateType = false;
   }
 
   /**
@@ -79,7 +122,7 @@ export class CalendarComponent extends UnSubOnDestroy {
     const Result = [];
     for (let i = 0; i < array.length; i = i + base) {
       Result.push(array.slice(i, i + base));
-    }
+    };
     return Result;
   }
 
@@ -100,9 +143,13 @@ export class CalendarComponent extends UnSubOnDestroy {
     );
     while (Dates.length < TimeHelper.getOffset(Start, End, 'day')) {
       Dates.push(
-          TimeHelper.formatSpecDate(Start, Dates.length + 1, 'day'),
+        TimeHelper.formatSpecDate(Start, Dates.length + 1, 'day'),
       );
-    }
+    };
     return Dates;
+  }
+
+  private getMonths(): string[] {
+    return Array.from(Array(12).keys()).map(num => `${num + 1}`);
   }
 }

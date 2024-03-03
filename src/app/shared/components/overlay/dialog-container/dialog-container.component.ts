@@ -12,6 +12,9 @@ import {IDialog} from '@utilities/interface/overlay.interface';
 export class DialogContainerComponent<T = any> implements IDialog<T> {
   @Input() noDefaultStyle?: boolean;
   @Input() padding = '';
+  @Input() width = '';
+  @Input() maxWidth = '';
+  @Input() minWidth = '';
   @Output() closed = new EventEmitter<boolean>();
 
   public component: any;

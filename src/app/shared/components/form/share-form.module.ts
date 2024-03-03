@@ -15,6 +15,11 @@ import { MultiSelectComponent } from './multi-select/multi-select.component';
 import { DirectiveModule } from '@shared/directives/directive.module';
 import { CheckboxComponent } from './checkbox/checkbox.component';
 import { CheckboxSetComponent } from './checkbox-set/checkbox-set.component';
+import { SharedModule } from '@shared/shared.module';
+import { InputComponent } from './input/input/input.component';
+import { TextButtonComponent } from './buttons/text-button/text-button.component';
+import { DynamicInputListComponent } from './input/dynamic-input-list/dynamic-input-list.component';
+import { RadioSetComponent } from './radio-set/radio-set.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +34,11 @@ import { CheckboxSetComponent } from './checkbox-set/checkbox-set.component';
     ToggleComponent,
     MultiSelectComponent,
     CheckboxComponent,
-    CheckboxSetComponent
+    CheckboxSetComponent,
+    InputComponent,
+    TextButtonComponent,
+    DynamicInputListComponent,
+    RadioSetComponent
   ],
   exports: [
     SearchInputComponent,
@@ -43,8 +52,21 @@ import { CheckboxSetComponent } from './checkbox-set/checkbox-set.component';
     ToggleComponent,
     MultiSelectComponent,
     CheckboxComponent,
-    CheckboxSetComponent
+    CheckboxSetComponent,
+    FormsModule,
+    ReactiveFormsModule,
+    InputComponent,
+    TextButtonComponent,
+    DynamicInputListComponent,
+    RadioSetComponent
   ],
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, TranslateModule, DirectiveModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    TranslateModule,
+    DirectiveModule,
+    SharedModule,
+  ],
 })
 export class ShareFormModule {}

@@ -5,7 +5,7 @@ import {
   RouterStateSnapshot,
 } from '@angular/router';
 
-import { Observable, take } from 'rxjs';
+import { Observable, take, timer } from 'rxjs';
 
 import { AuthenticationService } from './services/authentication.service';
 import { UsersService } from './services/users.service';
@@ -203,9 +203,7 @@ export class NoAuthGuard {
           this.auth.doLogout('quiet');
           if (!environment.production)
             console.log(`path: ${state.url}, LOGOUT`);
-          setTimeout(() => {
-            window.location.reload();
-          }, 0);
+            timer(100).pipe(take(1)).subscribe(() => window.location.reload());
           return observer.next(true);
         }
 
@@ -221,9 +219,7 @@ export class NoAuthGuard {
           this.auth.doLogout('quiet');
           if (!environment.production)
             console.log(`path: ${state.url}, LOGOUT`);
-          setTimeout(() => {
-            window.location.reload();
-          }, 0);
+            timer(100).pipe(take(1)).subscribe(() => window.location.reload());
           return observer.next(true);
         }
 

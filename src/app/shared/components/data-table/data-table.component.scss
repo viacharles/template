@@ -3,6 +3,7 @@
 :host {
   // color
   --theme-color: #44b787;
+  --theme-text-color: #0c8553;
   --focus: #ef6149;
   --default-header-text: #6d6d6d;
   --default-text: #6d6d6d;
@@ -28,7 +29,7 @@
     min-width: calc(100% - 60px);
     margin-right: 5px;
     border-collapse: separate;
-    border-spacing: 0 0.325rem;
+    border-spacing: 0 0.1rem;
 
     thead {
       position: sticky;
@@ -135,11 +136,8 @@
             filter: drop-shadow(6px 0px 4px rgba(0, 0, 0, 0.1));
 
             & td.title {
-              border-top: 1px solid #c8c7c7;
-              border-bottom: 1px solid #c8c7c7;
-
               p {
-                color: var(--theme-color) !important;
+                color: var( --theme-text-color) !important;
                 background-color: 'red';
 
                 &:first-of-type {
@@ -155,8 +153,7 @@
 
               &:first-of-type {
                 color: var(--theme-color);
-                border: 1px solid #c8c7c7;
-                border-right: none;
+                border-left: 6px solid var(--primary-color);
               }
 
               &:last-of-type {
@@ -192,7 +189,7 @@
             bottom: -20px;
             left: 50%;
             transform: translateX(-50%);
-            padding: 4.4px 4px 4px 4px;
+            padding: 3px 5px 3px 5px;
             border-radius: 4px;
 
             p {
@@ -265,7 +262,6 @@
             position: sticky;
             z-index: 1;
             left: 0;
-            border-radius: 0 0 0 10px;
             border-left: 1px solid #c8c7c7;
 
             &.showFrontShadow::after {
@@ -462,6 +458,7 @@ h6 {
           padding-right: 0.5rem;
           width: 100%;
           text-align: left;
+          font-weight: 500;
 
           &:hover {
             background-color: #f5f5f5;
@@ -603,7 +600,7 @@ h6 {
 .filter-icon {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: start;
 
   &.hasFilter span {
     border-bottom: 1.8px solid var(--theme-color);

@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import {
   Component,
   ElementRef,
@@ -13,12 +14,15 @@ import {
   CustomForm,
   getFormProvider,
 } from '@utilities/abstract/customForm.abstract';
+import { fadeEnterAndHideOutSmaller } from '@utilities/helper/animations.helper';
+import { IRangeDate } from '@utilities/interface/common.interface';
 import {takeUntil} from 'rxjs';
 
 @Component({
   selector: 'app-date-picker',
   templateUrl: './date-picker.component.html',
   styleUrls: ['./date-picker.component.scss'],
+  animations: [fadeEnterAndHideOutSmaller()],
   providers: [getFormProvider(DatePickerComponent)],
 })
 export class DatePickerComponent extends CustomForm<string> implements OnInit {
@@ -27,12 +31,14 @@ export class DatePickerComponent extends CustomForm<string> implements OnInit {
   ) {
     if (calendar) {
       this.setCalendarPosition(calendar.nativeElement);
-    }
+    };
   }
   /** 是否為範圍日期 */
   @Input() isRange = false;
   /** 值字體大小 */
   @Input() valueFontSize = '';
+  /** placeholder */
+  @Input() placeholder = 'YYYY/MM/DD';
   /** placeholder 字體大小 */
   @Input() placeholderFontSize = '';
   /** 是否欄位驗證錯誤 */
@@ -47,30 +53,39 @@ export class DatePickerComponent extends CustomForm<string> implements OnInit {
   constructor(
     private selfElement: ElementRef,
     private renderer: Renderer2,
-    private $window: WindowService
+    private $window: WindowService,
+    private datePipe: DatePipe
   ) {
     super();
   }
 
   public show = false;
+  private readonly format = 'yyyy/MM/dd';
 
   ngOnInit(): void {
     this.$window.click$.pipe(takeUntil(this.onDestroy$)).subscribe(click => {
       if (!this.selfElement.nativeElement.contains(click.target)) {
         this.show = false;
-      }
+      };
     });
+    this.placeholder = this.isRange ? 'YYYY/MM/DD ~ YYYY/MM/DD' : 'YYYY/MM/DD';
   }
 
   public showCalendar(): void {
     if (!this.isDisabled) {
       this.show = true;
       this.calendarShow.emit(this.show);
-    }
+    };
   }
 
-  public select(date: string) {
+  public clear(event: Event): void {
+    event.stopPropagation();
+    this.notifyValueChange('');
+  }
+
+  public select(select: string | IRangeDate) {
     this.show = false;
+    const date = (this.isRange ? this.datePipe.transform((select as IRangeDate).start, this.format) + ' ~ ' + this.datePipe.transform((select as IRangeDate).end, this.format) : this.datePipe.transform(select as string, this.format) as string);
     this.notifyValueChange(date);
     this.selectDate.emit(date);
     this.calendarShow.emit(this.show);

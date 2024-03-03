@@ -8,6 +8,7 @@ import {
   SimpleChanges,
 } from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
+import { take, timer } from 'rxjs';
 
 @Directive({
   selector: '[appPassiveTooltip]',
@@ -70,9 +71,8 @@ export class PassiveTooltipDirective implements AfterViewInit, OnChanges {
           `${this.self.nativeElement.clientHeight}px`
         );
         this.renderer.setStyle(this.toolTipElement, 'opacity', '0');
-        setTimeout(() => {
-          this.renderer.setStyle(this.toolTipElement, 'display', 'none');
-        }, 300); // close animation time 0.3s
+        // close animation time 0.3s
+        timer(300).pipe(take(1)).subscribe(() => this.renderer.setStyle(this.toolTipElement, 'display', 'none'));
       }
     });
     this.showOrHide();

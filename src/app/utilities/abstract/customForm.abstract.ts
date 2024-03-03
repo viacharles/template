@@ -43,8 +43,9 @@ export class CustomForm<T = any>
     isFirstChange: boolean;
   }): void {}
 
+  /** 傳入的 value 如果不是 undefined，就使用原本 model 值 */
   protected notifyValueChange(value?: T): void {
-    this.model = value ?? this.model;
+    this.model = value !== undefined ? value : this.model;
     if (this.onChange) {
       this.onChange(this.model);
     }

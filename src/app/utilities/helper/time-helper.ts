@@ -79,7 +79,7 @@ export class TimeHelper {
     end: moment.MomentInput,
     unit: moment.DurationInputArg2
   ): number {
-    const Offset = Math.abs(moment(start, ['YYYY-MM-DD', 'YYYY/MM/DD', 'YYYYMMDD']).diff(moment(end), unit));
+    const Offset = Math.abs(moment(start, ['YYYY-MM-DD', 'YYYY/MM/DD', 'YYYYMMDD']).diff(moment(end, ['YYYY-MM-DD', 'YYYY/MM/DD', 'YYYYMMDD']), unit));
     return !Offset ? Offset : Offset + 1;
   }
 

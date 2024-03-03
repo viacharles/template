@@ -1,5 +1,5 @@
-<label class="switch" [for]="this.id">
-  <input class="d-none" type="checkbox" [id]="this.id" [value]="this.value"
-    [checked]="this.model || this.value" (change)="this.toCheck($event)">
+<input class="d-none" type="checkbox" [id]="this.id" [value]="this.value" [disabled]="this.disabled"
+[checked]="this.model || this.value" (change)="this.toCheck($event)">
+<label class="toggle" [for]="this.id">
   <span></span>
 </label>

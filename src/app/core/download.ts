@@ -7,7 +7,7 @@ import {
 } from '@angular/common/http';
 import {ELoadingStatus} from '@utilities/enum/common.enum';
 import {Observable} from 'rxjs';
-import {distinctUntilChanged, scan} from 'rxjs/operators';
+import {distinctUntilChanged, scan, take} from 'rxjs/operators';
 
 function isHttpResponse<T>(event: HttpEvent<T>): event is HttpResponse<T> {
   return event.type === HttpEventType.Response;

@@ -78,15 +78,6 @@ export enum ECabFormProcess {
   BackSubmitForReview,
 }
 
-/** 欄位類型 */
-export enum EFieldType {
-  Select = 'select',
-  MultiSelect = 'multiselect',
-  TextArea = 'textarea',
-  Input = 'input',
-  DatePicker = 'datepicker',
-}
-
 /** 欄位狀態 */
 export enum EFieldStatus {
   /** 輸入中 */
@@ -118,4 +109,29 @@ export enum EFileType {
 /** 使用者狀態 */
 export enum EUserStatus {
   Active = 'ACTIVE',
+}
+
+/** 排序方式 */
+export enum ESort {
+  /** 順冪 */
+  Asc = 'asc',
+  /** 降冪 */
+  Desc = 'desc',
+}
+
+/** 樣式種類 */
+export enum EColorType {
+  /** 主色 */
+  Primary = 'primary',
+  /** 副色 */
+  Secondary = 'secondary',
+  /** 警示色 */
+  Warn = 'warn',
+}
+
+/** 尺寸 */
+export enum ESize {
+  Small = 's',
+  Medium = 'm',
+  Large = 'l'
 }

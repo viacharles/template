@@ -735,10 +735,22 @@
       "name": "Carol Chen",
       "tenantId": null
     },
+    "trigger":
+      {
+        "name": "小明",
+        "departmentCn": "大兄弟",
+        "departmentEn": "Big Bro",
+        "sectionCn": "櫃檯",
+        "sectionEn": "front"
+      },
     "attachment": [
       {
         "file": "ce7bf37a370548758d381673efa235ae",
-        "uploadDate": "2023-11-16 15:09:32"
+        "uploadDate": "2023-11-16 15:09:32",
+        "departmentCn": "大兄弟",
+        "departmentEn": "Big Bro",
+        "sectionCn": "櫃檯",
+        "sectionEn": "front"
       }
     ]
   }

@@ -30,6 +30,8 @@ export class AppComponent extends UnSubOnDestroy implements OnInit {
   componentLoading$ = this.loader.miniLoading$;
   private pageIsSubscribed = false;
   private sidebarWidthObservable = new Subscription();
+  /** 儲存 setTimeout */
+  private setTimeouts: any = [];
 
   constructor(
     private loader: LoaderService,
@@ -46,7 +48,7 @@ export class AppComponent extends UnSubOnDestroy implements OnInit {
   }
 
   ngOnInit() {
-    setTimeout(() => {
+    this.setTimeouts.push(setTimeout(() => {
       // guard 為了在url上加版號連打兩次navigate，所以此處需延遲
       this.translate.addLangs(['en', 'zh']);
       this.translate.setDefaultLang('zh');
@@ -61,10 +63,11 @@ export class AppComponent extends UnSubOnDestroy implements OnInit {
       );
 
       setTheme('bs4');
-    }, 200);
+    }, 200));
     const appTitle = this.titleService.getTitle();
     this.router.events
       .pipe(
+        takeUntil(this.onDestroy$),
         filter(event => event instanceof NavigationEnd),
         map((event: any) => event as NavigationEnd),
         tap(event => {
@@ -89,6 +92,10 @@ export class AppComponent extends UnSubOnDestroy implements OnInit {
       .subscribe((val: string) => {
         this.titleService.setTitle(val);
       });
+  }
+
+  protected override onDestroy(): void {
+    this.setTimeouts.forEach((s: any) => clearTimeout(s)) ;
   }
 
   @HostListener('click', ['$event']) windowClick(event: Event) {
@@ -123,7 +130,7 @@ export class AppComponent extends UnSubOnDestroy implements OnInit {
         this.sidebarWidthObservable = this.$layout.sidebarWidth$
           .pipe(takeUntil(this.onDestroy$))
           .subscribe(width => {
-            setTimeout(() => {
+            this.setTimeouts.push(setTimeout(() => {
               if (this.tOverlay) {
                 this.renderer.setStyle(
                   this.tOverlay?.nativeElement,
@@ -131,7 +138,7 @@ export class AppComponent extends UnSubOnDestroy implements OnInit {
                   `calc(100vw - ${width}px)`
                 );
               }
-            }, 0);
+            }, 0));
           });
       } else {
         this.sidebarWidthObservable.unsubscribe();

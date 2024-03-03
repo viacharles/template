@@ -8,8 +8,8 @@ import { IOption } from '@utilities/interface/common.interface';
   styleUrls: ['./normal-select-presentation-section.component.scss']
 })
 export class NormalSelectPresentationSectionComponent {
-  @Input() options: IOption[] = [];
-  
+  @Input() options: IOption<string>[] = [];
+
   public configForm = new FormGroup({
     disable: new FormControl(false)
   })

@@ -7,7 +7,7 @@ import {
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { StorageMap } from '@ngx-pwa/local-storage';
-import { catchError, EMPTY, mergeMap, Observable, retry, tap, throwError } from 'rxjs';
+import { catchError, EMPTY, mergeMap, Observable, retry, take, tap, throwError } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { AuthenticationService } from './services/authentication.service';
 import { Router } from '@angular/router';
@@ -34,6 +34,7 @@ export class AuthInterceptor implements HttpInterceptor {
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
     return this.$auth.getTokens().pipe(
+      take(1),
       mergeMap(data => {
         if (req.url !== '/api/auth/refresh') {
           req = req.clone({
@@ -91,6 +92,7 @@ export class AuthInterceptor implements HttpInterceptor {
     return this.$auth
       .refresh()
       .pipe(
+        take(1),
         mergeMap(token => {
           request = request.clone({
             setHeaders: {

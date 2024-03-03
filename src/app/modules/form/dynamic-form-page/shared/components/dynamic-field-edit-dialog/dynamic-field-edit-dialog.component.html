@@ -1,0 +1,36 @@
+<app-dialog-container [width]="'70%'" [maxWidth]="'673px'" [minWidth]="'350px'">
+  <h4 id="title" class="">
+    編輯題目: XXXXXXXXXXXXX
+  </h4>
+  <form id="body" class="w-100 d-flex flex-wrap px-3" >
+    <div class="w-100 d-flex align-items-center mr-2 mb-3">
+      <p class="mr-2">必填</p>
+      <app-toggle></app-toggle>
+    </div>
+    <div class="w-45p mr-3 mb-3">
+      <p>題目標題</p>
+      <app-input></app-input>
+    </div>
+    <div class="w-45p mr-3 mb-3">
+      <p>副標題說明文字</p>
+      <app-input></app-input>
+    </div>
+    <div class="w-45p mr-3 mb-3">
+      <p>欄位內說明文字</p>
+      <app-input></app-input>
+    </div>
+    <div class="w-45p mr-3 mb-3">
+      <p>欄位類型</p>
+      <app-select [options]="this.fieldTypeList"></app-select>
+    </div>
+    <div class="w-100 mr-2 mb-3">
+      <p>驗證</p>
+      <app-checkbox-set [options]="this.validationOptions" [name]="'validations'"></app-checkbox-set>
+    </div>
+    <div class="w-100 mr-3 mb-3">
+      <p>選項</p>
+      <app-dynamic-input-list></app-dynamic-input-list>
+    </div>
+
+  </form>
+</app-dialog-container>

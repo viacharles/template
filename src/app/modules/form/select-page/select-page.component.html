@@ -3,6 +3,9 @@
     <app-bread-crumbs></app-bread-crumbs>
     {{ 'nav.select' | translate }}
   </div>
+  <div class="mb-5">
+    <p>{{'繼承 ControlValueAccessor，可直接與 ReactiveForm 使用。'}}</p>
+  </div>
 </div>
 <div class="background-section pb-40 pt-3">
   <!-- 下拉單選 -->
@@ -10,9 +13,8 @@
   <!-- 下拉多選 -->
   <app-presentation-section [title]="'下拉多選'" [tabName]="'\< app-multi-select >'">
     <div id="config">
-      <app-toggle></app-toggle>
     </div>
-    <ul class="d-flex flex-row flex-wrap">
+    <ul class="d-flex flex-row align-items-start flex-wrap">
       <li class="d-flex align-items-start mr-4 mb-3">
         <p class="w-12 mr-3 mt-3 text-nowrap">預設</p>
         <app-multi-select class="w-56" [options]="this.options" [id]="'multi-select-enable'"
@@ -33,41 +35,61 @@
   <app-presentation-section [title]="'核取方塊'" [tabName]="'\< app-checkbox-set >'">
     <div class="w-40p d-flex align-items-start">
       <p class="w-12 mr-3 text-nowrap">預設</p>
-      <app-checkbox-set [options]="this.options" [id]="'checkbox-enable'" [hasOtherInput]="true" ></app-checkbox-set>
+      <app-checkbox-set [options]="this.options" [id]="'checkbox-enable'" [name]="'checkbox-enable'" [hasOtherInput]="true"></app-checkbox-set>
     </div>
     <div class="w-40p d-flex align-items-start">
       <p class="w-12 mr-3 text-nowrap">不啟用</p>
-      <app-checkbox-set [options]="this.options" [disabled]="true" [id]="'checkbox-disabled'" [hasOtherInput]="true" ></app-checkbox-set>
+      <app-checkbox-set [options]="this.options" [disabled]="true" [id]="'checkbox-disabled'" [name]="'checkbox-disabled'"
+        [hasOtherInput]="true"></app-checkbox-set>
     </div>
     <div class="w-20p d-flex align-items-start">
       <p class="w-12 mr-3 text-nowrap">無資料</p>
-      <app-checkbox-set [options]="[]" [id]="'checkbox-no-data'"></app-checkbox-set>
+      <app-checkbox-set [options]="[]" [id]="'checkbox-no-data'" [name]="'checkbox-no-data'"></app-checkbox-set>
     </div>
   </app-presentation-section>
   <!-- 單選按鈕  -->
   <app-presentation-section [title]="'單選按鈕'" [tabName]="'\< app-radio >'">
     <div class="w-40p d-flex align-items-start">
       <p class="w-12 mr-3 text-nowrap">預設</p>
-      <app-radio [options]="this.options" [hasOtherInput]="true" [memo]="'其他說明'"></app-radio>
+      <app-radio-set [options]="this.options" [memo]="'其他說明'" name="radio-enable"></app-radio-set>
     </div>
     <div class="w-40p d-flex align-items-start">
       <p class="w-12 mr-3 text-nowrap">不啟用</p>
-      <app-radio [options]="this.options" [disabled]="true" [hasOtherInput]="true" [memo]="'其他說明'"></app-radio>
+      <app-radio-set [options]="this.options" [disabled]="true" [memo]="'其他說明'" name="radio-disable"></app-radio-set>
     </div>
     <div class="w-20p d-flex align-items-start">
       <p class="w-12 mr-3 text-nowrap">無資料</p>
-      <app-radio [options]="[]" [noData]="true"></app-radio>
+      <app-radio-set [options]="[]" [noData]="true" name="radio-no-data"></app-radio-set>
     </div>
   </app-presentation-section>
   <!-- 日期選擇器  -->
-  <app-presentation-section [title]="'日期選擇器'" [tabName]="'\< app-date-picker >'">
-    <div class="w-30p d-flex align-items-start">
-      <p class="w-12 mr-3 text-nowrap">單點</p>
-      <app-date-picker ></app-date-picker>
+  <app-presentation-section [title]="'日期選擇器'" [des]="'使用套件 moment.js。'" [tabName]="'\< app-date-picker >'">
+    <div class="d-flex flex-wrap w-100">
+      <div class="w-30p d-flex align-items-center mr-5 mb-2">
+        <p class="w-12 mr-3 text-nowrap">單日</p>
+        <app-date-picker class=w-100></app-date-picker>
+      </div>
+      <div class="w-40p d-flex align-items-center mr-5 mb-2">
+        <p class="mr-3 text-nowrap">範圍日期</p>
+        <app-date-picker class="w-100" [isRange]="true"></app-date-picker>
+      </div>
+      <div class="w-40p d-flex align-items-center">
+        <p class="mr-3 text-nowrap">不啟用</p>
+        <app-date-picker class="w-100" [isDisabled]="true"></app-date-picker>
+      </div>
     </div>
-    <div class="w-30p d-flex align-items-start">
-      <p class="w-12 mr-3 text-nowrap">期間</p>
-      <app-date-picker ></app-date-picker>
+  </app-presentation-section>
+  <!-- 開關  -->
+  <app-presentation-section [title]="'開關'" [tabName]="'\< app-toggle >'">
+    <div class="d-flex flex-wrap w-100">
+      <div class="w-30p d-flex align-items-center">
+        <p class="w-12 mr-3 text-nowrap">預設</p>
+        <app-toggle [id]="'toggle-enable'"></app-toggle>
+      </div>
+      <div class="w-40p d-flex align-items-center ml-5">
+        <p class="mr-3 text-nowrap">不啟用</p>
+        <app-toggle [id]="'toggle-disable'" [disabled]="true"></app-toggle>
+      </div>
     </div>
   </app-presentation-section>
 </div>

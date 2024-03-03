@@ -1,0 +1,12 @@
+<form [formGroup]="this.listForm">
+  <ul [formArrayName]="'list'">
+    <li *ngFor="let item of this.listForm.controls.list.controls;let index = index" class="d-flex">
+      <p class="mr-2">{{index+1}}.</p>
+      <app-input [size]="this.sizeType.Small" [formControlName]="index" />
+      <em class="icon-cencel"></em>
+    </li>
+  </ul>
+</form>
+<em class="icon-add "></em>
+
+

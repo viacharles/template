@@ -6,4 +6,7 @@
   class="textarea w-100"
   (ngModelChange)="this.resize(tTextArea)"
   [disabled]="this.disabled"
+  [class.error]="this.isError"
 ></textarea>
+<!-- 錯誤訊息 -->
+<div class="error-message" *ngIf="this.errorMessage && this.isError">{{this.errorMessage}}</div>

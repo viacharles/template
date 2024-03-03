@@ -1,0 +1,57 @@
+@import "color";
+button {
+  color: $grey-dark;
+  letter-spacing: 1px;
+  border-radius: 6px;
+  outline: none;
+  white-space: nowrap;
+  border: none;
+  background-color: transparent;
+  box-sizing: border-box;
+  transition: 0.05s;
+  padding-bottom: 2px;
+  &.hasFrame {
+    border: 1px solid transparent;
+    border-bottom-width: 2px;
+    border-right-width: 2px;
+    padding-bottom: 0;
+    &:hover {
+      background-color: $white;
+    }
+  }
+
+  &:hover {
+    filter: brightness(90%) contrast(130%);
+    background-color: $grey-light;
+  }
+
+  &.primary {
+    &:hover {
+      color: var(--primary-text-color);
+      border-color: var(--primary-color) !important;
+    }
+  }
+
+  &.warn {
+    &:hover {
+      color: var(--warn-color);
+      border-color: var(--warn-color) !important;
+    }
+  }
+
+
+  &.s {
+    padding-top: 0;
+    padding-right: 0.3rem;
+    padding-left: 0.3rem;
+    font-weight: 400;
+    font-size: 1rem;
+    border-radius: var(--form-radius-s);
+  }
+  &.m {
+    padding: 1rem 1.3rem;
+    font-weight: 400;
+    font-size: 1.1rem;
+    border-radius: var(--form-radius-m);
+  }
+}

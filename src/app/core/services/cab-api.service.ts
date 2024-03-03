@@ -16,8 +16,8 @@ import {
   ICabSupplementReq,
 } from '@utilities/interface/api/cab-api.interface';
 import {Observable} from 'rxjs';
-import {ECab} from 'src/app/modules/cab/shared/enum/cab.enum';
 import {ERole} from '@utilities/enum/common.enum';
+import { ECab } from 'src/app/modules/form/dynamic-form-page/shared/enum/cab.enum';
 
 @Injectable({
   providedIn: 'root',

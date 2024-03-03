@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {NavigationEnd, NavigationStart, Router} from '@angular/router';
 import {IRouterHistory} from '@utilities/interface/common.interface';
-import {BehaviorSubject, filter, map} from 'rxjs';
+import {BehaviorSubject, filter, map, takeUntil} from 'rxjs';
 import {environment} from 'src/environments/environment.prod';
 import {LayoutService} from './layout.service';
 
@@ -28,7 +28,6 @@ export class RouterService {
       .subscribe(event => {
         this.currentUrl = (event as any).url;
         this.$layout.warningBeforeNavigateSubject.next('');
-        this.$layout.hideSidebarSubject.next(false);
         this.handleRouterEvent(event);
       });
   }

@@ -12,6 +12,11 @@ em {
   &:hover {
     opacity: 0.7;
   }
+  &.no-func {
+    &:hover {
+      opacity: 1;
+    }
+  }
 }
 
 // hover 標籤
@@ -203,4 +208,43 @@ app-bread-crumbs {
 
 .text-start {
   text-align: start;
+}
+
+.nav-link {
+  color: #635d5d !important;
+}
+
+.page-header {
+  white-space: nowrap;
+  font-weight: 700;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  line-height: 3rem;
+  color: $grey-black;
+  text-align: start;
+  margin-top: 3rem;
+}
+
+.form-control,
+textarea {
+  &:focus {
+    border-color: $primary-color !important;
+    box-shadow: 0 0 3px 0 $primary-color !important;
+  }
+  &:disabled {
+    background-color: $grey-light !important;
+  }
+}
+
+/* for light-gray area in background (not include header text) */
+.background-section {
+  // background-color: $dark-background;
+  width: 100%;
+  padding: 10px 45px;
+}
+
+a {
+  &:hover {
+    text-decoration: none;
+  }
 }

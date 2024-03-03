@@ -1,0 +1,21 @@
+@import 'color';
+.question-card {
+  &__upload {
+    border-radius: 10px;
+    padding: 35.5px 0 36.5px 0;
+
+    &.error {
+      background-color: $red-bg;
+    }
+
+    a {
+      &:hover {
+        color: $green-middle !important;
+      }
+    }
+  }
+}
+
+p {
+  margin-bottom: 0;
+}

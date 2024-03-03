@@ -11,8 +11,7 @@ export enum EFormPages {
   Input = 'input',
   Button = 'button',
   File = 'file',
-  Calendar = 'calendar',
-  DataDrivenForm = 'data-driven-form',
+  DynamicForm = 'dynamic-form-generation',
 }
 
 /** 主Menu：表格元件 */

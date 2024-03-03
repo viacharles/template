@@ -1,0 +1,49 @@
+<ng-container [ngSwitch]="SubQuestion.type">
+  <!-- 單選 radio -->
+  <app-radio *ngSwitchCase="this.fieldType.Radio" class="w-100"
+    formControlName="value"
+    [options]="SubQuestion.optionsForNormal"
+    [hasOtherInput]="this.hasMemo(SubQuestion)"
+    [isError]="SubQuestion.form.invalid && this.form!.touched && this.isCompleteClicked"
+    [name]="(question?.questionId ?? '') + '-' + SubQuestionIndex"
+    [memo]="SubQuestion.form.get('memo')?.value"
+    (memoChange)="SubQuestion.form.get('memo')?.setValue($event)"></app-radio>
+  <!-- 單選 select -->
+  <app-select *ngSwitchCase="this.fieldType.Select" class="w-40p"
+    formControlName="value"
+    [options]="SubQuestion.optionsForNormal"
+    [placeholder]="SubQuestion.placeholder??'請選擇'"
+    (memoChange)="SubQuestion.form.get('memo')?.setValue($event)"></app-select>
+  <!-- 多選 checkbox -->
+  <app-checkbox-set *ngSwitchCase="this.fieldType.Checkbox" class="w-80p"
+    formControlName="value"
+    [options]="SubQuestion.optionsForNormal" [hasOtherInput]="this.hasMemo(SubQuestion)"
+    [memo]="SubQuestion.form.get('memo')?.value"
+    [isError]="SubQuestion.form.invalid && this.form!.touched && this.isCompleteClicked"
+    (memoChange)="SubQuestion.form.get('memo')?.setValue($event)"></app-checkbox-set>
+  <!-- 多選 multi select -->
+  <app-multi-select *ngSwitchCase="this.fieldType.MultiSelect" class="w-40p"
+    formControlName="value"
+    [id]="question.title"
+    [options]="SubQuestion.optionsForNormal"
+    [placeholder]="SubQuestion.placeholder??'可多選'"
+    [hasFilter]="true"
+    ></app-multi-select>
+  <!-- date picker -->
+  <app-date-picker *ngSwitchCase="this.fieldType.DatePicker" class="h-11 w-40p"
+    formControlName="value"
+    [isError]="SubQuestion.form.invalid && this.form!.touched && this.isCompleteClicked"
+    position="right" valeFontSize="1rem" [isDisabled]="SubQuestion.form.disabled">
+  </app-date-picker>
+  <!-- date picker range -->
+  <app-date-picker *ngSwitchCase="this.fieldType.DatePickerRange" class="h-11 w-40p"
+    formControlName="value" [isRange]="true"
+    [isError]="SubQuestion.form.invalid && this.form!.touched && this.isCompleteClicked"
+    position="right" valeFontSize="1rem" [isDisabled]="SubQuestion.form.disabled">
+  </app-date-picker>
+  <!-- 輸入欄 -->
+  <input *ngSwitchCase="this.fieldType.Input" class="input w-80p" formControlName="value"
+    [placeholder]="SubQuestion.placeholder ?? '請輸入內容文字'"
+    [class.error]="SubQuestion.form.invalid && this.form!.touched && this.isCompleteClicked"
+    (keyup)="this.trim($event)" />
+</ng-container>

@@ -8,10 +8,10 @@
   "answers": {
     "7f217ab434a946bbb742e488c541752f": {
       "values": {
-        "A": {
-          "value": "ererere",
-          "memo": ""
-        }
+        "A": [{
+            "value": "想不到題目了",
+            "memo": [""]
+          }]
       },
       "remark": [
         {
@@ -25,10 +25,10 @@
     },
     "1be0ca85bf014a06995e16e070ebf245": {
       "values": {
-        "A": {
-          "value": [1],
+        "A": [{
+          "value": 1,
           "memo": ""
-        }
+        }]
       },
       "remark": [
         {
@@ -42,14 +42,14 @@
     },
     "521efd77b2d340d2ad7b58c02b5acb3f": {
       "values": {
-        "A": {
-          "value": [1],
-          "memo": ""
-        },
-        "B": {
+        "A": [{
           "value": 1,
           "memo": ""
-        }
+        }],
+        "B": [{
+          "value": 1,
+          "memo": ""
+        }]
       },
       "remark": [
         {
@@ -63,10 +63,10 @@
     },
     "d456d3930a1e43659816b5acf48b635d": {
       "values": {
-        "A": {
+        "A": [{
           "value": 1,
           "memo": ""
-        }
+        }]
       },
       "remark": [
         {
@@ -80,10 +80,10 @@
     },
     "7839395d929a4d0193b5138a7aee6969": {
       "values": {
-        "A": {
+        "A": [{
           "value": 1,
           "memo": ""
-        }
+        }]
       },
       "remark": [
         {
@@ -97,10 +97,10 @@
     },
     "cef109f6352a42beba478064f27f14f0": {
       "values": {
-        "A": {
+        "A":[ {
           "value": "1",
           "memo": ""
-        }
+        }]
       },
       "remark": [
         {
@@ -114,10 +114,10 @@
     },
     "70b7ec8d989e4548872e67e951409027": {
       "values": {
-        "A": {
+        "A": [{
           "value": 1,
           "memo": ""
-        }
+        }]
       },
       "remark": [
         {
@@ -131,10 +131,7 @@
     },
     "ecad8de7b9024c6e8758141e26b52468": {
       "values": {
-        "A": {
-          "value": "1",
-          "memo": ""
-        }
+        "A":[]
       },
       "remark": [
         {
@@ -148,10 +145,10 @@
     },
     "2c8dacb01c00481e92443723abf0e0ae": {
       "values": {
-        "A": {
-          "value": "dedwdd",
+        "A": [{
+          "value": "虎紋",
           "memo": ""
-        }
+        }]
       },
       "remark": [
         {
@@ -165,10 +162,10 @@
     },
     "ec928a3ab82d44a190c2a74376353333": {
       "values": {
-        "A": {
+        "A": [{
           "value": 1,
           "memo": ""
-        }
+        }]
       },
       "remark": [
         {
@@ -182,10 +179,10 @@
     },
     "7670cfd4bb2c4f459aea0f13005fda23": {
       "values": {
-        "A": {
+        "A": [{
           "value": 1,
           "memo": ""
-        }
+        }]
       },
       "remark": [
         {
@@ -199,10 +196,10 @@
     },
     "b6d13ad1cbff4d019206b21e5885e2c6": {
       "values": {
-        "A": {
+        "A": [{
           "value": 1,
           "memo": ""
-        }
+        }]
       },
       "remark": [
         {
@@ -216,10 +213,10 @@
     },
     "89eb40331ba54df5b83e0308839cf9bd": {
       "values": {
-        "A": {
+        "A": [{
           "value": 1,
           "memo": ""
-        }
+        }]
       },
       "remark": [
         {
@@ -233,10 +230,10 @@
     },
     "6bf2a6cb77e74c988eca4cfb7f51da81": {
       "values": {
-        "A": {
-          "value": "rer",
+        "A": [{
+          "value": "",
           "memo": ""
-        }
+        }]
       },
       "remark": [
         {
@@ -250,10 +247,10 @@
     },
     "422d2274a32d454fb62ee7aaae41920c": {
       "values": {
-        "A": {
-          "value": "",
+        "A":[ {
+          "value": "2024/02/05 ~ 2024/02/16",
           "memo": ""
-        }
+        }]
       },
       "remark": [
         {
@@ -267,10 +264,10 @@
     },
     "35bc67a8592e4c96bf71b86232a16aad": {
       "values": {
-        "A": {
+        "A": [{
           "value": 1,
           "memo": ""
-        }
+        }]
       },
       "remark": [
         {
@@ -284,10 +281,10 @@
     },
     "e0d244a654dd4f5fb560833ab49c24a8": {
       "values": {
-        "A": {
+        "A": [{
           "value": 1,
           "memo": ""
-        }
+        }]
       },
       "remark": [
         {
@@ -301,10 +298,10 @@
     },
     "272dd29f1167468da2a43e1f22bf6e3b": {
       "values": {
-        "A": {
-          "value": [1],
+        "A": [{
+          "value": 1,
           "memo": ""
-        }
+        }]
       },
       "remark": [
         {
@@ -318,10 +315,10 @@
     },
     "6e24ffe048074793944aa74b05dedafd": {
       "values": {
-        "A": {
+        "A": [{
           "value": 2,
-          "memo": "4-1 說明影像檔OS，並說明使用版本"
-        }
+          "memo": "4-1 說明菜單版本"
+        }]
       },
       "remark": [
         {
@@ -335,10 +332,10 @@
     },
     "ef5194ac31c7403abc8b6be253e31c98": {
       "values": {
-        "A": {
+        "A": [{
           "value": 1,
           "memo": ""
-        }
+        }]
       },
       "remark": [
         {
@@ -352,10 +349,10 @@
     },
     "43757e23a0d14bc6aa5d8417c9dba3d2": {
       "values": {
-        "A": {
+        "A": [{
           "value": 1,
           "memo": ""
-        }
+        }]
       },
       "remark": [
         {
@@ -369,10 +366,16 @@
     },
     "ca3077ae3f4d48888af7b34a3e829ef5": {
       "values": {
-        "A": {
-          "value": "dedwdd",
+        "A": [{
+          "value": 1,
           "memo": ""
-        }
+        },{
+        "value": 3,
+        "memo": ""
+      },{
+      "value": 5,
+      "memo": "霜抹山道館(冰)"
+    }]
       },
       "remark": [
         {
@@ -386,10 +389,10 @@
     },
     "e79757be3e654b1c83d10bdb038b6bf0": {
       "values": {
-        "A": {
+        "A": [{
           "value": 1,
           "memo": ""
-        }
+        }]
       },
       "remark": [
         {
@@ -403,10 +406,10 @@
     },
     "d1849a219ebd4930a5c73155f7c25433": {
       "values": {
-        "A": {
+        "A": [{
           "value": 1,
           "memo": ""
-        }
+        }]
       },
       "remark": [
         {
@@ -420,10 +423,10 @@
     },
     "29c543edc15f425f99376796daa8a5b1": {
       "values": {
-        "A": {
+        "A": [{
           "value": 1,
           "memo": ""
-        }
+        }]
       },
       "remark": [
         {
@@ -437,10 +440,10 @@
     },
     "c630061562584bf6ac9660a4dfd36eb9": {
       "values": {
-        "A": {
+        "A": [{
           "value": 1,
           "memo": ""
-        }
+        }]
       },
       "remark": [
         {
@@ -454,10 +457,10 @@
     },
     "a9151a52f2314c2e803a022639b1b54e": {
       "values": {
-        "A": {
-          "value": "ere",
+        "A": [{
+          "value": "還有其他？",
           "memo": ""
-        }
+        }]
       },
       "remark": [
         {
@@ -471,10 +474,10 @@
     },
     "31885c4596424d73a93a5e05fdc7675b": {
       "values": {
-        "A": {
+        "A": [{
           "value": 1,
           "memo": ""
-        }
+        }]
       },
       "remark": [
         {
@@ -488,10 +491,10 @@
     },
     "1cd17542718e426b92bc58dcae7797fd": {
       "values": {
-        "A": {
+        "A": [{
           "value": 1,
           "memo": ""
-        }
+        }]
       },
       "remark": [
         {
@@ -505,10 +508,10 @@
     },
     "7a9c90e4ad66473ab7277a063000c512": {
       "values": {
-        "A": {
+        "A": [{
           "value": "2023/11/07",
           "memo": ""
-        }
+        }]
       },
       "remark": [
         {
@@ -522,10 +525,10 @@
     },
     "03f88dd7ba70480fbbfbb78abbd3ed8f": {
       "values": {
-        "A": {
+        "A": [{
           "value": 1,
           "memo": ""
-        }
+        }]
       },
       "remark": [
         {
@@ -539,10 +542,10 @@
     },
     "8addbd69e1a54fd781a194f6dbe518bc": {
       "values": {
-        "A": {
+        "A": [{
           "value": 1,
           "memo": ""
-        }
+        }]
       },
       "remark": [
         {
@@ -556,10 +559,10 @@
     },
     "cd9a4221b0944efc82b9a1ccfa1ee9b9": {
       "values": {
-        "A": {
+        "A": [{
           "value": 1,
           "memo": ""
-        }
+        }]
       },
       "remark": [
         {
@@ -573,10 +576,7 @@
     },
     "10baf98753b14271aa00b988b943949d": {
       "values": {
-        "A": {
-          "value": "reer",
-          "memo": ""
-        }
+        "A": []
       },
       "remark": [
         {
@@ -590,10 +590,10 @@
     },
     "5d732ed23563402dac8392c40843f0a9": {
       "values": {
-        "A": {
+        "A": [{
           "value": 1,
           "memo": ""
-        }
+        }]
       },
       "remark": [
         {
@@ -607,10 +607,10 @@
     },
     "2c41025cac6840f5aeadc080b8c31745": {
       "values": {
-        "A": {
+        "A": [{
           "value": 1,
           "memo": ""
-        }
+        }]
       },
       "remark": [
         {
@@ -624,10 +624,10 @@
     },
     "b6027c164d8f44c1b64236debe07e9d7": {
       "values": {
-        "A": {
+        "A": [{
           "value": 1,
           "memo": ""
-        }
+        }]
       },
       "remark": [
         {
@@ -641,10 +641,14 @@
     },
     "3eab6befe97d46b9b9ced1a06260b21c": {
       "values": {
-        "A": {
-          "value": "ddw",
+        "A": [{
+          "value": 1,
           "memo": ""
-        }
+        },
+        {
+          "value": 3,
+          "memo": ""
+        }]
       },
       "remark": [
         {
@@ -658,10 +662,10 @@
     },
     "07d70b3f7c3c4b01a2291a55374146d8": {
       "values": {
-        "A": {
-          "value": [1],
+        "A": [{
+          "value": 1,
           "memo": ""
-        }
+        }]
       },
       "remark": [
         {
@@ -675,14 +679,14 @@
     },
     "9554c727e8414770830932fc8a308ae8": {
       "values": {
-        "A": {
-          "value": [1],
-          "memo": ""
-        },
-        "B": {
+        "A": [{
           "value": 1,
           "memo": ""
-        }
+        }],
+        "B": [{
+          "value": 1,
+          "memo": ""
+        }]
       },
       "remark": [
         {
@@ -696,10 +700,16 @@
     },
     "c75e079787ab42fc8d8a7a5d6cd3e6e0": {
       "values": {
-        "A": {
-          "value": [1, 4],
-          "memo": "1-1 雲端服務提供商*"
+        "A": [
+          {
+          "value": 1,
+          "memo": ""
+        },
+        {
+          "value": 4,
+          "memo": "自有中央廚房"
         }
+      ]
       },
       "remark": [
         {
@@ -712,7 +722,7 @@
       "groupId": "cdef84de752f4b3db3b4d79d9ee83215"
     }
   },
-  "projectName": "asasas11",
+  "projectName": "動態生成表單 Dynamic Form Generation",
   "projectOwnerSectionNameCN": "sasa",
   "projectOwnerName": "saas",
   "cab": "0",
@@ -734,10 +744,22 @@
     "name": "Carol Chen",
     "tenantId": null
   },
+  "trigger":
+      {
+        "name": "小明",
+        "departmentCn": "大兄弟",
+        "departmentEn": "Big Bro",
+        "sectionCn": "櫃檯",
+        "sectionEn": "front"
+      },
   "attachment": [
     {
       "file": "ce7bf37a370548758d381673efa235ae",
-      "uploadDate": "2023-11-16 15:09:32"
+      "uploadDate": "2023-11-16 15:09:32",
+      "departmentCn": "大兄弟",
+      "departmentEn": "Big Bro",
+      "sectionCn": "櫃檯",
+      "sectionEn": "front"
     }
   ]
 }

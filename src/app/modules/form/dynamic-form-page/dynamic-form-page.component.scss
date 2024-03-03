@@ -1,0 +1,151 @@
+@import 'color';
+
+:host {
+  width: 100%;
+  height: 100%;
+
+  & > div:first-of-type {
+    flex-direction: row;
+    padding: 0 45px;
+  }
+
+  & > div:nth-of-type(2),
+  & > div:nth-of-type(3),
+  & > div:nth-of-type(4) {
+    padding: 0 45px;
+  }
+
+  & > form {
+    width: 70%;
+  }
+
+  .question-card {
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.1);
+    &__header {
+      border-bottom: 1px solid $grey-light;
+
+      em {
+        height: 2rem;
+        width: 2rem;
+        min-height: 2rem;
+        min-width: 2rem;
+        border-radius: 50%;
+        border: 2px solid $grey-black;
+
+        &.complete {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: $green-middle;
+          border: 1px solid $green-light;
+          font-size: 16px;
+
+          &::before {
+            transform: scale(0.8);
+          }
+        }
+      }
+
+      h4 {
+        font-size: 28px !important;
+      }
+    }
+
+    &__question {
+      li.error {
+        background-color: $red-bg;
+      }
+      li:not(:last-child) {
+        border-bottom: 1px solid $grey-light;
+      }
+    }
+
+    &__upload {
+      border-radius: 10px;
+      margin: 35.5px 0 36.5px 0;
+      em:hover {
+        opacity: 1;
+      }
+      &.error {
+        background-color: $red-bg;
+      }
+    }
+  }
+}
+
+.header-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  .page-header {
+    margin-top: 1.625rem;
+    a {
+      letter-spacing: 0;
+      color: $grey-dark;
+      text-decoration: underline;
+      &:hover {
+        color: $green-middle;
+      }
+    }
+  }
+}
+
+.status-label {
+  border-radius: 3px;
+}
+
+::ng-deep.page-icon {
+  min-width: 18px;
+  min-height: 18px;
+  margin: 1px 2px;
+  border-radius: 50%;
+  background-color: red;
+  &::before {
+    transform: scale(0.7);
+  }
+}
+
+p,
+h4,
+h5,
+ul,
+label,
+pre {
+  margin-bottom: 0;
+}
+
+a {
+  &:hover {
+    text-decoration: none;
+    color: $green-middle;
+  }
+}
+
+button {
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+.requiredForApprove {
+  .link {
+    a {
+      color: $green-middle;
+      text-decoration: underline;
+    }
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+  button {
+    max-width: 136px;
+  }
+
+  label {
+    border-radius: 3px;
+  }
+}

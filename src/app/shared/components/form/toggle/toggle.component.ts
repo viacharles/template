@@ -8,6 +8,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   providers: [getFormProvider(ToggleComponent)]
 })
 export class ToggleComponent<T> extends CustomForm {
+  @Input() override disabled = false;
   @Input() checked?: boolean;
   @Input() id?: string;
   @Input() value?: T;

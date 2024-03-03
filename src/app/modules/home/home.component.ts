@@ -10,7 +10,7 @@ import {TranslateService} from '@core/services/translate.service';
 import {Router} from '@angular/router';
 import {StorageMap} from '@ngx-pwa/local-storage';
 import {WindowService} from '@shared/service/window.service';
-import {forkJoin, take, takeUntil} from 'rxjs';
+import {forkJoin, take, takeUntil, timer} from 'rxjs';
 import {UnSubOnDestroy} from '@utilities/abstract/unSubOnDestroy.abstract';
 import {OverlayService} from '@shared/service/overlay.service';
 import {LayoutService} from '@shared/service/layout.service';
@@ -73,7 +73,6 @@ export class HomeComponent extends UnSubOnDestroy implements OnInit {
   private readonly fadeInClass = 'fadeIn';
 
   ngOnInit() {
-    this.$layout.hideSidebarSubject.next(true);
     this.$window.mainScroll$
       .pipe(takeUntil(this.onDestroy$))
       .subscribe(scroll => {
@@ -227,7 +226,7 @@ export class HomeComponent extends UnSubOnDestroy implements OnInit {
       currentScrollTop > scrollTopLimit &&
       !node?.classList.contains(animClass)
     ) {
-      setTimeout(() => this.renderer.addClass(node, animClass), delay);
+      timer(delay).pipe(take(1)).subscribe(() => this.renderer.addClass(node, animClass));
     }
   }
 }

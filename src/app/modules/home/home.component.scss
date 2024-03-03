@@ -28,7 +28,7 @@
   h2 {
     font-size: clamp(16px, 4vw, 36px);
     font-weight: 400;
-    color: $color-primary;
+    color: $primary-color;
     white-space: nowrap;
   }
 
@@ -167,7 +167,6 @@ section > div {
   mat-select {
     padding: 0 0;
     margin: 0;
-    border: solid 0px;
     background-color: unset;
   }
 

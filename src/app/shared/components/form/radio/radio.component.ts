@@ -1,9 +1,9 @@
-import {Component, EventEmitter, Input, OnChanges, Output} from '@angular/core';
+import {AfterViewInit, Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import {
   CustomForm,
   getFormProvider,
 } from '@utilities/abstract/customForm.abstract';
-import {IOption} from '@utilities/interface/common.interface';
+import { IDynamicOption } from '@utilities/interface/form.interface';
 
 @Component({
   selector: 'app-radio',
@@ -11,20 +11,17 @@ import {IOption} from '@utilities/interface/common.interface';
   styleUrls: ['./radio.component.scss'],
   providers: [getFormProvider(RadioComponent)],
 })
-export class RadioComponent extends CustomForm implements OnChanges {
-  @Input() options: IOption<string | number>[] = [];
-  /** 是否 直排版 */
-  @Input() isColumn = true;
-  /** 是否最後一項有input欄位 */
-  @Input() hasOtherInput = false;
+export class RadioComponent extends CustomForm implements AfterViewInit {
+  @Input() option?: IDynamicOption<string | number>;
   /** 最小寬度 / 欄位 */
   @Input() minWidth = '';
   @Input() isError = false;
+  @Input() errorMessage = '';
   @Input() override disabled = false;
   @Input() name?: string;
+  @Input() id?: string;
+  @Input() checked?: boolean;
   @Input() memo?: string;
-  @Input() itemMarginTop?: string;
-  @Input() groupMarginTop?: string;
   /** 無資料樣式 */
   @Input() noData = false;
   @Output() memoChange = new EventEmitter<string>();
@@ -33,7 +30,14 @@ export class RadioComponent extends CustomForm implements OnChanges {
     super();
   }
 
-  ngOnChanges(): void {}
+  ngAfterViewInit(): void {
+    if (this.option) {
+      const timer = setTimeout(() => {
+        clearTimeout(timer);
+      });
+      ;
+    };
+  }
 
   public onOther(event: Event) {
     if (!this.disabled) {
@@ -42,10 +46,12 @@ export class RadioComponent extends CustomForm implements OnChanges {
     }
   }
 
-  public check(event: any): void {
-    if (!this.disabled) {
-      this.model = event.target.value;
-      this.notifyValueChange(event.target.value);
-    }
+  public check(event: Event): void {
+    if (this.disabled) { event.preventDefault() }
+    else {
+      const input = event.target as HTMLInputElement;
+      this.model = input.value;
+      this.notifyValueChange(input.value);
+    };
   }
 }

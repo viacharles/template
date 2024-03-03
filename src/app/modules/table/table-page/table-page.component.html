@@ -1,1 +1,83 @@
-<p>table-page works!</p>
+<div class="d-flex flex-column justify-content-center w-100">
+  <div class="header-container">
+    <div class="page-header d-flex flex-row p-relative w-100 mb-3">
+      <app-bread-crumbs></app-bread-crumbs>
+      <p class="page-header__title pr-3">{{ 'nav.data-table' | translate }}</p>
+      <p class="page-header__des fs-md fw-4 ml-3">{{'以 \<table> 為運作基礎。'}}</p>
+      <form class="config d-flex flex-row align-items-center justify-content-end w-100 px-3 fs-md"
+        [formGroup]="this.configForm">
+        <div class="d-flex flex-row align-items-center mr-3">
+          <p class="fw-4 mr-1">{{'上方scroll bar'}}</p>
+          <app-toggle formControlName="topScrollBar" [id]="'topScrollBar'"></app-toggle>
+        </div>
+        <div class="d-flex flex-row align-items-center mr-3">
+          <p class="fw-4 mr-1">{{'行選擇欄'}}</p>
+          <app-toggle formControlName="rowSelections" [id]="'rowSelections'"></app-toggle>
+        </div>
+        <div class="d-flex flex-row align-items-center mr-2_5">
+          <p class="fw-4 mr-1">{{'分頁'}}</p>
+          <app-toggle formControlName="pagination" [id]="'pagination'"></app-toggle>
+        </div>
+        <div class="d-flex flex-row align-items-center mr-2_5">
+          <p class="fw-4 mr-1">{{'一頁'}}</p>
+          <input #tPageSizeInput type="number" min="1" max="99" class="input input-s mr-2 w-7"
+            formControlName="pageSize" id="page-size">
+          <p class="fw-4">{{'項'}}</p>
+        </div>
+        <button class="btn-normal btn-normal-s" (click)="this.applyTableSetting()">{{'套用'}}</button>
+      </form>
+    </div>
+    <form class="w-100 d-flex" [formGroup]="filterForm">
+      <div class="d-flex flex-row flex-wrap align-items-center justify-content-between w-100">
+        <div class="d-flex flex-row flex-wrap align-items-center">
+          <em class="reset-btn fa fa-rotate-right w-10 h-10 pt-1 fs-xl text-text pe-pointer hover-box"
+            [class.show]="this.showResetButton" data-hover="重置表單" (click)="this.resetListSubject.next()"></em>
+          <div class="tenant-select d-flex align-items-center mr-3 mb-2" *ngIf="this.tenantOptions.length > 1">
+            <p class="fs-sm fw-4 text text-nowrap mr-2">
+              {{ 'portfolio.own-tenant' | translate }}:
+            </p>
+            <div class="w-45">
+              <app-select [options]="this.tenantOptions" [enableAll]="true" (select)="this.onTenantSelect($event)"
+                formControlName="tenantFilter"></app-select>
+            </div>
+          </div>
+          <app-search-input #searchFilter class="w-76 mr-3 mb-2" formControlName="searchFilter"
+            placeholder="{{ 'project.enter-search' | translate }}"
+            (search)="this.filter(this.searchFilterControl?.value)"></app-search-input>
+          <button type="button" class="btn-flat d-flex flex-row justify-content-center align-items-center mb-2"
+            (click)="this.toProject()">
+            <em class="fa fa-plus mr-2"></em>
+            <p class="text-nowrap">{{ 'project.add-new' | translate }}</p>
+          </button>
+          <button type="button" class="btn-flat d-flex flex-row justify-content-center align-items-center mb-2 ml-2"
+            (click)="this.dataChange()">{{this.projectList_view.length === 1 ? '顯示全部' : '顯示本物件'}}</button>
+        </div>
+
+      </div>
+    </form>
+  </div>
+</div>
+<div class="background-section project-list pb-2">
+  <div class="h-100">
+    <app-data-table @slideIn *ngIf="this.projectList_view?.length! > 0; else tNoProject" [config]="this.tableConfigs"
+      [data]="this.projectList_view!" [search$]="this.search$" [resetTable$]="this.resetList$" tableName="project-list"
+      [keepFilter]="this.revertFilter" (rowClick)="this.toProject($event)"
+      (filterValued)="this.resetFromTable = $event"></app-data-table>
+  </div>
+
+
+  <!-- Admin tools -->
+  <div class="admin" *ngIf="showAdminTools$ | async">
+    <pre>{{ projectList | json }}</pre>
+  </div>
+</div>
+<ng-template #tNoProject>
+  <div class="d-flex align-items-center justify-content-center w-100">
+    <app-no-data-section [i18nCode]="this.noTableWarn" imgUrl="assets/img/project-list-table.jpg"
+      *ngIf="this.noTableWarn !== ''"></app-no-data-section>
+  </div>
+</ng-template>
+<!-- <div *ngIf="isSiteAdmin" class="download-all-projects">
+  <button (click)="dowloadProjects()"><i class="fa fa-download" aria-hidden="true"></i> {{
+    'project.output-tenant-projects' | translate }}</button>
+</div> -->
