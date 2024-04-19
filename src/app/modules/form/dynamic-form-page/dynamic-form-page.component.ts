@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
   FormArray,
   FormBuilder,
@@ -32,7 +32,7 @@ import { Subscription, catchError, forkJoin, takeUntil, throwError } from 'rxjs'
 import {
   ICabQuestionGroupView,
   ICabRecordInfo,
-} from './shared/interface/cab.interface';
+} from './shared/interface/dynamic-form.interface';
 import { TranslateService } from '@ngx-translate/core';
 import {
   ECab,
@@ -42,22 +42,21 @@ import {
 } from './shared/enum/cab.enum';
 import { WindowService } from '@shared/service/window.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { EModule } from '@utilities/enum/router.enum';
 import { cabProcessLabelMap, cabQuestionFormMap } from './shared/map/cab.map';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 // import { saveAs } from 'file-saver';
 import { UsersService } from '@core/services/users.service';
 import { DatePipe } from '@angular/common';
 import { CabRecordDialogComponent } from './components/cab-record-dialog/cab-record-dialog.component';
-import { CabRecord } from './shared/model/cab-record.model';
 import { IAccordionListCard } from '@shared/components/accordion/accordion-list-card/accordion-list-card.component';
 import { IUser } from '@utilities/interface/api/auth-api.interface';
 import { ILabel } from '@utilities/interface/common.interface';
 import { WarnDialogComponent } from '@shared/components/overlay/warn-dialog/warn-dialog.component';
 import { DynamicForm } from './shared/model/dynamic-form.model';
-import { ICabFormPage } from './shared/interface/cab.interface';
+import { ICabFormPage } from './shared/interface/dynamic-form.interface';
 import { HttpClient } from '@angular/common/http';
 import { EFieldType } from '@utilities/enum/form.enum';
+import { DynamicFormValidatorsService } from '@core/dynamic-form-validators.service';
 
 @Component({
   selector: 'app-dynamic-form-page',
@@ -79,7 +78,7 @@ export class DynamicFormPageComponent extends UnSubOnDestroy
     private sanitizer: DomSanitizer,
     private datePipe: DatePipe,
     private http: HttpClient,
-    private cdr: ChangeDetectorRef,
+    private $dynamicValidator: DynamicFormValidatorsService,
   ) {
     super();
   }
@@ -207,6 +206,7 @@ export class DynamicFormPageComponent extends UnSubOnDestroy
   }
 
   ngOnInit(): void {
+    this.http.get('../../../../assets/mock-data/aarc-list.json').subscribe(v => console.log('aa-v', v))
     this.$layout.doSidebarExpandSubject.next(false);
     this.$layout.warningBeforeNavigateSubject.next(this.warningBeforeNavigate);
     this.init();
@@ -267,6 +267,7 @@ export class DynamicFormPageComponent extends UnSubOnDestroy
             question,
             this.$translate,
             this.datePipe,
+            this.$dynamicValidator,
             project,
             this.fb
           );
@@ -278,14 +279,6 @@ export class DynamicFormPageComponent extends UnSubOnDestroy
           this.user = user;
           this.isCreator =
             user.userId === (project as ICabApplicationAnswerRes).creator.id;
-          this.record = this.cab
-            .getRecordCard(
-              new CabRecord(records, this.$translate),
-              this.isCreator!,
-              this.isChairman,
-              this.isCommittee
-            )
-            .find(record => record.data.current.cabId === this.cabId);
           this.formValueForCompare = JSON.parse(
             JSON.stringify(
               +this.cab.status! === ECabFormProcess.RequiredForApprove
@@ -297,9 +290,6 @@ export class DynamicFormPageComponent extends UnSubOnDestroy
             this.cab.getDataForQuestion(question).groupsView,
             10
           );
-          setTimeout(() => {
-            this.infoTooltipHtml = this.cab?.getInfoTooltipHtml();
-          });
           if (this.question_pages) {
             this.tabs = this.question_pages.map((page, index) => {
               const groups = page.groups;
