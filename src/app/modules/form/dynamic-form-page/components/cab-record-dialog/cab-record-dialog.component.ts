@@ -1,6 +1,6 @@
 import {Component, Input, OnChanges} from '@angular/core';
 import {IAccordionListCard} from '@shared/components/accordion/accordion-list-card/accordion-list-card.component';
-import {ICabRecordInfo} from '../../shared/interface/cab.interface';
+import {ICabRecordInfo} from '../../shared/interface/dynamic-form.interface';
 import {BaseDialog} from '@utilities/base/base-dialog';
 import {DialogContainerComponent} from '@shared/components/overlay/dialog-container/dialog-container.component';
 
