@@ -5,6 +5,7 @@ import {
   transition,
   trigger,
 } from '@angular/animations';
+import { delay } from 'rxjs';
 
 export function slideEnterAndOutScreen(): AnimationTriggerMetadata {
   return trigger('slideInOut', [
@@ -91,6 +92,19 @@ export function fadeSlideInAndHideSlideOut(): AnimationTriggerMetadata {
   ]);
 }
 
+/** dialog:
+ * 逐漸消失
+ */
+export function fadeOut(): AnimationTriggerMetadata {
+  return trigger('fadeOut', [
+    transition(':leave', [
+      style({opacity: 1, transform: 'translate(-50% -50%) '}),
+      animate('200ms', style({opacity: 0, transform: 'translate(-50% -50%)'})),
+    ]),
+  ]);
+
+}
+
 /** 卡片
  * 下往上淡入+壓縮淡出
  * @param OccurDelay 動畫發生前延遲(ms)
@@ -141,6 +155,21 @@ export function verticalShortenOut(): AnimationTriggerMetadata {
     transition(':leave', [
       style({opacity: 1, height: 'auto'}),
       animate('100ms', style({opacity: 0, height: 0})),
+    ]),
+  ]);
+}
+
+/** dialog：
+ * 放大進入，垂直壓縮消失 */
+export function scaleInShortenOut(): AnimationTriggerMetadata {
+  return trigger('scaleInShortenOut', [
+    transition(':enter', [
+      style({opacity: 0, transform: 'translate(-50%, -50%) scale(0.98)'}),
+      animate('200ms ease-in-out', style({opacity: 1, transform: 'translate(-50%, -50%) scale(1)'})),
+    ]),
+    transition(':leave', [
+      style({opacity: 1, transform: 'translate(-50%, -50%) scale(100%, 100%)'}),
+      animate('100ms', style({opacity: 0, height: '0', transform: 'translate(-50%, -50%) scale(70%, 100%)'})),
     ]),
   ]);
 }
