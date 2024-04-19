@@ -28,7 +28,7 @@ export class FullScreenImgOverlayComponent
     super(dialog);
   }
 
-  ngAfterViewInit(): void {
+  protected override afterViewInitBase(): void {
     const ImgRect = this.tImg?.nativeElement.getBoundingClientRect();
     this.renderer.setStyle(
       this.tCancelButton?.nativeElement,

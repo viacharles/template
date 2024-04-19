@@ -9,6 +9,7 @@ import {WarnDialogComponent} from './warn-dialog/warn-dialog.component';
 import {FullScreenImgOverlayComponent} from './full-screen-img-overlay/full-screen-img-overlay.component';
 import {PipeModule} from '@shared/pipes/pipe.module';
 import { TranslateModule } from '@ngx-translate/core';
+import { SharedModule } from '@shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,6 @@ import { TranslateModule } from '@ngx-translate/core';
     WarnDialogComponent,
     FullScreenImgOverlayComponent,
   ],
-  imports: [CommonModule, CoreModule, PipeModule],
+  imports: [CommonModule, CoreModule, PipeModule, SharedModule],
 })
 export class OverlayModule {}

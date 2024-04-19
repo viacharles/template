@@ -6,6 +6,8 @@ import {takeUntil} from 'rxjs';
 import {
   fadeEnterAndHideOut,
   fadeSlideInAndHideSlideOut,
+  scaleInShortenOut,
+  fadeOut,
 } from '@utilities/helper/animations.helper';
 import {Dialog} from '@utilities/model/dialog.model';
 
@@ -13,7 +15,7 @@ import {Dialog} from '@utilities/model/dialog.model';
   selector: 'app-overlay',
   templateUrl: './overlay.component.html',
   styleUrls: ['./overlay.component.scss'],
-  animations: [fadeEnterAndHideOut(), fadeSlideInAndHideSlideOut()],
+  animations: [fadeEnterAndHideOut(), fadeSlideInAndHideSlideOut(), fadeOut(), scaleInShortenOut()],
 })
 export class OverlayComponent extends UnSubOnDestroy implements OnInit {
   constructor(

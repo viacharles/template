@@ -30,7 +30,7 @@ export class WarnDialogComponent
     }
   }
 
-  ngOnInit(): void {
+  protected override onInit(): void {
     if (!this.dialog.data.buttons) {
       this.dialog.data.buttons = {
         confirm: {

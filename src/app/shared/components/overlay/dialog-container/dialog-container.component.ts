@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Injector, Input, Output} from '@angular/core';
-import {fadeSlideInAndHideSlideOut} from '@utilities/helper/animations.helper';
+import {scaleInShortenOut} from '@utilities/helper/animations.helper';
 import {IDialogParams} from '@utilities/interface/overlay.interface';
 import {IDialog} from '@utilities/interface/overlay.interface';
 
@@ -7,7 +7,7 @@ import {IDialog} from '@utilities/interface/overlay.interface';
   selector: 'app-dialog-container',
   templateUrl: './dialog-container.component.html',
   styleUrls: ['./dialog-container.component.scss'],
-  animations: [fadeSlideInAndHideSlideOut()],
+  animations: [scaleInShortenOut()],
 })
 export class DialogContainerComponent<T = any> implements IDialog<T> {
   @Input() noDefaultStyle?: boolean;
@@ -23,4 +23,14 @@ export class DialogContainerComponent<T = any> implements IDialog<T> {
   public params!: IDialogParams;
   public injector!: Injector;
   public data!: T;
+
+  public isClose = false;
+
+  public onClose(): void {
+    this.isClose = true;
+    let closeTimer = setTimeout(() => {
+      this.closed.emit(true);
+      clearTimeout(closeTimer);
+    }, 300);
+  }
 }

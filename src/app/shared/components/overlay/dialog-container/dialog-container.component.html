@@ -1,19 +1,19 @@
-<div
-  @fadeSlideInOut
-  class="{{
+<div @scaleInShortenOut class="{{
     this.noDefaultStyle
       ? 'd-flex align-items-center justify-content-center w-100 h-100'
       : 'bg-white d-flex flex-column'
-  }} dialog-container position-fixed"
-  [style.padding]="this.padding === '' ? '1.25rem' : this.padding"
-  [style.width]="this.width ? this.width : 'inherit'"
-  [style.max-width]="this.maxWidth ? this.maxWidth : 'inherit'"
-  [style.min-width]="this.minWidth ? this.minWidth : 'inherit'"
->
-<ng-content select="#title"></ng-content>
-<div class="overflow-auto">
-  <ng-content select="#body"></ng-content>
-</div>
+  }} {{
+    this.isClose ? 'onClose' : ''
+  }} dialog-container position-fixed" [style.padding]="this.padding === '' ? '1.7rem 1.25rem' : this.padding"
+  [style.width]="this.width ? this.width : 'inherit'" [style.max-width]="this.maxWidth ? this.maxWidth : 'inherit'"
+  [style.min-width]="this.minWidth ? this.minWidth : 'inherit'">
+  <header class="d-flex p-relative">
+    <ng-content select="#title"></ng-content>
+    <app-icon-button [classes]="'icon-cancel-m text-grey-black fs-xs fw-9'" (click)="this.onClose()"></app-icon-button>
+  </header>
+  <div class="overflow-auto">
+    <ng-content select="#body"></ng-content>
+  </div>
   <div class="d-flex flex-row">
     <ng-content select="#footer"></ng-content>
   </div>
