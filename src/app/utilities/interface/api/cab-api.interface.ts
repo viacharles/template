@@ -49,12 +49,12 @@ export interface ICabAnswer {
 
 export interface ICabQuestionValue {
   [key: string]: // questionId
-  ICabValue[];
+  IDynamicFieldValue[];
 }
 
-export interface ICabValue {
-  value: string | number;
-  memo: string[] | null;
+export interface IDynamicFieldValue {
+  value: string | number | boolean;
+  memo: string;
 }
 
 export interface ICabEditor {
@@ -104,9 +104,10 @@ export interface ICabSupplementReq {
 
 export interface ICabApplicationAnswerReqAnswers {
   [key: string]: {
-    values: ICabValue[];
+    values: IDynamicFieldValue[];
   };
 }
+
 
 export interface ICabApplicationAnswerRes {
   type: ECabFormSubmitType;
@@ -223,6 +224,7 @@ export interface ICabQuestionSubQuestion {
 
 export interface IDynamicFromValidator {
   type: EErrorMessage,
+  /** 可放限制的數值 */
   value?: number[] | null,
   regex?: string | null,
 }
