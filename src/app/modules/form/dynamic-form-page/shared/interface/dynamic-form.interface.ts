@@ -1,4 +1,4 @@
-import {AbstractControl, UntypedFormGroup} from '@angular/forms';
+import {AbstractControl, FormControl, UntypedFormGroup} from '@angular/forms';
 import {ECabFormProcess} from '@utilities/enum/common.enum';
 import {
   ICabApplicationAnswerRes,
@@ -7,7 +7,7 @@ import {
   ICabQuestionOption,
   ICabRemark,
   ICabTemplateRes,
-  ICabValue,
+  IDynamicFieldValue,
   IDynamicFromValidator,
 } from '@utilities/interface/api/cab-api.interface';
 import {ICabRoleInfo} from '../map/cab.map';
@@ -35,7 +35,7 @@ export interface ICabQuestionView {
 
 export interface ICabQuestionSubQuestionGroupView {
   answerId: string;
-  form: UntypedFormGroup;
+  form: FormControl;
   type: EFieldType;
   show: boolean;
   required: boolean;
@@ -130,7 +130,7 @@ export interface ICabReviewFormAnswerView {
   config: null;
   options: ICabReviewFormOptionView[][];
   optionForNormal: IOption[];
-  valueView: ICabValue[];
+  valueView: IDynamicFieldValue[];
   form: UntypedFormGroup;
   show: boolean;
 }
