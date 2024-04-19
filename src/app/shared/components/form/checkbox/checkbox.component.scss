@@ -9,10 +9,11 @@ input {
     width: 100%;
     padding-top: 2px;
     padding-bottom: 2px;
-    margin-bottom: 5px;
-    margin-right: 2px;
     border-radius: 4px;
-
+    .isInGroup {
+      margin-bottom: 5px;
+      margin-right: 2px;
+    }
     .checkbox {
       position: relative;
       width: 1rem;
@@ -55,9 +56,11 @@ input {
     input {
       width: 9rem;
       height: 1.4rem;
-      margin: 2px 2px 2px 0;
+      border: none;
+      border-bottom: 1px solid $grey-iron;
       border-radius: 5px;
       transition: 0.1s ease;
+      margin: 2px 2px 2px 0;
       &:not(:disabled):hover {
         border: 1.5px solid var(--primary-color);
       }

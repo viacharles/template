@@ -1,5 +1,4 @@
-import { IOption } from '@utilities/interface/common.interface';
-import { AfterViewInit, Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 import { CustomForm, getFormProvider } from '@utilities/abstract/customForm.abstract';
 import { IDynamicOption } from '@utilities/interface/form.interface';
 
@@ -10,27 +9,36 @@ import { IDynamicOption } from '@utilities/interface/form.interface';
   providers: [getFormProvider(CheckboxComponent)]
 })
 export class CheckboxComponent extends CustomForm {
-@Input() id = '';
-@Input() name = 'checkbox';
-@Input() checked?: boolean;
-@Input() option?: IDynamicOption<string | number>;
-@Input() override disabled = false;
-@Input() noData = false;
-@Input() isError = false;
-@Input() memo = '';
-@Input() errorMessage = '';
-@Output() memoChange = new EventEmitter<string>();
+  @Input() id = '';
+  @Input() name = 'checkbox';
+  @Input() checked?: boolean;
+  @Input() option?: IDynamicOption<string | number | boolean>;
+  @Input() override disabled = false;
+  @Input() noData = false;
+  @Input() isError = false;
+  @Input() memo = '';
+  @Input() errorMessage = '';
+  /** 為群組內元素 */
+  @Input() isInGroup = false;
+  @Output() valueChange = new EventEmitter<{ value: string | number | boolean | null, memo: string }>();
+  @Output() memoChange = new EventEmitter<string>();
 
+  get currentValue() { return { value: this.checked ? this.option!.code : null, memo: this.memo } }
 
-public onMemoInput(event: Event) {
-  if (!this.disabled) {
-    const value = (event.target as HTMLInputElement).value;
-    this.memoChange.emit(value);
-  };
-}
+  public onMemoInput(event: Event) {
+    if (!this.disabled) {
+      this.notifyValueChange(this.currentValue);
+      // console.log('aa-memo-0', this.currentValue)
+      this.valueChange.emit(this.currentValue);
+      // console.log('aa-memo-1', this.currentValue)
+      this.memoChange.emit(this.memo);
+      // console.log('aa-memo-2', this.currentValue)
+    };
+  }
 
-public change(event: Event): void {
-  this.checked = (event.target as HTMLInputElement).checked;
-  this.notifyValueChange(this.checked ? this.option?.code : null);
-}
+  public change(event: Event): void {
+    this.checked = (event.target as HTMLInputElement).checked;
+    this.notifyValueChange(this.currentValue);
+    this.valueChange.emit(this.currentValue);
+  }
 }

@@ -2,21 +2,25 @@
   <input #tCheckbox class="d-none" type="checkbox"
   [value]="this.option.code"
   (change)="this.disabled ? null : this.change($event)"
-  [disabled]="this.disabled" [id]="this.id"
+  [disabled]="this.disabled"
   [name]="'checkbox-' + this.name"
   [id]="this.id"
   [checked]="this.checked === undefined ? this.model === option.code : this.checked">
-  <label class="d-flex align-items-start pr-2 pe-pointer" [class.noData]="this.noData" [class.error]="this.isError"
+  <label class="d-flex align-items-start pr-2 pe-pointer" [class.noData]="this.noData" [class.error]="this.isError" [class.isInGroup]="this.isInGroup"
   [for]="this.id">
     <div class="checkbox d-flex align-items-center justify-content-center ml-2 mr-2_5">
       <em class="icon-check-thick"></em>
       <em class="icon-minus" *ngIf="this.noData"></em>
     </div>
-    <div class="d-flex flex-wrap">
-      <p *ngIf="this.option?.name" [class.hasMemo]="this.option.hasMemo">{{this.option!.name | translate}}</p>
+    <div class="d-flex flex-wrap" >
+      <p *ngIf="this.option?.name" [class.hasMemo]="this.option.hasMemo">
+        {{this.option!.name | translate}}</p>
       <!-- 其他說明欄位 -->
-      <input type="text" class="input" [placeholder]="(this.option.memoPlaceholder ? this.option.memoPlaceholder : 'cab.comment-send-placeholder') | translate" *ngIf="this.option.hasMemo"
-        (input)="this.onMemoInput($event)" [disabled]="this.disabled || !tCheckbox.checked" id="otherInput" [value]="this.memo" />
+      <input [type]="this.option.memoInputType ?? 'text'" class="input"
+        [(ngModel)]="this.memo"
+        [placeholder]="(this.option.memoPlaceholder ? this.option.memoPlaceholder : 'cab.comment-send-placeholder') | translate"
+        *ngIf="this.option.hasMemo"
+        (input)="this.onMemoInput($event)" [disabled]="this.disabled || !tCheckbox.checked" id="otherInput"  />
     </div>
     <!-- 錯誤訊息 -->
     <div class="error-message" *ngIf="this.errorMessage && this.isError">{{this.errorMessage}}</div>
@@ -24,7 +28,12 @@
 </ng-container>
 <!-- 沒有選項 -->
 <ng-template #tNoData>
-  <app-radio [option]="{name: '無資料', code: ''}" [noData]="true" [name]="'checkbox-' + this.name"></app-radio>
+  <input type="checkbox" class="d-none">
+  <label class="d-flex align-items-start pr-2 pe-pointer">
+    <div class="checkbox d-flex align-items-center justify-content-center ml-2 mr-2_5">
+      <em class="icon-minus" *ngIf="this.noData"></em>
+    </div>
+  </label>
 </ng-template>
 
 
