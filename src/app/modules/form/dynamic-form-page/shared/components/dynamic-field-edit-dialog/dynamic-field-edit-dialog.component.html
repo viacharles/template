@@ -1,36 +1,43 @@
-<app-dialog-container [width]="'70%'" [maxWidth]="'673px'" [minWidth]="'350px'">
-  <h4 id="title" class="">
-    編輯題目: XXXXXXXXXXXXX
+<app-dialog-container [width]="'70%'" [maxWidth]="'673px'" [minWidth]="'350px'"
+(closed)="this.close()">
+  <h4 id="title" class="fs-lg fw-4">
+    編輯題目: {{ this.data.title }}
   </h4>
-  <form id="body" class="w-100 d-flex flex-wrap px-3" >
+  <form id="body" class="w-100 d-flex flex-wrap px-3" [formGroup]="this.questionForm">
     <div class="w-100 d-flex align-items-center mr-2 mb-3">
       <p class="mr-2">必填</p>
-      <app-toggle></app-toggle>
+      <app-toggle formControlName="required"></app-toggle>
     </div>
     <div class="w-45p mr-3 mb-3">
-      <p>題目標題</p>
-      <app-input></app-input>
+      <p class="mb-2">題目標題</p>
+      <app-input formControlName="title"></app-input>
     </div>
     <div class="w-45p mr-3 mb-3">
-      <p>副標題說明文字</p>
-      <app-input></app-input>
+      <p class="mb-2">副標題說明文字</p>
+      <app-input formControlName="des"></app-input>
     </div>
     <div class="w-45p mr-3 mb-3">
-      <p>欄位內說明文字</p>
-      <app-input></app-input>
+      <p class="mb-2">欄位內說明文字</p>
+      <app-input formControlName="placeholder"></app-input>
     </div>
     <div class="w-45p mr-3 mb-3">
-      <p>欄位類型</p>
-      <app-select [options]="this.fieldTypeList"></app-select>
+      <p class="mb-2">欄位類型</p>
+      <app-select [options]="this.fieldTypeList" formControlName="fieldType"></app-select>
     </div>
-    <div class="w-100 mr-2 mb-3">
-      <p>驗證</p>
-      <app-checkbox-set [options]="this.validationOptions" [name]="'validations'"></app-checkbox-set>
+    <div @verticalShortenOut class="w-100 mr-2 mb-3" *ngIf="this.validationOptions.length">
+      <p class="mb-2">驗證</p>
+      <app-checkbox-set [options]="this.validationOptions" [name]="'validations'" formControlName="validation"></app-checkbox-set>
     </div>
-    <div class="w-100 mr-3 mb-3">
-      <p>選項</p>
-      <app-dynamic-input-list></app-dynamic-input-list>
+    <div class="w-100 mr-3 mb-3" *ngIf="this.showOptionField">
+      <p class="mb-2">選項</p>
+      <app-dynamic-input-list formControlName="options" [list]="this.data.SubQuestionGroup[0].optionsForNormal" (onAddEmptyItem)="this.onAddEmptyItem()"></app-dynamic-input-list>
     </div>
-
   </form>
+  <div id="footer" class="w-100 d-flex justify-content-end mt-2">
+    <!-- <app-borderless-button [icon]="'icon-check'" (click)="this.submit()">儲存</app-borderless-button> -->
+    <button class="btn btn-flat bg-primary-color text-white ml-2" (click)="this.submit()" [disabled]="this.questionForm.invalid">
+      <em class="icon-check fs-xsm mr-1"></em>
+      儲存
+    </button>
+  </div>
 </app-dialog-container>
