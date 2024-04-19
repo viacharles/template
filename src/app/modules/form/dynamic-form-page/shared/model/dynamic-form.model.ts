@@ -1,5 +1,6 @@
 import {
   AbstractControl,
+  FormControl,
   UntypedFormArray,
   UntypedFormBuilder,
   UntypedFormControl,
@@ -11,7 +12,6 @@ import {
 import {
   ECabFormProcess,
   EFieldStatus,
-  EFormMode,
 } from '@utilities/enum/common.enum';
 import {
   ICabAnswer,
@@ -24,23 +24,17 @@ import {
   ICabQuestionValue,
   ICabRemark,
   ICabTemplateRes,
-  ICabValue,
   IDynamicFromValidator,
 } from '@utilities/interface/api/cab-api.interface';
-import { ECab, ECabAnswerStatus, ECabPageFormStyleType } from '../enum/cab.enum';
+import { ECab, ECabAnswerStatus } from '../enum/cab.enum';
 import {
-  cabProcessLabelMap,
   cabQuestionFormMap,
-  cabTypeIconMap,
 } from '../map/cab.map';
 import { TranslateService } from '@ngx-translate/core';
 import { DatePipe } from '@angular/common';
-import { CabRecord } from './cab-record.model';
-import { IAccordionListCard } from '@shared/components/accordion/accordion-list-card/accordion-list-card.component';
-import { ICabRecordInfo } from '../interface/cab.interface';
-import { formModeIconMap } from '@utilities/map/common.map';
 import { ValidatorHelper } from '@core/validators.helper';
 import { EErrorMessage, EFieldType } from '@utilities/enum/form.enum';
+import { DynamicFormValidatorsService } from '@core/dynamic-form-validators.service';
 
 export class DynamicForm {
   public question_origin?: ICabTemplateRes;
@@ -66,8 +60,9 @@ export class DynamicForm {
     question: ICabTemplateRes,
     public $translate: TranslateService,
     public datePipe: DatePipe,
+    private $dynamicValidator: DynamicFormValidatorsService,
     project?: ICabApplicationAnswerRes,
-    private fb?: UntypedFormBuilder
+    private fb?: UntypedFormBuilder,
   ) {
     this.docId = question?.docId;
     this.templateId = question.id;
@@ -101,7 +96,6 @@ export class DynamicForm {
     let form = new UntypedFormGroup({});
     if (this.fb) {
       form = this.fb.group({});
-
       form.patchValue({ cabId, docId });
       form.addControl(
         'answers',
@@ -116,7 +110,7 @@ export class DynamicForm {
           (form.get('answers') as UntypedFormArray)
             ?.controls[0] as UntypedFormGroup
         ).disable();
-      }
+      };
       const answers = project?.answers;
       if (answers) {
         this.patchFormValue(form, answers, project.attachment);
@@ -153,12 +147,12 @@ export class DynamicForm {
             }))
         );
         Object.keys(answerList).forEach(answerId => {
-          const answer: UntypedFormGroup | undefined = (
+          const answer: FormControl | undefined = (
             question.controls['answers'] as UntypedFormGroup
-          )?.controls[answerId] as UntypedFormGroup | undefined;
+          )?.controls[answerId] as FormControl | undefined;
           if (answer) {
             answer.patchValue(answerList[answerId]);
-          }
+          };
         });
       }
     });
@@ -313,7 +307,7 @@ export class DynamicForm {
               ],
             ],
             answers: this.getSubQuestionGroup(SubQuestionGroup),
-          }, { validator: ValidatorHelper.allSubQuestionsValid()})
+          }, { validator: ValidatorHelper.allSubQuestionsValid() })
         );
         if (disabled) {
           group.controls[questionId].disable();
@@ -325,29 +319,19 @@ export class DynamicForm {
   }
 
   /** 得到子答案群組 formGroup */
-  private getSubQuestionGroup(answers: {[key: string]: ICabQuestionSubQuestion}): UntypedFormGroup {
+  private getSubQuestionGroup(answers: { [key: string]: ICabQuestionSubQuestion }): UntypedFormGroup {
     if (this.fb) {
       const group: UntypedFormGroup = this.fb.group({});
       Object.keys(answers).forEach(answerId => {
-        const { type, required, disabled, options } = answers[answerId];
-        console.log('aa-', answers[answerId]);
+        const { type, required, disabled } = answers[answerId];
         const isMulti = type === EFieldType.MultiSelect || type === EFieldType.Checkbox;
-        // group.addControl(
-        //   answerId,
-        //   this.fb!.array(
-        //     options ? options.map(option => this.fb!.group({value: ''}))
-        //   )
-          // this.fb!.group({
-          //   value: [
-          //     isMulti ? [] : '',
-          //     this.getValidations(answers[answerId], isMulti, required),
-          //   ],
-          //   memo: [''],
-          // })
-        // );
+        group.addControl(
+          answerId,
+          this.fb!.control([], this.getValidations(answers[answerId], isMulti, required))
+        );
         if (disabled) {
           group.controls[answerId].disable();
-        }
+        };
       });
       return group;
     }
@@ -357,102 +341,37 @@ export class DynamicForm {
   private getValidations(answer: ICabQuestionSubQuestion, isMulti: boolean, required: boolean) {
     const dynamicValidations = answer.validation?.map(validate => this.getDynamicValidate(answer, validate));
     return [
-      ...(required ? [ this.requiredValidate(isMulti)] : []),
-      // ...(dynamicValidations ?? [])
+      ...(required ? [this.DynamicRequiredValidate(isMulti)] : []),
+      ...(dynamicValidations ?? [])
     ];
   }
 
   private getDynamicValidate(answer: ICabQuestionSubQuestion, validation: IDynamicFromValidator): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
       const value = validation.value!;
-      switch(validation.type) {
+      switch (validation.type) {
         case EErrorMessage.EMAIL_ERROR:
-          const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(control.value);
+          const isValid = control.value && control.value.length > 0 ? /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(control.value[0].value) : true;
           return isValid ? null : { email: validation.type };
-        case EErrorMessage.EN_NUMBER_ONLY: return ValidatorHelper.EnNumberOnly(); break;
-        case EErrorMessage.MAX_ITEMS: return ValidatorHelper.MaxItems(+value as number); break;
-        case EErrorMessage.MIN_ITEMS: return ValidatorHelper.MinItems(+value as number); break;
-        case EErrorMessage.MAX_MIN_ITEMS: return ValidatorHelper.MaxMinItems(value[0], value[1]); break;
-        case EErrorMessage.MAX_LENGTH: return ValidatorHelper.MaxLength(+value as number); break;
-        case EErrorMessage.MIN_LENGTH: return ValidatorHelper.MinLength(+value as number); break;
-        case EErrorMessage.MAX_MIN_LENGTH: return ValidatorHelper.MaxMinLength(value[0], value[1]); break;
-        case EErrorMessage.NUMBER_ONLY: return ValidatorHelper.NumberOnly(); break;
+        case EErrorMessage.EN_NUMBER_ONLY: return this.$dynamicValidator.DynamicEnNumberOnly(control); break;
+        case EErrorMessage.MAX_ITEMS: return this.$dynamicValidator.DynamicMaxItems(control, +value as number); break;
+        case EErrorMessage.MIN_ITEMS: return this.$dynamicValidator.DynamicMinItems(control, +value as number); break;
+        case EErrorMessage.MAX_MIN_ITEMS: return this.$dynamicValidator.DynamicMaxMinItems(control, value[0], value[1]); break;
+        case EErrorMessage.MAX_LENGTH: return this.$dynamicValidator.DynamicMaxLength(control, +value as number); break;
+        case EErrorMessage.MIN_LENGTH: return this.$dynamicValidator.DynamicMinLength(control, +value as number); break;
+        case EErrorMessage.MAX_MIN_LENGTH: return this.$dynamicValidator.DynamicMaxMinLength(control, value[0], value[1]); break;
+        case EErrorMessage.NUMBER_ONLY: return this.$dynamicValidator.DynamicNumberOnly(control); break;
         default: return null;
       };
     }
   }
 
-  private requiredValidate(isMultiSelect: boolean) {
+  private DynamicRequiredValidate(isMulti = false) {
     return ({ value }: AbstractControl): ValidationErrors | null => {
-      const isValid = isMultiSelect ? (value as string[]).length > 0 : !!value;
-      return isValid ? null : { required: 'error.required' };
-    };
-  }
-
-  /** review畫面資料 */
-  public getDataForReview(
-    template: ICabTemplateRes,
-    project: ICabApplicationAnswerRes
-  ): any {
-    const ProjectAnswers = project.answers;
-    return {
-      ...template,
-      groupsView: template.groups
-        .sort((a, b) => a.order - b.order)
-        .map((group, index) => ({
-          ...group,
-          styleType:
-            index === 0
-              ? ECabPageFormStyleType.BasicInfo
-              : ECabPageFormStyleType.Default,
-          questions: Object.entries(group.questions)
-            .sort((a, b) => a[1].order - b[1].order)
-            .map(question => {
-              return {
-                ...question[1],
-                questionId: question[0],
-                remarks: ProjectAnswers
-                  ? ProjectAnswers[question[0]]
-                    ? ProjectAnswers[question[0]]?.remark
-                    : []
-                  : '',
-                SubQuestionGroup: Object.entries(question[1].SubQuestionGroup)
-                  .map(answer => {
-                    const Answer = ProjectAnswers
-                      ? ProjectAnswers[question[0]]?.values[answer[0]]
-                      : { value: '', memo: '' };
-                    return {
-                      ...answer[1],
-                      valueView: answer[1].options
-                        ? answer[1].options.reduce((options, option) => {
-                          if (
-                            typeof Answer?.value === 'string' ||
-                              typeof Answer?.value === 'number'
-                              ? +option.value === +Answer.value
-                              : (Answer?.value as string[]).some(
-                                optionValue =>
-                                  `${optionValue}` === `${option.value}`
-                              )
-                          ) {
-                            options.push({
-                              value: option.label,
-                              memo: option.memo ? Answer?.memo ?? '' : '',
-                            });
-                          }
-                          return options;
-                        }, [] as ICabValue[])
-                        : [
-                          {
-                            value: Answer.value,
-                            memo: Answer.memo,
-                          },
-                        ],
-                    };
-                  })
-                  .filter(({ valueView }) => valueView && valueView.length > 0),
-              };
-            }),
-        })),
+      const isValid = isMulti ? value.length > 0 :( value[0] ? value[0].value.length > 0 : false);
+      const error: any = {};
+      error[`${EErrorMessage.REQUIRED}`] = this.$translate.instant(EErrorMessage.REQUIRED);
+      return isValid ? null : error;
     };
   }
 
@@ -526,8 +445,8 @@ export class DynamicForm {
 
   private getValidationView(answer: ICabQuestionSubQuestion): IDynamicFromValidator[] {
     return [
-        ...(answer.required ? [{type: EErrorMessage.REQUIRED } as IDynamicFromValidator] : []),
-        ...(answer.validation ?? []).flatMap(item => item ? [item] : [])
+      ...(answer.required ? [{ type: EErrorMessage.REQUIRED } as IDynamicFromValidator] : []),
+      ...(answer.validation ?? []).flatMap(item => item ? [item] : [])
     ]
   }
 
@@ -568,134 +487,5 @@ export class DynamicForm {
       }
     }
     return result;
-  }
-
-  /** cab tooltip 資料 */
-  public getInfoTooltipHtml(): string {
-    return this.cab
-      ? `<div class=" mt-3 mx-1">
-    <p class="fw-7 fs-md text-white text-nowrap mb-2_5">${this.$translate.instant(
-        'cab.docId'
-      )}</p>
-    <p class=" fs-md text-white text-nowrap mb-5 ">${this.cabId ?? '-'}</p>
-    <p class="fw-7 fs-md text-white text-nowrap mb-2_5">${this.$translate.instant(
-        'cab.templateVersion'
-      )}</p>
-    <p class=" fs-md text-white text-nowrap mb-5">${this.questionVersion ?? '-'
-      }</p>
-    <p class="fw-7 fs-md text-white text-nowrap mb-2_5">${this.$translate.instant(
-        'cab.projectVersion'
-      )}</p>
-    <p class=" fs-md text-white text-nowrap mb-5">${this.projectVersion ?? '-'
-      }</p>
-    <p class="fw-7 fs-md text-white text-nowrap mb-2_5">${this.$translate.instant(
-        'cab.basic-question-owner'
-      )}</p>
-    <p class=" fs-md text-white text-nowrap mb-5">${this.project_origin?.projectOwnerName ?? '-'
-      }${this.project_origin?.projectOwnerSectionNameCN
-        ? ' / ' + this.project_origin?.projectOwnerSectionNameCN
-        : ''
-      }</p>
-    <p class="fw-7 fs-md text-white text-nowrap mb-2_5">${this.$translate.instant(
-        'cab.basic-question-type'
-      )}</p>
-    <p class=" fs-md text-white text-nowrap mb-5">${this.cab
-        ? this.$translate.instant(
-          cabTypeIconMap.get(+this.cab! as ECab)?.title!
-        )
-        : '-'
-      }</p>
-    <p class="fw-7 fs-md text-white text-nowrap mb-2_5">${this.$translate.instant(
-        'cab.send-review-date'
-      )}</p>
-    <p class=" fs-md text-white text-nowrap mb-4">${this.datePipe.transform(this.project_origin?.submitDate, 'yyyy/MM/dd') ??
-      '-'
-      }</p>
-    </div>
-    `
-      : '';
-  }
-
-  /** cab 角色在每個階段的表單狀態 */
-  public getRecordFormMode(
-    isCreator: boolean,
-    isChairman: boolean,
-    isCommittee: boolean,
-    status: ECabFormProcess
-  ): EFormMode {
-    switch (status) {
-      case ECabFormProcess.Draft:
-        return isCreator ? EFormMode.Edit : EFormMode.Null;
-      case ECabFormProcess.SubmitForReview:
-        return EFormMode.View;
-      case ECabFormProcess.UnderReview:
-        return isChairman || isCommittee ? EFormMode.Review : EFormMode.View;
-      case ECabFormProcess.Approved:
-        return EFormMode.View;
-      case ECabFormProcess.RequiredForApprove:
-        return isCreator ? EFormMode.Edit : EFormMode.View;
-      default:
-        return EFormMode.View;
-    }
-  }
-
-  /** cab record dialog 資料 */
-  public getRecordCard(
-    cabRecord: CabRecord,
-    isCreator: boolean,
-    isChairman: boolean,
-    isCommittee: boolean
-  ): IAccordionListCard<ICabRecordInfo>[] {
-    return cabRecord.records!.map(record => {
-      const titleInfo = record.current;
-      const list = record.list;
-      const processLabel = cabProcessLabelMap.get(+titleInfo.status);
-      const fomModeLabel = formModeIconMap.get(
-        this.getRecordFormMode(
-          isCreator!,
-          isChairman,
-          isCommittee,
-          +titleInfo.status
-        )!
-      );
-      const cabLabel = cabTypeIconMap.get(+titleInfo.sourceData.cab as ECab);
-      return {
-        data: record,
-        header: {
-          title: '',
-          innerHTML: `<div class=" d-flex flex-wrap align-items-center justify-content-between">
-              <div class="d-flex flex-wrap align-items-center">
-              <p class="text-${cabLabel?.color} mb-0 mr-2">${this.$translate.instant(
-            cabLabel?.title ?? ''
-          )}</p>
-              <p class="text-grey-black fw-5 mb-0 mr-2">${this.$translate.instant(
-            'cab.docId'
-          )}</p>
-                <p class="text-grey-black fw-5 mb-0 mr-2">${titleInfo.cabId}</p>
-                <label class="status-label text-${processLabel?.textColor} bg-${processLabel?.backgroundColor} fw-5 mb-0 fs-xs py-0_5 px-1">${this.$translate.instant(
-            processLabel?.title ?? ''
-          )}</label>
-              </div>
-              <div class="d-flex flex-wrap align-items-center">
-              <p class="text-grey-iron mr-1 mb-0 fs-xsm">${titleInfo.creator.departmentName
-            }</p><p class="text-grey-iron mr-1 mb-0 fs-xsm">${titleInfo.creator.sectionName
-            }</p><p class="text-grey-iron mr-1 mb-0 fs-xsm">${titleInfo.creator.name
-            }</p><p class="text-grey-iron mr-3 mb-0 fs-xsm">${this.$translate.instant(
-              'cab.apply'
-            )}</p>
-              </div>`,
-          button: {
-            iconCode: fomModeLabel?.iconCode,
-            color: fomModeLabel?.color ?? '',
-            hoverColor: fomModeLabel?.hoverColor ?? '',
-            text: fomModeLabel?.title ?? '',
-          },
-        },
-        list: list.map(record => ({
-          content: '',
-          innerHTML: `<div class="d-flex flex-wrap"><p class="w-37_5 mr-3 mb-0">${record.triggerDate}</p><p class="mb-0">${record.content}</p></div>`,
-        })),
-      };
-    });
   }
 }
