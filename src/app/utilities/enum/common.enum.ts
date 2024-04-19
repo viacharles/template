@@ -127,11 +127,16 @@ export enum EColorType {
   Secondary = 'secondary',
   /** 警示色 */
   Warn = 'warn',
+  /** 無色 */
+  Default = 'default',
 }
 
 /** 尺寸 */
 export enum ESize {
-  Small = 's',
-  Medium = 'm',
-  Large = 'l'
+  /** Small */
+  S = 's',
+  /** Middle */
+  M = 'm',
+  /** Large */
+  L = 'l'
 }
