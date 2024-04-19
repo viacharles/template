@@ -1,5 +1,5 @@
 import {ICabApplicationAnswerRes} from '@utilities/interface/api/cab-api.interface';
-import {ICabRecordInfo} from '../interface/cab.interface';
+import {ICabRecordInfo} from '../interface/dynamic-form.interface';
 import {ECabFormProcess, ELang} from '@utilities/enum/common.enum';
 import {TranslateService} from '@ngx-translate/core';
 
