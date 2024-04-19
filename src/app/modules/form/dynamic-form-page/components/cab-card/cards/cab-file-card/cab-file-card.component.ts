@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormGroup} from '@angular/forms';
-import { ICabFormPage } from '../../../../shared/interface/cab.interface';
+import { ICabFormPage } from '../../../../shared/interface/dynamic-form.interface';
 
 @Component({
   selector: 'app-cab-file-card',

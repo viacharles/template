@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {UntypedFormArray, FormGroup} from '@angular/forms';
-import { ICabFormPage } from 'src/app/modules/form/dynamic-form-page/shared/interface/cab.interface';
+import { ICabFormPage } from 'src/app/modules/form/dynamic-form-page/shared/interface/dynamic-form.interface';
 
 @Component({
   selector: 'app-cab-upload-field',
