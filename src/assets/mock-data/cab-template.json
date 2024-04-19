@@ -30,7 +30,7 @@
                   "value": null
                 }
               ],
-              "validator": [
+              "validation": [
                 {
                   "type":"validator.en-number-only"
                 }
@@ -82,12 +82,12 @@
                 },
                 {
                   "label": "佐藤咖哩",
-                  "value": 4,
+                  "value": 5,
                   "memo": false
                 },
                 {
                   "label": "其他推薦",
-                  "value": 5,
+                  "value": 6,
                   "memo": true,
                   "memoPlaceholder":"推薦餐廳"
                 }
@@ -216,6 +216,12 @@
                   "value": null
                 }
               ],
+              "validation": [
+                {
+                  "type": "validator.min-items",
+                  "value": 2
+                }
+              ],
               "options": [
                 {
                   "label": "防癌",
@@ -239,7 +245,7 @@
                 },
                 {
                   "label": "預防老年癡呆",
-                  "value": 4,
+                  "value": 5,
                   "memo": false
                 }
               ]
@@ -353,7 +359,7 @@
               "required": true,
               "disabled": false,
               "title": null,
-              "placeholder": "請隨意輸入超過5字...",
+              "placeholder": "請輸入5到10字...",
               "hideExpression": [
                 {
                   "answerId": "",
@@ -363,8 +369,8 @@
               ],
               "validation": [
                 {
-                  "type": "validator.min-length",
-                  "value": 5,
+                  "type": "validator.max-min-length",
+                  "value": [5, 20],
                   "regex": null
                 }
               ],
