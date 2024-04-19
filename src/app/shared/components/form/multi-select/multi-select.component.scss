@@ -43,28 +43,25 @@
       }
     }
 
-    &:checked+label {
-      border-top: 1px solid $green-middle;
-      border-left: 1px solid $green-middle;
-      border-right: 1px solid $green-middle;
-    }
-
     &:disabled+label {
       cursor: default;
       background-color: $grey-light;
     }
 
-    &:not(:disabled) + label:hover {
-      border-top: 1px solid var(--primary-color);
-      border-right: 1px solid var(--primary-color);
-      border-left: 1px solid var(--primary-color);
-      border-bottom-width: 2px;
-    }
-    &:not(:disabled)+label.error {
-      border-color: var(--warn-color);
+    &:not(:disabled) + label {
       &:hover {
-        background-color: var(--warn-background-hover);
-        border-width: 1.5px;
+        border-bottom-width: 2px;
+      }
+      &.focus {
+        border-bottom-width: 2px !important;
+        border-bottom-color: var(--primary-color);
+      }
+      &.error {
+        border-color: var(--warn-color);
+        &:hover {
+          background-color: var(--warn-background-hover);
+          border-width: 1.5px;
+        }
       }
     }
   }

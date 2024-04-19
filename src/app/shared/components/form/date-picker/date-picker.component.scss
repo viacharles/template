@@ -21,6 +21,10 @@
       color: $grey-iron;
     }
   }
+  &.focus {
+    border-width: 2px;
+    border-bottom-color: var(--primary-color);
+  }
   &.error {
     border: 1px solid $red-middle;
     &:hover {
@@ -33,7 +37,7 @@
   }
   em {
     font-size: 1.2rem;
-    color: $grey-dark;
+    color: $grey-black;
     transition: 0.3s;
     &.cancel {
       display: flex;
@@ -44,12 +48,11 @@
       height: 17px;
       font-size: 0.5rem;
       font-weight: 700;
-      color: $grey-dark;
+      color: $grey-black;
       border-radius: 50%;
 
       &:hover {
         font-size: 0.4rem;
-        // border: 1px solid $grey-dark;
         background-color: var(--primary-background-hover);
         color: $grey-black;
       }

@@ -1,9 +1,10 @@
 <textarea
   #tTextArea
   [placeholder]="this.placeholder | translate"
-  [(ngModel)]="this.model"
+  [(ngModel)]="this.isDynamic ? $any(this.model![0]).value : this.model"
   [style.minHeight]="this.minHeight ? this.minHeight : '6rem'"
-  class="textarea w-100"
+  [style.maxHeight]="this.maxHeight ? this.maxHeight : 'unset'"
+  class="textarea w-100 overflow-auto"
   (ngModelChange)="this.resize(tTextArea)"
   [disabled]="this.disabled"
   [class.error]="this.isError"

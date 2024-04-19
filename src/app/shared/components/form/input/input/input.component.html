@@ -1,7 +1,8 @@
 <input
 class="input w-100 {{this.size}}"
-[ngModel]="this.model"
+[ngModel]="this.isDynamic ? $any(this.model![0]).value : this.model"
 [type]="this.type"
+pattern="[0-9]+(\.[0-9]{1,2})?"
 [disabled]="this.disabled"
 [placeholder]="this.placeholder"
 [class.error]="this.isError"

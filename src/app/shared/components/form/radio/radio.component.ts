@@ -1,8 +1,9 @@
-import {AfterViewInit, Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {
   CustomForm,
   getFormProvider,
 } from '@utilities/abstract/customForm.abstract';
+import { IDynamicFieldValue } from '@utilities/interface/api/cab-api.interface';
 import { IDynamicOption } from '@utilities/interface/form.interface';
 
 @Component({
@@ -11,7 +12,7 @@ import { IDynamicOption } from '@utilities/interface/form.interface';
   styleUrls: ['./radio.component.scss'],
   providers: [getFormProvider(RadioComponent)],
 })
-export class RadioComponent extends CustomForm implements AfterViewInit {
+export class RadioComponent extends CustomForm {
   @Input() option?: IDynamicOption<string | number>;
   /** 最小寬度 / 欄位 */
   @Input() minWidth = '';
@@ -24,34 +25,29 @@ export class RadioComponent extends CustomForm implements AfterViewInit {
   @Input() memo?: string;
   /** 無資料樣式 */
   @Input() noData = false;
-  @Output() memoChange = new EventEmitter<string>();
+  @Output() valueChange = new EventEmitter<IDynamicFieldValue>();
+  @Output() memoChange = new EventEmitter<string>()
 
   constructor() {
     super();
   }
 
-  ngAfterViewInit(): void {
-    if (this.option) {
-      const timer = setTimeout(() => {
-        clearTimeout(timer);
-      });
-      ;
-    };
-  }
-
-  public onOther(event: Event) {
+  public onMemoChange(event: Event) {
     if (!this.disabled) {
-      const value = (event.target as HTMLInputElement).value;
-      this.memoChange.emit(value);
-    }
+      const value = {value: this.model.value, memo: this.memo??''};
+      this.notifyValueChange(value);
+      this.memoChange.emit(this.memo);
+    };
   }
 
   public check(event: Event): void {
     if (this.disabled) { event.preventDefault() }
     else {
       const input = event.target as HTMLInputElement;
-      this.model = input.value;
-      this.notifyValueChange(input.value);
+
+      const value = {value: input.value, memo: this.memo??''};
+      this.notifyValueChange(value);
+      this.valueChange.emit(value);
     };
   }
 }

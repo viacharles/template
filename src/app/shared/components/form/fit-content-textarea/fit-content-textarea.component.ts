@@ -12,6 +12,7 @@ import {
   CustomForm,
   getFormProvider,
 } from '@utilities/abstract/customForm.abstract';
+import { IDynamicFieldValue } from '@utilities/interface/api/cab-api.interface';
 import { take, timer } from 'rxjs';
 
 @Component({
@@ -21,17 +22,19 @@ import { take, timer } from 'rxjs';
   providers: [getFormProvider(FitContentTextareaComponent)],
 })
 export class FitContentTextareaComponent
-  extends CustomForm<string>
-  implements OnChanges, AfterViewInit
-{
+  extends CustomForm<[IDynamicFieldValue] | string>
+  implements OnChanges, AfterViewInit {
   @ViewChild('tTextArea') tTextArea?: ElementRef<HTMLTextAreaElement>;
   @Input() placeholder = 'common.question-basic-content-placeholder';
   @Input() errorMessage?: string
   @Input() minHeight = '';
+  @Input() maxHeight = '';
   @Input() show?: boolean;
   @Input() clear?: boolean;
   @Input() override disabled = false;
   @Input() isError = false;
+  /** 是 Dynamic 系統模式： IDynamicFieldValue */
+  @Input() isDynamic = false;
 
   constructor(
     private selfElem: ElementRef,
@@ -40,10 +43,9 @@ export class FitContentTextareaComponent
     super();
   }
 
-  public override model = '';
   public preReserveHeight?: number;
 
-  ngOnChanges({show, clear}: SimpleChanges): void {
+  ngOnChanges({ show, clear }: SimpleChanges): void {
     if (show) {
       this.setHeightByShow('ngOnChanges');
     }
@@ -56,7 +58,7 @@ export class FitContentTextareaComponent
   ngAfterViewInit(): void {
     if (this.show) {
       timer(1000).pipe(take(1)).subscribe(() => this.setHeightByShow('ngAfterViewInit'));
-    }
+    };
   }
 
   public resize(fieldElem: HTMLElement): void {
@@ -67,7 +69,8 @@ export class FitContentTextareaComponent
       fieldElem.scrollHeight + 'px'
     );
     this.preReserveHeight = fieldElem.scrollHeight;
-    this.notifyValueChange();
+    const inputValue = (fieldElem as HTMLInputElement).value;
+    this.notifyValueChange(this.isDynamic ? [{ value: inputValue, memo: '' }] : inputValue);
   }
 
   private setHeightByShow(s: string) {

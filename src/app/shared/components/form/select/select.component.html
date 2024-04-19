@@ -1,6 +1,6 @@
 <div class="w-100 position-relative">
   <div class="input w-100 h-11 d-flex justify-content-between align-items-center position-relative"
-    (click)="this.open()" [class.disabled]="this.disabled" [class.error]="this.isError">
+    (click)="this.open()" [class.disabled]="this.disabled" [class.error]="this.isError"[class.focus]="this.isOpen">
     <p class="text-nowrap overflow-auto text-left w-100 text-grey-{{this.currentOption?.name ? 'black' : 'iron'}}">
       {{ this.currentOption?.name ?? this.placeholder | translate }}
     </p>

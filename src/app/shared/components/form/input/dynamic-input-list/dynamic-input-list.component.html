@@ -1,12 +1,13 @@
-<form [formGroup]="this.listForm">
-  <ul [formArrayName]="'list'">
-    <li *ngFor="let item of this.listForm.controls.list.controls;let index = index" class="d-flex">
-      <p class="mr-2">{{index+1}}.</p>
-      <app-input [size]="this.sizeType.Small" [formControlName]="index" />
-      <em class="icon-cencel"></em>
+<app-borderless-button class="ml-1 mb-1" [icon]="'icon-add'" [size]="this.sizeType.S" (click)="this.addEmptyItem()">
+新增項目</app-borderless-button>
+<form class="d-flex" [formGroup]="this.listForm">
+  <ul class="d-flex flex-column" [formArrayName]="'list'">
+    <li @verticalShortenOut *ngFor="let item of this.listForm.controls.list.controls;let index = index"
+    [formGroup]="this.listForm.controls.list.controls[index]"
+    class="d-flex align-items-center p-1">
+      <app-input [size]="this.sizeType.S" formControlName="content" />
+      <app-checkbox class="ml-2" *ngIf="'icon-add'" [option]="{ name: '有說明欄位', code: true }" [id]="''+index" formControlName="hasMemo"></app-checkbox>
+      <app-icon-button class="ml-2" [classes]="'icon-cancel-thick text-grey-black fs-xs fw-9'" [size]="this.sizeType.S" (click)="this.listForm.controls.list.removeAt(index)"></app-icon-button>
     </li>
   </ul>
 </form>
-<em class="icon-add "></em>
-
-

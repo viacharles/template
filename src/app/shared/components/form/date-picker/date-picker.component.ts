@@ -8,15 +8,20 @@ import {
   Renderer2,
   ViewChild,
   OnInit,
+  OnChanges,
+  SimpleChanges,
+  AfterViewInit,
+  ChangeDetectorRef,
 } from '@angular/core';
-import {WindowService} from '@shared/service/window.service';
+import { WindowService } from '@shared/service/window.service';
 import {
   CustomForm,
   getFormProvider,
 } from '@utilities/abstract/customForm.abstract';
 import { fadeEnterAndHideOutSmaller } from '@utilities/helper/animations.helper';
+import { IDynamicFieldValue } from '@utilities/interface/api/cab-api.interface';
 import { IRangeDate } from '@utilities/interface/common.interface';
-import {takeUntil} from 'rxjs';
+import { takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-date-picker',
@@ -25,7 +30,7 @@ import {takeUntil} from 'rxjs';
   animations: [fadeEnterAndHideOutSmaller()],
   providers: [getFormProvider(DatePickerComponent)],
 })
-export class DatePickerComponent extends CustomForm<string> implements OnInit {
+export class DatePickerComponent extends CustomForm<IDynamicFieldValue[] | string> implements OnInit {
   @ViewChild('tCalendarContainer') set tCalendarContainer(
     calendar: ElementRef<HTMLElement>
   ) {
@@ -47,6 +52,8 @@ export class DatePickerComponent extends CustomForm<string> implements OnInit {
   @Input() isDisabled?: boolean;
   /** 是否只限本月 */
   @Input() thisMonthLimit = false;
+  /** 是 Dynamic 系統模式： IDynamicFieldValue */
+  @Input() isDynamic = false;
   @Output() selectDate = new EventEmitter<string>();
   @Output() calendarShow = new EventEmitter<boolean>();
 
@@ -54,7 +61,7 @@ export class DatePickerComponent extends CustomForm<string> implements OnInit {
     private selfElement: ElementRef,
     private renderer: Renderer2,
     private $window: WindowService,
-    private datePipe: DatePipe
+    private datePipe: DatePipe,
   ) {
     super();
   }
@@ -80,13 +87,13 @@ export class DatePickerComponent extends CustomForm<string> implements OnInit {
 
   public clear(event: Event): void {
     event.stopPropagation();
-    this.notifyValueChange('');
+    this.notifyValueChange(this.isDynamic ? [{value: '', memo:''}] : '');
   }
 
   public select(select: string | IRangeDate) {
     this.show = false;
     const date = (this.isRange ? this.datePipe.transform((select as IRangeDate).start, this.format) + ' ~ ' + this.datePipe.transform((select as IRangeDate).end, this.format) : this.datePipe.transform(select as string, this.format) as string);
-    this.notifyValueChange(date);
+    this.notifyValueChange(this.isDynamic ? [{value: date, memo: ''}] : date);
     this.selectDate.emit(date);
     this.calendarShow.emit(this.show);
   }

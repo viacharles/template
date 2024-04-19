@@ -17,7 +17,6 @@ import { CheckboxComponent } from './checkbox/checkbox.component';
 import { CheckboxSetComponent } from './checkbox-set/checkbox-set.component';
 import { SharedModule } from '@shared/shared.module';
 import { InputComponent } from './input/input/input.component';
-import { TextButtonComponent } from './buttons/text-button/text-button.component';
 import { DynamicInputListComponent } from './input/dynamic-input-list/dynamic-input-list.component';
 import { RadioSetComponent } from './radio-set/radio-set.component';
 
@@ -36,7 +35,6 @@ import { RadioSetComponent } from './radio-set/radio-set.component';
     CheckboxComponent,
     CheckboxSetComponent,
     InputComponent,
-    TextButtonComponent,
     DynamicInputListComponent,
     RadioSetComponent
   ],
@@ -56,7 +54,6 @@ import { RadioSetComponent } from './radio-set/radio-set.component';
     FormsModule,
     ReactiveFormsModule,
     InputComponent,
-    TextButtonComponent,
     DynamicInputListComponent,
     RadioSetComponent
   ],

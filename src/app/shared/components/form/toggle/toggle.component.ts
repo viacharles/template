@@ -13,6 +13,8 @@ export class ToggleComponent<T> extends CustomForm {
   @Input() id?: string;
   @Input() value?: T;
   @Output() check = new EventEmitter<Event>();
+  /** 是 Dynamic 系統模式： IDynamicFieldValue */
+  @Input() isDynamic = false;
 
   constructor() { super() }
 

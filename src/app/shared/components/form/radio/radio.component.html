@@ -4,7 +4,7 @@
   [class.error]="this.isError"
   [name]="'radio-' + this.name"
   [id]="this.id"
-  [checked]="this.checked === undefined ? this.model === option.code : this.checked"
+  [checked]="this.checked === undefined ? this.model?.value === option.code : this.checked"
   [value]="option.code"
   (click)="this.check($event)" />
   <label class="d-flex align-items-start pe-pointer" [for]="this.id"
@@ -14,9 +14,12 @@
       <p class="fs-md text-wrap text-grey-black ml-2" [class.hasMemo]="option.hasMemo">
         {{ option.name | translate }}
       </p>
-      <input type="text" class="input ml-2"
+      <input type="text" class="input"
+        [(ngModel)]="this.memo"
+        (ngModelChange)="this.onMemoChange($event)"
         [placeholder]="(option.memoPlaceholder ? option.memoPlaceholder : 'cab.comment-send-placeholder') | translate"
-        *ngIf="option.hasMemo" [disabled]="this.disabled || !tRadio.checked" (input)="this.onOther($event)"
+        *ngIf="option.hasMemo"
+        [disabled]="this.disabled || !tRadio.checked"
         id="otherInput" [value]="this.memo" />
     </div>
   </label>

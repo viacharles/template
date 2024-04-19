@@ -1,0 +1,13 @@
+@import "color";
+ul {
+  margin-top: 0;
+  margin-bottom: 0;
+  li {
+    width: auto;
+    border-radius: var(--form-radius-sm);
+    &:hover {
+      background-color: $grey-light;
+    }
+  }
+}
+

@@ -1,8 +1,8 @@
 <div class="position-relative mb-1 w-100">
   <div class="input w-100 d-flex align-items-center justify-content-between" [class.disabled]="this.isDisabled"
-    [class.error]="this.isError" (click)="this.showCalendar()">
+    [class.error]="this.isError" [class.focus]="this.show" (click)="this.showCalendar()">
     <h5 class="has-value" [style.fontSize]="this.valueFontSize" *ngIf="this.model; else tPlaceholder">
-      {{this.model}}
+      {{this.isDynamic ? $any(this.model[0]).value : this.model}}
     </h5>
     <ng-template #tPlaceholder>
       <p class="text-grey-iron fs-xsm mb-0" [style.fontSize]="this.placeholderFontSize">

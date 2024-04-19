@@ -1,7 +1,7 @@
-import { Component, Input } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { AfterViewInit, Component, Input, SimpleChanges } from '@angular/core';
 import { CustomForm, getFormProvider } from '@utilities/abstract/customForm.abstract';
 import { ESize } from '@utilities/enum/common.enum';
+import { IDynamicFieldValue } from '@utilities/interface/api/cab-api.interface';
 
 @Component({
   selector: 'app-input',
@@ -9,18 +9,21 @@ import { ESize } from '@utilities/enum/common.enum';
   templateUrl: './input.component.html',
   styleUrl: './input.component.scss'
 })
-export class InputComponent extends CustomForm {
+export class InputComponent extends CustomForm<[IDynamicFieldValue] | string> {
   @Input() type = 'text';
   @Input() id = 'input';
   @Input() placeholder = '請輸入...';
   @Input() errorMessage?: string
   @Input() override disabled = false;
   @Input() isError = false;
-  @Input() size: ESize = ESize.Medium;
+  /** 是 Dynamic 系統模式： IDynamicFieldValue */
+  @Input() isDynamic = false;
+  @Input() size: ESize = ESize.M;
 
   public input(event: Event): void {
     this.trim(event);
-    this.notifyValueChange((event.target as HTMLInputElement).value);
+    const value = (event.target as HTMLInputElement).value;
+    this.notifyValueChange(this.isDynamic ? [{ value, memo: '' }] : value);
   }
 
   private trim(event: Event) {

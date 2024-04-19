@@ -1,6 +1,6 @@
 <div class="multi-select p-relative">
   <input #tInput class="d-none" type="checkbox" [id]="this.id" [(ngModel)]="this.showDropdown" [disabled]="this.disabled">
-  <label class="w-100 h-auto input d-flex pe-pointer" [class.error]="this.isError" [for]="this.id" >
+  <label class="w-100 h-auto input d-flex pe-pointer" [class.error]="this.isError" [class.focus]="this.showDropdown" [for]="this.id" >
     <div class="w-100 h-auto overflow-auto d-flex flex-wrap"
     *ngIf="!!this.checkedOptions?.length; else tPlaceholder">
     <!-- 已選取的項目 -->

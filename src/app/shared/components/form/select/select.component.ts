@@ -12,9 +12,10 @@ import {
   Renderer2,
   ViewChild,
 } from '@angular/core';
-import {WindowService} from '@shared/service/window.service';
-import {IOption} from '@utilities/interface/common.interface';
-import {take, takeUntil, timer} from 'rxjs';
+import { WindowService } from '@shared/service/window.service';
+import { IOption } from '@utilities/interface/common.interface';
+import { take, takeUntil, timer } from 'rxjs';
+import { IDynamicFieldValue } from '@utilities/interface/api/cab-api.interface';
 
 @Component({
   selector: 'app-select',
@@ -23,9 +24,8 @@ import {take, takeUntil, timer} from 'rxjs';
   providers: [getFormProvider(SelectComponent)],
 })
 export class SelectComponent<T extends IOption<string>>
-  extends CustomForm<string>
-  implements OnInit
-{
+  extends CustomForm<string | [IDynamicFieldValue]>
+  implements OnInit {
   @ViewChild('tDropDown') tDropDown?: ElementRef<HTMLElement>;
   @Output() select = new EventEmitter<T>();
   @Input() options: T[] = [];
@@ -35,6 +35,8 @@ export class SelectComponent<T extends IOption<string>>
   @Input() override disabled = false;
   @Input() errorMessage?: string;
   @Input() isError?: boolean;
+  /** 是 Dynamic 系統模式： IDynamicFieldValue */
+  @Input() isDynamic = false;
 
   constructor(
     private selfElem: ElementRef,
@@ -47,7 +49,7 @@ export class SelectComponent<T extends IOption<string>>
   public isOpen = false;
 
   get currentOption(): T | undefined {
-    return this.options?.find(({code}) => code === this.model);
+    return this.options?.find(({ code }) => this.model && code === (this.isDynamic ? (this.model[0] as IDynamicFieldValue)?.value : this.model));
   }
 
   ngOnInit(): void {
@@ -66,7 +68,7 @@ export class SelectComponent<T extends IOption<string>>
   /** 選擇選項 */
   public selectOption(option?: T): void {
     this.isOpen = false;
-    this.notifyValueChange(option ? option.code : '');
+    this.notifyValueChange(this.isDynamic ? [{value: option ? option.code : '', memo:''}] : option ? option.code : '');
     this.select.emit(option);
   }
 
@@ -98,7 +100,7 @@ export class SelectComponent<T extends IOption<string>>
         const isOffScreen =
           rect.bottom - 120 <
           rect?.height +
-            this.selfElem.nativeElement.getBoundingClientRect().height;
+          this.selfElem.nativeElement.getBoundingClientRect().height;
         this.render.setStyle(
           this.tDropDown.nativeElement,
           isOffScreen ? 'top' : 'bottom',
