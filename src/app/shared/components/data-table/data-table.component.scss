@@ -204,7 +204,6 @@
             right: -1px;
             width: 6px;
             height: 100%;
-            // border-right: 1px solid #d8d8d8;
             background-color: transparent;
 
             &.showFrontShadow {
@@ -600,7 +599,7 @@ h6 {
 .filter-icon {
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
 
   &.hasFilter span {
     border-bottom: 1.8px solid var(--theme-color);
