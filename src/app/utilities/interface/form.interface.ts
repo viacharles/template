@@ -1,7 +1,7 @@
 import { FormArray, FormControl, FormGroup } from "@angular/forms";
 import { IOption } from "./common.interface";
 import { ESize } from "@utilities/enum/common.enum";
-import { EFieldMemoType } from "@utilities/enum/form.enum";
+import { EFieldMemoType, EInputType } from "@utilities/enum/form.enum";
 
 export type Unpacked<T> = T extends Array<infer U> ? U : T;
 
@@ -27,5 +27,9 @@ export interface IDynamicOption<T> extends IOption<T> {
   /** 說明欄位的尺寸 */
   memoSize?: ESize,
   /** 說明欄位的型態 */
-  memoType?: EFieldMemoType
+  memoFieldType?: EFieldMemoType,
+  /** 說明欄輸入資料型態 */
+  memoInputType?: EInputType,
+  /** 說明欄內容 */
+  memo?: string
 }
