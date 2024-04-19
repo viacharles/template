@@ -1,20 +1,24 @@
 
-<div class="d-flex flex-{{this.direction}} flex-wrap">
-  <ng-container *ngIf="!!this.options.length;else tNoData">
-      <app-checkbox
-      *ngFor="let option of this.checkboxes;let index = index"
-      [option]="option"
-      [name]="'checkbox-' + this.name"
-      [id]="this.name+'-'+index"
-      [disabled]="this.disabled"
-      [isError]="this.isError"
-      [checked]="option.isSelect"
-      [memo]="this.memo"
-      (memoChange)="this.memoChange.emit($event)"
-      (change)="this.change(option.code)"
-      ></app-checkbox>
-  </ng-container>
-</div>
+  <div class="d-flex flex-{{this.direction}} flex-wrap">
+    <ng-container *ngIf="!!this.options.length;else tNoData">
+      <ng-container *ngFor="let option of this.checkboxes;let index = index">
+        <app-checkbox
+        *ngIf="option.show === true || option.show === undefined"
+        [option]="option"
+        [name]="'checkbox-' + this.name"
+        [id]="this.name+'-'+index"
+        [memo]="option.memo??''"
+        [disabled]="this.disabled"
+        [isError]="this.isError"
+        [checked]="option.isSelect"
+        [isInGroup]="true"
+        (valueChange)="this.change($event, index)"
+        (memoChange)="this.onMemoChange($event, index)"
+        ></app-checkbox>
+      </ng-container>
+    </ng-container>
+  </div>
+
   <!-- 錯誤訊息 -->
   <div class="error-message" *ngIf="this.errorMessage && this.isError">{{this.errorMessage}}</div>
 
