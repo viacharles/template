@@ -163,15 +163,15 @@
     "item-8": "選項八"
   },
   "field": {
-    "field.select": "單選下拉選單",
-    "field.multiselect": "多選下拉選單",
-    "field.radio": "單選按鈕",
-    "field.toggle": "切換開關",
-    "field.checkbox": "核取方塊",
-    "field.textarea": "多行文字輸入框",
-    "field.input": "輸入欄",
-    "field.datepicker": "日期選取器",
-    "field.datepicker-range": "範圍日期選取器"
+    "select": "單選下拉選單",
+    "multiselect": "多選下拉選單",
+    "radio": "單選按鈕",
+    "toggle": "切換開關",
+    "checkbox": "核取方塊",
+    "textarea": "多行文字輸入框",
+    "input": "輸入欄",
+    "datepicker": "日期選取器",
+    "datepicker-range": "範圍日期選取器"
   },
   "error": {
     "required": "必填"
