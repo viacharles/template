@@ -4,7 +4,6 @@ import {IconDropdownComponent} from './components/dropdown/icon-dropdown/icon-dr
 import {NoDataSectionComponent} from './components/sections/no-data-section/no-data-section.component';
 import {TranslateModule} from '@ngx-translate/core';
 import {AccordionComponent} from './components/accordion/accordion.component';
-import {GoTopButtonComponent} from './components/buttons/go-top-button/go-top-button.component';
 import {PageTabSetComponent} from './components/layout/page-tabset/page-tab-set.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {SimpleCardComponent} from './components/cards/simple-card/simple-card.component';
@@ -16,13 +15,13 @@ import {TabsComponent} from './components/tab/tabs.component';
 import {SideTabPopupDialogComponent} from './components/overlay/side-tab-popup-dialog/side-tab-popup-dialog.component';
 import {AccordionListCardComponent} from './components/accordion/accordion-list-card/accordion-list-card.component';
 import { SortThComponent } from './components/icon/sort-th/sort-th.component';
+import { ButtonsModule } from './components/buttons/buttons.module';
 
 @NgModule({
   declarations: [
     IconDropdownComponent,
     NoDataSectionComponent,
     AccordionComponent,
-    GoTopButtonComponent,
     PageTabSetComponent,
     SimpleCardComponent,
     TooltipComponent,
@@ -37,7 +36,6 @@ import { SortThComponent } from './components/icon/sort-th/sort-th.component';
     IconDropdownComponent,
     NoDataSectionComponent,
     AccordionComponent,
-    GoTopButtonComponent,
     PageTabSetComponent,
     SimpleCardComponent,
     TooltipComponent,
@@ -47,7 +45,8 @@ import { SortThComponent } from './components/icon/sort-th/sort-th.component';
     SideTabPopupDialogComponent,
     AccordionListCardComponent,
     SortThComponent,
-    PipeModule
+    PipeModule,
+    ButtonsModule
   ],
   imports: [
     CommonModule,
@@ -55,6 +54,7 @@ import { SortThComponent } from './components/icon/sort-th/sort-th.component';
     FormsModule,
     ReactiveFormsModule,
     PipeModule,
+    ButtonsModule
   ],
 })
 export class SharedModule {}
