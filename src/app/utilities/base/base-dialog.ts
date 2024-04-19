@@ -1,10 +1,12 @@
+import { OnInit } from '@angular/core';
 import {DialogContainerComponent} from '@shared/components/overlay/dialog-container/dialog-container.component';
 import {OverlayService} from '@shared/service/overlay.service';
 import {UnSubOnDestroy} from '@utilities/abstract/unSubOnDestroy.abstract';
 import {IDialogParams} from '@utilities/interface/overlay.interface';
 import {AppModule} from 'src/app/app.module';
+import { Base } from './base';
 
-export class BaseDialog<T = any> extends UnSubOnDestroy {
+export class BaseDialog<T = any> extends Base {
   constructor(public dialog: DialogContainerComponent<T>) {
     super();
     this.inject();
@@ -42,4 +44,10 @@ export class BaseDialog<T = any> extends UnSubOnDestroy {
   private inject(): void {
     this.$overlay = AppModule.injector.get(OverlayService);
   }
+
+  protected override onInitBase(): void {
+    this.onInit();
+  }
+
+  protected onInit(): void {}
 }
