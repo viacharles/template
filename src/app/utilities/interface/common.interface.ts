@@ -55,6 +55,7 @@ export interface IOption<T = (string | number)> {
   name: string;
   icon?: string;
   isSelect?: boolean,
+  show?: boolean,
   [key: string]: any;
 }
 
