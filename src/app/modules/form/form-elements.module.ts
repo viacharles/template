@@ -24,6 +24,7 @@ import { CabFileCardComponent } from './dynamic-form-page/components/cab-card/ca
 import { DirectiveModule } from '@shared/directives/directive.module';
 import { OverlayModule } from '@shared/components/overlay/overlay.module';
 import { DynamicFieldEditDialogComponent } from './dynamic-form-page/shared/components/dynamic-field-edit-dialog/dynamic-field-edit-dialog.component';
+import { DynamicFormValidatorsService } from '@core/dynamic-form-validators.service';
 
 
 
@@ -58,7 +59,8 @@ import { DynamicFieldEditDialogComponent } from './dynamic-form-page/shared/comp
     OverlayModule
   ],
   providers: [
-    DatePipe
+    DatePipe,
+    DynamicFormValidatorsService
   ]
 })
 export class FormElementsModule { }
