@@ -3,9 +3,9 @@ import {
   ICabFormPage,
   ICabQuestionView,
   ICabReviewFormOptionView,
-} from '../../../shared/interface/cab.interface';
+} from '../../../shared/interface/dynamic-form.interface';
 import {FormGroup} from '@angular/forms';
-import {fadeEnterAndHideOut, verticalShortenOut} from '@utilities/helper/animations.helper';
+import {downFadeInAndCompressOut, fadeEnterAndHideOut, verticalShortenOut} from '@utilities/helper/animations.helper';
 import { Base } from '@utilities/base/base';
 import { OverlayService } from '@shared/service/overlay.service';
 import { DynamicFieldEditDialogComponent } from '../../../shared/components/dynamic-field-edit-dialog/dynamic-field-edit-dialog.component';
@@ -15,7 +15,7 @@ import { EFieldType } from '@utilities/enum/form.enum';
   selector: 'app-dynamic-form-basic-type',
   templateUrl: './dynamic-form-basic-type.component.html',
   styleUrls: ['./dynamic-form-basic-type.component.scss'],
-  animations: [fadeEnterAndHideOut(), verticalShortenOut()],
+  animations: [fadeEnterAndHideOut(), verticalShortenOut(), downFadeInAndCompressOut()],
 })
 export class DynamicFormBasicTypeComponent extends Base {
   @Input() pageIndex?: number;
@@ -46,7 +46,8 @@ export class DynamicFormBasicTypeComponent extends Base {
   /** 編輯題目 */
   public editSubQuestion(SubQuestion: ICabQuestionView, index: number): void {
     this.$overlay.addDialog(
-      DynamicFieldEditDialogComponent
+      DynamicFieldEditDialogComponent,
+      SubQuestion
     )
   }
 

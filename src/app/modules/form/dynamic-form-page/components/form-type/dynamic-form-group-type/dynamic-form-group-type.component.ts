@@ -7,7 +7,7 @@ import {
 import {fadeEnterAndHideOut} from '@utilities/helper/animations.helper';
 import {ICabRemark} from '@utilities/interface/api/cab-api.interface';
 import { ECabAnswerStatus } from '../../../shared/enum/cab.enum';
-import { ICabFormPage, ICabQuestionView, ICabReviewFormOptionView } from '../../../shared/interface/cab.interface';
+import { ICabFormPage, ICabQuestionView, ICabReviewFormOptionView } from '../../../shared/interface/dynamic-form.interface';
 import { EFieldType } from '@utilities/enum/form.enum';
 
 @Component({

@@ -4,89 +4,94 @@
       <ul class="question-card__question pt-6 pb-4">
         <ng-container *ngFor="let question of group.questions; let questionIndex = index">
           <ng-container *ngIf="question.show">
-            <li @verticalShortenOut class="d-flex justify-content-between align-items-start px-8 mt-3 mb-5" *ngIf="question"
-              [class.error]="question.form.invalid && this.form?.touched" [formGroup]="question.form">
+            <li @verticalShortenOut class="p-relative d-flex justify-content-between align-items-start px-8 pt-3 pb-5"
+              *ngIf="question" [class.error]="question.form.invalid && this.form?.touched" [formGroup]="question.form">
               <div class="w-100 d-flex flex-column">
-                <div class="d-flex mb-3">
+                <div class="d-flex mb-2">
                   <p class="text-grey-black fs-md pr-2">
-                    {{ question.title }}<span class="text-red-middle align-top ml-1" *ngIf="this.isRequired(question)">*</span>
+                    {{ question.title }}<span class="text-red-middle align-top ml-1"
+                      *ngIf="this.isRequired(question)">*</span>
                   </p>
-                  <p class="text-grey-dark fs-xsm ml-4">{{ question.description }}</p>
+                  <p class="text-grey-dark fs-xsm ml-2">{{ question.description }}</p>
                 </div>
                 <ul class="question-card__option-group">
                   <ng-container *ngFor="
                       let SubQuestion of question.SubQuestionGroup;
                       let SubQuestionIndex = index
                     ">
-                    <li class="w-100 d-flex flex-column align-items-start" *ngIf="SubQuestion.show" [formGroup]="SubQuestion.form">
+                    <li class="w-100 d-flex flex-column align-items-start" *ngIf="SubQuestion.show">
                       <p class="fs-md text-grey-dark mt-3 mb-2" *ngIf="SubQuestion.title">
-                        {{ SubQuestion.title }}<span class="text-red-middle align-top ml-1" *ngIf="SubQuestion.required">*</span>
+                        {{ SubQuestion.title }}<span class="text-red-middle align-top ml-1"
+                          *ngIf="SubQuestion.required">*</span>
                       </p>
                       <ng-container [ngSwitch]="SubQuestion.type">
                         <!-- 單選 radio -->
                         <app-radio-set *ngSwitchCase="this.fieldType.Radio" class="w-100"
-                          formControlName="value"
-                          [options]="SubQuestion.optionsForNormal"
+                          [formControl]="SubQuestion.form" [options]="SubQuestion.optionsForNormal"
                           [isError]="SubQuestion.form.invalid && this.form!.touched && this.isCompleteClicked"
-                          [name]="(question?.questionId ?? '') + '-' + SubQuestionIndex"
-                          [memo]="SubQuestion.form.get('memo')?.value"
-                          (memoChange)="SubQuestion.form.get('memo')?.setValue($event)"></app-radio-set>
+                          [name]="(question?.questionId ?? '') + '-' + SubQuestionIndex"></app-radio-set>
                         <!-- 單選 select -->
-                        <app-select *ngSwitchCase="this.fieldType.Select" class="w-40p"
-                          formControlName="value"
-                          [options]="SubQuestion.optionsForNormal"
-                          [placeholder]="SubQuestion.placeholder??'請選擇'"
-                          [isError]="SubQuestion.form.invalid && this.form!.touched && this.isCompleteClicked"
-                          (memoChange)="SubQuestion.form.get('memo')?.setValue($event)"></app-select>
+                        <app-select *ngSwitchCase="this.fieldType.Select" class="w-40p" [formControl]="SubQuestion.form"
+                          [options]="SubQuestion.optionsForNormal" [placeholder]="SubQuestion.placeholder??'請選擇'"
+                          [isDynamic]="true"
+                          [isError]="SubQuestion.form.invalid && this.form!.touched && this.isCompleteClicked"></app-select>
                         <!-- 多選 checkbox -->
                         <app-checkbox-set *ngSwitchCase="this.fieldType.Checkbox" class="w-80p"
-                          formControlName="value"
-                          [options]="SubQuestion.optionsForNormal"
-                          [memo]="SubQuestion.form.get('memo')?.value"
-                          [isError]="SubQuestion.form.invalid && this.form!.touched && this.isCompleteClicked"
-                          (memoChange)="SubQuestion.form.get('memo')?.setValue($event)"></app-checkbox-set>
+                          [formControl]="SubQuestion.form" [options]="SubQuestion.optionsForNormal"
+                          [isError]="SubQuestion.form.invalid && this.form!.touched && this.isCompleteClicked"></app-checkbox-set>
                         <!-- 多選 multi select -->
                         <app-multi-select *ngSwitchCase="this.fieldType.MultiSelect" class="w-40p"
-                          formControlName="value"
-                          [id]="question.title??''"
-                          [options]="SubQuestion.optionsForNormal"
+                          [formControl]="SubQuestion.form" [id]="question.title??''"
+                          [options]="SubQuestion.optionsForNormal" [isDynamic]="true"
                           [isError]="SubQuestion.form.invalid && this.form!.touched && this.isCompleteClicked"
-                          [placeholder]="SubQuestion.placeholder??'可多選'"
-                          [hasFilter]="true"
-                          ></app-multi-select>
+                          [placeholder]="SubQuestion.placeholder??'可多選'" [hasFilter]="true"></app-multi-select>
                         <!-- date picker -->
                         <app-date-picker *ngSwitchCase="this.fieldType.DatePicker" class="h-11 w-40p"
-                          formControlName="value"
+                          [formControl]="SubQuestion.form" [isDynamic]="true"
                           [isError]="SubQuestion.form.invalid && this.form!.touched && this.isCompleteClicked"
                           position="right" valeFontSize="1rem" [isDisabled]="SubQuestion.form.disabled">
                         </app-date-picker>
                         <!-- date picker range -->
                         <app-date-picker *ngSwitchCase="this.fieldType.DatePickerRange" class="h-11 w-40p"
-                          formControlName="value" [isRange]="true"
+                          [formControl]="SubQuestion.form" [isRange]="true" [isDynamic]="true"
                           [isError]="SubQuestion.form.invalid && this.form!.touched && this.isCompleteClicked"
                           position="right" valeFontSize="1rem" [isDisabled]="SubQuestion.form.disabled">
                         </app-date-picker>
                         <!-- 輸入欄 -->
-                        <app-input *ngSwitchCase="this.fieldType.Input" class="w-80p" formControlName="value"
-                        [isError]="SubQuestion.form.invalid && this.form!.touched && this.isCompleteClicked"></app-input>
+                        <app-input *ngSwitchCase="this.fieldType.Input" class="w-80p" [formControl]="SubQuestion.form"
+                          [isDynamic]="true"
+                          [isError]="SubQuestion.form.invalid && this.form!.touched && this.isCompleteClicked"></app-input>
                         <!-- textarea -->
-                        <app-fit-content-textarea *ngSwitchCase="this.fieldType.TextArea" class="w-80p" formControlName="value"
-                        [isError]="SubQuestion.form.invalid && this.form!.touched && this.isCompleteClicked"></app-fit-content-textarea>
+                        <app-fit-content-textarea *ngSwitchCase="this.fieldType.TextArea" class="w-80p"
+                          [formControl]="SubQuestion.form" [isDynamic]="true" [maxHeight]="'4rem'"
+                          [isError]="SubQuestion.form.invalid && this.form!.touched && this.isCompleteClicked"></app-fit-content-textarea>
                       </ng-container>
-                      <ul class="d-flex mt-1">
+                      <!-- 錯誤訊息 -->
+                      <ul class="d-flex mt-1" *ngIf="SubQuestion.form.invalid && this.form!.touched && this.isCompleteClicked">
                         <ng-container *ngFor="let item of SubQuestion.validationView; let SubQuestionIndex = index">
-                          <li class="error-message mr-3" *ngIf="SubQuestion.form.invalid && this.form!.touched && this.isCompleteClicked">{{item.type|translate}}</li>
+                          <li @downInCompressOut class="error-message mr-3"
+                          *ngIf="SubQuestion.form.errors ? SubQuestion.form.errors[item.type] : false">
+                            <!-- {{(item.type | translate)}} -->
+                            <!-- {{(SubQuestion.form.errors ? SubQuestion.form.errors[item.type] : false)|json}} -->
+                            <span  >
+                              {{SubQuestion.form.errors ? SubQuestion.form.errors[item.type] : ''}}
+                              <!-- <span *ngIf="!item.value?.length">({{item.value}})</span>
+                              <span *ngIf="item.value?.length">
+                                ({{item.value![0]}}<span>-</span>{{item.value![1]}})
+                              </span> -->
+                            </span>
+                          </li>
                         </ng-container>
                       </ul>
                     </li>
                   </ng-container>
                 </ul>
               </div>
-              <div class="d-flex align-items-end pt-3">
-                <app-text-button class="mr-2" [type]="this.colorType.Primary" [size]="this.sizeType.Small"
-                (click)="this.editSubQuestion(question, questionIndex)">編輯</app-text-button>
-                <app-text-button [type]="this.colorType.Warn" [size]="this.sizeType.Small" [hasFrame]="false"
-                (click)="this.deleteSubQuestion(groupIndex, questionIndex)">刪除</app-text-button>
+              <div class="d-flex align-items-end pt-3 opacity-0">
+                <app-borderless-button class="mr-2 h-8" [type]="this.colorType.Primary" [size]="this.sizeType.S"
+                  (click)="this.editSubQuestion(question, questionIndex)">編輯</app-borderless-button>
+                <app-borderless-button  class="h-8" [type]="this.colorType.Warn" [size]="this.sizeType.S"
+                  (click)="this.deleteSubQuestion(groupIndex, questionIndex)">刪除</app-borderless-button>
               </div>
             </li>
           </ng-container>

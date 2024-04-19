@@ -36,51 +36,67 @@
                     let SubQuestionIndex = index
                   ">
                   <li class="d-flex flex-column align-items-start pl-6 ml-8" *ngIf="SubQuestion.show"
-                    [formGroup]="SubQuestion.form">
+                    >
                     <!-- <p class="fs-md text-grey-black mt-3 mb-2" *ngIf="SubQuestion.title">
                       {{ SubQuestion.title }}
                     </p> -->
                     <ng-container [ngSwitch]="SubQuestion.type">
                       <!-- 單選 radio -->
-                      <app-radio-set *ngSwitchCase="this.fieldType.Radio" class="w-100" formControlName="value"
+                      <app-radio-set *ngSwitchCase="this.fieldType.Radio" class="w-100"
+                        [formControl]="SubQuestion.form"
                         [options]="SubQuestion.optionsForNormal"
                         [isError]="SubQuestion.form.invalid && this.form!.touched && this.isCompleteClicked"
                         [name]="(question?.questionId ?? '') + '-' + SubQuestionIndex"
-                        [memo]="SubQuestion.form.get('memo')?.value"
-                        (memoChange)="SubQuestion.form.get('memo')?.setValue($event)"></app-radio-set>
+                        ></app-radio-set>
                       <!-- 單選 select -->
-                      <app-select *ngSwitchCase="this.fieldType.Select" class="w-100 mt-2" formControlName="value"
+                      <app-select *ngSwitchCase="this.fieldType.Select" class="w-100 mt-2"
+                        [formControl]="SubQuestion.form"
+                        [isDynamic]="true"
                         [options]="SubQuestion.optionsForNormal" [placeholder]="SubQuestion.placeholder??'請選擇'"
-                        (memoChange)="SubQuestion.form.get('memo')?.setValue($event)"></app-select>
+                        ></app-select>
                       <!-- 多選 checkbox -->
-                      <app-checkbox-set *ngSwitchCase="this.fieldType.Checkbox" class="w-100" formControlName="value"
+                      <app-checkbox-set *ngSwitchCase="this.fieldType.Checkbox" class="w-100"
+                        [formControl]="SubQuestion.form"
                         [options]="SubQuestion.optionsForNormal" [hasOtherInput]="this.hasMemo(SubQuestion)"
-                        [memo]="SubQuestion.form.get('memo')?.value" [name]="question.questionId + SubQuestion.answerId"
+                        [name]="question.questionId + SubQuestion.answerId"
                         [isError]="SubQuestion.form.invalid && this.form!.touched && this.isCompleteClicked"
-                        (memoChange)="SubQuestion.form.get('memo')?.setValue($event)"></app-checkbox-set>
+                        ></app-checkbox-set>
                       <!-- 多選 multi select -->
                       <app-multi-select *ngSwitchCase="this.fieldType.MultiSelect" class="w-100 mt-2"
-                        formControlName="value" [id]="question.title??''" [options]="SubQuestion.optionsForNormal"
-                        [placeholder]="SubQuestion.placeholder??'可多選'" [hasFilter]="true"></app-multi-select>
+                        [formControl]="SubQuestion.form"
+                        [isDynamic]="true"
+                        [id]="question.title??''"
+                        [options]="SubQuestion.optionsForNormal"
+                        [placeholder]="SubQuestion.placeholder??'可多選'"
+                        [hasFilter]="true"
+                        ></app-multi-select>
                       <!-- date picker -->
                       <app-date-picker *ngSwitchCase="this.fieldType.DatePicker" class="h-11 w-100"
-                        formControlName="value"
+                        [formControl]="SubQuestion.form"
+                        [isDynamic]="true"
                         [isError]="SubQuestion.form.invalid && this.form!.touched && this.isCompleteClicked"
-                        position="right" valeFontSize="1rem" [isDisabled]="SubQuestion.form.disabled">
+                        position="right" valeFontSize="1rem"
+                        [isDisabled]="SubQuestion.form.disabled">
                       </app-date-picker>
                       <!-- date picker range -->
                       <app-date-picker *ngSwitchCase="this.fieldType.DatePickerRange" class="h-11 w-100"
-                        formControlName="value" [isRange]="true"
+                        [formControl]="SubQuestion.form"
+                        [isDynamic]="true"
+                        [isRange]="true"
                         [isError]="SubQuestion.form.invalid && this.form!.touched && this.isCompleteClicked"
-                        position="right" valeFontSize="1rem" [isDisabled]="SubQuestion.form.disabled">
+                        position="right" valeFontSize="1rem"
+                        [isDisabled]="SubQuestion.form.disabled">
                       </app-date-picker>
                       <!-- 輸入欄 -->
-                      <app-input *ngSwitchCase="this.fieldType.Input" class="w-100" formControlName="value"
+                      <app-input *ngSwitchCase="this.fieldType.Input" class="w-100"
+                        [formControl]="SubQuestion.form"
+                        [isDynamic]="true"
                         [placeholder]="SubQuestion.placeholder ?? '請輸入內容文字'"
                         [isError]="SubQuestion.form.invalid && this.form!.touched && this.isCompleteClicked"></app-input>
                       <!-- textarea -->
                       <app-fit-content-textarea *ngSwitchCase="this.fieldType.TextArea" class="w-80p"
-                        formControlName="value"
+                        [formControl]="SubQuestion.form"
+                        [isDynamic]="true"
                         [isError]="SubQuestion.form.invalid && this.form!.touched && this.isCompleteClicked"></app-fit-content-textarea>
                     </ng-container>
                   </li>
