@@ -1,0 +1,67 @@
+@import "color";
+:host {
+  display: inline-block;
+}
+button {
+  color: $grey-dark;
+  letter-spacing: 1px;
+  border-radius: 6px;
+  outline: none;
+  white-space: nowrap;
+  border: none;
+  background-color: transparent;
+  box-sizing: border-box;
+  transition: 0.05s;
+  border: 1px solid transparent;
+
+  p {
+    letter-spacing: 2px;
+  }
+
+  &.primary {
+    color: var(--primary-text-color);
+    &.hasBg {
+      filter: brightness(99%);
+      background-color: var(--primary-background-hover);
+    }
+  }
+
+  &.warn {
+    color: var(--warn-color);
+    &.hasBg {
+      filter: brightness(99%);
+      background-color: var(--warn-background-hover);
+    }
+  }
+
+  &.default {
+    color: $grey-black;
+    &.hasBg {
+      filter: brightness(99%);
+      background-color: $grey-light;
+    }
+  }
+
+
+  &.s {
+    padding-right: 0.3rem;
+    padding-left: 0.3rem;
+    font-weight: 400;
+    font-size: 1rem;
+    border-radius: var(--form-radius-s);
+  }
+  &.m {
+    padding-right: 0.4rem;
+    padding-left: 0.4rem;
+    font-weight: 400;
+    font-size: 1.1rem;
+    border-radius: var(--form-radius-m);
+  }
+
+  &:hover {
+    &.hasBg {
+      filter: saturate(130%) brightness(103%) !important;
+    }
+    background-color: $grey-light;
+  }
+}

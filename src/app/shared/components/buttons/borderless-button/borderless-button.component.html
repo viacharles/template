@@ -1,0 +1,4 @@
+<button class="{{this.type}} {{this.size}} d-flex align-items-center" [class.hasBg]="this.hasBg">
+  <em *ngIf="this.icon" class=" {{this.icon}} fs-xs fw-7 mr-2" ></em>
+  <p><ng-content></ng-content></p>
+</button>
