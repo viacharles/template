@@ -51,11 +51,11 @@
   <app-presentation-section [title]="'單選按鈕'" [tabName]="'\< app-radio >'">
     <div class="w-40p d-flex align-items-start">
       <p class="w-12 mr-3 text-nowrap">預設</p>
-      <app-radio-set [options]="this.options" [memo]="'其他說明'" name="radio-enable"></app-radio-set>
+      <app-radio-set [options]="this.options" name="radio-enable"></app-radio-set>
     </div>
     <div class="w-40p d-flex align-items-start">
       <p class="w-12 mr-3 text-nowrap">不啟用</p>
-      <app-radio-set [options]="this.options" [disabled]="true" [memo]="'其他說明'" name="radio-disable"></app-radio-set>
+      <app-radio-set [options]="this.options" [disabled]="true" name="radio-disable"></app-radio-set>
     </div>
     <div class="w-20p d-flex align-items-start">
       <p class="w-12 mr-3 text-nowrap">無資料</p>

@@ -41,6 +41,7 @@ export class SelectPageComponent {
     {
       code: '2',
       name: '亞洲最大梗圖專門網站。提供每日有趣梗圖',
+      hasMemo: true
     },
     {
       code: '3',
@@ -51,44 +52,8 @@ export class SelectPageComponent {
       name: '「不好意思，我明天的 schedule 滿了，讓我 book 後天的時間好嗎？」',
     },
     {
-      code: '5',
-      name: '項目六',
-    },
-    {
-      code: '6',
-      name: '項目六',
-    },
-    {
-      code: '7',
-      name: '項目吧',
-    },
-    {
-      code: '8',
-      name: '項目九',
-    },
-    {
-      code: '9',
-      name: '項目10',
-    },
-    {
-      code: '10',
-      name: '項目十一',
-    },
-    {
-      code: '11',
-      name: '項目12',
-    },
-    {
       code: '12',
       name: '項目1333333333333333333333333333',
-    },
-    {
-      code: '13',
-      name: '項目十四',
-    },
-    {
-      code: '14',
-      name: '項目15',
     },
     {
       code: '15',
