@@ -2,9 +2,11 @@
 
 .btn {
   &-flat {
-    height: 2.5rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    display: flex;
+    align-items: center;
+    height: 2rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
     font-weight: 400;
     font-size: 1.1rem;
     color: #fff;
@@ -20,10 +22,17 @@
       border-color: var(--primary-color) !important;
       box-shadow: 0 0 4px 0 $light-gray-1 !important;
     }
+
+    &:disabled {
+      color: $grey-dark !important;
+      background-color: $grey-light;
+      opacity: 1;
+      border: none;
+    }
   }
 
   &-flat-line {
-    height: 3rem;
+    height: 2.5rem;
     padding-left: 1rem;
     padding-right: 1rem;
     font-weight: 600;
@@ -94,27 +103,24 @@
   display: flex;
   align-items: center;
   color: $grey-black;
-  height: 3rem;
+  height: 2.75rem;
   overflow: auto;
   padding-left: 1rem;
   outline: none;
   box-sizing: border-box;
-  border-radius: 0 var(--form-radius-m) var(--form-radius-m) 0;
-  border: 1px solid transparent;
-  border-bottom: 1px solid $grey-iron;
+  border-radius: var(--form-radius-m);
+  border: 1px solid $grey-iron;
   background-color: $white;
 
-  &:not(:disabled):not(.error):hover {
-    border-top: 1px solid var(--primary-color);
-    border-right: 1px solid var(--primary-color);
-    border-left: 1px solid var(--primary-color);
-    border-bottom-width: 2px;
+  &:not(:disabled):not(.error) {
+    &:hover {
+      border-bottom-width: 2px;
+    }
 
-  }
-
-  &:focus {
-    border-width: 1.5px;
-    border-bottom: 2px solid var(--primary-color);
+    &:focus {
+      border-bottom-width: 2px !important;
+      border-bottom: 2px solid var(--primary-color) !important;
+    }
   }
 
   &.error {
@@ -200,23 +206,22 @@ input {
   outline: none;
   background-color: $white;
   &:not(:disabled):not(.error):hover {
-      border: 1px solid var(--primary-color);
-      border-bottom: 2px solid $grey-iron;
-      box-shadow: none;
+    border-bottom-width: 2px;
   }
-  &:not(.error):focus {
-    box-shadow: none !important;
+
+  &:focus {
+    border-bottom: 2px solid var(--primary-color);
   }
 
   &.error {
     border: 1px solid $red-middle;
     &:hover {
       background-color: var(--warn-background-hover);
-    box-shadow: none;
+      border-width: 1.5px ;
     }
   }
-
   &:disabled {
+    color: $grey-iron;
     background-color: $grey-light;
   }
 }

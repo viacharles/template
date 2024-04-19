@@ -225,17 +225,6 @@ app-bread-crumbs {
   margin-top: 3rem;
 }
 
-.form-control,
-textarea {
-  &:focus {
-    border-color: $primary-color !important;
-    box-shadow: 0 0 3px 0 $primary-color !important;
-  }
-  &:disabled {
-    background-color: $grey-light !important;
-  }
-}
-
 /* for light-gray area in background (not include header text) */
 .background-section {
   // background-color: $dark-background;
