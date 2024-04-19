@@ -6,7 +6,6 @@ import {
   ValidationErrors,
   ValidatorFn,
 } from '@angular/forms';
-import { EErrorMessage } from '@utilities/enum/form.enum';
 
 export class ValidatorHelper {
 
@@ -132,70 +131,5 @@ export class ValidatorHelper {
       }
     };
   }
-
-  /** 只能輸入英數 */
-  public static EnNumberOnly(): ValidatorFn {
-    return (control: AbstractControl): ValidationErrors | null => {
-      const isValid = /^[a-zA-Z0-9]+$/.test(control.value);
-      return isValid ? null : { email: EErrorMessage.EN_NUMBER_ONLY };
-    };
-  }
-
-  /** 只能輸入數字 */
-  public static NumberOnly(): ValidatorFn {
-    return (control: AbstractControl): ValidationErrors | null => {
-      const isValid = /^[0-9]+$/.test(control.value);
-      return isValid ? null : { email: EErrorMessage.NUMBER_ONLY };
-    };
-  }
-
-  /** 限制最大與最小字串長度 */
-  public static MaxMinLength(max: number, min: number): ValidatorFn {
-    return (control: AbstractControl): ValidationErrors | null => {
-      const isValid = control.value.length <= max && control.value.length >= min;
-      return isValid ? null : { email: EErrorMessage.MAX_MIN_LENGTH };
-    };
-  }
-
-  /** 限制最大字串長度 */
-  public static MaxLength(max: number): ValidatorFn {
-    return (control: AbstractControl): ValidationErrors | null => {
-      const isValid = control.value.length <= max;
-      return isValid ? null : { email: EErrorMessage.MAX_LENGTH };
-    };
-  }
-
-  /** 限制最小字串長度 */
-  public static MinLength(min: number): ValidatorFn {
-    return (control: AbstractControl): ValidationErrors | null => {
-      const isValid = control.value.length >= min;
-      return isValid ? null : { email: EErrorMessage.MIN_LENGTH };
-    };
-  }
-
-  /** 限制最大與最小選取項目數量 */
-  public static MaxMinItems(max: number, min: number): ValidatorFn {
-    return (control: AbstractControl): ValidationErrors | null => {
-      const isValid = control.value.length <= max && control.value.length >= min;
-      return isValid ? null : { email: EErrorMessage.MAX_MIN_ITEMS };
-    };
-  }
-
-  /** 限制最大選取項目數量 */
-  public static MaxItems(max: number): ValidatorFn {
-    return (control: AbstractControl): ValidationErrors | null => {
-      const isValid = control.value.length <= max;
-      return isValid ? null : { email: EErrorMessage.MAX_ITEMS };
-    };
-  }
-
-  /** 限制最小選取項目數量 */
-  public static MinItems(min: number): ValidatorFn {
-    return (control: AbstractControl): ValidationErrors | null => {
-      const isValid = control.value.length >= min;
-      return isValid ? null : { email: EErrorMessage.MIN_ITEMS };
-    };
-  }
-
 }
 
