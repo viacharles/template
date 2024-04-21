@@ -1,0 +1,3028 @@
+{
+  "questionTemplateDocId": "2deb8b7e082044479f276faf07de27ac",
+  "questionTemplateId": "5w2vHgjLA7j7RA5t5Hfr",
+  "createDate": "2023-10-31 15:52:49",
+  "editDate": "2023-10-31 15:52:49",
+  "version": "1.0.3",
+  "groups": [
+      {
+          "groupOrder": 7,
+          "section": "Risk Level",
+          "sectionId": "caacfc6d8e684b9b9b84093057866068",
+          "groupName": "重大性",
+          "groupId": "1d240faa8b53473e9feb7b04b4d7dad4",
+          "groupWeight": 2,
+          "totalScore": 130,
+          "questions": {
+              "8b6cbcb02da048a3ac2b151e26ebaaaf": {
+                  "desc": "這個問題詢問系統內是否有重要或機密的資料，例如個人身份、銀行帳戶、信用卡資訊或是商業策略等。",
+                  "questionOrder": 1,
+                  "shortTitleEN": "Sensitive Data",
+                  "shortTitleCN": "是否存在敏感資料",
+                  "longTitleEN": "Sensitive Data",
+                  "longTitleCN": "系統內是否存在敏感資料？",
+                  "weight": 8,
+                  "type": "select",
+                  "disabled": false,
+                  "required": false,
+                  "className": null,
+                  "placeholder": null,
+                  "hideExpression": [
+                      {
+                          "value": null,
+                          "key": ""
+                      }
+                  ],
+                  "options": [
+                      {
+                          "label": "Yes",
+                          "value": 1,
+                          "score": 5,
+                          "reportHighLight": true,
+                          "reportAdvice": "系統含有個資相關的敏感資料，風險程度高，上雲時需設計高規格的安全措施，網路隔離、權限控管、加密傳輸、資料防護、金鑰管理、軌跡記錄等",
+                          "desc": null
+                      },
+                      {
+                          "label": "No",
+                          "value": 2,
+                          "score": 3,
+                          "reportHighLight": false,
+                          "reportAdvice": null,
+                          "desc": null
+                      }
+                  ],
+                  "config": {
+                      "list": {
+                          "desCode": null,
+                          "inSearch": false,
+                          "hasFilter": true,
+                          "filterConfig": null,
+                          "inform": null,
+                          "hasSort": false,
+                          "className": null,
+                          "style": null,
+                          "fixedWidth": null,
+                          "fontColor": null,
+                          "colorMap": null,
+                          "fontSize": null,
+                          "enable": true,
+                          "columnWidth": "80"
+                      }
+                  }
+              },
+              "9bf81ccc5e5046eaa511b0700ffd3be1": {
+                  "desc": "這個問題是在詢問當系統發生停機時，會對業務造成多少損失。若系統停機會影響重要業務，損失程度會比較高。",
+                  "questionOrder": 3,
+                  "shortTitleEN": "Criticality Description",
+                  "shortTitleCN": "系統若停機時的損失說明",
+                  "longTitleEN": "Criticality Description",
+                  "longTitleCN": "系統若停機時的損失說明",
+                  "weight": 0,
+                  "type": "textarea",
+                  "disabled": false,
+                  "required": false,
+                  "className": null,
+                  "placeholder": "範例：客戶無法投保",
+                  "hideExpression": [
+                      {
+                          "value": null,
+                          "key": ""
+                      }
+                  ],
+                  "options": null,
+                  "config": {
+                      "list": {
+                          "desCode": null,
+                          "inSearch": false,
+                          "hasFilter": false,
+                          "filterConfig": null,
+                          "inform": null,
+                          "hasSort": false,
+                          "className": null,
+                          "style": null,
+                          "fixedWidth": null,
+                          "fontColor": null,
+                          "colorMap": null,
+                          "fontSize": null,
+                          "enable": false,
+                          "columnWidth": null
+                      }
+                  }
+              },
+              "7bef5ad597964ef68e2268a1a2af4384": {
+                  "desc": "這個題目是在詢問該系統對於組織的重要程度如何，其重要性等級為何，如果出現問題或故障對組織造成的影響有多大。重要程度由大到小分別為S1~S4",
+                  "questionOrder": 2,
+                  "shortTitleEN": "Criticality",
+                  "shortTitleCN": "重大性",
+                  "longTitleEN": "Criticality",
+                  "longTitleCN": "系統重大性等級為何？",
+                  "weight": 10,
+                  "type": "select",
+                  "disabled": false,
+                  "required": false,
+                  "className": null,
+                  "placeholder": null,
+                  "hideExpression": [
+                      {
+                          "value": null,
+                          "key": ""
+                      }
+                  ],
+                  "options": [
+                      {
+                          "label": "S1 正式環境系統─與公司業務直接相關",
+                          "value": 1,
+                          "score": 5,
+                          "reportHighLight": true,
+                          "reportAdvice": "系統重大性等級為 S1，與公司業務直接相關，風險程度最高，上雲時需規劃 S1 營運持續計畫(BCP)",
+                          "desc": null
+                      },
+                      {
+                          "label": "S2 正式環境系統─與公司營運作業相關",
+                          "value": 2,
+                          "score": 4,
+                          "reportHighLight": false,
+                          "reportAdvice": "系統重大性等級為 S2，與公司營運作業相關，風險程度高，上雲時需規劃 S2 營運持續計畫(BCP)",
+                          "desc": null
+                      },
+                      {
+                          "label": "S3 正式環境系統─與資訊管理作業相關",
+                          "value": 3,
+                          "score": 4,
+                          "reportHighLight": false,
+                          "reportAdvice": "系統重大性等級為 S3，與資訊管理作業相關，風險程度一般，上雲時需規劃 S3 營運持續計畫(BCP)",
+                          "desc": null
+                      },
+                      {
+                          "label": "S4 平行測試環境系統",
+                          "value": 4,
+                          "score": 3,
+                          "reportHighLight": false,
+                          "reportAdvice": "系統重大性等級為 S4，為平行測試環境系統，風險程度低，上雲時需規劃 S4 營運持續計畫(BCP)",
+                          "desc": null
+                      }
+                  ],
+                  "config": {
+                      "list": {
+                          "desCode": null,
+                          "inSearch": false,
+                          "hasFilter": true,
+                          "filterConfig": null,
+                          "inform": null,
+                          "hasSort": false,
+                          "className": null,
+                          "style": null,
+                          "fixedWidth": null,
+                          "fontColor": null,
+                          "colorMap": null,
+                          "fontSize": null,
+                          "enable": true,
+                          "columnWidth": "160"
+                      }
+                  }
+              },
+              "ffb2ac66708541d989bce3af9cda513b": {
+                  "desc": "這個問題是在問這個系統是否有直接存取核心系統資料庫的資源或功能，例如金融系統的核心交易系統。",
+                  "questionOrder": 0,
+                  "shortTitleEN": "Core System Linked",
+                  "shortTitleCN": "是否有存取核心",
+                  "longTitleEN": "Core System Linked",
+                  "longTitleCN": "系統是否有存取核心系統？",
+                  "weight": 8,
+                  "type": "select",
+                  "disabled": false,
+                  "required": false,
+                  "className": null,
+                  "placeholder": null,
+                  "hideExpression": [
+                      {
+                          "value": null,
+                          "key": ""
+                      }
+                  ],
+                  "options": [
+                      {
+                          "label": "Yes",
+                          "value": 1,
+                          "score": 5,
+                          "reportHighLight": true,
+                          "reportAdvice": "系統與核心系統串接，風險等級高，上雲時需設計高規格的檢測與測試計畫，如弱點掃描、資安檢測、壓力測試等，使作業風險降至最低",
+                          "desc": null
+                      },
+                      {
+                          "label": "No",
+                          "value": 2,
+                          "score": 3,
+                          "reportHighLight": false,
+                          "reportAdvice": null,
+                          "desc": null
+                      }
+                  ],
+                  "config": {
+                      "list": {
+                          "desCode": null,
+                          "inSearch": false,
+                          "hasFilter": true,
+                          "filterConfig": null,
+                          "inform": null,
+                          "hasSort": false,
+                          "className": null,
+                          "style": null,
+                          "fixedWidth": null,
+                          "fontColor": null,
+                          "colorMap": null,
+                          "fontSize": null,
+                          "enable": true,
+                          "columnWidth": "80"
+                      }
+                  }
+              }
+          }
+      },
+      {
+          "groupOrder": 8,
+          "section": "Risk Level",
+          "sectionId": "caacfc6d8e684b9b9b84093057866068",
+          "groupName": "SLA",
+          "groupId": "e47f83a5dd7742f88b27eb6369f49c22",
+          "groupWeight": 1,
+          "totalScore": 60,
+          "questions": {
+              "078aae26c6854cf9bb2e33dd769a4ae3": {
+                  "desc": "這個問題是問在系統出現問題時，需要多快地將系統恢復正常運作。RTO是「復原時間目標 (Recovery Time Objective)」的縮寫，是由國際標準組織 (ISO) 所制定的一個專有名詞。問題中提供選項分別是12、8、4和1小時，答案取決於業務需求、風險承受能力等因素，需要通過專業評估來確定最適合的RTO。",
+                  "questionOrder": 1,
+                  "shortTitleEN": "Avaliability / RTO(hr)",
+                  "shortTitleCN": "容許服務中斷時間(RTO)",
+                  "longTitleEN": "Avaliability / RTO(H)",
+                  "longTitleCN": "若系統出問題，目標幾小時內需要復原(RTO)？",
+                  "weight": 6,
+                  "type": "select",
+                  "disabled": false,
+                  "required": false,
+                  "className": null,
+                  "placeholder": null,
+                  "hideExpression": [
+                      {
+                          "value": null,
+                          "key": ""
+                      }
+                  ],
+                  "options": [
+                      {
+                          "label": "12hr",
+                          "value": 1,
+                          "score": 2,
+                          "reportHighLight": false,
+                          "reportAdvice": "系統目標復原時間(RTO) 為 12 小時，緊急程度一般，上雲時需規劃 12hr 災難復原計畫(DRP)",
+                          "desc": null
+                      },
+                      {
+                          "label": "8hr",
+                          "value": 2,
+                          "score": 3,
+                          "reportHighLight": false,
+                          "reportAdvice": "系統目標復原時間(RTO) 為 8 小時，緊急程度一般，上雲時需規劃 8hr 災難復原計畫(DRP)",
+                          "desc": null
+                      },
+                      {
+                          "label": "4hr",
+                          "value": 3,
+                          "score": 4,
+                          "reportHighLight": false,
+                          "reportAdvice": "系統目標復原時間(RTO) 為 4 小時，緊急程度高，上雲時需規劃緊急 4hr 災難復原計畫(DRP)",
+                          "desc": null
+                      },
+                      {
+                          "label": "1hr",
+                          "value": 4,
+                          "score": 5,
+                          "reportHighLight": true,
+                          "reportAdvice": "系統目標復原時間(RTO) 為 1 小時，緊急程度非常高，上雲時需規劃 1hr 災難復原計畫(DRP)",
+                          "desc": null
+                      }
+                  ],
+                  "config": {
+                      "list": {
+                          "desCode": null,
+                          "inSearch": false,
+                          "hasFilter": true,
+                          "filterConfig": null,
+                          "inform": null,
+                          "hasSort": false,
+                          "className": null,
+                          "style": null,
+                          "fixedWidth": null,
+                          "fontColor": null,
+                          "colorMap": null,
+                          "fontSize": null,
+                          "enable": true,
+                          "columnWidth": "80"
+                      }
+                  }
+              },
+              "85c0b79883264ae4b2d3a148b62cdfaa": {
+                  "desc": "系統所採用的服務水準協議 (SLA)，是指系統提供的服務品質承諾與保障。它描述了系統的可用性、效能、容量等屬性，以及相關的賠償和責任。該系統所使用的 SLA 可以是內部或外部協議，通常包括在服務合約或服務等級協議中。",
+                  "questionOrder": 0,
+                  "shortTitleEN": "SLA",
+                  "shortTitleCN": "服務水準協議(SLA)",
+                  "longTitleEN": "SLA",
+                  "longTitleCN": "系統採用哪種服務水準協議 (SLA)？",
+                  "weight": 6,
+                  "type": "select",
+                  "disabled": false,
+                  "required": false,
+                  "className": null,
+                  "placeholder": null,
+                  "hideExpression": [
+                      {
+                          "value": null,
+                          "key": ""
+                      }
+                  ],
+                  "options": [
+                      {
+                          "label": "一週5天工作日，每天工作8小時(5x8)",
+                          "value": 1,
+                          "score": 3,
+                          "reportHighLight": false,
+                          "reportAdvice": "此系統 SLA 為 5x8，等於需要一週 5 天工作日，每天工作 8 小時提供服務，風險程度一般，上雲時可規劃資源管理與優化方式，以節省系統成本",
+                          "desc": null
+                      },
+                      {
+                          "label": "一週7天，每天24小時(7x24)",
+                          "value": 2,
+                          "score": 5,
+                          "reportHighLight": false,
+                          "reportAdvice": "此系統 SLA 為 7x24，等於需要一週 7 天，每天 24 小時提供服務，風險程度高，上雲時需規劃高可用機制，如 Active/Active 或 Active/Standby",
+                          "desc": null
+                      }
+                  ],
+                  "config": {
+                      "list": {
+                          "desCode": null,
+                          "inSearch": false,
+                          "hasFilter": true,
+                          "filterConfig": null,
+                          "inform": null,
+                          "hasSort": false,
+                          "className": null,
+                          "style": null,
+                          "fixedWidth": null,
+                          "fontColor": null,
+                          "colorMap": null,
+                          "fontSize": null,
+                          "enable": true,
+                          "columnWidth": "160"
+                      }
+                  }
+              }
+          }
+      },
+      {
+          "groupOrder": 2,
+          "section": "Business Impact",
+          "sectionId": "7dffe7782c8a40dab6998f1fb639c46e",
+          "groupName": "業務規劃",
+          "groupId": "d05a830cc606489c976b6ab2d2b81c43",
+          "groupWeight": 2,
+          "totalScore": 105,
+          "questions": {
+              "02868c0905c94ce0b0c7caab53b67e5f": {
+                  "desc": "系統的業務類型是指其所屬的行業類別或提供的服務種類，該類型可以幫助人們更好地理解系統的定位和功能。",
+                  "questionOrder": 0,
+                  "shortTitleEN": "Domain Map",
+                  "shortTitleCN": "業務類型",
+                  "longTitleEN": "Domain Map",
+                  "longTitleCN": "系統屬於哪個業務類型？",
+                  "weight": 3,
+                  "type": "multiselect",
+                  "disabled": false,
+                  "required": false,
+                  "className": null,
+                  "placeholder": null,
+                  "hideExpression": [
+                      {
+                          "value": null,
+                          "key": ""
+                      }
+                  ],
+                  "options": [
+                      {
+                          "label": "行銷/通路",
+                          "value": 1,
+                          "score": 3,
+                          "reportHighLight": false,
+                          "reportAdvice": "此系統的業務類型屬於 行銷/通路，此類系統容易突然產生大量用戶同時在線，適合使用高可用的雲端架構，來維持服務品質",
+                          "desc": "行銷/通路是指關注於產品或服務的市場推廣與銷售渠道的設計和執行。"
+                      },
+                      {
+                          "label": "應用/服務",
+                          "value": 2,
+                          "score": 2,
+                          "reportHighLight": false,
+                          "reportAdvice": "此系統的業務類型屬於 應用/服務，此類系統涵蓋範圍很廣，所以有很多不同的特性，適合使用容器化、微服務架構，來發揮雲端敏捷優勢，並提升開發與部屬的效率",
+                          "desc": "應用/服務是指關注於應用程式的開發、測試、上線、使用、維護等階段的相關工作。"
+                      },
+                      {
+                          "label": "核心/產品",
+                          "value": 3,
+                          "score": 5,
+                          "reportHighLight": false,
+                          "reportAdvice": "此系統的業務類型屬於 核心/產品，與交易、金流相關，故容錯率低，適合使用高可用與災難備援的雲端架構，提升服務品質並可減輕 Infra 的維護成本",
+                          "desc": "核心/產品是指關注於公司核心產品或業務的發展、維護、優化、創新等工作。"
+                      },
+                      {
+                          "label": "分析/數據",
+                          "value": 4,
+                          "score": 4,
+                          "reportHighLight": false,
+                          "reportAdvice": "此系統的業務類型屬於 分析/數據，適合使用雲原生的數據服務， 這些服務大多是 Serverless，可以協助數據人員減少大部分 Infra 的維護工作，並能利用雲端優勢大幅度提升作業效率",
+                          "desc": "分析/數據是指關注於從大量數據中提煉出有價值的信息和洞察，用於決策和優化業務流程等方面的工作。"
+                      },
+                      {
+                          "label": "其他",
+                          "value": 5,
+                          "score": 1,
+                          "reportHighLight": false,
+                          "reportAdvice": null,
+                          "desc": "這個是指除以上分類之外的其他工作或領域。"
+                      }
+                  ],
+                  "config": {
+                      "list": {
+                          "desCode": null,
+                          "inSearch": false,
+                          "hasFilter": true,
+                          "filterConfig": null,
+                          "inform": null,
+                          "hasSort": false,
+                          "className": null,
+                          "style": null,
+                          "fixedWidth": null,
+                          "fontColor": null,
+                          "colorMap": null,
+                          "fontSize": null,
+                          "enable": true,
+                          "columnWidth": "160"
+                      }
+                  }
+              },
+              "aa93468954324ed5bf3560259cf21be8": {
+                  "desc": "該系統是否有成立戰情室來開發，或是與數位轉型專案有相關。",
+                  "questionOrder": 2,
+                  "shortTitleEN": "Strategic Alignment",
+                  "shortTitleCN": "戰情規劃",
+                  "longTitleEN": "Strategic Alignment",
+                  "longTitleCN": "是否與數位轉型專案、戰情規劃有相關？",
+                  "weight": 8,
+                  "type": "select",
+                  "disabled": false,
+                  "required": false,
+                  "className": null,
+                  "placeholder": null,
+                  "hideExpression": [
+                      {
+                          "value": null,
+                          "key": ""
+                      }
+                  ],
+                  "options": [
+                      {
+                          "label": "Yes",
+                          "value": 1,
+                          "score": 5,
+                          "reportHighLight": false,
+                          "reportAdvice": "該系統為集團戰情規劃專案，商業價值較高",
+                          "desc": null
+                      },
+                      {
+                          "label": "No",
+                          "value": 2,
+                          "score": 3,
+                          "reportHighLight": false,
+                          "reportAdvice": null,
+                          "desc": null
+                      }
+                  ],
+                  "config": {
+                      "list": {
+                          "desCode": null,
+                          "inSearch": false,
+                          "hasFilter": true,
+                          "filterConfig": null,
+                          "inform": null,
+                          "hasSort": false,
+                          "className": null,
+                          "style": null,
+                          "fixedWidth": null,
+                          "fontColor": null,
+                          "colorMap": null,
+                          "fontSize": null,
+                          "enable": true,
+                          "columnWidth": "80"
+                      }
+                  }
+              },
+              "0ecd8dcf8ec64a6fb4f9bd896889ac67": {
+                  "desc": "這個題目意思是詢問該系統在未來三年內是否有任何擴充或擴建的計畫，例如: 該系統有參與戰情室、系統改寫、效能優化、擴增硬體資源等等。",
+                  "questionOrder": 4,
+                  "shortTitleEN": "Expansion Plan",
+                  "shortTitleCN": "擴充計畫",
+                  "longTitleEN": "Expansion Plan",
+                  "longTitleCN": "3 年內有無任何擴充計畫?",
+                  "weight": 4,
+                  "type": "select",
+                  "disabled": false,
+                  "required": false,
+                  "className": null,
+                  "placeholder": null,
+                  "hideExpression": [
+                      {
+                          "value": null,
+                          "key": ""
+                      }
+                  ],
+                  "options": [
+                      {
+                          "label": "Yes",
+                          "value": 1,
+                          "score": 5,
+                          "reportHighLight": true,
+                          "reportAdvice": "有規劃擴充計畫，為組織重視且想發展的專案，商業價值較高",
+                          "desc": null
+                      },
+                      {
+                          "label": "No",
+                          "value": 2,
+                          "score": 3,
+                          "reportHighLight": false,
+                          "reportAdvice": null,
+                          "desc": null
+                      }
+                  ],
+                  "config": {
+                      "list": {
+                          "desCode": null,
+                          "inSearch": false,
+                          "hasFilter": true,
+                          "filterConfig": null,
+                          "inform": null,
+                          "hasSort": false,
+                          "className": null,
+                          "style": null,
+                          "fixedWidth": null,
+                          "fontColor": null,
+                          "colorMap": null,
+                          "fontSize": null,
+                          "enable": true,
+                          "columnWidth": "80"
+                      }
+                  }
+              },
+              "3e7a70f61df1461a84b33872865e08db": {
+                  "desc": null,
+                  "questionOrder": 5,
+                  "shortTitleEN": "Expansion Plan Description",
+                  "shortTitleCN": "系統擴充目標說明",
+                  "longTitleEN": "Expansion Plan Description",
+                  "longTitleCN": "系統擴充目標說明",
+                  "weight": 0,
+                  "type": "textarea",
+                  "disabled": false,
+                  "required": false,
+                  "className": null,
+                  "placeholder": "範例：增加server或轉換JDK版本。",
+                  "hideExpression": [
+                      {
+                          "value": null,
+                          "key": ""
+                      }
+                  ],
+                  "options": null,
+                  "config": {
+                      "list": {
+                          "desCode": null,
+                          "inSearch": false,
+                          "hasFilter": false,
+                          "filterConfig": null,
+                          "inform": null,
+                          "hasSort": false,
+                          "className": null,
+                          "style": null,
+                          "fixedWidth": null,
+                          "fontColor": null,
+                          "colorMap": null,
+                          "fontSize": null,
+                          "enable": false,
+                          "columnWidth": null
+                      }
+                  }
+              },
+              "ee82320ce0f94698aa108e68b8b8b92e": {
+                  "desc": "這個題目指的是該系統是否已經有規劃的下線時間，也就是該系統將會停止運作的時間點，通常是因為系統的生命週期已到或是被替代，或是因為其他原因而需要下線。",
+                  "questionOrder": 3,
+                  "shortTitleEN": "Remaining Service Life",
+                  "shortTitleCN": "下線時間",
+                  "longTitleEN": "Remaining Service Life",
+                  "longTitleCN": "是否有預期下線的時間？",
+                  "weight": 2,
+                  "type": "select",
+                  "disabled": false,
+                  "required": false,
+                  "className": null,
+                  "placeholder": null,
+                  "hideExpression": [
+                      {
+                          "value": null,
+                          "key": ""
+                      }
+                  ],
+                  "options": [
+                      {
+                          "label": "無下線時間",
+                          "value": 1,
+                          "score": 5,
+                          "reportHighLight": false,
+                          "reportAdvice": null,
+                          "desc": null
+                      },
+                      {
+                          "label": "有下線時間",
+                          "value": 2,
+                          "score": 1,
+                          "reportHighLight": true,
+                          "reportAdvice": "有規劃下線時間，使用年限較短，商業價值較低",
+                          "desc": null
+                      }
+                  ],
+                  "config": {
+                      "list": {
+                          "desCode": null,
+                          "inSearch": false,
+                          "hasFilter": true,
+                          "filterConfig": null,
+                          "inform": null,
+                          "hasSort": false,
+                          "className": null,
+                          "style": null,
+                          "fixedWidth": null,
+                          "fontColor": null,
+                          "colorMap": null,
+                          "fontSize": null,
+                          "enable": true,
+                          "columnWidth": "160"
+                      }
+                  }
+              },
+              "83128327f2e44db78d27d2d498003bd8": {
+                  "desc": "誰會用這個系統? 是公司內部的員工還是外部的客戶，還是兩者都有呢？",
+                  "questionOrder": 1,
+                  "shortTitleEN": "User Facing",
+                  "shortTitleCN": "用戶面向",
+                  "longTitleEN": "User Facing",
+                  "longTitleCN": "系統的使用者是誰？",
+                  "weight": 4,
+                  "type": "multiselect",
+                  "disabled": false,
+                  "required": false,
+                  "className": null,
+                  "placeholder": null,
+                  "hideExpression": [
+                      {
+                          "value": null,
+                          "key": ""
+                      }
+                  ],
+                  "options": [
+                      {
+                          "label": "顧客 Customer",
+                          "value": 1,
+                          "score": 5,
+                          "reportHighLight": false,
+                          "reportAdvice": "使用者為顧客，屬於外部系統，故商業價值最高",
+                          "desc": "顧客(Customer)是指購買產品或服務的人或組織。"
+                      },
+                      {
+                          "label": "合作廠商 Business Partner",
+                          "value": 2,
+                          "score": 4,
+                          "reportHighLight": false,
+                          "reportAdvice": "使用者為合作廠商，屬於外部系統，故商業價值較高",
+                          "desc": "合作廠商(Business Partner)是指與公司建立業務關係，共同開發產品或提供服務的公司或個人。"
+                      },
+                      {
+                          "label": "員工 Staff",
+                          "value": 3,
+                          "score": 3,
+                          "reportHighLight": false,
+                          "reportAdvice": "使用者為員工，屬於內部系統，故商業價值一般",
+                          "desc": "員工(Staff)是指公司的內部人員，包括全職、兼職、臨時工或承包商等。"
+                      }
+                  ],
+                  "config": {
+                      "list": {
+                          "desCode": null,
+                          "inSearch": false,
+                          "hasFilter": true,
+                          "filterConfig": null,
+                          "inform": null,
+                          "hasSort": false,
+                          "className": null,
+                          "style": null,
+                          "fixedWidth": null,
+                          "fontColor": null,
+                          "colorMap": null,
+                          "fontSize": null,
+                          "enable": true,
+                          "columnWidth": "160"
+                      }
+                  }
+              }
+          }
+      },
+      {
+          "groupOrder": 3,
+          "section": "Business Impact",
+          "sectionId": "7dffe7782c8a40dab6998f1fb639c46e",
+          "groupName": "上雲價值",
+          "groupId": "706691a503fb4b4e8071828eb0a6385a",
+          "groupWeight": 1,
+          "totalScore": 230,
+          "questions": {
+              "60ce6cdaa7c84f94ac77666859a50efc": {
+                  "desc": "這個問題指的是系統是否可能會在某些時間點或事件中，突然遇到非常大的訪問量或流量。舉例來說，某個電商網站在黑色星期五可能會有突發流量。",
+                  "questionOrder": 2,
+                  "shortTitleEN": "Burst Traffic",
+                  "shortTitleCN": "突發流量",
+                  "longTitleEN": "Burst Traffic",
+                  "longTitleCN": "系統是否會有突發流量？",
+                  "weight": 10,
+                  "type": "select",
+                  "disabled": false,
+                  "required": false,
+                  "className": null,
+                  "placeholder": null,
+                  "hideExpression": [
+                      {
+                          "value": null,
+                          "key": ""
+                      }
+                  ],
+                  "options": [
+                      {
+                          "label": "有突發流量 Burst",
+                          "value": 1,
+                          "score": 5,
+                          "reportHighLight": true,
+                          "reportAdvice": "此系統有突發流量的情境，非常適合使用雲端 Load Balancer 與 Autoscaling 機制，獲得更好的彈性與擴增性，故上雲價值高",
+                          "desc": null
+                      },
+                      {
+                          "label": "無突發流量 Normal",
+                          "value": 2,
+                          "score": 3,
+                          "reportHighLight": false,
+                          "reportAdvice": null,
+                          "desc": null
+                      }
+                  ],
+                  "config": {
+                      "list": {
+                          "desCode": null,
+                          "inSearch": false,
+                          "hasFilter": true,
+                          "filterConfig": null,
+                          "inform": null,
+                          "hasSort": false,
+                          "className": null,
+                          "style": null,
+                          "fixedWidth": null,
+                          "fontColor": null,
+                          "colorMap": null,
+                          "fontSize": null,
+                          "enable": true,
+                          "columnWidth": "160"
+                      }
+                  }
+              },
+              "a1e1ef32ff60495094069d10bfa3fd85": {
+                  "desc": "這個問題是詢問該系統是否需要有容錯機制或備援方案，以保障系統在意外或故障時仍能維持運作。如果需要的話，該系統會建立備援系統或機制，以提高系統的可用性和穩定性。",
+                  "questionOrder": 4,
+                  "shortTitleEN": "HADR Classification",
+                  "shortTitleCN": "高可用/備援機制",
+                  "longTitleEN": "HADR Classification",
+                  "longTitleCN": "系統有高可用/備援(HADR)的需求嗎？",
+                  "weight": 10,
+                  "type": "select",
+                  "disabled": false,
+                  "required": false,
+                  "className": null,
+                  "placeholder": null,
+                  "hideExpression": [
+                      {
+                          "value": null,
+                          "key": ""
+                      }
+                  ],
+                  "options": [
+                      {
+                          "label": "Active/Standby",
+                          "value": 1,
+                          "score": 3,
+                          "reportHighLight": false,
+                          "reportAdvice": "高可用/備援的需求為 Active/Standby，適合使用雲端的高可用與備援機制，降低 Infra 維護成本",
+                          "desc": "Active/Standby 系統擁有備援功能，主要是在主系統發生故障時，備援系統會自動接管工作，保持系統的可用性。"
+                      },
+                      {
+                          "label": "Active/Active",
+                          "value": 2,
+                          "score": 5,
+                          "reportHighLight": true,
+                          "reportAdvice": "高可用/備援的需求為 Active/Active，適合使用雲端的高可用與備援機制，降低 Infra 維護成本",
+                          "desc": "Active/Active 系統具有高可用性功能，意味著系統可以同時處理多個工作並提供更高的服務可用性。"
+                      },
+                      {
+                          "label": "無此需求",
+                          "value": 3,
+                          "score": 1,
+                          "reportHighLight": false,
+                          "reportAdvice": null,
+                          "desc": "系統不需要高可用性或備援功能，因為故障或停機對系統的影響不大。"
+                      }
+                  ],
+                  "config": {
+                      "list": {
+                          "desCode": null,
+                          "inSearch": false,
+                          "hasFilter": true,
+                          "filterConfig": null,
+                          "inform": null,
+                          "hasSort": false,
+                          "className": null,
+                          "style": null,
+                          "fixedWidth": null,
+                          "fontColor": null,
+                          "colorMap": null,
+                          "fontSize": null,
+                          "enable": true,
+                          "columnWidth": "160"
+                      }
+                  }
+              },
+              "3a8093b991f54f44a182d8f17ab7cb49": {
+                  "desc": "這個題目是在詢問系統的用戶在每個月中使用該系統的頻率是多少次，通常是以次數或時間長度表示，以了解系統的使用情況。",
+                  "questionOrder": 1,
+                  "shortTitleEN": "User Frequency",
+                  "shortTitleCN": "用戶使用頻率 (每月)",
+                  "longTitleEN": "User Frequency",
+                  "longTitleCN": "系統用戶使用頻率(每月)為何？",
+                  "weight": 8,
+                  "type": "select",
+                  "disabled": false,
+                  "required": false,
+                  "className": null,
+                  "placeholder": null,
+                  "hideExpression": [
+                      {
+                          "value": null,
+                          "key": ""
+                      }
+                  ],
+                  "options": [
+                      {
+                          "label": "> 10",
+                          "value": 1,
+                          "score": 5,
+                          "reportHighLight": false,
+                          "reportAdvice": null,
+                          "desc": null
+                      },
+                      {
+                          "label": "5 ~ 10",
+                          "value": 2,
+                          "score": 4,
+                          "reportHighLight": false,
+                          "reportAdvice": null,
+                          "desc": null
+                      },
+                      {
+                          "label": "< 5",
+                          "value": 3,
+                          "score": 3,
+                          "reportHighLight": false,
+                          "reportAdvice": null,
+                          "desc": null
+                      }
+                  ],
+                  "config": {
+                      "list": {
+                          "desCode": null,
+                          "inSearch": false,
+                          "hasFilter": true,
+                          "filterConfig": null,
+                          "inform": null,
+                          "hasSort": false,
+                          "className": null,
+                          "style": null,
+                          "fixedWidth": null,
+                          "fontColor": null,
+                          "colorMap": null,
+                          "fontSize": null,
+                          "enable": true,
+                          "columnWidth": "80"
+                      }
+                  }
+              },
+              "bec7d95094e742ac811382afe7b42555": {
+                  "desc": "系統目前有多少使用者。",
+                  "questionOrder": 0,
+                  "shortTitleEN": "Active User",
+                  "shortTitleCN": "用戶數量",
+                  "longTitleEN": "Active User",
+                  "longTitleCN": "系統現行的用戶數量？",
+                  "weight": 8,
+                  "type": "select",
+                  "disabled": false,
+                  "required": false,
+                  "className": null,
+                  "placeholder": null,
+                  "hideExpression": [
+                      {
+                          "value": null,
+                          "key": ""
+                      }
+                  ],
+                  "options": [
+                      {
+                          "label": "100,000 人以上",
+                          "value": 1,
+                          "score": 5,
+                          "reportHighLight": false,
+                          "reportAdvice": "用戶量達 100,000人以上，適合使用雲端應對 100,000 人以上的連線體驗，具有較高的上雲價值",
+                          "desc": null
+                      },
+                      {
+                          "label": "10,000 ~ 100,000 人",
+                          "value": 2,
+                          "score": 4,
+                          "reportHighLight": false,
+                          "reportAdvice": "用戶量達 10,000 ~ 100,000 人，適合使用雲端應對 10,000 ~ 100,000 人以上的連線體驗，具有較高的上雲價值",
+                          "desc": null
+                      },
+                      {
+                          "label": "5,000 ~ 10,000 人",
+                          "value": 3,
+                          "score": 3,
+                          "reportHighLight": false,
+                          "reportAdvice": "用戶量達 5,000 ~ 10,000 人，適合使用雲端應對 5,000 ~ 10,000 人用戶的連線體驗",
+                          "desc": null
+                      },
+                      {
+                          "label": "1,000 ~ 5,000 人",
+                          "value": 4,
+                          "score": 2,
+                          "reportHighLight": false,
+                          "reportAdvice": "用戶量達 1,000 ~ 5,000 人，適合使用雲端應對 5,000 ~ 10,000 人用戶的連線體驗",
+                          "desc": null
+                      },
+                      {
+                          "label": "小於 1,000 人",
+                          "value": 5,
+                          "score": 1,
+                          "reportHighLight": false,
+                          "reportAdvice": null,
+                          "desc": null
+                      }
+                  ],
+                  "config": {
+                      "list": {
+                          "desCode": null,
+                          "inSearch": false,
+                          "hasFilter": true,
+                          "filterConfig": null,
+                          "inform": null,
+                          "hasSort": false,
+                          "className": null,
+                          "style": null,
+                          "fixedWidth": null,
+                          "fontColor": null,
+                          "colorMap": null,
+                          "fontSize": null,
+                          "enable": true,
+                          "columnWidth": "160"
+                      }
+                  }
+              },
+              "5b35458547bb40adab137712b2cca7c7": {
+                  "desc": "這個問題是在詢問系統每月更新的頻率，也就是系統的升級、修復和改善等的頻率，一般以月為單位計算。",
+                  "questionOrder": 3,
+                  "shortTitleEN": "Application Change Rate",
+                  "shortTitleCN": "系統更新頻率(每月)",
+                  "longTitleEN": "Application Change Rate",
+                  "longTitleCN": "系統更新頻率(每月)為何？",
+                  "weight": 10,
+                  "type": "select",
+                  "disabled": false,
+                  "required": false,
+                  "className": null,
+                  "placeholder": null,
+                  "hideExpression": [
+                      {
+                          "value": null,
+                          "key": ""
+                      }
+                  ],
+                  "options": [
+                      {
+                          "label": "每月3次以上",
+                          "value": 1,
+                          "score": 5,
+                          "reportHighLight": false,
+                          "reportAdvice": "系統更新頻率每月達 3 次以上，適合使用敏捷架構，快速開發與部署應用程式至雲端，故上雲價值較高",
+                          "desc": null
+                      },
+                      {
+                          "label": "每月2次",
+                          "value": 2,
+                          "score": 4,
+                          "reportHighLight": false,
+                          "reportAdvice": "系統更新頻率每月達 2 次，適合使用敏捷架構，快速開發與部署應用程式至雲端，故上雲價值較高",
+                          "desc": null
+                      },
+                      {
+                          "label": "每月1次",
+                          "value": 3,
+                          "score": 3,
+                          "reportHighLight": false,
+                          "reportAdvice": "系統更新頻率每月達 1 次，適合使用敏捷架構，快速開發與部署應用程式至雲端，故上雲價值較高",
+                          "desc": null
+                      },
+                      {
+                          "label": "每月不到1次",
+                          "value": 4,
+                          "score": 2,
+                          "reportHighLight": false,
+                          "reportAdvice": null,
+                          "desc": null
+                      }
+                  ],
+                  "config": {
+                      "list": {
+                          "desCode": null,
+                          "inSearch": false,
+                          "hasFilter": true,
+                          "filterConfig": null,
+                          "inform": null,
+                          "hasSort": false,
+                          "className": null,
+                          "style": null,
+                          "fixedWidth": null,
+                          "fontColor": null,
+                          "colorMap": null,
+                          "fontSize": null,
+                          "enable": true,
+                          "columnWidth": "160"
+                      }
+                  }
+              }
+          }
+      },
+      {
+          "groupOrder": 1,
+          "section": "基本資訊",
+          "sectionId": "65b2fd2d74944849a6c75a3561301155",
+          "groupName": "基本資訊",
+          "groupId": "86dd49e88bac409ca6fc8909adacb162",
+          "groupWeight": 0,
+          "totalScore": 0,
+          "questions": {
+              "4558bec4f8af42ee8570fbb0a76a2d0b": {
+                  "desc": null,
+                  "questionOrder": 2,
+                  "shortTitleEN": "Owner",
+                  "shortTitleCN": "權責人員",
+                  "longTitleEN": "Owner",
+                  "longTitleCN": "系統權責人員",
+                  "weight": 0,
+                  "type": "input",
+                  "disabled": false,
+                  "required": true,
+                  "className": "cathay-email",
+                  "placeholder": null,
+                  "hideExpression": [
+                      {
+                          "value": null,
+                          "key": ""
+                      }
+                  ],
+                  "options": null,
+                  "config": {
+                      "list": {
+                          "desCode": null,
+                          "inSearch": false,
+                          "hasFilter": true,
+                          "filterConfig": null,
+                          "inform": null,
+                          "hasSort": false,
+                          "className": null,
+                          "style": null,
+                          "fixedWidth": null,
+                          "fontColor": null,
+                          "colorMap": null,
+                          "fontSize": null,
+                          "enable": true,
+                          "columnWidth": "160"
+                      }
+                  }
+              },
+              "e85648553d5544ab93838d1a299f450d": {
+                  "desc": null,
+                  "questionOrder": 1,
+                  "shortTitleEN": "AP Name",
+                  "shortTitleCN": "系統名稱",
+                  "longTitleEN": "AP Name",
+                  "longTitleCN": "系統名稱",
+                  "weight": 0,
+                  "type": "input",
+                  "disabled": false,
+                  "required": true,
+                  "className": "ap-name",
+                  "placeholder": null,
+                  "hideExpression": [
+                      {
+                          "value": null,
+                          "key": ""
+                      }
+                  ],
+                  "options": null,
+                  "config": {
+                      "list": {
+                          "desCode": null,
+                          "inSearch": false,
+                          "hasFilter": true,
+                          "filterConfig": null,
+                          "inform": null,
+                          "hasSort": false,
+                          "className": null,
+                          "style": null,
+                          "fixedWidth": null,
+                          "fontColor": null,
+                          "colorMap": null,
+                          "fontSize": null,
+                          "enable": true,
+                          "columnWidth": "240"
+                      }
+                  }
+              },
+              "84274128836447329749adbd534be191": {
+                  "desc": null,
+                  "questionOrder": 4,
+                  "shortTitleEN": "AP Vendor",
+                  "shortTitleCN": "開發廠商",
+                  "longTitleEN": "AP Vendor",
+                  "longTitleCN": "系統開發廠商",
+                  "weight": 0,
+                  "type": "select",
+                  "disabled": false,
+                  "required": true,
+                  "className": null,
+                  "placeholder": null,
+                  "hideExpression": [
+                      {
+                          "value": null,
+                          "key": ""
+                      }
+                  ],
+                  "options": [
+                      {
+                          "label": "自行開發維護",
+                          "value": 1,
+                          "score": 0,
+                          "reportHighLight": false,
+                          "reportAdvice": null,
+                          "desc": "系統由內部開發人員進行開發和維護，負責全部工作。"
+                      },
+                      {
+                          "label": "外部開發自行維護",
+                          "value": 2,
+                          "score": 0,
+                          "reportHighLight": false,
+                          "reportAdvice": null,
+                          "desc": "系統由外部開發公司進行開發，但內部人員負責系統的維護和支持。"
+                      },
+                      {
+                          "label": "外部開發外部維護",
+                          "value": 3,
+                          "score": 0,
+                          "reportHighLight": false,
+                          "reportAdvice": null,
+                          "desc": "系統由外部開發公司負責開發和維護，內部人員僅負責協調和監督。"
+                      }
+                  ],
+                  "config": {
+                      "list": {
+                          "desCode": null,
+                          "inSearch": false,
+                          "hasFilter": true,
+                          "filterConfig": null,
+                          "inform": null,
+                          "hasSort": false,
+                          "className": null,
+                          "style": null,
+                          "fixedWidth": null,
+                          "fontColor": null,
+                          "colorMap": null,
+                          "fontSize": null,
+                          "enable": true,
+                          "columnWidth": "160"
+                      }
+                  }
+              },
+              "6f3f871ec06041c68be3dbd3425b9945": {
+                  "desc": "系統說明是對一個系統的各項功能和使用目的的簡要描述。這個說明通常包括系統的主要功能和用途，並且能夠幫助使用者更好地了解該系統所能提供的各種服務。例如，一個線上會議系統的說明可能會包括該系統的主要功能（如音視訊會議、文件共享等）以及使用目的（如遠程工作、線上教學等）。",
+                  "questionOrder": 5,
+                  "shortTitleEN": "AP Description",
+                  "shortTitleCN": "系統說明(如用途與系統功能簡述）",
+                  "longTitleEN": "AP Description",
+                  "longTitleCN": "系統說明(如用途與系統功能簡述）",
+                  "weight": 0,
+                  "type": "textarea",
+                  "disabled": false,
+                  "required": true,
+                  "className": null,
+                  "placeholder": "範例：協助業務員線下銷售時，讓新種險的商品組合可直接透過平台進行投保，主要功能有選擇商品組合、預覽投保合約、金流交易、保單管理。",
+                  "hideExpression": [
+                      {
+                          "value": null,
+                          "key": ""
+                      }
+                  ],
+                  "options": null,
+                  "config": {
+                      "list": {
+                          "desCode": null,
+                          "inSearch": false,
+                          "hasFilter": false,
+                          "filterConfig": null,
+                          "inform": null,
+                          "hasSort": false,
+                          "className": null,
+                          "style": null,
+                          "fixedWidth": null,
+                          "fontColor": null,
+                          "colorMap": null,
+                          "fontSize": null,
+                          "enable": false,
+                          "columnWidth": null
+                      }
+                  }
+              },
+              "2d04629f7bf84981a09364610461996b": {
+                  "desc": null,
+                  "questionOrder": 3,
+                  "shortTitleEN": "AP Owner",
+                  "shortTitleCN": "權責單位",
+                  "longTitleEN": "AP Owner",
+                  "longTitleCN": "系統權責單位",
+                  "weight": 0,
+                  "type": "input",
+                  "disabled": false,
+                  "required": true,
+                  "className": null,
+                  "placeholder": null,
+                  "hideExpression": [
+                      {
+                          "value": null,
+                          "key": ""
+                      }
+                  ],
+                  "options": null,
+                  "config": {
+                      "list": {
+                          "desCode": null,
+                          "inSearch": false,
+                          "hasFilter": true,
+                          "filterConfig": null,
+                          "inform": null,
+                          "hasSort": false,
+                          "className": null,
+                          "style": null,
+                          "fixedWidth": null,
+                          "fontColor": null,
+                          "colorMap": null,
+                          "fontSize": null,
+                          "enable": true,
+                          "columnWidth": "160"
+                      }
+                  }
+              },
+              "017a145d37d04340a94ccb93ba2ffdb8": {
+                  "desc": null,
+                  "questionOrder": 0,
+                  "shortTitleEN": "AP ID",
+                  "shortTitleCN": "系統編號",
+                  "longTitleEN": "AP ID",
+                  "longTitleCN": "系統編號",
+                  "weight": 0,
+                  "type": "input",
+                  "disabled": true,
+                  "required": true,
+                  "className": "ap-id",
+                  "placeholder": null,
+                  "hideExpression": [
+                      {
+                          "value": null,
+                          "key": ""
+                      }
+                  ],
+                  "options": null,
+                  "config": {
+                      "list": {
+                          "desCode": null,
+                          "inSearch": false,
+                          "hasFilter": true,
+                          "filterConfig": null,
+                          "inform": null,
+                          "hasSort": false,
+                          "className": null,
+                          "style": null,
+                          "fixedWidth": null,
+                          "fontColor": null,
+                          "colorMap": null,
+                          "fontSize": null,
+                          "enable": true,
+                          "columnWidth": "240"
+                      }
+                  }
+              }
+          }
+      },
+      {
+          "groupOrder": 9,
+          "section": "開發體驗(DX)",
+          "sectionId": "45a336411ec64fb684d91918c49c0bec",
+          "groupName": "開發體驗",
+          "groupId": "22c721a571684db687b9213b1a9fa480",
+          "groupWeight": 0,
+          "totalScore": 0,
+          "questions": {
+              "c048dbeb5e234736bcb547f816157b91": {
+                  "desc": "這個題目是想了解在日常開發或維運上有哪些困難或問題需要面對，例如軟體或硬體環境的限制、資源不足、技術挑戰等。",
+                  "questionOrder": 0,
+                  "shortTitleEN": "Developer Painpoints",
+                  "shortTitleCN": "日常開發/維運痛點",
+                  "longTitleEN": "Developer Painpoints",
+                  "longTitleCN": "日常開發或維運上有遇到哪些痛點？",
+                  "weight": 0,
+                  "type": "multiselect",
+                  "disabled": false,
+                  "required": false,
+                  "className": null,
+                  "placeholder": null,
+                  "hideExpression": [
+                      {
+                          "value": null,
+                          "key": ""
+                      }
+                  ],
+                  "options": [
+                      {
+                          "label": "資料庫容量常不足",
+                          "value": 1,
+                          "score": 0,
+                          "reportHighLight": false,
+                          "reportAdvice": null,
+                          "desc": null
+                      },
+                      {
+                          "label": "伺服器記憶體常不足",
+                          "value": 2,
+                          "score": 0,
+                          "reportHighLight": false,
+                          "reportAdvice": null,
+                          "desc": null
+                      },
+                      {
+                          "label": "換版時間長",
+                          "value": 3,
+                          "score": 0,
+                          "reportHighLight": false,
+                          "reportAdvice": null,
+                          "desc": null
+                      },
+                      {
+                          "label": "Log追蹤不方便",
+                          "value": 4,
+                          "score": 0,
+                          "reportHighLight": false,
+                          "reportAdvice": null,
+                          "desc": null
+                      },
+                      {
+                          "label": "測試/正式環境規格不一，Debug困難",
+                          "value": 5,
+                          "score": 0,
+                          "reportHighLight": false,
+                          "reportAdvice": null,
+                          "desc": null
+                      },
+                      {
+                          "label": "其他",
+                          "value": 6,
+                          "score": 0,
+                          "reportHighLight": false,
+                          "reportAdvice": null,
+                          "desc": null
+                      },
+                      {
+                          "label": "無",
+                          "value": 7,
+                          "score": 0,
+                          "reportHighLight": false,
+                          "reportAdvice": null,
+                          "desc": null
+                      }
+                  ],
+                  "config": {
+                      "list": {
+                          "desCode": null,
+                          "inSearch": false,
+                          "hasFilter": false,
+                          "filterConfig": null,
+                          "inform": null,
+                          "hasSort": false,
+                          "className": null,
+                          "style": null,
+                          "fixedWidth": null,
+                          "fontColor": null,
+                          "colorMap": null,
+                          "fontSize": null,
+                          "enable": false,
+                          "columnWidth": null
+                      }
+                  }
+              },
+              "b5cd033c83804588b493127cd6bc1875": {
+                  "desc": null,
+                  "questionOrder": 1,
+                  "shortTitleEN": "Painpoint Description",
+                  "shortTitleCN": "痛點說明",
+                  "longTitleEN": "Painpoint Description",
+                  "longTitleCN": "痛點說明",
+                  "weight": 0,
+                  "type": "textarea",
+                  "disabled": false,
+                  "required": false,
+                  "className": null,
+                  "placeholder": null,
+                  "hideExpression": [
+                      {
+                          "value": null,
+                          "key": ""
+                      }
+                  ],
+                  "options": null,
+                  "config": {
+                      "list": {
+                          "desCode": null,
+                          "inSearch": false,
+                          "hasFilter": false,
+                          "filterConfig": null,
+                          "inform": null,
+                          "hasSort": false,
+                          "className": null,
+                          "style": null,
+                          "fixedWidth": null,
+                          "fontColor": null,
+                          "colorMap": null,
+                          "fontSize": null,
+                          "enable": false,
+                          "columnWidth": null
+                      }
+                  }
+              }
+          }
+      },
+      {
+          "groupOrder": 4,
+          "section": "Technical Cost",
+          "sectionId": "e8a4123e5c734bc797c645a07eb66888",
+          "groupName": "技術架構",
+          "groupId": "0453e6494da748a08a971fd5deaf0d94",
+          "groupWeight": 2,
+          "totalScore": 160,
+          "questions": {
+              "713bb8fa84a9491897af3ab46d5a9544": {
+                  "desc": "系統是使用哪種資料庫？資料庫是指用於儲存和管理資料的系統，例如 MySQL、Oracle、SQL Server 等。",
+                  "questionOrder": 8,
+                  "shortTitleEN": "Database",
+                  "shortTitleCN": "資料庫類型",
+                  "longTitleEN": "Database",
+                  "longTitleCN": "選用哪種資料庫(DB)？",
+                  "weight": 8,
+                  "type": "multiselect",
+                  "disabled": false,
+                  "required": false,
+                  "className": null,
+                  "placeholder": null,
+                  "hideExpression": [
+                      {
+                          "value": null,
+                          "key": ""
+                      }
+                  ],
+                  "options": [
+                      {
+                          "label": "無使用DB",
+                          "value": 1,
+                          "score": 0,
+                          "reportHighLight": false,
+                          "reportAdvice": null,
+                          "desc": null
+                      },
+                      {
+                          "label": "PostgreSQL",
+                          "value": 2,
+                          "score": 1,
+                          "reportHighLight": false,
+                          "reportAdvice": "資料庫為 PostgreSQL，廣泛適用於雲平台，遷移成本低",
+                          "desc": "PostgreSQL 為一款開源的關聯式資料庫管理系統(RDBMS)，支援 ACID 事務，常被用於大型資料庫和高流量應用。提供高度的資料完整性和可靠性，並且支援複雜的查詢。"
+                      },
+                      {
+                          "label": "MS SQL",
+                          "value": 3,
+                          "score": 4,
+                          "reportHighLight": true,
+                          "reportAdvice": "資料庫為 MS SQL，廣泛適用於雲平台，但需額外考慮授權費用，遷移成本較高",
+                          "desc": "MS SQL 為一款由 Microsoft 開發的關聯式資料庫管理系統(RDBMS)，支援 ACID 事務和 T-SQL 程式語言。提供穩定性、安全性和可靠性，是許多企業使用的主流資料庫之一。"
+                      },
+                      {
+                          "label": "MySQL",
+                          "value": 4,
+                          "score": 1,
+                          "reportHighLight": false,
+                          "reportAdvice": "資料庫為 MySQL，廣泛適用於雲平台，遷移成本低",
+                          "desc": "MySQL 為一款開源的關聯式資料庫管理系統(RDBMS)，支援 ACID 事務和多種開發語言的介面，常被用於 Web 應用程式、商業應用程式等。"
+                      },
+                      {
+                          "label": "Crystal DB",
+                          "value": 5,
+                          "score": 3,
+                          "reportHighLight": false,
+                          "reportAdvice": "資料庫為 Crystal DB，上雲需額外考慮授權費用，以及額外建置的技術成本，遷移成本較高",
+                          "desc": "Crystal DB 為一款由 SAP 開發的關聯式資料庫管理系統(RDBMS)，用於大型企業級應用，提供高度的可擴展性和安全性。特別適合用於SAP的應用系統。"
+                      },
+                      {
+                          "label": "Mongo DB",
+                          "value": 6,
+                          "score": 1,
+                          "reportHighLight": false,
+                          "reportAdvice": "資料庫為 MongoDB ，雲平台支援此種 NoSQL 資料庫，因此遷移到雲端相對容易",
+                          "desc": "Mongo DB 是一款開源的非關聯式資料庫管理系統(NoSQL)，將資料以文件的方式儲存在集合中，支援分散式儲存和高可用性。具有高度的可擴展性和靈活性，被廣泛地應用於大數據和雲端應用程式開發。"
+                      },
+                      {
+                          "label": "DB2",
+                          "value": 7,
+                          "score": 5,
+                          "reportHighLight": true,
+                          "reportAdvice": "資料庫為 DB2，雲端支援度低或不支援，需額外考慮授權費用，以及額外建置的技術成本",
+                          "desc": "DB2 為一款由 IBM 開發的關聯式資料庫管理系統(RDBMS)，提供高度的可擴展性和可用性，被廣泛地應用於企業級應用。"
+                      },
+                      {
+                          "label": "Oracle",
+                          "value": 8,
+                          "score": 5,
+                          "reportHighLight": true,
+                          "reportAdvice": "資料庫為 Oracle，雲原生支援度低或不支援，需額外考慮授權費用，以及額外建置的技術成本",
+                          "desc": "Oracle 為一款由 Oracle 公司開發的關聯式資料庫管理系統(RDBMS)，支援 ACID 事務和 SQL 程式語言。是世界上最大的商用資料庫之一，提供高度的可靠性和安全性，被廣泛地應用於企業級應用。"
+                      }
+                  ],
+                  "config": {
+                      "list": {
+                          "desCode": null,
+                          "inSearch": false,
+                          "hasFilter": true,
+                          "filterConfig": null,
+                          "inform": null,
+                          "hasSort": false,
+                          "className": null,
+                          "style": null,
+                          "fixedWidth": null,
+                          "fontColor": null,
+                          "colorMap": null,
+                          "fontSize": null,
+                          "enable": true,
+                          "columnWidth": "160"
+                      }
+                  }
+              },
+              "61dc3eb15dfe474abff6f7cab610f67a": {
+                  "desc": "這個題目的意思是，系統目前可以支持多少程度的虛擬化？虛擬化是指將一個物理系統分割成多個虛擬系統，以便更有效地使用資源。",
+                  "questionOrder": 2,
+                  "shortTitleEN": "Virtualization",
+                  "shortTitleCN": "虛擬化程度",
+                  "longTitleEN": "Virtualization",
+                  "longTitleCN": "系統目前的虛擬化程度為何？",
+                  "weight": 3,
+                  "type": "multiselect",
+                  "disabled": false,
+                  "required": false,
+                  "className": null,
+                  "placeholder": null,
+                  "hideExpression": [
+                      {
+                          "value": null,
+                          "key": ""
+                      }
+                  ],
+                  "options": [
+                      {
+                          "label": "Serverless",
+                          "value": 1,
+                          "score": 1,
+                          "reportHighLight": false,
+                          "reportAdvice": null,
+                          "desc": "Serverless 指的是使用雲端平台提供的無伺服器架構來執行應用程式。這種方式可以大幅降低系統管理成本和運維負擔，並提高系統可擴展性和彈性。"
+                      },
+                      {
+                          "label": "Containers",
+                          "value": 2,
+                          "score": 1,
+                          "reportHighLight": false,
+                          "reportAdvice": "虛擬化程度為 Containers ，可直接部署至雲端 PaaS 服務或 Serverless 服務",
+                          "desc": "Containers 指的是將應用程式和相關的軟體套件打包成可移植的容器，以實現系統虛擬化。容器技術可以提高系統的可攜性和可靠性，並加速應用程式的開發和部署。"
+                      },
+                      {
+                          "label": "Virtual Servers",
+                          "value": 3,
+                          "score": 4,
+                          "reportHighLight": true,
+                          "reportAdvice": "虛擬化程度為 Virtual Servers，建議先進行容器化改寫，再遷移到雲端 PaaS 服務或 Serverless 服務，技術成本較高",
+                          "desc": "Virtual Servers 指的是使用虛擬化技術創建的虛擬伺服器，以運行應用程式和存儲數據。虛擬伺服器可以提供與實體伺服器相同的功能，但具有更高的靈活性和可擴展性。"
+                      },
+                      {
+                          "label": "Physical Servers",
+                          "value": 4,
+                          "score": 5,
+                          "reportHighLight": true,
+                          "reportAdvice": "虛擬化程度為 Physical Servers，建議先進行虛擬化轉換，再進行容器化改寫，並遷移到雲端 PaaS 服務或 Serverless 服務，技術成本較高",
+                          "desc": "Physical Servers 指的是傳統的實體伺服器，通常是專門為特定用途設計和部署。這種方式需要更多的管理和維護工作，並且缺乏可擴展性。"
+                      },
+                      {
+                          "label": "AIX",
+                          "value": 5,
+                          "score": 5,
+                          "reportHighLight": true,
+                          "reportAdvice": "虛擬化程度為 AIX，這是 IBM 公司的 Unix 作業系統，與其他虛擬化技術不同，需要特殊的硬體和軟體支援，上雲技術成本高",
+                          "desc": "AIX 指的是 IBM 公司推出的一種 UNIX 作業系統，通常運行在 IBM 的 POWER 系列伺服器上。這種方式在大型企業中仍然很常見，但需要專業技能和設備來管理和維護。"
+                      }
+                  ],
+                  "config": {
+                      "list": {
+                          "desCode": null,
+                          "inSearch": false,
+                          "hasFilter": true,
+                          "filterConfig": null,
+                          "inform": null,
+                          "hasSort": false,
+                          "className": null,
+                          "style": null,
+                          "fixedWidth": null,
+                          "fontColor": null,
+                          "colorMap": null,
+                          "fontSize": null,
+                          "enable": true,
+                          "columnWidth": "160"
+                      }
+                  }
+              },
+              "c892fd7d8b5842fe90ac4ce2dc06e9f0": {
+                  "desc": "這個問題的意思是，系統的資料狀態是什麼類型？Stateless 指的是系統不會記住任何使用者的狀態，而 Stateful 指的是系統會記住之前的資料狀態(例如儲存於server的session中)，以便在之後的請求中使用。",
+                  "questionOrder": 4,
+                  "shortTitleEN": "Stateless / Stateful",
+                  "shortTitleCN": "Stateless/Stateful",
+                  "longTitleEN": "Stateless / Stateful",
+                  "longTitleCN": "系統資料狀態為 Stateless 或 Stateful？",
+                  "weight": 3,
+                  "type": "select",
+                  "disabled": false,
+                  "required": false,
+                  "className": null,
+                  "placeholder": null,
+                  "hideExpression": [
+                      {
+                          "value": null,
+                          "key": ""
+                      }
+                  ],
+                  "options": [
+                      {
+                          "label": "Stateless",
+                          "value": 1,
+                          "score": 1,
+                          "reportHighLight": false,
+                          "reportAdvice": null,
+                          "desc": "Stateless 意味著在處理每一個請求時，系統不會保留任何與之前請求相關的狀態。每個請求都是獨立的，不需要參考任何先前的狀態。這種設計通常用於 Web 應用程式，因為 Web 應用程式需要能夠處理大量同時連線的用戶請求。"
+                      },
+                      {
+                          "label": "Stateful",
+                          "value": 2,
+                          "score": 5,
+                          "reportHighLight": true,
+                          "reportAdvice": "系统需要管理狀態(Stateful)，上雲建議要規劃儲存服務、HADR機制等，遷移成本相對較高",
+                          "desc": "Stateful 意味著系統會在處理請求時保留狀態，這些狀態可以是簡單的變數或複雜的物件。當後續請求到達時，系統會參考先前請求的狀態進行處理。這種設計通常用於需要追蹤客戶端狀態的應用程式，例如在網路遊戲中，系統需要知道每個玩家的位置和狀態。"
+                      }
+                  ],
+                  "config": {
+                      "list": {
+                          "desCode": null,
+                          "inSearch": false,
+                          "hasFilter": true,
+                          "filterConfig": null,
+                          "inform": null,
+                          "hasSort": false,
+                          "className": null,
+                          "style": null,
+                          "fixedWidth": null,
+                          "fontColor": null,
+                          "colorMap": null,
+                          "fontSize": null,
+                          "enable": true,
+                          "columnWidth": "80"
+                      }
+                  }
+              },
+              "f6e1b5fa27294b38bd1ca33794000df0": {
+                  "desc": "開發程式語言是指用於編寫軟體的語言，例如 C、Java、Python 等。前後端可能使用不同語言開發。",
+                  "questionOrder": 6,
+                  "shortTitleEN": "Programming Language",
+                  "shortTitleCN": "開發程式語言",
+                  "longTitleEN": "Programming Language",
+                  "longTitleCN": "選用哪種開發程式語言？",
+                  "weight": 3,
+                  "type": "multiselect",
+                  "disabled": false,
+                  "required": false,
+                  "className": null,
+                  "placeholder": null,
+                  "hideExpression": [
+                      {
+                          "value": null,
+                          "key": ""
+                      }
+                  ],
+                  "options": [
+                      {
+                          "label": "Java-Spring boot",
+                          "value": 1,
+                          "score": 1,
+                          "reportHighLight": false,
+                          "reportAdvice": "開發程式語言為  Java-Spring Boot ，使用容器化技術部署其應用程式，具有良好的可移植性和可擴展性，上雲技術成本低",
+                          "desc": "Java 是一種廣泛使用的程式語言，Spring boot 是一個開發框架，可以讓 Java 程式開發更簡單快速。Spring boot 適用於 Web 開發、API 開發、微服務架構等，常用於企業級應用開發。"
+                      },
+                      {
+                          "label": "Java-Spring Struts Hibernate(SSH)",
+                          "value": 11,
+                          "score": 5,
+                          "reportHighLight": true,
+                          "reportAdvice": "開發程式語言為 Java-Spring Struts Hibernate(SSH) ，此為較舊的 Java 框架，不適合容器化且遷移成本較高，建議上雲前先進行 Spring 或其他雲原生框架的改寫",
+                          "desc": "Java-Spring Struts Hibernate (SSH) 是一個結合了 Spring、Struts 和 Hibernate 的 Java Web 開發框架組合，用於快速開發可擴展的企業級 Web 應用程序。它提供了分層架構、依賴注入、面向切面編程和對象關係映射等功能，提高開發效率和代碼可測試性。"
+                      },
+                      {
+                          "label": "Java-eBAF",
+                          "value": 2,
+                          "score": 5,
+                          "reportHighLight": true,
+                          "reportAdvice": "開發程式語言為 Java-eBAF ，在上雲時需要解決複雜的依賴關係和配置問題，需改寫程式或改動架構，因此遷移成本較高",
+                          "desc": "Java 是一種廣泛使用的程式語言，eBAF 則是在 Java 上構建的企業級應用平台，具有豐富的功能。eBAF 可以提供雲端服務、資料庫管理、企業應用開發等方面的支援。"
+                      },
+                      {
+                          "label": "Python",
+                          "value": 3,
+                          "score": 2,
+                          "reportHighLight": false,
+                          "reportAdvice": "開發程式語言為 Python，廣泛適用於雲平台，因此上雲技術成本低",
+                          "desc": "Python 是一種高階程式語言，簡單易學、易讀易寫、可擴展性強。Python 常被用於資料科學、機器學習、人工智慧、自然語言處理等領域的開發。"
+                      },
+                      {
+                          "label": "R",
+                          "value": 4,
+                          "score": 2,
+                          "reportHighLight": false,
+                          "reportAdvice": "開發程式語言為 R，是較為開放且彈性高的程式語言，因此上雲技術成本低",
+                          "desc": "R 是一種針對統計分析和圖形化呈現的語言，適合用於數據分析、機器學習等領域的開發。R 具有豐富的統計分析庫和繪圖庫，可以方便地進行各種數據分析和可視化操作。"
+                      },
+                      {
+                          "label": "C#-.Net Framework",
+                          "value": 5,
+                          "score": 4,
+                          "reportHighLight": true,
+                          "reportAdvice": "開發程式語言為 C#-.NET Framework ，不是天生為雲端設計，需進行較多的調整和配置才能在雲端環境中運行，因此遷移成本較高",
+                          "desc": "C# 是一種由微軟推出的程式語言，.Net Framework 是一個框架，可讓 C# 程式開發更加容易。.Net Framework 適用於 Windows 平台上的應用開發，可以用於開發桌面應用、Web 應用和服務應用等。"
+                      },
+                      {
+                          "label": "C#-.Net Core",
+                          "value": 6,
+                          "score": 1,
+                          "reportHighLight": false,
+                          "reportAdvice": "開發程式語言為 C#-.Net Core，由於 .Net Core 是跨平台且具有高度的可攜性，使得容器的部署更加方便且彈性大，因此遷移成本低",
+                          "desc": "C# 是一種由微軟推出的程式語言，.Net Core 是一個開源框架，可以跨平台開發應用程式。.Net Core 適用於桌面應用、Web 應用、服務應用等領域的開發。"
+                      },
+                      {
+                          "label": "Vue",
+                          "value": 7,
+                          "score": 1,
+                          "reportHighLight": false,
+                          "reportAdvice": "開發程式語言為 Vue.js，輕量級特性和組件化架構使 Vue.js 在雲端環境中提供高效率和成本節省的開發方式",
+                          "desc": "Vue.js 是一個用於構建用戶界面的 JavaScript 框架，它具有輕量級、高效、易於學習等優點，並且提供了豐富的插件和生態系統。Vue.js 的開發風格簡潔明瞭，並支持快速開發。在 Web 應用開發中，Vue.js 常用於實現單頁應用(SPA)或小型專案。"
+                      },
+                      {
+                          "label": "Angular",
+                          "value": 8,
+                          "score": 1,
+                          "reportHighLight": false,
+                          "reportAdvice": "開發程式語言為 Angular，Google 背書和模組化架構使 Angular 在雲端環境中具有優秀的相容度，有助於大型應用的開發和維護",
+                          "desc": "Angular 是一個開源的 Web 應用框架，由 Google 開發和維護，它提供了完整的 MVC 架構和開發工具集，以及一個強大的模板系統、依賴注入、可測試性等特點。Angular 的開發過程較為複雜，但它的架構清晰，支持大型應用開發和團隊協作。"
+                      },
+                      {
+                          "label": "React",
+                          "value": 9,
+                          "score": 1,
+                          "reportHighLight": false,
+                          "reportAdvice": "開發程式語言為 React，React 的高性能和虛擬 DOM 技術有助於降低雲端運營成本，同時提供了豐富的社區支持，以解決各種雲端挑戰",
+                          "desc": "React 是一個由 Facebook 開發的 JavaScript 庫，用於構建用戶界面。React 採用組件化的開發模式，提供了豐富的生命週期方法和事件機制，開發者可以根據需求構建自定義組件。React 的虛擬 DOM 技術能夠提高渲染性能，並且易於與其他庫和框架集成。在 Web 應用開發中，React 常用於實現大型、高性能的應用程序。"
+                      },
+                      {
+                          "label": "Software",
+                          "value": 10,
+                          "score": 5,
+                          "reportHighLight": true,
+                          "reportAdvice": "開發程式語言為 Software 套裝軟體，可考慮採用雲端版 SaaS，並注意 License 相關費用",
+                          "desc": "Software 一般指使用現成的軟體套件進行應用開發"
+                      }
+                  ],
+                  "config": {
+                      "list": {
+                          "desCode": null,
+                          "inSearch": false,
+                          "hasFilter": true,
+                          "filterConfig": null,
+                          "inform": null,
+                          "hasSort": false,
+                          "className": null,
+                          "style": null,
+                          "fixedWidth": null,
+                          "fontColor": null,
+                          "colorMap": null,
+                          "fontSize": null,
+                          "enable": true,
+                          "columnWidth": "160"
+                      }
+                  }
+              },
+              "e392076aefc5422f994187f321c7e3a8": {
+                  "desc": "系統是使用哪種作業系統？作業系統是指用於控制電腦硬體和軟體的軟體，例如 Windows、macOS、Linux 等。",
+                  "questionOrder": 7,
+                  "shortTitleEN": "Operation System(OS)",
+                  "shortTitleCN": "作業系統版本",
+                  "longTitleEN": "Operation System(OS)",
+                  "longTitleCN": "選用哪種作業系統(OS)？",
+                  "weight": 2,
+                  "type": "multiselect",
+                  "disabled": false,
+                  "required": false,
+                  "className": null,
+                  "placeholder": null,
+                  "hideExpression": [
+                      {
+                          "value": null,
+                          "key": ""
+                      }
+                  ],
+                  "options": [
+                      {
+                          "label": "Alpine",
+                          "value": 1,
+                          "score": 1,
+                          "reportHighLight": false,
+                          "reportAdvice": "作業系統為 Alpine，Alpine Linux 以極小的容器映像聞名，非常適合用於容器化服務，節省存儲空間和加速部署",
+                          "desc": "一款基於輕量級的BusyBox工具集的Linux發行版，因其極簡的結構而被廣泛應用於容器化部署。"
+                      },
+                      {
+                          "label": "Debian",
+                          "value": 2,
+                          "score": 1,
+                          "reportHighLight": false,
+                          "reportAdvice": "作業系統為 Debian，是一個穩定的作業系統，有長期支援版本（LTS）、龐大的套件庫與社群支援，使其成為可靠的、廣泛適用於雲平台的選擇",
+                          "desc": "一款由全球志願者共同維護的免費開源操作系統，擁有穩定且廣泛的套件庫，適合用於各種伺服器應用。"
+                      },
+                      {
+                          "label": "CentOS",
+                          "value": 3,
+                          "score": 1,
+                          "reportHighLight": false,
+                          "reportAdvice": "作業系統為 CentOS，是企業級應用程式的理想選擇，強調安全性，提供定期的安全更新和修補程式，使其成為一個安全的作業系統選擇，也廣泛適用於雲平台",
+                          "desc": "由Red Hat Enterprise Linux（RHEL）的社區版本衍生而來，是一個穩定且安全的Linux發行版，廣泛應用於企業環境。"
+                      },
+                      {
+                          "label": "RHEL",
+                          "value": 4,
+                          "score": 3,
+                          "reportHighLight": false,
+                          "reportAdvice": "作業系統為 RHEL ，是企業級的操作系統，雲上需額外考慮授權費用，遷移成本較高",
+                          "desc": "一款商業級的Linux操作系統，由Red Hat公司維護，支援長期支援版本(LTS)，並提供商業級的支援服務，廣泛應用於企業環境。"
+                      },
+                      {
+                          "label": "Windows Server",
+                          "value": 5,
+                          "score": 4,
+                          "reportHighLight": true,
+                          "reportAdvice": "作業系統為 Windows ，具有較高的授權費用與硬體要求，部署成本較高",
+                          "desc": "微軟開發的服務器作業系統，提供強大的安全性、可靠性和管理功能，適合用於企業應用和網站服務。"
+                      },
+                      {
+                          "label": "Ubuntu",
+                          "value": 6,
+                          "score": 1,
+                          "reportHighLight": false,
+                          "reportAdvice": "作業系統為 Ubnuntu，因其開源性質、廣泛社群支持，雲端平台相容度高，遷移成本低",
+                          "desc": "一款以Debian為基礎的免費開源操作系統，經常被廣泛應用於雲端平台和桌面操作系統，擁有龐大的套件庫和社區支持。"
+                      }
+                  ],
+                  "config": {
+                      "list": {
+                          "desCode": null,
+                          "inSearch": false,
+                          "hasFilter": true,
+                          "filterConfig": null,
+                          "inform": null,
+                          "hasSort": false,
+                          "className": null,
+                          "style": null,
+                          "fixedWidth": null,
+                          "fontColor": null,
+                          "colorMap": null,
+                          "fontSize": null,
+                          "enable": true,
+                          "columnWidth": "160"
+                      }
+                  }
+              },
+              "b062c16dbba4479ca885f425e9002e7a": {
+                  "desc": "前後端分離是指將網站的前端和後端功能分開，以便更容易管理和開發。前端負責顯示網站的外觀和用戶交互，而後端負責處理數據和應用程序的邏輯。",
+                  "questionOrder": 1,
+                  "shortTitleEN": "Frontend & Backend Separation",
+                  "shortTitleCN": "是否前後分離",
+                  "longTitleEN": "Frontend & Backend Separation",
+                  "longTitleCN": "是否有前後端分離？",
+                  "weight": 4,
+                  "type": "select",
+                  "disabled": false,
+                  "required": false,
+                  "className": null,
+                  "placeholder": null,
+                  "hideExpression": [
+                      {
+                          "value": null,
+                          "key": ""
+                      }
+                  ],
+                  "options": [
+                      {
+                          "label": "Yes",
+                          "value": 1,
+                          "score": 1,
+                          "reportHighLight": false,
+                          "reportAdvice": null,
+                          "desc": null
+                      },
+                      {
+                          "label": "No",
+                          "value": 2,
+                          "score": 5,
+                          "reportHighLight": true,
+                          "reportAdvice": "前後端沒有分離，上雲前會先需要進行程式改寫與架構調整，遷移成本較高",
+                          "desc": null
+                      }
+                  ],
+                  "config": {
+                      "list": {
+                          "desCode": null,
+                          "inSearch": false,
+                          "hasFilter": true,
+                          "filterConfig": null,
+                          "inform": null,
+                          "hasSort": false,
+                          "className": null,
+                          "style": null,
+                          "fixedWidth": null,
+                          "fontColor": null,
+                          "colorMap": null,
+                          "fontSize": null,
+                          "enable": true,
+                          "columnWidth": "80"
+                      }
+                  }
+              },
+              "a5d1fb90b444408cb8d95c14143d2813": {
+                  "desc": "這個問題是在詢問系統現行的應用系統架構是哪種類型，每種選項代表一種常見的架構模式。了解現行應用系統架構的類型，可以幫助了解系統的開發方式、設計特點以及運維需求，來評估上雲技術難度與成本。",
+                  "questionOrder": 0,
+                  "shortTitleEN": "Application Architecture",
+                  "shortTitleCN": "應用系統架構",
+                  "longTitleEN": "Application Architecture",
+                  "longTitleCN": "系統現行的應用系統架構為何？",
+                  "weight": 2,
+                  "type": "multiselect",
+                  "disabled": false,
+                  "required": false,
+                  "className": null,
+                  "placeholder": null,
+                  "hideExpression": [
+                      {
+                          "value": null,
+                          "key": ""
+                      }
+                  ],
+                  "options": [
+                      {
+                          "label": "Microservices 微服務",
+                          "value": 1,
+                          "score": 1,
+                          "reportHighLight": false,
+                          "reportAdvice": "此系統架構為 Microservices ，適合使用雲端發揮水平擴充的優勢，並且可以模組化部署，減少部署的成本",
+                          "desc": "Microservices 微服務指將系統拆分成多個小型服務，每個服務都可以獨立開發、部署、維護和擴展。"
+                      },
+                      {
+                          "label": "N-Tier(SPA)",
+                          "value": 2,
+                          "score": 2,
+                          "reportHighLight": false,
+                          "reportAdvice": "此系統架構為 N-Tier(SPA) ，一種前端架構模式，因其具有分層結構，使得程式部署和管理容易，容易遷移雲端",
+                          "desc": "N-Tier(SPA) 為前端單頁應用架構，指將前端的應用邏輯分成多層，例如UI層、控制層、服務層等，適合單頁應用的開發模式。"
+                      },
+                      {
+                          "label": "N-Tier(MVC)",
+                          "value": 3,
+                          "score": 2,
+                          "reportHighLight": false,
+                          "reportAdvice": "此系統架構為 N-Tier(MVC) ，經典的三層式架構，使得程式部署和管理容易，降低了部署時的技術成本，容易遷移雲端",
+                          "desc": "N-Tier(MVC) 為後端MVC架構，指將後端的應用邏輯分成模型(Model)、視圖(View)和控制器(Controller)三層，讓開發人員專注於不同的邏輯層面，易於維護和擴展。"
+                      },
+                      {
+                          "label": "eBAF",
+                          "value": 4,
+                          "score": 4,
+                          "reportHighLight": true,
+                          "reportAdvice": "此系統架構為 eBAF ，屬於較舊的框架，維護與容器化成本較高，需部分改寫程式或改動架構，才能適應雲平台",
+                          "desc": "eBAF為一種企業級應用框架，提供許多功能和模組，可幫助開發人員快速構建和部署複雜的企業應用。"
+                      },
+                      {
+                          "label": "N-Tier(WebForm)",
+                          "value": 5,
+                          "score": 4,
+                          "reportHighLight": true,
+                          "reportAdvice": "此系統架構為 WebForm，屬於較舊的框架，由於其框架依賴特定用戶端腳本、伺服器控制項等，遷移雲端成本較高",
+                          "desc": "N-Tier(WebForm) 為後端WebForm架構，使用ASP.NET WebForms技術開發，適合複雜的Web應用。"
+                      },
+                      {
+                          "label": "Monolith 單體式",
+                          "value": 6,
+                          "score": 4,
+                          "reportHighLight": true,
+                          "reportAdvice": "此系統架構為 Monolith 單體架構，上雲過程中需投入較多成本，如改寫程式、前後端分離或改動架構，才能發揮雲端敏捷優勢",
+                          "desc": "Monolith 單體式架構，指它只有一個核心，所有的功能都集中在一個中心。它可以提供更高的效率和可靠性，因為所有的資源都集中在一個地方，而不是分散在多個位置。"
+                      },
+                      {
+                          "label": "Software 套裝軟體",
+                          "value": 7,
+                          "score": 5,
+                          "reportHighLight": true,
+                          "reportAdvice": "此系統架構為 Software 套裝軟體，建議調研此軟體是否有雲端版 SaaS，可直接採用並做資料搬遷，也需注意 License 費用、特定硬體依賴問題，才能在雲平台上運行",
+                          "desc": "Software 套裝軟體指一種已經開發好的應用軟體，可以直接使用或者根據需求進行定制化開發。"
+                      },
+                      {
+                          "label": "Big Data & AI/ML",
+                          "value": 8,
+                          "score": 3,
+                          "reportHighLight": false,
+                          "reportAdvice": "此系統架構為 Big Data & AI/ML，建議使用雲端上的 Big Data  Serverless 服務或 SaaS 服務直接取代，能很好提高運算效能，並減少 Infra 維運工作",
+                          "desc": "Big Data & AI/ML的技術架構包括數據收集、存儲和分析。首先，數據從各種來源收集，例如傳感器、社交媒體和日誌文件。這些數據被存儲在分佈式系統中，如Hadoop或NoSQL數據庫，以應對大量和高速的數據。然後，利用AI/ML技術進行數據分析，使用機器學習算法訓練模型，從數據中發現模式和洞察力，以解決問題或做出預測。"
+                      },
+                      {
+                          "label": "Hadoop",
+                          "value": 11,
+                          "score": 3,
+                          "reportHighLight": false,
+                          "reportAdvice": "此系統架構為 Hadoop，可以改用雲端託管Hadoop服務，更彈性配置平台運算資源",
+                          "desc": "大數據儲存與分析平台，其中包含HDFS分散式檔案系統與Map/Reduce運算等演算法"
+                      },
+                      {
+                          "label": "Data Warehouse",
+                          "value": 9,
+                          "score": 5,
+                          "reportHighLight": true,
+                          "reportAdvice": "此系統架構為 DataWarehouse，建議倉儲資料上雲使用雲端 Serverless 服務，可大幅度提升儲存量能，又能減少 Infra 維運工作，並建議先做資料分類，冷熱資料分開儲存，資料倉儲只存 Hot Data，歷史資料則存 Archive，優化資源管理。而且需考慮資料倉儲會儲存重要的業務數據和客戶數據，上雲需要設計數據的機密性和完整性的保護機制，如 Encryption, IAM, Audit Log 等",
+                          "desc": "資料倉儲將來自不同來源的數據整合到一個統一的資料庫中，並將其組織成易於查詢和分析的格式。資料倉儲通常包括大量的歷史數據，用於分析趨勢和預測未來的發展。"
+                      },
+                      {
+                          "label": "ETL",
+                          "value": 10,
+                          "score": 1,
+                          "reportHighLight": false,
+                          "reportAdvice": "此系統架構為 ETL，建議上雲使用雲原生的 ETL 服務 ，可大幅度提升運算效能，又能減少 Infra 維運工作",
+                          "desc": "數據抽取（Extract）、轉換（Transform）和加載（Load)工具。"
+                      }
+                  ],
+                  "config": {
+                      "list": {
+                          "desCode": null,
+                          "inSearch": false,
+                          "hasFilter": true,
+                          "filterConfig": null,
+                          "inform": null,
+                          "hasSort": false,
+                          "className": null,
+                          "style": null,
+                          "fixedWidth": null,
+                          "fontColor": null,
+                          "colorMap": null,
+                          "fontSize": null,
+                          "enable": true,
+                          "columnWidth": "160"
+                      }
+                  }
+              },
+              "d043935c1e3540a7ac2c65f70322e944": {
+                  "desc": "這個問題的意思是，資料庫的容量是否大於 200GB？容量指的是資料庫可以儲存的資料量，一般來說，200GB 以上的資料庫可以支持大型應用程式。",
+                  "questionOrder": 9,
+                  "shortTitleEN": "Size of Data",
+                  "shortTitleCN": "資料庫資料量大小 (GB)",
+                  "longTitleEN": "Size of Data",
+                  "longTitleCN": "資料庫既有容量是否 >200GB?",
+                  "weight": 4,
+                  "type": "select",
+                  "disabled": false,
+                  "required": false,
+                  "className": null,
+                  "placeholder": null,
+                  "hideExpression": [
+                      {
+                          "value": null,
+                          "key": ""
+                      }
+                  ],
+                  "options": [
+                      {
+                          "label": "<= 200",
+                          "value": 1,
+                          "score": 3,
+                          "reportHighLight": false,
+                          "reportAdvice": "資料庫容量 <= 200G，容量等級一般，上雲可規劃 <= 200G 計價模式級距，以更精準的預估費用",
+                          "desc": null
+                      },
+                      {
+                          "label": "> 200",
+                          "value": 2,
+                          "score": 5,
+                          "reportHighLight": false,
+                          "reportAdvice": "資料庫容量 >= 200G，容量等級較高，上雲可規劃 >= 200G 計價模式級距，以更精準的預估費用",
+                          "desc": null
+                      }
+                  ],
+                  "config": {
+                      "list": {
+                          "desCode": null,
+                          "inSearch": false,
+                          "hasFilter": true,
+                          "filterConfig": null,
+                          "inform": null,
+                          "hasSort": false,
+                          "className": null,
+                          "style": null,
+                          "fixedWidth": null,
+                          "fontColor": null,
+                          "colorMap": null,
+                          "fontSize": null,
+                          "enable": true,
+                          "columnWidth": "80"
+                      }
+                  }
+              },
+              "f139671a6a704d2fb4fe956dc80ecfc0": {
+                  "desc": "OLTP 指的是線上事務處理，用於快速處理大量小型事務；而 OLAP 指的是線上分析處理，用於分析大量複雜的資料。",
+                  "questionOrder": 5,
+                  "shortTitleEN": "Data Processing Type",
+                  "shortTitleCN": "資料處理類型",
+                  "longTitleEN": "Data Processing Type",
+                  "longTitleCN": "資料處理類型為 OLTP 或 OLAP?",
+                  "weight": 0,
+                  "type": "select",
+                  "disabled": false,
+                  "required": false,
+                  "className": null,
+                  "placeholder": null,
+                  "hideExpression": [
+                      {
+                          "value": null,
+                          "key": ""
+                      }
+                  ],
+                  "options": [
+                      {
+                          "label": "OLTP",
+                          "value": 1,
+                          "score": 0,
+                          "reportHighLight": false,
+                          "reportAdvice": "系統處理類型為 OLTP，上雲適合使用一般運算服務，如 PaaS 或 SaaS",
+                          "desc": "OLTP代表'Online Transaction Processing'，是一種用於處理交易性資料的系統。這類系統通常處理許多小型交易，如銷售、訂單、交易和付款等。在OLTP系統中，資料以實時方式輸入和存儲，需要快速處理以保證高效的交易處理。"
+                      },
+                      {
+                          "label": "OLAP",
+                          "value": 2,
+                          "score": 0,
+                          "reportHighLight": false,
+                          "reportAdvice": "系統處理類型為 OLAP，上雲適合使用數據分析服務，大多是 SaaS",
+                          "desc": "OLAP代表'Online Analytical Processing'，是一種用於分析和報告大量資料的系統。這類系統通常處理大型的歷史資料，並將其轉換為有意義的信息。在OLAP系統中，資料需要事先處理和分析，以便讓用戶可以快速進行數據探索和分析。"
+                      }
+                  ],
+                  "config": {
+                      "list": {
+                          "desCode": null,
+                          "inSearch": false,
+                          "hasFilter": true,
+                          "filterConfig": null,
+                          "inform": null,
+                          "hasSort": false,
+                          "className": null,
+                          "style": null,
+                          "fixedWidth": null,
+                          "fontColor": null,
+                          "colorMap": null,
+                          "fontSize": null,
+                          "enable": true,
+                          "columnWidth": "80"
+                      }
+                  }
+              },
+              "59eaa880313e48fda1054669ed2be869": {
+                  "desc": "這個題目的意思是，有些情況下系統前端會採用VM(如Nginx)，後端會是Container的模式，這樣會影響上雲的遷移方式，也建議所有服務進行容器化。",
+                  "questionOrder": 3,
+                  "shortTitleEN": "Containerization",
+                  "shortTitleCN": "是否所有皆容器化",
+                  "longTitleEN": "Containerization",
+                  "longTitleCN": "是否所有服務皆容器化？",
+                  "weight": 3,
+                  "type": "select",
+                  "disabled": false,
+                  "required": false,
+                  "className": null,
+                  "placeholder": null,
+                  "hideExpression": [
+                      {
+                          "value": null,
+                          "key": ""
+                      }
+                  ],
+                  "options": [
+                      {
+                          "label": "完全容器化",
+                          "value": 1,
+                          "score": 2,
+                          "reportHighLight": false,
+                          "reportAdvice": null,
+                          "desc": null
+                      },
+                      {
+                          "label": "完全沒有容器化",
+                          "value": 2,
+                          "score": 5,
+                          "reportHighLight": true,
+                          "reportAdvice": "系統目前完全沒有容器化，上雲前建議先進行容器化改寫，需符合敏捷架構較好發揮雲端優勢",
+                          "desc": null
+                      },
+                      {
+                          "label": "部分容器化",
+                          "value": 3,
+                          "score": 3,
+                          "reportHighLight": false,
+                          "reportAdvice": "系統目前為部分容器化，上雲前建議將其全面容器化或調整架構，需符合敏捷架構較好發揮雲端優勢",
+                          "desc": null
+                      }
+                  ],
+                  "config": {
+                      "list": {
+                          "desCode": null,
+                          "inSearch": false,
+                          "hasFilter": true,
+                          "filterConfig": null,
+                          "inform": null,
+                          "hasSort": false,
+                          "className": null,
+                          "style": null,
+                          "fixedWidth": null,
+                          "fontColor": null,
+                          "colorMap": null,
+                          "fontSize": null,
+                          "enable": true,
+                          "columnWidth": "160"
+                      }
+                  }
+              }
+          }
+      },
+      {
+          "groupOrder": 5,
+          "section": "Technical Cost",
+          "sectionId": "e8a4123e5c734bc797c645a07eb66888",
+          "groupName": "系統要求",
+          "groupId": "e55ea232e3fa479cac0b3b8b85fb2b9f",
+          "groupWeight": 1,
+          "totalScore": 100,
+          "questions": {
+              "7089120c9b2c475e9fa613b073718d4e": {
+                  "desc": "這個題目的意思是，系統是如何進行驗證和授權的？例如使用者登入帳號密碼或其他身份驗證方式。這是確保系統只能被授權的人使用並確保系統的安全性。",
+                  "questionOrder": 4,
+                  "shortTitleEN": "Authentication/Authorization",
+                  "shortTitleCN": "系統驗證/授權方式",
+                  "longTitleEN": "Authentication/Authorization",
+                  "longTitleCN": "系統驗證/授權方式為何？",
+                  "weight": 2,
+                  "type": "multiselect",
+                  "disabled": false,
+                  "required": false,
+                  "className": null,
+                  "placeholder": null,
+                  "hideExpression": [
+                      {
+                          "value": null,
+                          "key": ""
+                      }
+                  ],
+                  "options": [
+                      {
+                          "label": "ISAM",
+                          "value": 1,
+                          "score": 5,
+                          "reportHighLight": false,
+                          "reportAdvice": "系統授權方式為 ISAM，為較舊的認證系統，建議使用主流認證授權協定(OAuth 2.0、SAML)與雲原生服務進行改寫",
+                          "desc": "ISAM (IBM Security Access Manager)是IBM開發的一款Web單點登錄(SSO)解決方案，用於管理Web應用程序的身份驗證和授權。"
+                      },
+                      {
+                          "label": "AD",
+                          "value": 2,
+                          "score": 4,
+                          "reportHighLight": false,
+                          "reportAdvice": "系統授權方式為 AD，建議上雲時使用雲端的 AD 服務整合雲端環境的新系統，這需要重新設置 AD 服務，上雲技術成本較高",
+                          "desc": "AD (Active Directory)是Microsoft開發的一款集中式身份驗證和授權服務，用於Windows環境中的用戶身份驗證和管理。"
+                      },
+                      {
+                          "label": "無",
+                          "value": 3,
+                          "score": 3,
+                          "reportHighLight": false,
+                          "reportAdvice": null,
+                          "desc": "表示系統沒有任何驗證或授權機制，使用者可以直接訪問所有資源。"
+                      },
+                      {
+                          "label": "SAML",
+                          "value": 4,
+                          "score": 2,
+                          "reportHighLight": false,
+                          "reportAdvice": "系統授權方式為 SAML，此種方式與部署應用程式相同，上雲技術成本低",
+                          "desc": "SAML (Security Assertion Markup Language)是一種基於XML的標準，用於跨不同安全領域之間的身份驗證和授權。"
+                      },
+                      {
+                          "label": "API Key",
+                          "value": 5,
+                          "score": 2,
+                          "reportHighLight": false,
+                          "reportAdvice": "系統授權方式為 API Key，雲端提供了豐富的 API Key 管理工具，並且具有良好的相容性，上雲可以直接使用此類服務",
+                          "desc": "API Key (Application Programming Interface Key)是一種密鑰，用於驗證API用戶身份，控制API使用權限，通常用於Web服務或應用程序。"
+                      },
+                      {
+                          "label": "LDAP",
+                          "value": 6,
+                          "score": 2,
+                          "reportHighLight": false,
+                          "reportAdvice": "系統授權方式為 LDAP，建議使用雲原生的 LDAP 相關服務，雲平台如 GCP 也提供了一些用於整合 LDAP 服務的工具和指南",
+                          "desc": "LDAP (Lightweight Directory Access Protocol)是一種協議，用於訪問和維護分佈式目錄服務，通常用於企業中的身份驗證和授權。"
+                      },
+                      {
+                          "label": "內部系統驗證",
+                          "value": 7,
+                          "score": 2,
+                          "reportHighLight": false,
+                          "reportAdvice": "系統授權方式為 內部系統驗證，此種方式與部署應用程式相同，上雲技術成本低",
+                          "desc": "內部系統驗證表示系統內部有一個獨立的驗證機制，用於驗證用戶的身份和授權他們訪問系統資源，通常用於內部應用程序或私有網絡中。"
+                      }
+                  ],
+                  "config": {
+                      "list": {
+                          "desCode": null,
+                          "inSearch": false,
+                          "hasFilter": true,
+                          "filterConfig": null,
+                          "inform": null,
+                          "hasSort": false,
+                          "className": null,
+                          "style": null,
+                          "fixedWidth": null,
+                          "fontColor": null,
+                          "colorMap": null,
+                          "fontSize": null,
+                          "enable": true,
+                          "columnWidth": "160"
+                      }
+                  }
+              },
+              "4c9f3e3e05974d4d87d420a1338947f9": {
+                  "desc": "這個問題的意思是，該系統是否需要高度的安全性保護，可能需要加密、身份驗證、防火牆等安全措施。如果需要高安全性，那麼系統需要將這些安全需求納入考量，以確保數據和系統不受到未經授權的存取和攻擊。",
+                  "questionOrder": 3,
+                  "shortTitleEN": "High Security Requirement",
+                  "shortTitleCN": "高安全需求",
+                  "longTitleEN": "High Security Requirement",
+                  "longTitleCN": "是否有高安全需求？(如加密、驗證等)",
+                  "weight": 6,
+                  "type": "select",
+                  "disabled": false,
+                  "required": false,
+                  "className": null,
+                  "placeholder": null,
+                  "hideExpression": [
+                      {
+                          "value": null,
+                          "key": ""
+                      }
+                  ],
+                  "options": [
+                      {
+                          "label": "Yes",
+                          "value": 1,
+                          "score": 5,
+                          "reportHighLight": false,
+                          "reportAdvice": "系統有高安全需求，建議規劃網路隔離、權限控管、加密傳輸、資料防護、金鑰管理、軌跡記錄等安全措施，上雲技術成本較高",
+                          "desc": null
+                      },
+                      {
+                          "label": "No",
+                          "value": 2,
+                          "score": 3,
+                          "reportHighLight": false,
+                          "reportAdvice": null,
+                          "desc": null
+                      }
+                  ],
+                  "config": {
+                      "list": {
+                          "desCode": null,
+                          "inSearch": false,
+                          "hasFilter": true,
+                          "filterConfig": null,
+                          "inform": null,
+                          "hasSort": false,
+                          "className": null,
+                          "style": null,
+                          "fixedWidth": null,
+                          "fontColor": null,
+                          "colorMap": null,
+                          "fontSize": null,
+                          "enable": true,
+                          "columnWidth": "80"
+                      }
+                  }
+              },
+              "923c91be4c9648d380677c373481f3c9": {
+                  "desc": "你是否需要儲存超過1GB的檔案，像是文件、圖片、影片或音樂等？這意味著你是否需要一個存儲空間超過1GB的地方來保存這些資料。如果你經常處理這些大型檔案，或者你需要保存許多媒體內容，那麼在雲端上會需要一個特定的儲存空間服務。",
+                  "questionOrder": 2,
+                  "shortTitleEN": "BLOB File",
+                  "shortTitleCN": "大量檔案存放需求",
+                  "longTitleEN": "BLOB File",
+                  "longTitleCN": "是否有大量檔案存放的需求(如文件、圖片、影片、音樂，總共大於1GB)？",
+                  "weight": 4,
+                  "type": "select",
+                  "disabled": false,
+                  "required": false,
+                  "className": null,
+                  "placeholder": null,
+                  "hideExpression": [
+                      {
+                          "value": null,
+                          "key": ""
+                      }
+                  ],
+                  "options": [
+                      {
+                          "label": "Yes",
+                          "value": 1,
+                          "score": 5,
+                          "reportHighLight": false,
+                          "reportAdvice": "系統要求需要存放 BLOB 檔案，因此類檔案通常容量較大，適合使用雲端 BLOB Storage 來儲存，如 Cloud Storage、S3。除了可輕鬆使用高可用/備援機制外，也能減少儲存成本",
+                          "desc": null
+                      },
+                      {
+                          "label": "No",
+                          "value": 2,
+                          "score": 1,
+                          "reportHighLight": false,
+                          "reportAdvice": null,
+                          "desc": null
+                      }
+                  ],
+                  "config": {
+                      "list": {
+                          "desCode": null,
+                          "inSearch": false,
+                          "hasFilter": true,
+                          "filterConfig": null,
+                          "inform": null,
+                          "hasSort": false,
+                          "className": null,
+                          "style": null,
+                          "fixedWidth": null,
+                          "fontColor": null,
+                          "colorMap": null,
+                          "fontSize": null,
+                          "enable": true,
+                          "columnWidth": "80"
+                      }
+                  }
+              },
+              "384096691ebb473aa803da919f18a9cd": {
+                  "desc": "硬體安全模組(HSM)是指系統是否使用具有加密及認證功能的硬體設備。若系統需要高度保密及安全性，通常會使用HSM，可提供更高的安全性保護。",
+                  "questionOrder": 5,
+                  "shortTitleEN": "Hardware Security Module(HSM)",
+                  "shortTitleCN": "是否使用HSM",
+                  "longTitleEN": "Hardware Security Module(HSM)",
+                  "longTitleCN": "是否使用硬體安全模組(HSM)?",
+                  "weight": 2,
+                  "type": "select",
+                  "disabled": false,
+                  "required": false,
+                  "className": null,
+                  "placeholder": null,
+                  "hideExpression": [
+                      {
+                          "value": null,
+                          "key": ""
+                      }
+                  ],
+                  "options": [
+                      {
+                          "label": "Yes",
+                          "value": 1,
+                          "score": 5,
+                          "reportHighLight": true,
+                          "reportAdvice": "系統需要使用硬體安全模組(HSM)，而配置 HSM 在雲端環境上需要特別調整，遷移至雲端成本較高",
+                          "desc": null
+                      },
+                      {
+                          "label": "No",
+                          "value": 2,
+                          "score": 3,
+                          "reportHighLight": false,
+                          "reportAdvice": null,
+                          "desc": null
+                      }
+                  ],
+                  "config": {
+                      "list": {
+                          "desCode": null,
+                          "inSearch": false,
+                          "hasFilter": true,
+                          "filterConfig": null,
+                          "inform": null,
+                          "hasSort": false,
+                          "className": null,
+                          "style": null,
+                          "fixedWidth": null,
+                          "fontColor": null,
+                          "colorMap": null,
+                          "fontSize": null,
+                          "enable": true,
+                          "columnWidth": "80"
+                      }
+                  }
+              },
+              "511941a712084eba9c1bcceea26603d2": {
+                  "desc": "這個問題的意思是，系統是否有使用負載均衡器？負載均衡器是一種網路設備，可以對網路流量進行分配，以減輕伺服器的負載，並提高系統的整體效能。",
+                  "questionOrder": 1,
+                  "shortTitleEN": "Load Balancer",
+                  "shortTitleCN": "是否使用負載均衡器",
+                  "longTitleEN": "Load Balancer",
+                  "longTitleCN": "是否使用負載均衡器(Load Balancer)？",
+                  "weight": 2,
+                  "type": "select",
+                  "disabled": false,
+                  "required": false,
+                  "className": null,
+                  "placeholder": null,
+                  "hideExpression": [
+                      {
+                          "value": null,
+                          "key": ""
+                      }
+                  ],
+                  "options": [
+                      {
+                          "label": "Yes",
+                          "value": 1,
+                          "score": 5,
+                          "reportHighLight": true,
+                          "reportAdvice": "系統有使用負載均衡器，建議上雲直接採用雲原生 Load Balancer，可以更方便快速建立分流服務",
+                          "desc": null
+                      },
+                      {
+                          "label": "No",
+                          "value": 2,
+                          "score": 3,
+                          "reportHighLight": false,
+                          "reportAdvice": null,
+                          "desc": null
+                      }
+                  ],
+                  "config": {
+                      "list": {
+                          "desCode": null,
+                          "inSearch": false,
+                          "hasFilter": true,
+                          "filterConfig": null,
+                          "inform": null,
+                          "hasSort": false,
+                          "className": null,
+                          "style": null,
+                          "fixedWidth": null,
+                          "fontColor": null,
+                          "colorMap": null,
+                          "fontSize": null,
+                          "enable": true,
+                          "columnWidth": "80"
+                      }
+                  }
+              },
+              "23c0ba37405d4ebda7fa2bff656f3098": {
+                  "desc": "這個問題的意思是，系統是否有高效能的需求？例如使用多核 CPU 和多塊記憶體？高效能的需求可以提高系統的運行效能，以滿足特定應用程式的需求。",
+                  "questionOrder": 0,
+                  "shortTitleEN": "High Performance Requirement",
+                  "shortTitleCN": "高效能需求",
+                  "longTitleEN": "High Performance Requirement",
+                  "longTitleCN": "是否有高效能需求？(如多核CPU＋多記憶體)",
+                  "weight": 4,
+                  "type": "select",
+                  "disabled": false,
+                  "required": false,
+                  "className": null,
+                  "placeholder": null,
+                  "hideExpression": [
+                      {
+                          "value": null,
+                          "key": ""
+                      }
+                  ],
+                  "options": [
+                      {
+                          "label": "Yes",
+                          "value": 1,
+                          "score": 5,
+                          "reportHighLight": true,
+                          "reportAdvice": "系統有高效能需求，建議規劃高可用雲端架構，以及選用高規格服務，並可運用雲端彈性優勢調整到最適合的配置，達成資源與成本最佳化",
+                          "desc": null
+                      },
+                      {
+                          "label": "No",
+                          "value": 2,
+                          "score": 3,
+                          "reportHighLight": false,
+                          "reportAdvice": null,
+                          "desc": null
+                      }
+                  ],
+                  "config": {
+                      "list": {
+                          "desCode": null,
+                          "inSearch": false,
+                          "hasFilter": true,
+                          "filterConfig": null,
+                          "inform": null,
+                          "hasSort": false,
+                          "className": null,
+                          "style": null,
+                          "fixedWidth": null,
+                          "fontColor": null,
+                          "colorMap": null,
+                          "fontSize": null,
+                          "enable": true,
+                          "columnWidth": "80"
+                      }
+                  }
+              }
+          }
+      },
+      {
+          "groupOrder": 6,
+          "section": "Technical Cost",
+          "sectionId": "e8a4123e5c734bc797c645a07eb66888",
+          "groupName": "系統複雜度",
+          "groupId": "e389dfb18ff74f3182ad9035f42071d8",
+          "groupWeight": 2,
+          "totalScore": 160,
+          "questions": {
+              "850e0075179749658a7863b8b2c7c5eb": {
+                  "desc": "這個題目的意思是，這個系統是否與其他系統使用相同的伺服器或其他基礎設施。這可能會影響到系統的可靠性和安全性。",
+                  "questionOrder": 0,
+                  "shortTitleEN": "Shared Infrastructure Element",
+                  "shortTitleCN": "是否共享基礎設施",
+                  "longTitleEN": "Shared Infrastructure Element",
+                  "longTitleCN": "是否與其他系統共享基礎設施？(如伺服器)",
+                  "weight": 6,
+                  "type": "select",
+                  "disabled": false,
+                  "required": false,
+                  "className": null,
+                  "placeholder": null,
+                  "hideExpression": [
+                      {
+                          "value": null,
+                          "key": ""
+                      }
+                  ],
+                  "options": [
+                      {
+                          "label": "Yes",
+                          "value": 1,
+                          "score": 5,
+                          "reportHighLight": false,
+                          "reportAdvice": "系統有與其他系統共享基礎設施，這樣會增加雲端遷移的難度，因為需要重建共享基礎設施與調整網路設置以支援雲端環境。此外，必須確保不影響其他系統的運作，故其遷移難易度高",
+                          "desc": null
+                      },
+                      {
+                          "label": "No",
+                          "value": 2,
+                          "score": 3,
+                          "reportHighLight": false,
+                          "reportAdvice": null,
+                          "desc": null
+                      }
+                  ],
+                  "config": {
+                      "list": {
+                          "desCode": null,
+                          "inSearch": false,
+                          "hasFilter": true,
+                          "filterConfig": null,
+                          "inform": null,
+                          "hasSort": false,
+                          "className": null,
+                          "style": null,
+                          "fixedWidth": null,
+                          "fontColor": null,
+                          "colorMap": null,
+                          "fontSize": null,
+                          "enable": true,
+                          "columnWidth": "80"
+                      }
+                  }
+              },
+              "e5d639fdcaf84673bde9d6cadbc1320f": {
+                  "desc": "這個題目的意思是，這個系統是否需要與其他系統共享同一個資料庫來儲存資料。如果需要共享，就要考慮資料庫的管理和安全性等議題。",
+                  "questionOrder": 2,
+                  "shortTitleEN": "Shared Database",
+                  "shortTitleCN": "是否共享資料庫",
+                  "longTitleEN": "Shared Database",
+                  "longTitleCN": "是否與其他系統共享資料庫(Shared DB)？",
+                  "weight": 6,
+                  "type": "select",
+                  "disabled": false,
+                  "required": false,
+                  "className": null,
+                  "placeholder": null,
+                  "hideExpression": [
+                      {
+                          "value": null,
+                          "key": ""
+                      }
+                  ],
+                  "options": [
+                      {
+                          "label": "Yes",
+                          "value": 1,
+                          "score": 5,
+                          "reportHighLight": true,
+                          "reportAdvice": "系統有與其他系統共享資料庫，上雲前需要分析是否有共用 Table 或 Store procedure 等操作，並考慮雲端資料庫相容性議題",
+                          "desc": null
+                      },
+                      {
+                          "label": "No",
+                          "value": 2,
+                          "score": 3,
+                          "reportHighLight": false,
+                          "reportAdvice": null,
+                          "desc": null
+                      }
+                  ],
+                  "config": {
+                      "list": {
+                          "desCode": null,
+                          "inSearch": false,
+                          "hasFilter": true,
+                          "filterConfig": null,
+                          "inform": null,
+                          "hasSort": false,
+                          "className": null,
+                          "style": null,
+                          "fixedWidth": null,
+                          "fontColor": null,
+                          "colorMap": null,
+                          "fontSize": null,
+                          "enable": true,
+                          "columnWidth": "80"
+                      }
+                  }
+              },
+              "fcc9bcbff0a442948011c78be48f6b28": {
+                  "desc": "這個問題意思是問這個系統是否會與其他系統共用相同的資料來源，例如資料庫或檔案。如果有共用，就需要考慮資料的權限、存取方式及同步問題，以確保資料的一致性和安全性。",
+                  "questionOrder": 3,
+                  "shortTitleEN": "Shared Data Source(s)",
+                  "shortTitleCN": "是否共享資料源",
+                  "longTitleEN": "Shared Data Source(s)",
+                  "longTitleCN": "是否與其他系統共享資料源(Shared Data Source)？",
+                  "weight": 6,
+                  "type": "select",
+                  "disabled": false,
+                  "required": false,
+                  "className": null,
+                  "placeholder": null,
+                  "hideExpression": [
+                      {
+                          "value": null,
+                          "key": ""
+                      }
+                  ],
+                  "options": [
+                      {
+                          "label": "Yes",
+                          "value": 1,
+                          "score": 5,
+                          "reportHighLight": true,
+                          "reportAdvice": "系統有與其他系統共享資料源，上雲前需要評估是否影響資料源存取延遲與安全性等問題",
+                          "desc": null
+                      },
+                      {
+                          "label": "No",
+                          "value": 2,
+                          "score": 3,
+                          "reportHighLight": false,
+                          "reportAdvice": null,
+                          "desc": null
+                      }
+                  ],
+                  "config": {
+                      "list": {
+                          "desCode": null,
+                          "inSearch": false,
+                          "hasFilter": true,
+                          "filterConfig": null,
+                          "inform": null,
+                          "hasSort": false,
+                          "className": null,
+                          "style": null,
+                          "fixedWidth": null,
+                          "fontColor": null,
+                          "colorMap": null,
+                          "fontSize": null,
+                          "enable": true,
+                          "columnWidth": "80"
+                      }
+                  }
+              },
+              "4a5a80e9faf046aab8c5828762a61b29": {
+                  "desc": "這個題目的意思是，系統是否需要使用共享的儲存裝置，這些裝置可以像一個硬碟一樣被多個電腦共用，這樣可以方便地存取和管理資料。",
+                  "questionOrder": 1,
+                  "shortTitleEN": "Network File System(NFS)",
+                  "shortTitleCN": "是否共享儲存(NFS)",
+                  "longTitleEN": "Network File System(NFS)",
+                  "longTitleCN": "是否需要使用共享儲存裝置？(如NFS)",
+                  "weight": 6,
+                  "type": "select",
+                  "disabled": false,
+                  "required": false,
+                  "className": null,
+                  "placeholder": null,
+                  "hideExpression": [
+                      {
+                          "value": null,
+                          "key": ""
+                      }
+                  ],
+                  "options": [
+                      {
+                          "label": "Yes",
+                          "value": 1,
+                          "score": 5,
+                          "reportHighLight": false,
+                          "reportAdvice": "系統有與其他系統共享儲存裝置，如 NFS，在雲端環境中使用共享儲存必須考慮到網路延遲、帶寬和資料一致性等問題，因此遷移難易度較高",
+                          "desc": null
+                      },
+                      {
+                          "label": "No",
+                          "value": 2,
+                          "score": 3,
+                          "reportHighLight": false,
+                          "reportAdvice": null,
+                          "desc": null
+                      }
+                  ],
+                  "config": {
+                      "list": {
+                          "desCode": null,
+                          "inSearch": false,
+                          "hasFilter": true,
+                          "filterConfig": null,
+                          "inform": null,
+                          "hasSort": false,
+                          "className": null,
+                          "style": null,
+                          "fixedWidth": null,
+                          "fontColor": null,
+                          "colorMap": null,
+                          "fontSize": null,
+                          "enable": true,
+                          "columnWidth": "80"
+                      }
+                  }
+              },
+              "332309dbef354cdd9c7009498aa17fa2": {
+                  "desc": "這個問題是在問系統是否和其他系統透過API或其他方式進行串接，有幾個系統是內部的、幾個是外部的。簡單來說就是系統之間的互相溝通。",
+                  "questionOrder": 4,
+                  "shortTitleEN": "External Coupling",
+                  "shortTitleCN": "串接外部系統數量(API)",
+                  "longTitleEN": "External Coupling",
+                  "longTitleCN": "與幾個內外部系統有相互串接？(如API)",
+                  "weight": 8,
+                  "type": "select",
+                  "disabled": false,
+                  "required": false,
+                  "className": null,
+                  "placeholder": null,
+                  "hideExpression": [
+                      {
+                          "value": null,
+                          "key": ""
+                      }
+                  ],
+                  "options": [
+                      {
+                          "label": "0",
+                          "value": 1,
+                          "score": 1,
+                          "reportHighLight": false,
+                          "reportAdvice": "系統沒有跟其他系統串接，無耦合程度，技術複雜度低，上雲時可直接單一系統搬遷，不需考慮其他系統",
+                          "desc": null
+                      },
+                      {
+                          "label": "1~4",
+                          "value": 2,
+                          "score": 2,
+                          "reportHighLight": false,
+                          "reportAdvice": "系統與較少數量系統串接，約 1-4 套，技術複雜度一般，上雲時需考慮這 1-4 套系統的相關串接計畫",
+                          "desc": null
+                      },
+                      {
+                          "label": "5~9",
+                          "value": 3,
+                          "score": 4,
+                          "reportHighLight": false,
+                          "reportAdvice": "系統與較多數量系統串接，約 5-9 套，技術複雜度較高，上雲時需考慮這 5-9 套系統的相關串接計畫",
+                          "desc": null
+                      },
+                      {
+                          "label": ">=10",
+                          "value": 4,
+                          "score": 5,
+                          "reportHighLight": true,
+                          "reportAdvice": "系統與大量系統串接，大於 10 套，技術複雜程度高，上雲時需考慮這 10+ 套系統的相關串接計畫",
+                          "desc": null
+                      }
+                  ],
+                  "config": {
+                      "list": {
+                          "desCode": null,
+                          "inSearch": false,
+                          "hasFilter": true,
+                          "filterConfig": null,
+                          "inform": null,
+                          "hasSort": false,
+                          "className": null,
+                          "style": null,
+                          "fixedWidth": null,
+                          "fontColor": null,
+                          "colorMap": null,
+                          "fontSize": null,
+                          "enable": true,
+                          "columnWidth": "80"
+                      }
+                  }
+              }
+          }
+      }
+  ]
+}

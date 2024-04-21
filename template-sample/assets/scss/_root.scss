@@ -1,0 +1,239 @@
+// 全局設定
+@import 'color';
+@import 'utilities';
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'CCMA-customize' !important;
+}
+
+em {
+  &:hover {
+    opacity: 0.7;
+  }
+  &.no-func {
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+// hover 標籤
+.hover-box {
+  position: relative;
+
+  &::after {
+    content: attr(data-hover);
+    display: flex;
+    position: absolute;
+    z-index: 9999;
+    top: -19px;
+    left: -36px;
+    white-space: nowrap;
+    padding: 4px 8px;
+    background-color: $light-black;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 4px;
+    opacity: 0;
+    transition: 0.3s 0.3s;
+  }
+
+  &:hover::after {
+    opacity: 1;
+    z-index: 9999;
+    top: -25px;
+  }
+}
+
+// custom tooltip(hover show)
+.tooltip {
+  &__target {
+    position: relative;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &:hover .tooltip__overlay {
+      visibility: visible;
+      opacity: 0.8;
+      top: 28px;
+    }
+  }
+
+  &__overlay {
+    cursor: default;
+    position: absolute;
+    z-index: map-get($layout-level, 'tooltip');
+    top: 20px;
+    left: -14px;
+    min-width: 40px;
+    min-height: 38px;
+    padding: 0.5rem 0.8rem;
+    display: flex;
+    visibility: hidden;
+    flex-direction: column;
+    align-items: flex-start;
+    color: $white;
+    font-size: 0.75rem;
+    border-radius: 8px;
+    background-color: $light-black;
+    opacity: 0;
+    transition: 0.2s;
+
+    a {
+      color: $green-middle;
+
+      &:hover {
+        color: $green-middle;
+        opacity: 0.8;
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      z-index: map-get($layout-level, 'tooltip');
+      top: -5px;
+      left: 16px;
+      border-bottom: 8px solid $light-black;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+    }
+
+    &.disableHover {
+      pointer-events: none;
+
+      &:hover {
+        visibility: hidden;
+        opacity: 0;
+      }
+    }
+  }
+}
+
+// passive-tooltip 須主動關閉的tooltip
+.passive-tooltip {
+  &__target {
+    position: relative;
+  }
+
+  &__overlay {
+    position: absolute;
+    z-index: map-get($layout-level, 'tooltip');
+    top: 20px;
+    left: 0;
+    padding: 0.5rem 0.8rem;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    text-align: start;
+    color: $white;
+    font-size: 0.75rem;
+    border-radius: 8px;
+    background-color: $light-black;
+    transition: 0.2s;
+    div:first-of-type {
+      margin-right: 10px;
+      text-align: start;
+    }
+
+    em.cancel {
+      cursor: pointer;
+      color: $white;
+      transform: scale(90%);
+    }
+
+    a {
+      color: $green-middle;
+
+      &:hover {
+        color: $green-middle;
+        opacity: 0.5;
+      }
+    }
+  }
+  &__tail {
+    position: absolute;
+    z-index: map-get($layout-level, 'tooltip');
+    top: -5px;
+    left: 16px;
+    border-bottom: 8px solid $light-black;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+  }
+}
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// scroll
+.scroll {
+  overflow: auto !important;
+
+  &-bar {
+    @include scroll-bar;
+  }
+}
+
+.text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+app-bread-crumbs {
+  position: absolute;
+  top: -42px;
+  left: 0;
+}
+
+.reset-btn {
+  transition: 0.5s ease;
+  visibility: hidden;
+  opacity: 0;
+  width: 0;
+  &.show {
+    width: 2.5rem;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.text-start {
+  text-align: start;
+}
+
+.nav-link {
+  color: #635d5d !important;
+}
+
+.page-header {
+  white-space: nowrap;
+  font-weight: 700;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  line-height: 3rem;
+  color: $grey-black;
+  text-align: start;
+  margin-top: 3rem;
+}
+
+/* for light-gray area in background (not include header text) */
+.background-section {
+  // background-color: $dark-background;
+  width: 100%;
+  padding: 10px 45px;
+}
+
+a {
+  &:hover {
+    text-decoration: none;
+  }
+}

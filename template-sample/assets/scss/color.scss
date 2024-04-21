@@ -1,0 +1,109 @@
+// Primary
+$primary-color: var(--primary-color);
+$primary-text-color: var(--primary-text-color);
+$primary-select-color: var(--primary-select-color);
+$primary-background-hover: var(--primary-background-hover);
+// Warn
+$warn-color: var(--warn-color);
+$warn-background-hover: var(--warn-background-hover);
+// Grey
+$grey-background-hover: var(--grey-background-hover);
+// Secondary
+$secondary-color: var(--secondary-color);
+
+$dark-background: #f8f8f8;
+$color-select: var(--primary-select-color);
+
+
+// B/W
+$grey-black: #2c2c2c;
+$grey-dark: #6d6d6d;
+$grey-middle: #e7e7e7;
+$grey-light: #f4f4f4;
+$grey-iron: #a4a4a4;
+$light-black: #333;
+$grey-iron-deep: #7e7e7e;
+$deep-gray: #635d5d;
+$bootstrap-deep-gray: #495057;
+$light-gray-1: #aeaeae;
+$light-gray-2: #d8d8d8;
+$light-gray-3: #f5f5f5;
+$light-gray-4: #f0f0f0;
+$light-gray-5: #eeeff2;
+$light-white: #f9f9f9;
+$bg: #fafafa;
+$white: #fff;
+// Green
+$green-background-hover: #f1fcf7;
+// $green-background: #f1fcf7;
+$green-light: #d0ede1;
+$green-hover: #56dda5;
+$green-light-icon: #a1dbc3;
+$green-middle: #44b787;
+$green-text-color: #0c8553;
+// Orange
+$orange-light: #ffe3cf;
+$orange-middle: #fe8e3d;
+// Yellow
+$yellow-light: #fbead1;
+$yellow-middle: #efad49;
+// Red
+$red-bg: #fff0f0;
+$red-light: #fbd7d1;
+$red-middle: #ef6149;
+// Blue
+$blue-light: #d0e6ed;
+$blue-middle: #449bb7;
+// Purple
+$purple-light: #d2d0ed;
+$purple-middle: #6944b7;
+
+
+$theme-color: (
+  primary-color: $primary-color,
+  primary-text-color: $primary-text-color,
+  primary-select-color: $primary-select-color,
+  primary-background-hover: $primary-background-hover,
+  secondary-color: $secondary-color,
+  warn-color: $warn-color,
+  warn-background-hover: $warn-background-hover,
+
+  green-background-hover: $green-background-hover,
+  green-light: $green-light,
+  green-light-icon: $green-light-icon,
+  green-hover: $green-hover,
+  green-middle: $green-middle,
+
+  orange-light: $orange-light,
+  orange-middle: $orange-middle,
+
+  yellow-light: $yellow-light,
+  yellow-middle: $yellow-middle,
+
+  blue-light: $blue-light,
+  blue-middle: $blue-middle,
+
+  red-bg: $red-bg,
+  red-light: $red-light,
+  red-middle: $red-middle,
+
+  purple-light: $purple-light,
+  purple-middle: $purple-middle,
+
+  grey-black: $grey-black,
+  grey-dark: $grey-dark,
+  grey-middle: $grey-middle,
+  grey-light: $grey-light,
+  grey-iron: $grey-iron,
+  grey-iron-deep: $grey-iron-deep,
+  bootstrap-deep-gray: $bootstrap-deep-gray,
+  light-gray-1: $light-gray-1,
+  light-gray-2: $light-gray-2,
+  light-gray-3: $light-gray-3,
+  light-gray-4: $light-gray-4,
+  light-gray-5: $light-gray-5,
+  black: $grey-black,
+  white: $white,
+  bg: $bg,
+  none: 'none',
+);

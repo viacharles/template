@@ -1,0 +1,214 @@
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  0_5: 0.125 * $spacer,
+  // 2px
+  1: 0.25 * $spacer,
+  1_5: 0.375 * $spacer,
+  // 6px
+  2: 0.5 * $spacer,
+  // 32px
+  2_5: 0.625 * $spacer,
+  // 10px
+  3: 0.75 * $spacer,
+  // 12px
+  3_5: 0.875 * $spacer,
+  // 14px
+  4: 1 * $spacer,
+  4_5: 1.125 * $spacer,
+  // 18px
+  5: 1.25 * $spacer,
+  // 20px
+  6: 1.5 * $spacer,
+  // 24px
+  6_5: 1.625 * $spacer,
+  // 26px
+  7: 1.725 * $spacer,
+  8: 2 * $spacer,
+  // 32px
+  9: 2.225 * $spacer,
+  10: 2.5 * $spacer,
+  11: 2.75 * $spacer,
+  // 40px
+  12: 3 * $spacer,
+  // 48px
+  12_5: 3.125 * $spacer,
+  13: 3.25 * $spacer,
+  14: 3.5 * $spacer,
+  // 56px
+  15: 3.75 * $spacer,
+  16: 4 * $spacer,
+  17: 4.25 * $spacer,
+  18: 4.5 * $spacer,
+  19: 4.725 * $spacer,
+  20: 5 * $spacer,
+  21: 5.25 * $spacer,
+  23: 5.75 * $spacer,
+  25: 6.25 * $spacer,
+  // 100px
+  26: 6.5 * $spacer,
+  // 100px
+  27: 6.75 * $spacer,
+  // 108px
+  28: 7 * $spacer,
+  30: 7.5 * $spacer,
+  32: 8 * $spacer,
+  33: 8.25 * $spacer,
+  34: 8.5 * $spacer,
+  37_5: 9.35 * $spacer,
+  38: 9.875 * $spacer,
+  40: 10 * $spacer,
+  42_5: 10.625 * $spacer,
+  // 170px
+  45: 11.25 * $spacer,
+  48: 12 * $spacer,
+  52: 13.75 * $spacer,
+  56: 15 * $spacer,
+  58_5: 15.625 * $spacer,
+  66: 17.5 * $spacer,
+  71: 18.75 * $spacer,
+  76: 20 * $spacer,
+  80: 22 * $spacer,
+  84_5: 23.125 * $spacer,
+  // 370px
+  86: 25 * $spacer,
+  98_5: 28.125 * $spacer,
+  // 450px
+  116: 30 * $spacer,
+  160: 42 * $spacer,
+);
+
+$spacing: (
+  1p: 1%,
+  2p: 2%,
+  3p: 3%,
+  4p: 4%,
+  5p: 5%,
+  6p: 6%,
+  7p: 7%,
+  8p: 8%,
+  9p: 9%,
+  10p: 10%,
+  13p: 13%,
+  15p: 15%,
+  16p: 16%,
+  20p: 20%,
+  23p: 23%,
+  25p: 25%,
+  30p: 30%,
+  33p: 33%,
+  35p: 35%,
+  40p: 40%,
+  42p: 42%,
+  43p: 43%,
+  45p: 45%,
+  48p: 48%,
+  50p: 50%,
+  55p: 55%,
+  60p: 60%,
+  65p: 65%,
+  70p: 70%,
+  75p: 75%,
+  77p: 77%,
+  80p: 80%,
+  90p: 90%,
+  95p: 95%,
+  fit: fit-content,
+  auto: auto,
+  none: none,
+);
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 430px,
+  md: 768px,
+  lg: 1440px,
+);
+
+$overflow: auto, x, y;
+$flex-direction: row, column;
+$flex-position: (
+  start: flex-start,
+  center: center,
+  end: flex-end,
+);
+
+$font-family: (
+  robot: 'Roboto',
+);
+
+$limit: max, min;
+
+$font-level: (
+  xxxxl: 3rem,
+  // 48px
+  xxxl: 2.25rem,
+  // 36px
+  xxl: 2rem,
+  // 32px
+  xl: 1.625rem,
+  // 26px
+  lgxx: 1.5rem,
+  // 24px
+  lgx: 1.25rem,
+  // 20px
+  lg: 1.125rem,
+  // 18px
+  md: 1rem,
+  // 16px
+  sm: 0.9375rem,
+  // 15px
+  xsm: 0.875rem,
+  // 14px
+  xs: 0.75rem,
+  // 12px
+);
+
+$font-weight: (
+  9: 900,
+  7: 700,
+  6: 600,
+  5: 500,
+  4: 400,
+  3: 300,
+  1: 100,
+);
+
+$cursor-pointer: auto, default, pointer;
+
+$position: relative, fixed, absolute;
+
+$counts: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
+
+$layout-level: (
+  cover: 1,
+  fixed: 2,
+  fixed-cover: 3,
+  important-back: 10,
+  important: 11,
+  sidebar: 20,
+  overlay: 20,
+  dialog: 70,
+  tooltip: 80,
+  loaderContainer: 99,
+  toast: 100,
+);
+
+$write-mode: (
+  v-rl: 'vertical-rl',
+  v-lr: vertical-lr,
+  unset: unset,
+  inherit: inherit,
+);
+
+$list-style: 'decimal', 'disc';
+
+$grid-gutter-width: 16px;
+
+// $grid-breakpoints: (
+//   xs: 0px,
+//   sm: 768px,
+//   md: 1280px,
+//   lg: 1440px,
+//   xl: 1920px
+// );

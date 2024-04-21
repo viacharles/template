@@ -1,0 +1,28 @@
+{
+  "createdTime": "2022-06-16 15:35:20",
+  "department": null,
+  "email": "xxxx@xxx.com.tw",
+  "enabled2fa": false,    
+  "enabledNotifications": true,
+  "imageUrl": "https://static-img.cathaycloudteam.net/uat/images/users/d937169707b8ce622d5d3a131012a3f035ff6b3a29ddd8ecc44a56094b0c81b9",
+  "jobTitle": null,
+  "lastLogin": "2023-12-29 10:04:14",
+  "lastUpdated": "2023-08-30 18:14:06",
+  "name": "你好",
+  "role": ["SITE_ADMIN", "TENANT_ADMIN", "USER"],
+  "section": null,
+  "status": "ACTIVE",
+  "tenantId": "fe08d4b2b7dca7e0873f5479ec4901d7e917225e03beb3ccfc154803db7154ea",
+  "tenantRespDtos": [{
+    "createdId": null,
+    "createdTime": null,
+    "disabled": null,
+    "domain": "xxx.com.tw",
+    "lastUpdated": null,
+    "notifyEmailList": null,
+    "tenantId": "02015464cfe4dbac1cf4057a459738739d00c8f063ad557e2bfe9d7f7374e4e1",
+    "tenantNameCn": "株式會社",
+    "tenantNameEn": "company"
+  }],
+  "userId": "d937169707b8ce622d5d3a131012a3f035ff6b3a29ddd8ecc44a56094b0c81b9"
+}

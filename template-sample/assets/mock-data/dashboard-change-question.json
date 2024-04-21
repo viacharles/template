@@ -1,0 +1,27 @@
+{
+  "userId": "d937169707b8ce622d5d3a131012a3f035ff6b3a29ddd8ecc44a56094b0c81b9",
+  "dashBoardId": "d3a9467446ac4c99b6c3cca7b631d8c3",
+  "chartTemplates": {
+      "43ebd615e06f43c78ca256cfbca3f0b1": {
+          "questionId": "2d04629f7bf84981a09364610461996b",
+          "sortOrder": "3",
+          "chartCategory": "pie",
+          "chartName": "系統權責單位",
+          "chartType": "customization",
+          "chartSpacing": null,
+          "chartUnit": null,
+          "options": [
+              "測試部",
+              "321",
+              "test",
+              "測試部1"
+          ],
+          "values": [
+              2,
+              1,
+              1,
+              6
+          ]
+      }
+  }
+}
