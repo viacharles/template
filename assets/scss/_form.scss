@@ -70,7 +70,7 @@
   }
 
   &-normal {
-    color: $grey-iron;
+    color: $grey-dark;
     font-weight: 400;
     background-color: $white;
     border-radius: 5px;
@@ -83,7 +83,7 @@
     }
 
     &:hover {
-      color: $grey-dark
+      background-color: $dark-background;
     }
 
     &-green {
