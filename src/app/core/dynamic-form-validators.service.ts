@@ -28,7 +28,7 @@ export class DynamicFormValidatorsService {
   /** 動態表單專用：限制最大與最小字串長度 */
   public DynamicMaxMinLength(control: AbstractControl, min: number, max: number): { error: string; } | null {
     const value = control.value;
-    const isValid = value.length > 0 ? (value[0].value.length <= max && value[0].value.length >= min) : true;
+    const isValid = value.length > 0 ? (`${value[0].value}`.length <= max && `${value[0].value}`.length >= min) : true;
     const error: any = {};
     error[`${EErrorMessage.MAX_MIN_LENGTH}`] = `${this.$translate.instant(EErrorMessage.MAX_MIN_LENGTH)}(${min}-${max})`;
     return isValid ? null : error;
@@ -36,7 +36,7 @@ export class DynamicFormValidatorsService {
 
   /** 動態表單專用：限制最大字串長度 */
   public DynamicMaxLength(control: AbstractControl, max: number): { error: string; } | null {
-    const isValid = control.value.length > 0 ? control.value[0].value.length <= max : true;
+    const isValid = `${control.value}`.length > 0 ? `${control.value[0].value}`.length <= max : true;
     const error: any = {};
     error[`${EErrorMessage.MAX_LENGTH}`] = `${this.$translate.instant(EErrorMessage.MAX_LENGTH)}(${max})`;
     return isValid ? null : error;
@@ -44,7 +44,7 @@ export class DynamicFormValidatorsService {
 
   /** 動態表單專用：限制最小字串長度 */
   public DynamicMinLength(control: AbstractControl, min: number): { error: string; } | null {
-    const isValid = control.value.length > 0 ? control.value[0].value.length >= min : true;
+    const isValid = control.value.length > 0 ? `${control.value[0].value}`.length >= min : true;
     const error: any = {};
     error[`${EErrorMessage.MIN_LENGTH}`] = `${this.$translate.instant(EErrorMessage.MIN_LENGTH)}(${min})`;
     return isValid ? null : error;

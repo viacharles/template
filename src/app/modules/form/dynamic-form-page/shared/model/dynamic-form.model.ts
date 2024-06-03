@@ -84,6 +84,7 @@ export class DynamicForm {
     this.question_origin = question;
     if (this.fb) {
       this.form = this.initialForm(question, project, this.status);
+      console.log('aa-form', this.form)
     }
   }
 
@@ -327,7 +328,7 @@ export class DynamicForm {
         const isMulti = type === EFieldType.MultiSelect || type === EFieldType.Checkbox;
         group.addControl(
           answerId,
-          this.fb!.control([], this.getValidations(answers[answerId], isMulti, required))
+          this.fb!.control([], this.getValidations(answers[answerId].validation??[], isMulti, required))
         );
         if (disabled) {
           group.controls[answerId].disable();
@@ -338,15 +339,15 @@ export class DynamicForm {
     return new UntypedFormGroup({});
   }
 
-  private getValidations(answer: ICabQuestionSubQuestion, isMulti: boolean, required: boolean) {
-    const dynamicValidations = answer.validation?.map(validate => this.getDynamicValidate(answer, validate));
+  public getValidations(validations: IDynamicFromValidator[], isMulti: boolean, required: boolean) {
+    const dynamicValidations = validations?.map(validate => this.getDynamicValidate(validate));
     return [
       ...(required ? [this.DynamicRequiredValidate(isMulti)] : []),
       ...(dynamicValidations ?? [])
     ];
   }
 
-  private getDynamicValidate(answer: ICabQuestionSubQuestion, validation: IDynamicFromValidator): ValidatorFn {
+  private getDynamicValidate(validation: IDynamicFromValidator): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
       const value = validation.value!;
       switch (validation.type) {
@@ -368,7 +369,7 @@ export class DynamicForm {
 
   private DynamicRequiredValidate(isMulti = false) {
     return ({ value }: AbstractControl): ValidationErrors | null => {
-      const isValid = isMulti ? value.length > 0 :( value[0] ? value[0].value.length > 0 : false);
+      const isValid = isMulti ? value.length > 0 :( value[0] ? `${value[0].value}`.length : false);
       const error: any = {};
       error[`${EErrorMessage.REQUIRED}`] = this.$translate.instant(EErrorMessage.REQUIRED);
       return isValid ? null : error;

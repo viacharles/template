@@ -42,7 +42,7 @@ export interface ICabQuestionSubQuestionGroupView {
   disabled: boolean;
   title: string | null;
   placeholder: string | null;
-  options: ICabQuestionOption[][] | null;
+  options: IDynamicOption<string>[] | null;
   optionsForNormal: IDynamicOption<string>[];
   className?: string | null;
   hideExpression?: ICabQuestionHideExpressionView[];
@@ -140,7 +140,7 @@ export interface ICabReviewFormOptionView {
   value: number;
   reportHighLight: boolean;
   reportAdvice: string | null;
-  memo: boolean;
+  hasMemo: boolean;
 }
 
 export interface IRoleComment extends ICabRoleInfo {
