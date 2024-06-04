@@ -84,7 +84,7 @@ export class MultiSelectComponent extends CustomForm<(string | number)[] | IDyna
       event.stopPropagation();
       event.preventDefault();
     };
-    const IndexToCancel = (this.optionsInDropdown as IOption[]).findIndex(option => option.code === select.code);
+    const IndexToCancel = (this.optionsInDropdown as IOption[]).findIndex(option =>  `${option.code}` === `${select.code}`);
     this.f.checks.controls[IndexToCancel].setValue(false);
   }
 
@@ -99,7 +99,7 @@ export class MultiSelectComponent extends CustomForm<(string | number)[] | IDyna
     this.f.checks.valueChanges
       .subscribe((checks: (boolean | null)[] | IDynamicFieldValue[]) => {
         this.checkedOptions = this.getCheckedOptions(options, checks) as IOption[] | null;
-        this.optionsInDropdown = this.optionsInDropdown?.map(option => ({ ...option, isSelect: this.checkedOptions?.some(checkedOption => checkedOption.code === option.code)}));
+        this.optionsInDropdown = this.optionsInDropdown?.map(option => ({ ...option, isSelect: this.checkedOptions?.some(checkedOption => `${checkedOption.code}` === `${option.code}`)}));
         const value = this.isDynamic ? this.checkedOptions?.map(option => ({value: option.code, memo: ''})) : this.getValueArray(this.checkedOptions);
         this.notifyValueChange(value);
         this.select.emit(value);
@@ -124,9 +124,9 @@ export class MultiSelectComponent extends CustomForm<(string | number)[] | IDyna
   }
 
   private init(): void {
-    this.checkedOptions = (this.options as IOption[]).filter(option => this.model?.some(value => (this.isDynamic ? (value as IDynamicFieldValue).value : value) === option.code));
+    this.checkedOptions = (this.options as IOption[]).filter(option => this.model?.some(value => `${(this.isDynamic ? (value as IDynamicFieldValue).value : value)}` === `${option.code}`));
     if (this.model) {
-      this.optionsInDropdown = this.optionsInDropdown?.map(option => ({ ...option, isSelect: this.checkedOptions?.some(checkedOption => checkedOption.code === option.code) }));
+      this.optionsInDropdown = this.optionsInDropdown?.map(option => ({ ...option, isSelect: this.checkedOptions?.some(checkedOption => `${checkedOption.code}` === `${option.code}`) }));
       this.reCreateForm(this.options as IOption[]);
     };
     this.cdr.detectChanges();

@@ -75,10 +75,10 @@ export class CheckboxSetComponent extends CustomForm implements OnInit, OnChange
   }
 
   private setCheckboxIfChecked(): void {
-    this.checkboxes = this.options
-      .map(option => {
-        const model = this.model.find(v=> +v.value === +option.code);
 
+    this.checkboxes = this.options
+      .map((option, index) => {
+        const model = this.model.find(v=> `${v.value}` === `${option.code}`);
         return ({
         ...option,
         memo: model ? model.memo : '',

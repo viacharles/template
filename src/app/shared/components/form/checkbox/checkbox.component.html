@@ -1,11 +1,11 @@
 <ng-container *ngIf="this.option;else tNoData">
   <input #tCheckbox class="d-none" type="checkbox"
-  [value]="this.option.code"
+  [value]="''+this.option.code"
   (change)="this.disabled ? null : this.change($event)"
   [disabled]="this.disabled"
   [name]="'checkbox-' + this.name"
   [id]="this.id"
-  [checked]="this.checked === undefined ? this.model === option.code : this.checked">
+  [checked]="this.checked === undefined ? (''+this.model) === (''+option.code) : this.checked">
   <label class="d-flex align-items-start pr-2 pe-pointer" [class.noData]="this.noData" [class.error]="this.isError" [class.isInGroup]="this.isInGroup"
   [for]="this.id">
     <div class="checkbox d-flex align-items-center justify-content-center ml-2 mr-2_5">
