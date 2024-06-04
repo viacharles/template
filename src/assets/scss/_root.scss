@@ -233,7 +233,10 @@ app-bread-crumbs {
 }
 
 a {
+  color: $green-middle;
+
   &:hover {
-    text-decoration: none;
+    color: $green-middle;
+    opacity: 0.5;
   }
 }
