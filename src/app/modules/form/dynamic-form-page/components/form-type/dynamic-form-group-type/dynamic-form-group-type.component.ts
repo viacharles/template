@@ -1,10 +1,10 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import {FormGroup} from '@angular/forms';
 import {
   ECabFormProcess,
   EFieldStatus,
 } from '@utilities/enum/common.enum';
-import {fadeEnterAndHideOut} from '@utilities/helper/animations.helper';
+import {downFadeInAndCompressOut, fadeEnterAndHideOut} from '@utilities/helper/animations.helper';
 import {ICabRemark} from '@utilities/interface/api/cab-api.interface';
 import { ECabAnswerStatus } from '../../../shared/enum/cab.enum';
 import { ICabFormPage, ICabQuestionView, ICabReviewFormOptionView } from '../../../shared/interface/dynamic-form.interface';
@@ -14,7 +14,7 @@ import { EFieldType } from '@utilities/enum/form.enum';
   selector: 'app-dynamic-form-group-type',
   templateUrl: './dynamic-form-group-type.component.html',
   styleUrls: ['./dynamic-form-group-type.component.scss'],
-  animations: [fadeEnterAndHideOut()],
+  animations: [fadeEnterAndHideOut(), downFadeInAndCompressOut()],
 })
 export class DynamicFormGroupTypeComponent implements OnInit {
   @Output() valueChange = new EventEmitter<FormGroup>();
@@ -45,6 +45,7 @@ export class DynamicFormGroupTypeComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+
   public isRequired(question: ICabQuestionView) {
     return question.SubQuestionGroup.some(answer => answer.required);
   }
@@ -59,7 +60,7 @@ export class DynamicFormGroupTypeComponent implements OnInit {
   public hasMemo(SubQuestion: any) {
     return SubQuestion.options.some(
       (optionGroup: ICabReviewFormOptionView[]) => {
-        return optionGroup.some(options => options.memo);
+        return optionGroup.some(options => options.hasMemo);
       }
     );
   }

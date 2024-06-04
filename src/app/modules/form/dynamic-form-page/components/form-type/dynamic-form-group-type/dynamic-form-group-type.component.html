@@ -6,13 +6,13 @@
           <em class="complete icon-circle fw-7 h-8 w-8 bg-green-light text-center" *ngIf="group.form.valid"></em>
           <em class="d-flex align-items-center justify-content-center mr-2_5 fs-lgx fw-4" *ngIf="!group.form.valid">{{
             group.order }}</em>
-          <h4 class="fs-lg fw-4 text-grey-iron">{{ group.name }}</h4>
+          <h4 class="fs-lgx fw-4 text-grey-iron">{{ group.name }}</h4>
         </div>
       </div>
-      <ul class="question-card__question d-flex flex-wrap">
+      <ul class="question-card__question d-flex flex-wrap mb-3">
         <ng-container *ngFor="let question of group.questions; let questionIndex = index">
           <ng-container *ngIf="question.show">
-            <li class="pt-1 pb-3 px-8 w-50p" *ngIf="question" [class.error]="
+            <li class="p-3 ml-3 w-50p" *ngIf="question" [class.error]="
                 question.form.invalid &&
                 this.form?.touched &&
                 this.isCompleteClicked
@@ -22,8 +22,10 @@
                   <p class="text-grey-dark text-nowrap fw-7">{{ group?.order }}<span class="mx-0_5">-</span>{{
                     question.order + 1 }}</p>
                   <div class="d-flex flex-column ml-3">
-                    <span class="fs-lg text-grey-dark"><span class="text-red-middle"
-                        *ngIf="this.isQuestionRequired(question)">*</span>{{ question.title }}</span>
+                    <span class="fs-lg text-grey-black">{{ question.title }}
+                      <span class="text-red-middle"
+                      *ngIf="this.isQuestionRequired(question)">*</span>
+                    </span>
                     <p class="fs-xsm text-grey-dark mt-1" *ngIf="question.description">
                       {{ question.description }}
                     </p>
@@ -35,7 +37,7 @@
                     let SubQuestion of question.SubQuestionGroup;
                     let SubQuestionIndex = index
                   ">
-                  <li class="d-flex flex-column align-items-start pl-6 ml-8" *ngIf="SubQuestion.show"
+                  <li @downInCompressOut class="d-flex flex-column align-items-start p-3" *ngIf="SubQuestion.show"
                     >
                     <!-- <p class="fs-md text-grey-black mt-3 mb-2" *ngIf="SubQuestion.title">
                       {{ SubQuestion.title }}
@@ -99,6 +101,17 @@
                         [isDynamic]="true"
                         [isError]="SubQuestion.form.invalid && this.form!.touched && this.isCompleteClicked"></app-fit-content-textarea>
                     </ng-container>
+                      <!-- 錯誤訊息 -->
+                      <ul class="d-flex mt-1" *ngIf="SubQuestion.form.invalid && this.form!.touched && this.isCompleteClicked">
+                        <ng-container *ngFor="let item of SubQuestion.validationView; let SubQuestionIndex = index">
+                          <li @downInCompressOut class="error-message mr-3"
+                          *ngIf="SubQuestion.form.errors ? SubQuestion.form.errors[item.type] : false">
+                            <span  >
+                              {{SubQuestion.form.errors ? SubQuestion.form.errors[item.type] : ''}}
+                            </span>
+                          </li>
+                        </ng-container>
+                      </ul>
                   </li>
                 </ng-container>
               </ul>

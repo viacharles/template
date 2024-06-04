@@ -31,6 +31,7 @@
         color: $green-middle;
         border: 1px solid $green-light;
         font-size: 20px;
+        border: 1px solid var(--primary-fluorescent);
 
         &::before {
           transform: scale(0.8);
@@ -46,16 +47,24 @@
   }
 
   &__question {
-    padding-top: 1rem;
-    li {
+    padding-top: 0.5rem;
+    & > li {
       min-width: 350px;
       width: 95%;
       max-width: 700px;
       transition: 0.2s;
-      &:hover div {
-        border-left-color: var(--primary-color);
-      }
+      border-radius: 10px;
+      box-sizing: border-box;
+      &:hover {
+        div {
+          // border-left-color: var(--primary-color);
+        }
+      };
       &.error {
+        div {
+          border-left-color: var(--warn-color);
+
+        }
       }
       &>div {
         padding-left: 0.5rem;
