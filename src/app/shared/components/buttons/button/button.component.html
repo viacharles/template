@@ -1,0 +1,6 @@
+<div class="ml-2" [style]="{ height: this.height}">
+  <button #tButton class="btn-flat fs-xsm bg-{{this.bgColor}} w-100 h-100 px-5" (click)="this.click(tButton)">
+    <em *ngIf="this.icon" class="icon-{{this.icon}} text-white mr-3"></em>
+    <ng-content></ng-content>
+  </button>
+</div>

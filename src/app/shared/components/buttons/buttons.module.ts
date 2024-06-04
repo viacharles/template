@@ -4,22 +4,27 @@ import { GoTopButtonComponent } from './go-top-button/go-top-button.component';
 import { BorderLessButtonComponent } from './borderless-button/borderless-button.component';
 import { CommonModule } from '@angular/common';
 import { BorderButtonComponent } from './borderless-button copy/border-button.component';
+import { ButtonComponent } from './button/button.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
     GoTopButtonComponent,
     IconButtonComponent,
     BorderLessButtonComponent,
-    BorderButtonComponent
+    BorderButtonComponent,
+    ButtonComponent
   ],
   exports: [
     GoTopButtonComponent,
     IconButtonComponent,
     BorderLessButtonComponent,
-    BorderButtonComponent
+    BorderButtonComponent,
+    ButtonComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    TranslateModule
   ],
 })
 export class ButtonsModule {}
