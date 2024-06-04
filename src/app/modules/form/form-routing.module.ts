@@ -9,7 +9,7 @@ import { FilePageComponent } from './file-page/file-page.component';
 
 const routes: Routes = [
   {path: '', component: DynamicFormPageComponent, data: {title: 'Cloud Ready - Home'}},
-  {path: `${EFormPages.Select}`, component: SelectPageComponent},
+  {path: `${EFormPages.CustomComponent}`, component: SelectPageComponent},
   {path: `${EFormPages.Button}`, component: ButtonPageComponent},
   {path: `${EFormPages.Input}`, component: InputPageComponent},
   {path: `${EFormPages.File}`, component: FilePageComponent},
