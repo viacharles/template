@@ -62,33 +62,33 @@
                 {
                   "label": "Noname咖哩",
                   "value": 1,
-                  "memo": false,
+                  "hasmemo": false,
                   "memoPlaceholder":""
                 },
                 {
                   "label": "稲町家香料咖哩",
                   "value": 2,
-                  "memo": false
+                  "hasmemo": false
                 },
                 {
                   "label": "富士咖哩Fuji Curry",
                   "value": 3,
-                  "memo": false
+                  "hasmemo": false
                 },
                 {
                   "label": "新高軒",
                   "value": 4,
-                  "memo": false
+                  "hasmemo": false
                 },
                 {
                   "label": "佐藤咖哩",
                   "value": 5,
-                  "memo": false
+                  "hasmemo": false
                 },
                 {
                   "label": "其他推薦",
                   "value": 6,
-                  "memo": true,
+                  "hasmemo": true,
                   "memoPlaceholder":"推薦餐廳"
                 }
               ]
@@ -118,27 +118,27 @@
                 {
                   "label": "0-1",
                   "value": 1,
-                  "memo": false
+                  "hasmemo": false
                 },
                 {
                   "label": "2-3",
                   "value": 2,
-                  "memo": false
+                  "hasmemo": false
                 },
                 {
                   "label": "4-6",
                   "value": 3,
-                  "memo": false
+                  "hasmemo": false
                 },
                 {
                   "label": "6-10",
                   "value": 4,
-                  "memo": false
+                  "hasmemo": false
                 },
                 {
                   "label": "10次以上!",
                   "value": 5,
-                  "memo": false
+                  "hasmemo": false
                 }
               ]
             }
@@ -226,27 +226,27 @@
                 {
                   "label": "防癌",
                   "value": 1,
-                  "memo": false
+                  "hasmemo": false
                 },
                 {
                   "label": "好吃",
                   "value": 2,
-                  "memo": false
+                  "hasmemo": false
                 },
                 {
                   "label": "抗氧化",
                   "value": 3,
-                  "memo": false
+                  "hasmemo": false
                 },
                 {
                   "label": "減少膽固醇",
                   "value": 4,
-                  "memo": false
+                  "hasmemo": false
                 },
                 {
                   "label": "預防老年癡呆",
                   "value": 5,
-                  "memo": false
+                  "hasmemo": false
                 }
               ]
             }
@@ -275,17 +275,17 @@
                 {
                   "label": "印度式",
                   "value": 1,
-                  "memo": false
+                  "hasmemo": false
                 },
                 {
                   "label": "日式",
                   "value": 2,
-                  "memo": false
+                  "hasmemo": false
                 },
                 {
                   "label": "本地風格",
                   "value": 3,
-                  "memo": false
+                  "hasmemo": false
                 }
               ]
             }
@@ -337,12 +337,12 @@
                 {
                   "label": "喜歡，因為...",
                   "value": 1,
-                  "memo": true
+                  "hasmemo": true
                 },
                 {
                   "label": "不喜歡，因為...",
                   "value": 2,
-                  "memo": true
+                  "hasmemo": true
                 }
               ]
             }
@@ -434,17 +434,17 @@
                 {
                   "label": "符合",
                   "value": 1,
-                  "memo": false
+                  "hasmemo": false
                 },
                 {
                   "label": "不符合",
                   "value": 2,
-                  "memo": false
+                  "hasmemo": false
                 },
                 {
                   "label": "Other(不適用、例外情形)",
                   "value": 3,
-                  "memo": false
+                  "hasmemo": true
                 }
               ]
             }
@@ -473,22 +473,22 @@
                 {
                   "label": "JustKitchen",
                   "value": 1,
-                  "memo": false
+                  "hasmemo": false
                 },
                 {
                   "label": "欣億冠食品",
                   "value": 2,
-                  "memo": false
+                  "hasmemo": false
                 },
                 {
                   "label": "D.C. 中央廚房",
                   "value": 3,
-                  "memo": false
+                  "hasmemo": false
                 },
                 {
                   "label": "其他",
                   "value": 4,
-                  "memo": true
+                  "hasmemo": true
                 }
               ]
             }
@@ -527,17 +527,17 @@
                 {
                   "label": "符合",
                   "value": 1,
-                  "memo": false
+                  "hasmemo": false
                 },
                 {
                   "label": "不符合",
                   "value": 2,
-                  "memo": false
+                  "hasmemo": false
                 },
                 {
                   "label": "不適用",
                   "value": 3,
-                  "memo": false
+                  "hasmemo": false
                 }
               ]
             }
@@ -566,17 +566,17 @@
                 {
                   "label": "符合",
                   "value": 1,
-                  "memo": false
+                  "hasmemo": false
                 },
                 {
                   "label": "不符合",
                   "value": 2,
-                  "memo": false
+                  "hasmemo": false
                 },
                 {
                   "label": "Other(不適用、例外情形)",
                   "value": 3,
-                  "memo": false
+                  "hasmemo": true
                 }
               ]
             }
@@ -640,17 +640,17 @@
                 {
                   "label": "WAF 防護",
                   "value": 1,
-                  "memo": false
+                  "hasmemo": false
                 },
                 {
                   "label": "DDoS 防護",
                   "value": 2,
-                  "memo": false
+                  "hasmemo": false
                 },
                 {
                   "label": "Other(不適用、例外情形)",
                   "value": 3,
-                  "memo": false
+                  "hasmemo": true
                 }
               ]
             }
@@ -685,22 +685,22 @@
                 {
                   "label": "主機弱點掃描",
                   "value": 1,
-                  "memo": false
+                  "hasmemo": false
                 },
                 {
                   "label": "程式弱點掃描",
                   "value": 2,
-                  "memo": false
+                  "hasmemo": false
                 },
                 {
                   "label": "對外主機滲透測試檢測",
                   "value": 3,
-                  "memo": false
+                  "hasmemo": false
                 },
                 {
                   "label": "APP 檢測",
                   "value": 4,
-                  "memo": false
+                  "hasmemo": false
                 }
               ]
             }
@@ -740,17 +740,17 @@
                 {
                   "label": "符合",
                   "value": 1,
-                  "memo": false
+                  "hasmemo": false
                 },
                 {
                   "label": "不符合",
                   "value": 2,
-                  "memo": false
+                  "hasmemo": false
                 },
                 {
                   "label": "不適用",
                   "value": 3,
-                  "memo": false
+                  "hasmemo": false
                 }
               ]
             }
@@ -779,17 +779,17 @@
                 {
                   "label": "符合",
                   "value": 1,
-                  "memo": false
+                  "hasmemo": false
                 },
                 {
                   "label": "不符合",
                   "value": 2,
-                  "memo": false
+                  "hasmemo": false
                 },
                 {
                   "label": "不適用",
                   "value": 3,
-                  "memo": false
+                  "hasmemo": false
                 }
               ]
             }
@@ -829,12 +829,12 @@
                 {
                   "label": "中央廚房提供商所提供的文件",
                   "value": 1,
-                  "memo": false
+                  "hasMemo": false
                 },
                 {
                   "label": "其他",
                   "value": 2,
-                  "memo": true
+                  "hasmemo": true
                 }
               ]
             }
@@ -863,17 +863,17 @@
                 {
                   "label": "符合",
                   "value": 1,
-                  "memo": false
+                  "hasmemo": false
                 },
                 {
                   "label": "不符合",
                   "value": 2,
-                  "memo": false
+                  "hasmemo": false
                 },
                 {
                   "label": "Other(不適用、例外情形)",
                   "value": 3,
-                  "memo": false
+                  "hasmemo": true
                 }
               ]
             }
