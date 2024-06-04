@@ -5,10 +5,11 @@
         <ng-container *ngFor="let question of group.questions; let questionIndex = index">
           <ng-container *ngIf="question.show">
             <li @verticalShortenOut class="p-relative d-flex justify-content-between align-items-start px-8 pt-3 pb-5"
-              *ngIf="question" [class.error]="question.form.invalid && this.form?.touched" [formGroup]="question.form">
+            [class.error]="question.form.invalid && this.form?.touched"
+              *ngIf="question" [formGroup]="question.form">
               <div class="w-100 d-flex flex-column">
                 <div class="d-flex mb-2">
-                  <p class="text-grey-black fs-md pr-2">
+                  <p class="text-grey-black fs-lg pr-2">
                     {{ question.title }}<span class="text-red-middle align-top ml-1"
                       *ngIf="this.isRequired(question)">*</span>
                   </p>
@@ -71,14 +72,8 @@
                         <ng-container *ngFor="let item of SubQuestion.validationView; let SubQuestionIndex = index">
                           <li @downInCompressOut class="error-message mr-3"
                           *ngIf="SubQuestion.form.errors ? SubQuestion.form.errors[item.type] : false">
-                            <!-- {{(item.type | translate)}} -->
-                            <!-- {{(SubQuestion.form.errors ? SubQuestion.form.errors[item.type] : false)|json}} -->
                             <span  >
                               {{SubQuestion.form.errors ? SubQuestion.form.errors[item.type] : ''}}
-                              <!-- <span *ngIf="!item.value?.length">({{item.value}})</span>
-                              <span *ngIf="item.value?.length">
-                                ({{item.value![0]}}<span>-</span>{{item.value![1]}})
-                              </span> -->
                             </span>
                           </li>
                         </ng-container>
@@ -87,9 +82,9 @@
                   </ng-container>
                 </ul>
               </div>
-              <div class="d-flex align-items-end pt-3 opacity-0">
+              <div class="d-flex align-items-end pt-3">
                 <app-borderless-button class="mr-2 h-8" [type]="this.colorType.Primary" [size]="this.sizeType.S"
-                  (click)="this.editSubQuestion(question, questionIndex)">編輯</app-borderless-button>
+                  (click)="this.editSubQuestion(question, groupIndex, questionIndex)">編輯</app-borderless-button>
                 <app-borderless-button  class="h-8" [type]="this.colorType.Warn" [size]="this.sizeType.S"
                   (click)="this.deleteSubQuestion(groupIndex, questionIndex)">刪除</app-borderless-button>
               </div>

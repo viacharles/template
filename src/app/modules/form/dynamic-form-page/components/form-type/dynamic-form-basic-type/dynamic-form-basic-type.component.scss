@@ -4,28 +4,48 @@
   box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.04);
   &__question {
     & > li {
+        min-height: 96px;
+      &::before {
+        position: fixed;
+        top: 50%;
+        left: 1rem;
+        transform: translateY(-50%);
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 85%;
+        border-left: 5px solid var(--primary-background-hover);
+        border-top: 4px solid transparent;
+        border-bottom: 4px solid transparent;
+      }
       &:hover {
-        &::before {
-          position: fixed;
-          top: 0;
-          left: 0;
-          content: '';
-          position: absolute;
-          width: 3px;
-          height: 100%;
-          background-color: var(--primary-select-color);
-          left: 0;
-          top: 0;
-        }
         div:last-of-type {
           transition: 0.2s;
           opacity: 1 !important;
+          margin-left: 0;
+          color: green;
+          & >  p {
+            opacity: 1 !important;
+          }
         }
       }
-      div:first-of-type {
-        min-width: 150px;
-        &>div p {
-          letter-spacing: 1px;
+      &.error {
+        &::before {
+          border-left: 4px solid var(--warn-color);
+        }
+      }
+      & > div {
+        &:first-of-type {
+          min-width: 150px;
+          margin-left: 1rem;
+          & > div p {
+            transition: 0.2s;
+            letter-spacing: 1px;
+            // opacity: 0.7;
+          }
+        }
+        &:last-of-type {
+          opacity: 0.2;
         }
       }
     }
