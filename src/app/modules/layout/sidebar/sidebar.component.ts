@@ -222,11 +222,17 @@ export class SidebarComponent
   private showWarn(path: string): void {
     this.$overlay.addDialog(
       WarnDialogComponent,
-      {title: this.warningBeforeNavigate},
+      {
+        title: this.warningBeforeNavigate,
+        buttons: {
+          confirm: {},
+          cancel: {}
+        }
+      },
       {
         callback: {
           confirm: () => this.router.navigateByUrl(path),
-          cancel: () => this.menuForm.setValue(this.router.url),
+          cancel: () => {console.log('aa-cancel');this.menuForm.setValue(this.router.url)},
         },
       }
     );
