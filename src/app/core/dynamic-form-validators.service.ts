@@ -9,6 +9,14 @@ import { IDynamicFieldValue } from "@utilities/interface/api/cab-api.interface";
 export class DynamicFormValidatorsService {
 
   constructor(private $translate: TranslateService){}
+    /** 動態表單專用：email */
+    public DynamicEmail(control: AbstractControl): { error: string; } | null {
+      const isValid = control.value && control.value.length > 0 ? /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(control.value[0].value) : true;
+      const error: any = {};
+      error[`${EErrorMessage.EMAIL_ERROR}`] = this.$translate.instant(EErrorMessage.EMAIL_ERROR);
+      return isValid ? null : error;
+    }
+
   /** 動態表單專用：只能輸入英數 */
   public DynamicEnNumberOnly(control: AbstractControl): { error: string; } | null {
     const isValid = control.value.every(({ value }: IDynamicFieldValue) => /^[a-zA-Z0-9]+$/.test(`${value}`));
