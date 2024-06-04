@@ -61,6 +61,8 @@ export class DynamicFieldEditDialogComponent extends BaseDialog<ICabQuestionView
   public validationOptions: IDynamicOption<string>[] = [];
   /** 顯示選項欄位 */
   public showOptionField = false;
+  /** 隱藏 memo 欄位 */
+  public hideMemo = false;
 
   protected override onInit() {
     this.reCreateValidationForm();
@@ -73,6 +75,13 @@ export class DynamicFieldEditDialogComponent extends BaseDialog<ICabQuestionView
 
   public submit() {
     console.log('aa-form value', this.questionForm.value);
+    if (this.questionForm.invalid) {
+      this.questionForm.markAllAsTouched();
+    } else {
+      console.log('aa-dialog confirm', this.questionForm.value);
+      this.confirm(this.questionForm.value);
+    }
+
   }
 
   public setValue(data: ICabQuestionView): void {
@@ -83,8 +92,8 @@ export class DynamicFieldEditDialogComponent extends BaseDialog<ICabQuestionView
       des: data.description,
       placeholder: data.SubQuestionGroup[0].placeholder,
       fieldType: data.SubQuestionGroup[0].type,
-      validation: data.SubQuestionGroup[0].validationView?.map(v => ({type: v.type, value: v.value})),
-      options: data.SubQuestionGroup[0].optionsForNormal.map(option => ({content: option.name, hasMemo: !!option.memo})),
+      validation: data.SubQuestionGroup[0].validationView?.map(v => ({value: (v.type as unknown as (string | number)[]), code: v.type, memo: v.value, type: v.type})),
+      ...(data.SubQuestionGroup[0].optionsForNormal ? {options: data.SubQuestionGroup[0].optionsForNormal.map((option, index) => ({content: option.name, hasMemo: !!option.hasMemo, value: `${index + 1}`, label: option.name, memo: option.memo, code: option.code, name: option.name}))} : {}),
     });
   }
 
@@ -106,12 +115,11 @@ export class DynamicFieldEditDialogComponent extends BaseDialog<ICabQuestionView
 
   private subscribeQuestionForm() {
     this.questionForm.controls.fieldType.valueChanges.pipe(takeUntil(this.onDestroy$)).subscribe((type: EFieldType | null) => {
-      this.questionForm.controls.validation.setValue([]);
+      this.questionForm.controls.validation?.setValue([]);
       this.reSetValidationOptions(type);
       this.reCreateValidationForm();
-      if(type === EFieldType.MultiSelect || type === EFieldType.Checkbox || type === EFieldType.Radio || type === EFieldType.Select) {
-        this.showOptionField = true;
-      };
+      this.showOptionField = type === EFieldType.MultiSelect || type === EFieldType.Checkbox || type === EFieldType.Radio || type === EFieldType.Select;
+      this.hideMemo = type === EFieldType.MultiSelect || type === EFieldType.Select;
     });
   }
 

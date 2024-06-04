@@ -1,6 +1,6 @@
 <app-dialog-container [width]="'70%'" [maxWidth]="'673px'" [minWidth]="'350px'"
 (closed)="this.close()">
-  <h4 id="title" class="fs-lg fw-4">
+  <h4 id="title" class="fs-lgxx fw-4">
     編輯題目: {{ this.data.title }}
   </h4>
   <form id="body" class="w-100 d-flex flex-wrap px-3" [formGroup]="this.questionForm">
@@ -9,7 +9,7 @@
       <app-toggle formControlName="required"></app-toggle>
     </div>
     <div class="w-45p mr-3 mb-3">
-      <p class="mb-2">題目標題</p>
+      <p class="mb-2">題目標題<span class="text-warn-color fw-7">*</span></p>
       <app-input formControlName="title"></app-input>
     </div>
     <div class="w-45p mr-3 mb-3">
@@ -21,7 +21,7 @@
       <app-input formControlName="placeholder"></app-input>
     </div>
     <div class="w-45p mr-3 mb-3">
-      <p class="mb-2">欄位類型</p>
+      <p class="mb-2">欄位類型<span class="text-warn-color fw-7">*</span></p>
       <app-select [options]="this.fieldTypeList" formControlName="fieldType"></app-select>
     </div>
     <div @verticalShortenOut class="w-100 mr-2 mb-3" *ngIf="this.validationOptions.length">
@@ -30,12 +30,12 @@
     </div>
     <div class="w-100 mr-3 mb-3" *ngIf="this.showOptionField">
       <p class="mb-2">選項</p>
-      <app-dynamic-input-list formControlName="options" [list]="this.data.SubQuestionGroup[0].optionsForNormal" (onAddEmptyItem)="this.onAddEmptyItem()"></app-dynamic-input-list>
+      <app-dynamic-input-list formControlName="options" [list]="this.data.SubQuestionGroup[0].optionsForNormal" [hideMemo]="this.hideMemo" (onAddEmptyItem)="this.onAddEmptyItem()"></app-dynamic-input-list>
     </div>
   </form>
   <div id="footer" class="w-100 d-flex justify-content-end mt-2">
     <!-- <app-borderless-button [icon]="'icon-check'" (click)="this.submit()">儲存</app-borderless-button> -->
-    <button class="btn btn-flat bg-primary-color text-white ml-2" (click)="this.submit()" [disabled]="this.questionForm.invalid">
+    <button class="btn-flat bg-primary-color text-white ml-2" (click)="this.submit()" [disabled]="this.questionForm.invalid">
       <em class="icon-check fs-xsm mr-1"></em>
       儲存
     </button>
