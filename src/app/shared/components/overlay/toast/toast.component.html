@@ -8,10 +8,10 @@
     <em
       class="fa fa-{{
         this.iconCode
-      }} flex-row-center h-6 mr-3 fs-md rounded-circle"
+      }} flex-row-center h-3 fs-sm rounded-circle"
     ></em>
-    <div>
-      <h6 class="fs-lgx fw-7">
+    <div class="h-100 w-100">
+      <h6 class="fs-lg fw-4">
         {{ (this.article ? this.article.title : '') | translate }}
       </h6>
       <p *ngIf="this.article?.content" class="mb-1 fs-xs lh-4 mt-1">

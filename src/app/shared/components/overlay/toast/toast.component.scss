@@ -7,10 +7,11 @@
 .toast {
   pointer-events: all;
   max-width: unset;
-  padding: 0.875rem 1.739rem 0.812rem 1.81rem;
+  padding: 0.3rem 0 0.3rem 0.5rem;
   color: $white;
-  border-radius: 0.625rem;
+  border-radius: 0.3rem;
   animation: fade-up-in 0.3s ease forwards;
+  filter:  brightness(0.99);
   &.success {
     background-color: $green-middle;
   }
@@ -27,18 +28,20 @@
     animation: fade-up-out 0.3s ease forwards;
   }
   & > div:first-child {
-    min-width: 350px;
+    min-width: 250px;
     max-width: 400px;
     & > em {
-      min-width: 1.5rem;
-      border: 2px solid $white;
+      min-width: 1rem;
+      margin: 0 0.55rem 0 0.1rem;
     }
     h6 {
       margin-bottom: 0;
+      filter:drop-shadow(0 0 1px 3px rgba(0, 0, 0, 0.5));
     }
   }
   p {
     color: $white;
+
   }
 }
 
@@ -49,7 +52,6 @@
   height: 27px;
   transition: 0.3s ease;
   &:hover {
-    background-color: rgba(0, 0, 0, 0.1);
     &:before,
     &:after {
       opacity: 1;
