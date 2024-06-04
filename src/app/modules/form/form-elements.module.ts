@@ -25,6 +25,7 @@ import { DirectiveModule } from '@shared/directives/directive.module';
 import { OverlayModule } from '@shared/components/overlay/overlay.module';
 import { DynamicFieldEditDialogComponent } from './dynamic-form-page/shared/components/dynamic-field-edit-dialog/dynamic-field-edit-dialog.component';
 import { DynamicFormValidatorsService } from '@core/dynamic-form-validators.service';
+import { ButtonsModule } from '@shared/components/buttons/buttons.module';
 
 
 
@@ -56,7 +57,8 @@ import { DynamicFormValidatorsService } from '@core/dynamic-form-validators.serv
     ShareFormModule,
     ReactiveFormsModule,
     DirectiveModule,
-    OverlayModule
+    OverlayModule,
+    ButtonsModule
   ],
   providers: [
     DatePipe,

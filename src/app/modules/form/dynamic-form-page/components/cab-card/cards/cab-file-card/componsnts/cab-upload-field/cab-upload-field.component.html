@@ -11,10 +11,10 @@
     >
       {{ 'cab.upload-size-limit' | translate }}
     </p>
-    <a
+    <!-- <a
       class="text-start text-grey-black text-break"
       [href]="
-        this.isFileSavedLocal ? this.latestFile.value.url : 'javascript:void(0)'
+        this.isFileSavedLocal ? this.latestFile.value.url : 'javascript:' | safeHtml
       "
       [download]="this.latestFile.value.fileName"
       (click)="
@@ -27,7 +27,7 @@
       "
       *ngIf="this.latestFile?.get('fileName')?.value"
       >{{ this.latestFile.get('fileName')?.value }}</a
-    >
+    > -->
     <div
       class="d-flex flex-column align-items-center"
       *ngIf="this.isLastFileError"

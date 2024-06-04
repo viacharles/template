@@ -17,7 +17,7 @@
     <p class="fs-sm text-grey-iron" *ngIf="!this.isLastFileError && !this.fileControl.controls[0].value.fileName">
       {{"cab.upload-size-limit" | translate}}</p>
     <a class="text-grey-black"
-      [href]="this.isFileSavedLocal ? this.fileControl.controls[0].value.url :'javascript:void(0)'"
+      [href]="this.isFileSavedLocal ? this.fileControl.controls[0].value.url :'javascript:' | safeHtml"
       [download]="this.fileControl.controls[0].value.fileName"
       (click)="!this.isFileSavedLocal ? this.downloadFile($event, this.fileControl.controls[0].value.file) : null"
       *ngIf="this.fileControl.controls[0]?.get('fileName')?.value">{{this.fileControl.controls[0].get('fileName')?.value}}</a>
