@@ -18,6 +18,7 @@ import { Toast } from '@utilities/model/toast.model';
 import { takeUntil } from 'rxjs';
 
 @Component({
+  selector: 'app-layout-base',
   templateUrl: './layout-base.component.html',
   styleUrls: ['./layout-base.component.scss'],
 })
@@ -35,7 +36,7 @@ export class LayoutBaseComponent
     `${EIndividualPages.Home}`,
   ]
   /** 需隱藏 footer 的頁面 */
-  private hideFooterList = [`${EAssistantPages.Chat}`, `${EModule.Form}/${EFormPages.Select}`];
+  private hideFooterList = [`${EAssistantPages.Chat}`, `${EModule.Form}/${EFormPages.CustomComponent}`];
 
   public showSidebar = false;
   public hideFooter = false;
@@ -137,9 +138,9 @@ export class LayoutBaseComponent
       srcToasts.some(srcToast => srcToast.id === toast.id)
     );
     srcToasts
-      .filter(
-        srcToast => !this.currentToasts.some(toast => srcToast.id === toast.id)
-      )
+      // .filter(
+      //   srcToast => !this.currentToasts.some(toast => srcToast.id === toast.id)
+      // )
       .forEach(toast =>
         this.currentToasts.unshift(new Toast(toast, this.overlayService))
       );

@@ -85,7 +85,7 @@ export class FooterComponent extends UnSubOnDestroy implements OnInit {
           'backgroundColor',
           'white'
         );
-        timer(100).pipe(take(1)).subscribe(() => this.renderer.removeClass(this.tText?.nativeElement, 'mt-8'));
+        // timer(100).pipe(take(1)).subscribe(() => this.renderer.removeClass(this.tText?.nativeElement, 'mt-8'));
         break;
       default:
         this.renderer.setStyle(
@@ -93,7 +93,7 @@ export class FooterComponent extends UnSubOnDestroy implements OnInit {
           'backgroundColor',
           '#FAFAFA'
         );
-        timer(100).pipe(take(1)).subscribe(() => this.renderer.addClass(this.tText?.nativeElement, 'mt-8'));
+        // timer(100).pipe(take(1)).subscribe(() => this.renderer.addClass(this.tText?.nativeElement, 'mt-8'));
         this.showFull = false;
         break;
     }
