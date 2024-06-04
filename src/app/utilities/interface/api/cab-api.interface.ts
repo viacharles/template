@@ -233,8 +233,8 @@ export interface ICabQuestionOption {
   label: string;
   value: string;
   memo: boolean;
-  reportHighLight: boolean;
-  reportAdvice: string | null;
+  reportHighLight?: boolean;
+  reportAdvice?: string | null;
 }
 
 export interface ICabRemark {
