@@ -64,6 +64,7 @@ export interface IWarnDialogData {
 }
 
 export interface IButton {
-  classes: string;
-  text: string;
+  text?: string;
+  classes?: string;
+  bgColor?: string;
 }

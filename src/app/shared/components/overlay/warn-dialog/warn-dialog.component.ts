@@ -34,11 +34,10 @@ export class WarnDialogComponent
     if (!this.dialog.data.buttons) {
       this.dialog.data.buttons = {
         confirm: {
-          classes: 'btn-flat bg-green-middle',
+          bgColor: 'green-middle',
           text: 'common.confirm',
         },
         cancel: {
-          classes: 'btn-flat btn-normal',
           text: 'common.cancel',
         },
       };

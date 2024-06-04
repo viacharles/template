@@ -15,6 +15,7 @@ import { DynamicForm } from '../../../shared/model/dynamic-form.model';
 import { IDynamicFieldValue, IDynamicFromValidator } from '@utilities/interface/api/cab-api.interface';
 import { IDynamicOption } from '@utilities/interface/form.interface';
 import { take, timer } from 'rxjs';
+import { WarnDialogComponent } from '@shared/components/overlay/warn-dialog/warn-dialog.component';
 
 @Component({
   selector: 'app-dynamic-form-basic-type',
@@ -111,8 +112,29 @@ export class DynamicFormBasicTypeComponent extends Base {
 
   /** 刪除題目 */
   public deleteSubQuestion(groupIndex: number, questionIndex: number): void {
-    const questions = this.page?.groups[groupIndex].questions.filter((q, index) => index !== questionIndex);
-    this.page!.groups[groupIndex].questions = questions ?? [];
+    this.$overlay.addDialog(
+      WarnDialogComponent,
+      {
+        title: 'custom-form.question-delete-warn',
+        buttons: {
+          confirm: {
+            bgColor: 'warn-color',
+            text: 'common.delete',
+          },
+          cancel: {}
+        }
+      },
+      {
+        callback: {
+          confirm: () => {
+            const questions = this.page?.groups[groupIndex].questions.filter((q, index) => index !== questionIndex);
+            this.page!.groups[groupIndex].questions = questions ?? [];
+          },
+          cancel: () => {},
+        },
+      }
+    )
+
   }
 
   public trim(event: Event) {

@@ -293,6 +293,9 @@
     "back-to-supplement": "編輯補件",
     "no-supplement-provide": "沒有提供補件資料"
   },
+  "custom-form": {
+    "question-delete-warn": "確定刪除此題目？"
+  },
   "project": {
     "tenant": "租戶網域",
     "add-new": "新增項目",
