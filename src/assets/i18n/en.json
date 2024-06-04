@@ -24,7 +24,7 @@
     "all": "All",
     "cancel-edit": "Are you sure you want to leave this page?",
     "cancel-edit-no-save": "你有資料尚未儲存，確認要離開此頁面嗎？",
-    "cancel-edit-no-save-draft": "草稿尚未儲存，請問確定要離開嗎？",
+    "cancel-edit-no-save-draft": "變更尚未儲存，請問確定要離開嗎？",
     "delete-temp": "Are you sure you want to delete this draft?",
     "get-fail": "Failed to get data",
     "get-file-fail": "下載檔案失敗",
@@ -129,7 +129,8 @@
     "cloud-assessment": "Cloud Assessment",
     "validation": "Project Validation",
     "project-user": "Project User",
-    "question-config": "Questionnaire Config"
+    "question-config": "Questionnaire Config",
+    "sample": "Sample"
   },
   "login": {
     "email": "Email Address",
