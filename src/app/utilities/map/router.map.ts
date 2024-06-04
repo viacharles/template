@@ -23,37 +23,37 @@ export const SettingMenuMap = new Map<ESettingPages, IMenuParams>([
 /** 主Menu：表單元件組 */
 export const FormMenuMap = new Map<EFormPages, IMenuParams>([
   [
-    EFormPages.Select,
+    EFormPages.CustomComponent,
     {
-      title: 'nav.select',
+      title: 'nav.custom-component',
       icon: 'icon-input',
-      path: `${EModule.Form}/${EFormPages.Select}`,
+      path: `${EModule.Form}/${EFormPages.CustomComponent}`,
     },
   ],
-  [
-    EFormPages.Button,
-    {
-      title: 'nav.button',
-      icon: 'icon-input',
-      path: `${EModule.Form}/${EFormPages.Button}`,
-    },
-  ],
-  [
-    EFormPages.Input,
-    {
-      title: 'nav.input',
-      icon: 'icon-input',
-      path: `${EModule.Form}/${EFormPages.Input}`,
-    },
-  ],
-  [
-    EFormPages.File,
-    {
-      title: 'nav.file',
-      icon: 'icon-upload',
-      path: `${EModule.Form}/${EFormPages.File}`,
-    },
-  ],
+  // [
+  //   EFormPages.Button,
+  //   {
+  //     title: 'nav.button',
+  //     icon: 'icon-inpu t',
+  //     path: `${EModule.Form}/${EFormPages.Button}`,
+  //   },
+  // ],
+  // [
+  //   EFormPages.Input,
+  //   {
+  //     title: 'nav.input',
+  //     icon: 'icon-input',
+  //     path: `${EModule.Form}/${EFormPages.Input}`,
+  //   },
+  // ],
+  // [
+  //   EFormPages.File,
+  //   {
+  //     title: 'nav.file',
+  //     icon: 'icon-upload',
+  //     path: `${EModule.Form}/${EFormPages.File}`,
+  //   },
+  // ],
   [
     EFormPages.DynamicForm,
     {

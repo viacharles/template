@@ -7,7 +7,7 @@ export enum EModule {
 
 /** 主Menu：表單元件 */
 export enum EFormPages {
-  Select = 'select',
+  CustomComponent = 'custom-component-sample',
   Input = 'input',
   Button = 'button',
   File = 'file',
