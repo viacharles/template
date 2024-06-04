@@ -5,18 +5,18 @@ import {
   Renderer2,
   ViewChild,
 } from '@angular/core';
-import {AuthenticationService} from '@core/services/authentication.service';
-import {TranslateService} from '@core/services/translate.service';
-import {Router} from '@angular/router';
-import {StorageMap} from '@ngx-pwa/local-storage';
-import {WindowService} from '@shared/service/window.service';
-import {forkJoin, take, takeUntil, timer} from 'rxjs';
-import {UnSubOnDestroy} from '@utilities/abstract/unSubOnDestroy.abstract';
-import {OverlayService} from '@shared/service/overlay.service';
-import {LayoutService} from '@shared/service/layout.service';
+import { AuthenticationService } from '@core/services/authentication.service';
+import { TranslateService } from '@core/services/translate.service';
+import { Router } from '@angular/router';
+import { StorageMap } from '@ngx-pwa/local-storage';
+import { WindowService } from '@shared/service/window.service';
+import { forkJoin, take, takeUntil, timer } from 'rxjs';
+import { UnSubOnDestroy } from '@utilities/abstract/unSubOnDestroy.abstract';
+import { OverlayService } from '@shared/service/overlay.service';
+import { LayoutService } from '@shared/service/layout.service';
 import { UsersService } from '@core/services/users.service';
 import { HttpClient } from '@angular/common/http';
-import { EModule } from '@utilities/enum/router.enum';
+import { EFormPages, EModule } from '@utilities/enum/router.enum';
 import { IUser } from '@utilities/interface/api/auth-api.interface';
 
 @Component({
@@ -73,6 +73,13 @@ export class HomeComponent extends UnSubOnDestroy implements OnInit {
   private readonly fadeInClass = 'fadeIn';
 
   ngOnInit() {
+    this.http.get('assets/version.json').subscribe((res: any) => {
+      if(localStorage.getItem('version') !== res.version) {
+        localStorage.setItem('version', res.version);
+        window.location.reload();
+      }
+    });
+    this.http.get<any>('assets/mock-data/cab-answer.json').subscribe((res) => console.log('aa-home-innit', res));
     this.$window.mainScroll$
       .pipe(takeUntil(this.onDestroy$))
       .subscribe(scroll => {
@@ -118,22 +125,22 @@ export class HomeComponent extends UnSubOnDestroy implements OnInit {
   public callSso(): void {
     forkJoin({
       userData: this.http.get<IUser>('assets/mock-data/user-data.json'),
-  }).pipe(take(1)).subscribe(({userData}) => {
-    forkJoin([
-      this.storage.set('userData', userData),
-      this.storage.set('tenantData', userData.tenantRespDtos[0]),
-      this.storage.set('token', 'token'),
-      this.storage.set('session', 'session'),
-      this.storage.set('settingInfo', {
-        "chatEnable": "true",
-        "isSamlTest": "true",
-        "mockSamlLogoutPath": "http://34.80.186.63:8080/simplesaml/module.php/core/authenticate.php",
-        "samlLogoutPath": "https://tw3.cath"
-      }),
-    ]).pipe(take(1)).subscribe(() => {
-      this.router.navigateByUrl(`${EModule.Table}`)
+    }).pipe(take(1)).subscribe(({ userData }) => {
+      forkJoin([
+        this.storage.set('userData', userData),
+        this.storage.set('tenantData', userData.tenantRespDtos[0]),
+        this.storage.set('token', 'token'),
+        this.storage.set('session', 'session'),
+        this.storage.set('settingInfo', {
+          "chatEnable": "true",
+          "isSamlTest": "true",
+          "mockSamlLogoutPath": "http://34.80.186.63:8080/simplesaml/module.php/core/authenticate.php",
+          "samlLogoutPath": "https://tw3.cath"
+        }),
+      ]).pipe(take(1)).subscribe(() => {
+        this.router.navigateByUrl(`${EModule.Form}/${EFormPages.DynamicForm}`)
+      })
     })
-  })
   }
 
   private setAnimation(scrollTop: number): void {

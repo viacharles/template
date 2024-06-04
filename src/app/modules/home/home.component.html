@@ -1,9 +1,9 @@
 <section class="w-100">
   <div #tHead class="head virtual">
-    <img src="assets/img/logo.png" />
+    <!-- <img src="assets/img/logo.png" /> -->
     <div class="head-nav">
       <ul class="d-flex align-items-center">
-        <li *ngIf="!(isLoggedIn$ | async)" class="login">
+        <li *ngIf="!(isLoggedIn$ | async)" class="login flex-column align-items-center">
           <button
             class="btn-round bg-green-middle text-white fs-xsm d-flex align-items-center text-nowrap mr-2"
             (click)="this.callSso()"
@@ -15,19 +15,22 @@
         <li class="text-green-middle mr-2" *ngIf="isLoggedIn$ | async">
           <a
             class="btn-projects btn-round-line border-green-middle text-green-middle fs-xsm"
-            routerLink="/data-table"
+            routerLink="/form"
           >
-            {{ 'nav.projects-list-overview' | translate }}</a
+            {{ 'nav.sample' | translate }}</a
           >
         </li>
-        <li class="d-flex align-items-center">
+        <!-- <li class="d-flex align-items-center">
           <em class="icon-triangle fs-xsm"></em>
-        </li>
+        </li> -->
       </ul>
+
     </div>
+    <p>主要體驗動態表單的表單編輯。</p>
   </div>
+
   <!-- cover -->
-  <section class="cover p-relative d-flex w-100">
+  <!-- <section class="cover p-relative d-flex w-100">
     <div class="cover__text">
       <div class="w-100">
         <h2 class="title">Cloud Ready Platform</h2>
@@ -64,9 +67,9 @@
       <img class="cover__img__1" src="assets/img/index/1.png" />
       <img class="cover__img__4" src="assets/img/index/4.png" />
     </div>
-  </section>
+  </section> -->
   <!-- 目標願景 -->
-  <section class="section w-100 d-flex flex-column align-items-center mt-40">
+  <!-- <section class="section w-100 d-flex flex-column align-items-center mt-40">
     <div #tAnim1 class="opa-0 d-flex flex-column align-items-center">
       <h4 class="subtitle">
         {{ (isLoggedIn$ | async) ? 'Application' : 'Service' }}
@@ -191,5 +194,5 @@
       </div>
       <div #tAnim9 class="bg-img opa-0 w-100 h-100"></div>
     </div>
-  </section>
+  </section> -->
 </section>
