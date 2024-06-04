@@ -11,6 +11,7 @@ import {IDialog} from '@utilities/interface/overlay.interface';
 })
 export class DialogContainerComponent<T = any> implements IDialog<T> {
   @Input() noDefaultStyle?: boolean;
+  @Input() hasCancelButton = true;
   @Input() padding = '';
   @Input() width = '';
   @Input() maxWidth = '';

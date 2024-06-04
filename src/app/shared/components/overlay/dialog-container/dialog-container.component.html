@@ -9,7 +9,7 @@
   [style.min-width]="this.minWidth ? this.minWidth : 'inherit'">
   <header class="d-flex p-relative">
     <ng-content select="#title"></ng-content>
-    <app-icon-button [classes]="'icon-cancel-m text-grey-black fs-xs fw-9'" (click)="this.onClose()"></app-icon-button>
+    <app-icon-button *ngIf="this.hasCancelButton" [classes]="'icon-cancel-m text-grey-black fs-xs fw-9'" (click)="this.onClose()"></app-icon-button>
   </header>
   <div class="overflow-auto">
     <ng-content select="#body"></ng-content>
