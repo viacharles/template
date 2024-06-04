@@ -6,7 +6,7 @@ import { ESize } from '@utilities/enum/common.enum';
 import { verticalShortenOut } from '@utilities/helper/animations.helper';
 import { IDynamicOption } from '@utilities/interface/form.interface';
 
-export type IDynamicInputListForm = FormGroup<{ list: FormArray<FormGroup<{ content: FormControl<string | null>, hasMemo: FormControl<boolean | null> }>> }>;
+export type IDynamicInputListForm = FormGroup<{ list: FormArray<FormGroup<{ name: FormControl<string | null>, hasMemo: FormControl<boolean | null> }>> }>;
 
 @Component({
   selector: 'app-dynamic-input-list',
@@ -15,34 +15,32 @@ export type IDynamicInputListForm = FormGroup<{ list: FormArray<FormGroup<{ cont
   providers: [getFormProvider(DynamicInputListComponent)],
   animations: [verticalShortenOut()]
 })
-export class DynamicInputListComponent extends CustomForm implements OnInit, OnChanges {
+export class DynamicInputListComponent extends CustomForm implements OnChanges {
   @Input() list: IDynamicOption<string>[] = [];
+  /** 隱藏 Memo 欄位*/
+  @Input() hideMemo = false;
   @Output() onAddEmptyItem = new EventEmitter();
 
   constructor() { super() }
 
   private readonly listFormInit = new FormGroup({
     list: new FormArray<FormGroup<{
-      content: FormControl<string | null>,
+      name: FormControl<string | null>,
       hasMemo: FormControl<boolean | null> }>>([])
     });
 
   public listForm: IDynamicInputListForm = this.listFormInit;
   get sizeType() { return ESize };
 
-  ngOnInit(): void {
-    this.recCreateListForm([]);
-  }
-
   ngOnChanges({ list }: SimpleChanges): void {
     if (list && list.currentValue) {
-      this.recCreateListForm(list.currentValue);
+      this.reCreateListForm(list.currentValue);
     };
   }
 
   public addEmptyItem(): void {
     this.listForm.controls.list.controls.push(new FormGroup({
-      content: new FormControl(''),
+      name: new FormControl(''),
       hasMemo: new FormControl(false)
     }));
     this.listForm.controls.list.controls[this.listForm.controls.list.controls.length - 1].valueChanges.pipe(takeUntil(this.onDestroy$)).subscribe(value => { this.listForm.controls.list.updateValueAndValidity();})
@@ -50,13 +48,12 @@ export class DynamicInputListComponent extends CustomForm implements OnInit, OnC
     this.onAddEmptyItem.emit();
   };
 
-  private recCreateListForm(list: IDynamicOption<string>[]): void {
+  private reCreateListForm(list: IDynamicOption<string>[]): void {
     this.listForm = this.listFormInit;
     if (!!list.length) {
       list.forEach((item, index) => {
-        console.log('aa-item', item);
         (this.listForm.get('list') as FormArray).controls.push(new FormGroup({
-          content: new FormControl(item.name),
+          name: new FormControl(item.name),
           hasMemo: new FormControl(item.hasMemo)
           }));
           this.listForm.controls.list.controls[index].valueChanges.pipe(takeUntil(this.onDestroy$)).subscribe(value => { this.listForm.controls.list.updateValueAndValidity();})
@@ -65,8 +62,8 @@ export class DynamicInputListComponent extends CustomForm implements OnInit, OnC
       this.addEmptyItem();
     };
     this.listForm.controls.list.valueChanges.pipe(takeUntil(this.onDestroy$)).subscribe(value => {
-      this.notifyValueChange(value);
-      console.log('aa-listForm', this.listForm.value)
+      const format = value.map((item) => ({ name: item.name, hasMemo: (typeof item.hasMemo === 'object' && item.hasMemo !== null) ? (item.hasMemo as unknown as {value: string, memo: string}).value : item.hasMemo }));
+      this.notifyValueChange(format);
     });
     this.listForm.controls.list.updateValueAndValidity();
   }
