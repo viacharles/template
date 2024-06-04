@@ -17,7 +17,7 @@ import {MatLegacySnackBarModule as MatSnackBarModule} from '@angular/material/le
 
 
 export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http);
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
 @NgModule({
