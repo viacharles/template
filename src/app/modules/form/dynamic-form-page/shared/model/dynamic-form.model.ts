@@ -340,24 +340,24 @@ export class DynamicForm {
   }
 
   public getValidations(validations: IDynamicFromValidator[], isMulti: boolean, required: boolean) {
+    console.log('aa-getValidations', validations)
     const dynamicValidations = validations?.map(validate => this.getDynamicValidate(validate));
-    return [
+    const validators = [
       ...(required ? [this.DynamicRequiredValidate(isMulti)] : []),
       ...(dynamicValidations ?? [])
-    ];
+    ]
+    return validators;
   }
 
   private getDynamicValidate(validation: IDynamicFromValidator): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
       const value = validation.value!;
       switch (validation.type) {
-        case EErrorMessage.EMAIL_ERROR:
-          const isValid = control.value && control.value.length > 0 ? /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(control.value[0].value) : true;
-          return isValid ? null : { email: validation.type };
+        case EErrorMessage.EMAIL_ERROR:return this.$dynamicValidator.DynamicEmail(control); break;;
         case EErrorMessage.EN_NUMBER_ONLY: return this.$dynamicValidator.DynamicEnNumberOnly(control); break;
         case EErrorMessage.MAX_ITEMS: return this.$dynamicValidator.DynamicMaxItems(control, +value as number); break;
         case EErrorMessage.MIN_ITEMS: return this.$dynamicValidator.DynamicMinItems(control, +value as number); break;
-        case EErrorMessage.MAX_MIN_ITEMS: return this.$dynamicValidator.DynamicMaxMinItems(control, value[0], value[1]); break;
+        // case EErrorMessage.MAX_MIN_ITEMS: return this.$dynamicValidator.DynamicMaxMinItems(control, value[0], value[1]); break;
         case EErrorMessage.MAX_LENGTH: return this.$dynamicValidator.DynamicMaxLength(control, +value as number); break;
         case EErrorMessage.MIN_LENGTH: return this.$dynamicValidator.DynamicMinLength(control, +value as number); break;
         case EErrorMessage.MAX_MIN_LENGTH: return this.$dynamicValidator.DynamicMaxMinLength(control, value[0], value[1]); break;
@@ -445,6 +445,7 @@ export class DynamicForm {
   }
 
   private getValidationView(answer: ICabQuestionSubQuestion): IDynamicFromValidator[] {
+    console.log('aa-getValidationView',answer )
     return [
       ...(answer.required ? [{ type: EErrorMessage.REQUIRED } as IDynamicFromValidator] : []),
       ...(answer.validation ?? []).flatMap(item => item ? [item] : [])
