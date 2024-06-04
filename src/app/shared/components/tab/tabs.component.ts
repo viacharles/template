@@ -1,10 +1,14 @@
 import {
   Component,
+  ElementRef,
   EventEmitter,
   Input,
   OnChanges,
+  OnInit,
   Output,
+  Renderer2,
   SimpleChanges,
+  ViewChild,
 } from '@angular/core';
 import {
   CustomForm,
@@ -27,15 +31,16 @@ export interface ITab {
 })
 export class TabsComponent
   extends CustomForm<number | string>
-  implements OnChanges
+  implements OnInit, OnChanges
 {
+  @ViewChild('tUl') tUl?: ElementRef<HTMLElement>;
   @Input() tabs: ITab[] = [];
   /** 是否標籤寬度平均容器寬度 */
   @Input() isEvenlyDistribute = true;
   /** 標籤文字排版 */
-  @Input() tabTextAlign: 'start' | 'center' | 'end' = 'center';
+  @Input() tabTextAlign: 'start' | 'center' | 'end' | 'between' = 'center';
   @Input() containerPadding?: string;
-  @Input() tabWidth?: string;
+  @Input() tabMinWidth?: string;
   @Input() tabPadding?: string;
   @Input() tabContainerPadding?: string;
   @Input() defaultTab: string | number = 0;
@@ -44,8 +49,15 @@ export class TabsComponent
   public override model = '';
   public override disabled = false;
 
-  constructor() {
+  constructor(
+    private self: ElementRef<HTMLElement>,
+    private renderer: Renderer2
+    ) {
     super();
+  }
+
+  ngOnInit(): void {
+    const timer = setTimeout(() => {this.renderer.addClass(this.tUl?.nativeElement, 'fade-in')}, 200)
   }
 
   ngOnChanges({defaultTab}: SimpleChanges): void {

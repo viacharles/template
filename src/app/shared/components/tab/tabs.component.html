@@ -1,10 +1,10 @@
 <div
-  class="tab-container mt-2_5 mb-3 {{
+  class="tab-container d-flex align-items-end mt-2_5 mb-3 {{
     this.containerPadding ? '' : 'pl-4 pr-20'
   }}"
   [style.padding]="this.containerPadding"
 >
-  <ul class="w-100 d-flex flex-wrap pb-0 mb-0">
+  <ul #tUl class="w-100 d-flex flex-wrap pb-0 mb-0">
     <li
       *ngFor="let tab of this.tabs; let index = index"
       class="{{ this.isEvenlyDistribute ? 'isEvenly' : 'notEvent' }}"
@@ -19,18 +19,18 @@
           [(ngModel)]="this.model"
         />
         <label
-          class="w-90p h-100 d-flex align-items-center justify-content-{{
-            this.tabTextAlign
-          }} text-{{
-            this.tabTextAlign
-          }} py-2_5 mb-0 fs-xsm fw-7 pe-pointer mx-2"
+          class="w-90p h-100 d-flex align-items-center py-2_5 mb-0 fs-xsm fw-7 pe-pointer mx-2"
           [style.padding]="this.tabPadding ?? '0 0'"
-          [style.width]="this.tabWidth ?? 'auto'"
+          [style.min-width]="this.tabMinWidth ?? 'auto'"
           (click)="this.toggle(tab)"
           [for]="'tab' + index"
         >
           <div
-            class="text d-flex align-items-center"
+            class="w-100 text d-flex align-items-center justify-content-{{
+              this.tabTextAlign
+            }} text-{{
+            this.tabTextAlign
+          }}"
             *ngIf="!tab.innerHTML; else tInnerHtml"
           >
             {{ tab.titleI18n | translate }}
