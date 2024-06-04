@@ -26,7 +26,7 @@ export class WarnDialogComponent
       case EContent.Info:
         return {iconCode: 'exclamation text-warn', color: '#EFAD49'};
       default:
-        return {iconCode: 'exclamation text-warn', color: '#EFAD49'};
+        return {iconCode: '', color: ''};
     }
   }
 

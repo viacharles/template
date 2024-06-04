@@ -1,40 +1,31 @@
-<app-dialog-container>
-  <div id="body" class="d-flex flex-column align-items-center">
-    <em
-      class="icon d-flex align-items-center justify-content-center icon-{{
-        this.icon.iconCode
-      }} fs-lgx"
-      [style.border]="'3.5px solid ' + this.icon.color"
-    ></em>
-    <p
-      class="text-center fw-5 mb-7"
-      *ngIf="!this.data.innerHTML; else tInnerHTML"
-    >
-      {{ this.data.title ?? '' | translate }}
-    </p>
+<app-dialog-container [hasCancelButton]="false">
+  <div id="body" class="d-flex flex-column align-items-center px-3">
+    <div class="d-flex align-items-center mb-7">
+      <em *ngIf="this.icon.iconCode" class="icon d-flex align-items-center justify-content-center icon-{{ this.icon.iconCode }} fs-lgx"
+      [style.border]="'3.5px solid ' + this.icon.color" ></em>
+      <p class="text-center fw-4" *ngIf="!this.data.innerHTML; else tInnerHTML">{{ this.data.title ?? '' | translate }}</p>
+    </div>
     <ng-template #tInnerHTML>
       <div
         class="text-center fw-5 mb-7"
         [innerHTML]="this.data.innerHTML! | safeHtml"
       ></div>
     </ng-template>
-    <div id="buttons" class="d-flex justify-content-center align-items-center">
-      <button
+    <div id="buttons" class="w-100 d-flex justify-content-end align-items-center">
+      <app-button
+      *ngIf="this.data.buttons?.cancel"
         (click)="this.cancel()"
-        class="{{
-          this.data.buttons?.cancel?.classes ?? 'btn-flat btn-normal'
-        }} w-42_5 mr-7"
-      >
-        {{ this.data.buttons?.cancel?.text ?? 'common.cancel' | translate }}
-      </button>
-      <button
+        [bgColor]="this.data.buttons?.cancel?.classes ?? 'btn-flat btn-normal'" [height]="'1.9rem'"
+        [classes]="'mr-3 px-3'" >
+        {{ (this.data.buttons?.cancel?.text ?? 'common.cancel') | translate }}
+      </app-button>
+      <app-button
+      *ngIf="this.data.buttons?.confirm"
         (click)="this.confirm()"
-        class="{{
-          this.data.buttons?.confirm?.classes ?? 'btn-flat bg-green-middle'
-        }} w-42_5"
-      >
-        {{ this.data.buttons?.confirm?.text ?? 'common.confirm' | translate }}
-      </button>
+        [bgColor]="this.data.buttons?.confirm?.classes ?? 'btn-flat bg-primary-color'" [height]="'1.9rem'"
+        [classes]="'px-3'" >
+        {{ (this.data.buttons?.confirm?.text ?? 'common.confirm') | translate }}
+      </app-button>
     </div>
   </div>
 </app-dialog-container>
