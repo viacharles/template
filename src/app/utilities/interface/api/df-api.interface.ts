@@ -1,53 +1,53 @@
 import {
-  ECabFormProcess,
+  EFDProcess,
   ERole,
   EUserStatus,
   EFieldStatus,
 } from '@utilities/enum/common.enum';
-import {IOption} from '../common.interface';
-import { ECabAnswerStatus, ECabFormSubmitType } from 'src/app/modules/form/dynamic-form-page/shared/enum/cab.enum';
+import { IOption } from '../common.interface';
+import { EDFAnswerStatus, EDFSubmitType } from 'src/app/modules/form/dynamic-form-page/shared/enum/df.enum';
 import { EErrorMessage, EFieldType } from '@utilities/enum/form.enum';
 
-export interface ICabBasicInfoReq {
+export interface IDFBasicInfoReq {
   projectName: string;
   projectId: null;
   projectOwnerSectionNameCN: string;
   projectOwnerName: string;
-  cab: number;
+  df: number;
 }
 
-export interface ICabBasicInfoRes {
+export interface IDFBasicInfoRes {
   docId: string;
-  cabId: string;
+  dfId: string;
   projectName: string;
   projectId: string;
   projectOwnerSectionNameCN: string;
   projectOwnerName: string;
-  cab: number;
+  df: number;
   questionVersion: string | null;
   version: string;
-  status: ECabFormProcess;
-  answers: ICabAnswer | null;
+  status: EFDProcess;
+  answers: IDFAnswer | null;
   tenantCn: string;
   tenantId: string;
   createDate: string; // 2023-10-12 09:00:00
   editDate: string | null;
-  creator: ICabEditor;
-  editor: ICabEditor | null;
-  attachment: ICabFile[];
+  creator: IDFEditor;
+  editor: IDFEditor | null;
+  attachment: IDFFile[];
 }
 
-export interface ICabAnswer {
+export interface IDFAnswer {
   [key: string]: {
     // questionId
     groupId: string;
     sectionId: string;
-    values: ICabQuestionValue;
-    remark: ICabRemark[] | null;
+    values: IDFQuestionValue;
+    remark: IDFRemark[] | null;
   };
 }
 
-export interface ICabQuestionValue {
+export interface IDFQuestionValue {
   [key: string]: // questionId
   IDynamicFieldValue[];
 }
@@ -57,7 +57,7 @@ export interface IDynamicFieldValue {
   memo: string;
 }
 
-export interface ICabEditor {
+export interface IDFEditor {
   id: string;
   name: string;
   email: string;
@@ -69,7 +69,7 @@ export interface ICabEditor {
   sectionEn: string;
 }
 
-export interface ICabFile {
+export interface IDFFile {
   file: string; // uniq name from BE
   fileName: string;
   uploadDate: string;
@@ -82,60 +82,60 @@ export interface ICabFile {
   sectionCn: string;
   sectionEn: string;
   email: string;
-  type: ECabAnswerStatus;
+  type: EDFAnswerStatus;
   fieldStatus: EFieldStatus;
 }
 
-export interface ICabApplicationAnswerReq {
+export interface IDFApplicationAnswerReq {
   docId: string;
-  cabId: string;
+  dfId: string;
   projectId: string;
   questionVersion: string;
-  answers: ICabApplicationAnswerReqAnswers;
-  attachment: ICabFile[];
+  answers: IDFApplicationAnswerReqAnswers;
+  attachment: IDFFile[];
 }
 
-export interface ICabSupplementReq {
+export interface IDFSupplementReq {
   projectId: string;
-  cabId: string;
-  remark: {[questionId: string]: ICabRemark}[] | null;
-  attachment: ICabFile | null;
+  dfId: string;
+  remark: {[questionId: string]: IDFRemark}[] | null;
+  attachment: IDFFile | null;
 }
 
-export interface ICabApplicationAnswerReqAnswers {
+export interface IDFApplicationAnswerReqAnswers {
   [key: string]: {
     values: IDynamicFieldValue[];
   };
 }
 
 
-export interface ICabApplicationAnswerRes {
-  type: ECabFormSubmitType;
+export interface IDFApplicationAnswerRes {
+  type: EDFSubmitType;
   docId: string;
-  cabId: string;
+  dfId: string;
   projectName: string;
   projectId: string;
   projectOwnerSectionNameCN: string;
   projectOwnerName: string;
-  cab: number;
+  df: number;
   questionVersion: string;
   version: string;
-  status: ECabFormProcess;
-  answers: ICabAnswer;
+  status: EFDProcess;
+  answers: IDFAnswer;
   tenantCn: string;
   tenantId: string;
   createDate: string; // 2023-10-12 09:00:00
   editDate: string;
-  creator: ICabEditor;
-  editor: ICabEditor;
+  creator: IDFEditor;
+  editor: IDFEditor;
   submitDate: string;
-  attachment: ICabFile[];
+  attachment: IDFFile[];
   reviewDate: string | null;
-  trigger: ICabTrigger;
+  trigger: IDFTrigger;
   triggerDate: string;
 }
 
-export interface ICabTrigger {
+export interface IDFTrigger {
   id: string;
   department: string;
   departmentCn: string;
@@ -147,41 +147,41 @@ export interface ICabTrigger {
   email: string;
 }
 
-export interface ICabTemplateRes {
+export interface IDFTemplateRes {
   docId: string;
   id: string;
   createdDate: string; // 2023-08-29 15:00:00
   editDate: string;
   version: string;
-  groups: ICabQuestionGroup[];
+  groups: IDFQuestionGroup[];
 }
 
-export interface ICabQuestionGroup {
+export interface IDFQuestionGroup {
   id: string;
   name: string;
   order: number;
   section: string;
   sectionId: string;
-  questions: ICabQuestion;
+  questions: IDFQuestion;
 }
-export interface ICabQuestion {
+export interface IDFQuestion {
   [key: string]: {
     order: number;
-    cab: number;
+    df: number;
     description: string | null;
     title: string;
     disabled: boolean;
-    SubQuestionGroup: {[key: string]: ICabQuestionSubQuestion};
+    SubQuestionGroup: {[key: string]: IDFQuestionSubQuestion};
   };
 }
 
-export interface ICabQuestionHideExpression {
+export interface IDFQuestionHideExpression {
   questionId: string;
   answerId: string;
   value: any | null;
 }
 
-export interface ICabQuestionHideExpressionView {
+export interface IDFQuestionHideExpressionView {
   selfQuestionId: string;
   selfAnswerId: string;
   questionId: string;
@@ -189,7 +189,7 @@ export interface ICabQuestionHideExpressionView {
   value: any | null;
 }
 
-export interface ICabQuestionConfig {
+export interface IDFQuestionConfig {
   list: {
     desCode: string | null;
     inSearch: boolean;
@@ -208,18 +208,18 @@ export interface ICabQuestionConfig {
   };
 }
 
-export interface ICabQuestionSubQuestion {
+export interface IDFQuestionSubQuestion {
     type: EFieldType;
     required: boolean;
     disabled: boolean;
     title: string | null;
     placeholder: string | null;
-    options: ICabQuestionOption[] | null;
+    options: IDFQuestionOption[] | null;
     optionsForNormal?: IOption[] | null;
     className?: string | null;
-    hideExpression?: ICabQuestionHideExpression[];
+    hideExpression?: IDFQuestionHideExpression[];
     validation?: IDynamicFromValidator[];
-    config?: ICabQuestionConfig;
+    config?: IDFQuestionConfig;
 }
 
 export interface IDynamicFromValidator {
@@ -229,7 +229,7 @@ export interface IDynamicFromValidator {
   regex?: string | null,
 }
 
-export interface ICabQuestionOption {
+export interface IDFQuestionOption {
   label: string;
   value: string;
   memo: boolean;
@@ -237,8 +237,8 @@ export interface ICabQuestionOption {
   reportAdvice?: string | null;
 }
 
-export interface ICabRemark {
-  type: ECabAnswerStatus;
+export interface IDFRemark {
+  type: EDFAnswerStatus;
   /** 本來有值刪除後傳null，讓後端知道此筆被刪除 */
   content: string | null;
   fieldStatus: EFieldStatus;
@@ -252,11 +252,11 @@ export interface ICabRemark {
   sectionEn: string;
 }
 
-export interface ICabCommentRes {
+export interface IDFCommentRes {
   docId: string;
   projectDocId: string;
   projectId: string;
-  cabId: string;
+  dfId: string;
   comments: {
     [key: number]: IAdminComment[] | IComment[];
   };
@@ -277,34 +277,34 @@ export interface IComment {
 }
 
 export interface IAdminComment extends IComment {
-  status: ECabFormProcess;
+  status: EFDProcess;
 }
 
 export type ICommitteeRole = 'admin' | 'security' | 'arch' | 'devops' | 'sre';
 
-export interface ICabCommentReq {
+export interface IDFCommentReq {
   projectId: string;
-  cabId: string;
+  dfId: string;
   role: ERole;
-  status: ECabFormProcess;
+  status: EFDProcess;
   comment: string;
 }
 
-export interface ICabSchedule {
-  cabId: string;
+export interface IDFSchedule {
+  dfId: string;
   reviewDate: string;
 }
 
-export type ICabRoleReq = ICabRoleForApi[];
+export type IDFRoleReq = IDFRoleForApi[];
 
-export interface ICabRoleForApi {
+export interface IDFRoleForApi {
   userId: string;
   role: string[];
 }
 
-export type ICabUserRoleRes = ICabUserRoleForApi[];
+export type IDFUserRoleRes = IFDUserRoleForApi[];
 
-export interface ICabUserRoleForApi {
+export interface IFDUserRoleForApi {
   userId: string;
   tenantId: string;
   name: string;
@@ -319,7 +319,7 @@ export interface ICabUserRoleForApi {
   imageUrl: string;
 }
 
-export interface ICabReviewerPosition {
+export interface IDFReviewerPosition {
   id: string;
   nameCn: string;
   nameEn: string;

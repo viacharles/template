@@ -55,7 +55,7 @@ export enum ELoadingStatus {
 }
 
 /** 申請流程 */
-export enum ECabFormProcess {
+export enum EFDProcess {
   /** 草稿 */
   Draft = 0,
   /** 申請中 */

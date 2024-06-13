@@ -1,12 +1,12 @@
-import {ECabFormProcess, EFormMode} from '@utilities/enum/common.enum';
-import {IIcon} from '@utilities/interface/common.interface';
+import { EFDProcess, EFormMode } from '@utilities/enum/common.enum';
+import { IIcon } from '@utilities/interface/common.interface';
 
-export type EProcess = ECabFormProcess | null;
+export type EProcess = EFDProcess | null;
 
 /** 程序 -> icon */
 export const ProcessIconMap = new Map<EProcess, IIcon>([
   [
-    ECabFormProcess.Approved,
+    EFDProcess.Approved,
     {
       color: 'green-middle',
       iconCode: 'confirmed-round',
@@ -14,7 +14,7 @@ export const ProcessIconMap = new Map<EProcess, IIcon>([
     },
   ],
   [
-    ECabFormProcess.Draft,
+    EFDProcess.Draft,
     {
       color: 'orange-middle',
       iconCode: 'edit',
@@ -30,7 +30,7 @@ export const ProcessIconMap = new Map<EProcess, IIcon>([
     },
   ],
   [
-    ECabFormProcess.UnderReview,
+    EFDProcess.UnderReview,
     {
       color: 'orange-middle',
       iconCode: 'find-doc-solid',
@@ -38,7 +38,7 @@ export const ProcessIconMap = new Map<EProcess, IIcon>([
     },
   ],
   [
-    ECabFormProcess.SubmitForReview,
+    EFDProcess.SubmitForReview,
     {
       color: 'orange-middle',
       iconCode: 'edit-project-solid',
@@ -46,7 +46,7 @@ export const ProcessIconMap = new Map<EProcess, IIcon>([
     },
   ],
   [
-    ECabFormProcess.RequiredForApprove,
+    EFDProcess.RequiredForApprove,
     {
       color: 'green-light-icon',
       iconCode: 'edit-doc-solid',
@@ -54,7 +54,7 @@ export const ProcessIconMap = new Map<EProcess, IIcon>([
     },
   ],
   [
-    ECabFormProcess.SupplementForApprove,
+    EFDProcess.SupplementForApprove,
     {
       color: 'green-middle',
       iconCode: 'edit-doc-solid',
@@ -62,7 +62,7 @@ export const ProcessIconMap = new Map<EProcess, IIcon>([
     },
   ],
   [
-    ECabFormProcess.Rejected,
+    EFDProcess.Rejected,
     {
       color: 'red-middle',
       iconCode: 'delete-round',

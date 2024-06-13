@@ -45,6 +45,6 @@ export enum ELogin {
 /** 菜單項目直接觸發的功能 */
 export enum EMenuItemFunctionMark {
   Logout = 'logout',
-  CabReview = 'cab-review',
+  DFReview = 'df-review',
   PortfolioOverview = 'portfolio-overview',
 }
