@@ -6,8 +6,9 @@ import { Component, Input, Renderer2 } from '@angular/core';
   styleUrl: './button.component.scss'
 })
 export class ButtonComponent {
-  @Input() bgColor = 'primary';
+  @Input() bgColor = '';
   @Input() height = '2.25rem'
+  @Input() disabled = false;
   @Input() icon = '';
   @Input() classes = '';
 
