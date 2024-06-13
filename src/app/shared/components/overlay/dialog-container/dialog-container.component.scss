@@ -47,6 +47,10 @@
 
 .onClose {
   animation: onClose 0.3s forwards;
+  div {
+    transition: 0.3s;
+    opacity: 0.1;
+  }
 }
 
 @keyframes onClose {
