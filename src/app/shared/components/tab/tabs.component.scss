@@ -3,16 +3,10 @@
 .tab-container {
   border-bottom: 1px solid $grey-middle;
   height: 2.26rem;
-  input:checked {
+  input {
     & + label {
-      &:hover {
-        background-color: var(--primary-background-hover);
-      }
-      & p,
-      div {
-        color: var(--primary-text-color) !important;
-      }
       &::after {
+        opacity: 0;
         content: '';
         position: absolute;
         bottom: 0;
@@ -21,9 +15,25 @@
         width: 100%;
         color: $green-middle;
         background-color: $green-middle;
+        transition: 0.025s;
       }
     }
-  }
+    &:checked {
+      & + label {
+        &:hover {
+          background-color: var(--primary-background-hover);
+        }
+        & p,
+        div {
+          color: var(--primary-text-color) !important;
+        }
+        &::after {
+          opacity: 1;
+        }
+      }
+    }
+    }
+
   ul {
     overflow: hidden;
     height: 0;
