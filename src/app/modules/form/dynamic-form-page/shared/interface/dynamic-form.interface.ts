@@ -1,39 +1,37 @@
-import {AbstractControl, FormControl, UntypedFormGroup} from '@angular/forms';
-import {ECabFormProcess} from '@utilities/enum/common.enum';
+import { AbstractControl, FormControl, UntypedFormGroup } from '@angular/forms';
+import { EFDProcess } from '@utilities/enum/common.enum';
 import {
-  ICabApplicationAnswerRes,
-  ICabQuestionConfig,
-  ICabQuestionHideExpressionView,
-  ICabQuestionOption,
-  ICabRemark,
-  ICabTemplateRes,
+  IDFApplicationAnswerRes,
+  IDFQuestionConfig,
+  IDFQuestionHideExpressionView, IDFRemark,
+  IDFTemplateRes,
   IDynamicFieldValue,
-  IDynamicFromValidator,
-} from '@utilities/interface/api/cab-api.interface';
-import {ICabRoleInfo} from '../map/cab.map';
-import {ECab, ECabPageFormStyleType} from '../enum/cab.enum';
-import {IOption} from '@utilities/interface/common.interface';
+  IDynamicFromValidator
+} from '@utilities/interface/api/df-api.interface';
+import { IDFRoleInfo } from '../map/df.map';
+import { EDFPageFormStyleType } from '../enum/df.enum';
+import { IOption } from '@utilities/interface/common.interface';
 import { EFieldType } from '@utilities/enum/form.enum';
 import { IDynamicOption } from '@utilities/interface/form.interface';
 
-export interface ICabTemplateView extends ICabTemplateRes {
-  groupsView: ICabQuestionGroupView[];
+export interface IDFTemplateView extends IDFTemplateRes {
+  groupsView: IDFQuestionGroupView[];
 }
 
-export interface ICabQuestionView {
+export interface IDFQuestionView {
   questionId: string;
   form: UntypedFormGroup;
   order: number;
-  cab: number;
+  // df: number;
   show: boolean;
   description: string | null;
   title: string | null;
   disabled: boolean;
   SubQuestionGroupForm: UntypedFormGroup;
-  SubQuestionGroup: ICabQuestionSubQuestionGroupView[];
+  SubQuestionGroup: IDFQuestionSubQuestionGroupView[];
 }
 
-export interface ICabQuestionSubQuestionGroupView {
+export interface IDFQuestionSubQuestionGroupView {
   answerId: string;
   form: FormControl;
   type: EFieldType;
@@ -45,36 +43,36 @@ export interface ICabQuestionSubQuestionGroupView {
   options: IDynamicOption<string>[] | null;
   optionsForNormal: IDynamicOption<string>[];
   className?: string | null;
-  hideExpression?: ICabQuestionHideExpressionView[];
+  hideExpression?: IDFQuestionHideExpressionView[];
   validation?: IDynamicFromValidator[];
   validationView?: IDynamicFromValidator[];
-  config?: ICabQuestionConfig;
+  config?: IDFQuestionConfig;
 }
 
-export interface ICabFormPage {
-  styleType: ECabPageFormStyleType;
-  groups: ICabQuestionGroupView[];
+export interface IDFFormPage {
+  styleType: EDFPageFormStyleType;
+  groups: IDFQuestionGroupView[];
 }
 
-export interface ICabQuestionGroupView {
+export interface IDFQuestionGroupView {
   id: string;
   form: UntypedFormGroup;
   name: string;
   order: number;
   section: string;
   sectionId: string;
-  questions: ICabQuestionView[];
+  questions: IDFQuestionView[];
 }
 
-export interface ICabCommitteeView {
+export interface IDFCommitteeView {
   docId: string;
   projectDocId: string;
   projectId: string;
-  cabId: string;
+  dfId: string;
   comments: IRoleComment[];
 }
 
-export interface ICabReviewFormView {
+export interface IDFReviewFormView {
   questionTemplateDocId: string;
   questionTemplateId: string | null;
   createDate: string;
@@ -82,37 +80,37 @@ export interface ICabReviewFormView {
   version: string;
   groups: any;
   fileForm?: AbstractControl | null;
-  groupsView: ICabReviewFormGroupView[];
+  groupsView: IDFReviewFormGroupView[];
 }
 
-export interface ICabReviewFormGroupView {
+export interface IDFReviewFormGroupView {
   order: number;
   section: string;
   sectionId: string;
   name: string;
   id: string;
   form: UntypedFormGroup;
-  questions: ICabReviewFormQuestionView[];
+  questions: IDFReviewFormQuestionView[];
 }
 
-export interface ICabReviewFormQuestionView {
+export interface IDFReviewFormQuestionView {
   questionId: string;
   description: string | null;
   order: number;
-  cab: ECab;
+  df: string;
   show: boolean;
   shortTitleEN: string | null;
   shortTitleCN: string | null;
   longTitleEN: string | null;
   longTitleCN: string | null;
   disabled: boolean;
-  SubQuestionGroup: ICabReviewFormAnswerView[];
+  SubQuestionGroup: IDFReviewFormAnswerView[];
   SubQuestionGroupForm: UntypedFormGroup;
   form: UntypedFormGroup;
-  remarks: ICabRemark[];
+  remarks: IDFRemark[];
 }
 
-export interface ICabReviewFormAnswerView {
+export interface IDFReviewFormAnswerView {
   type: EFieldType;
   answerId: string;
   required: boolean;
@@ -128,14 +126,14 @@ export interface ICabReviewFormAnswerView {
     },
   ];
   config: null;
-  options: ICabReviewFormOptionView[][];
+  options: IDFReviewFormOptionView[][];
   optionForNormal: IOption[];
   valueView: IDynamicFieldValue[];
   form: UntypedFormGroup;
   show: boolean;
 }
 
-export interface ICabReviewFormOptionView {
+export interface IDFReviewFormOptionView {
   label: string;
   value: number;
   reportHighLight: boolean;
@@ -143,7 +141,7 @@ export interface ICabReviewFormOptionView {
   hasMemo: boolean;
 }
 
-export interface IRoleComment extends ICabRoleInfo {
+export interface IRoleComment extends IDFRoleInfo {
   commentInfo: IComment[];
 }
 
@@ -175,15 +173,15 @@ export interface IComment {
   name: string;
   comment: string;
   date: string;
-  status?: ECabFormProcess.Approved | ECabFormProcess.Rejected | null;
+  status?: EFDProcess.Approved | EFDProcess.Rejected | null;
 }
 
-export interface ICabRecordInfo {
+export interface IDFRecordInfo {
   current: {
-    sourceData: ICabApplicationAnswerRes;
+    sourceData: IDFApplicationAnswerRes;
     projectName: string;
-    cabId: string;
-    status: ECabFormProcess;
+    dfId: string;
+    status: EFDProcess;
     creator: {
       departmentName: string;
       sectionName: string;
@@ -196,11 +194,11 @@ export interface ICabRecordInfo {
     content: string;
     editorName?: string;
     tenantCn?: string;
-    status?: ECabFormProcess;
+    status?: EFDProcess;
   }[];
 }
 
-export interface ICabProjectInfo {
+export interface IDFProjectInfo {
   name: string;
   ownerName: string;
   tenantName: string;

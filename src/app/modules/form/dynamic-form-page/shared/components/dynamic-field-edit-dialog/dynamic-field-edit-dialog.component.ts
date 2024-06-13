@@ -9,15 +9,20 @@ import { IDynamicOption, ToForm } from '@utilities/interface/form.interface';
 import { IEditDynamicForm } from '../../interface/dynamic-form-form.interface';
 import { verticalShortenOut } from '@utilities/helper/animations.helper';
 import { takeUntil } from 'rxjs';
-import { ICabQuestionView } from '../../interface/dynamic-form.interface';
+import { IDFQuestionView } from '../../interface/dynamic-form.interface';
+import { EFormMode } from '@utilities/enum/common.enum';
 
+export interface IDynamicFormEditDialog {
+  question?: IDFQuestionView,
+  mode: EFormMode
+}
 @Component({
   selector: 'app-dynamic-field-edit-dialog',
   templateUrl: './dynamic-field-edit-dialog.component.html',
   styleUrl: './dynamic-field-edit-dialog.component.scss',
   animations: [ verticalShortenOut() ]
 })
-export class DynamicFieldEditDialogComponent extends BaseDialog<ICabQuestionView> {
+export class DynamicFieldEditDialogComponent extends BaseDialog<IDynamicFormEditDialog> {
 
   constructor(
     override dialog: DialogContainerComponent,
@@ -53,7 +58,7 @@ export class DynamicFieldEditDialogComponent extends BaseDialog<ICabQuestionView
     { code: EErrorMessage.NUMBER_ONLY, name: EErrorMessage.NUMBER_ONLY, memoInputType: EInputType.Number },
     { code: EErrorMessage.MAX_ITEMS, name: EErrorMessage.MAX_ITEMS, hasMemo: true, memoPlaceholder: '請填數字', memoInputType: EInputType.Number },
     { code: EErrorMessage.MIN_ITEMS, name: EErrorMessage.MIN_ITEMS, hasMemo: true, memoPlaceholder: '請填數字', memoInputType: EInputType.Number },
-    { code: EErrorMessage.MAX_MIN_ITEMS, name: EErrorMessage.MAX_MIN_ITEMS, hasMemo: true, memoType: EFieldMemoType.Range, memoInputType: EInputType.Number },
+    // { code: EErrorMessage.MAX_MIN_ITEMS, name: EErrorMessage.MAX_MIN_ITEMS, hasMemo: true, memoType: EFieldMemoType.Range, memoInputType: EInputType.Number },
     { code: EErrorMessage.MAX_LENGTH, name: EErrorMessage.MAX_LENGTH, hasMemo: true, memoPlaceholder: '請填數字', memoInputType: EInputType.Number },
     { code: EErrorMessage.MIN_LENGTH, name: EErrorMessage.MIN_LENGTH, hasMemo: true, memoPlaceholder: '請填數字', memoInputType: EInputType.Number },
     { code: EErrorMessage.MAX_MIN_LENGTH, name: EErrorMessage.MAX_MIN_LENGTH, hasMemo: true, memoType: EFieldMemoType.Range, memoInputType: EInputType.Number },
@@ -64,28 +69,26 @@ export class DynamicFieldEditDialogComponent extends BaseDialog<ICabQuestionView
   /** 隱藏 memo 欄位 */
   public hideMemo = false;
 
+  get modeText() { return this.data.mode === EFormMode.Edit ? '編輯' : '新增'};
+
   protected override onInit() {
     this.reCreateValidationForm();
     this.subscribeQuestionForm();
-    if (this.data) {
-      this.setValue(this.data);
+    if (this.data?.question) {
+      this.setValue(this.data.question);
     };
-    console.log('aa-dialog', this.data);
   };
 
   public submit() {
-    console.log('aa-form value', this.questionForm.value);
     if (this.questionForm.invalid) {
       this.questionForm.markAllAsTouched();
     } else {
-      console.log('aa-dialog confirm', this.questionForm.value);
       this.confirm(this.questionForm.value);
     }
 
   }
 
-  public setValue(data: ICabQuestionView): void {
-    console.log('aa-setValue', data)
+  public setValue(data: IDFQuestionView): void {
     this.questionForm.patchValue({
       required: data.SubQuestionGroup[0].required,
       title: data.title,

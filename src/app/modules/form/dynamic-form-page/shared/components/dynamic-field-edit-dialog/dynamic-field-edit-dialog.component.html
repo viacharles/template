@@ -1,7 +1,7 @@
 <app-dialog-container [width]="'70%'" [maxWidth]="'673px'" [minWidth]="'350px'"
 (closed)="this.close()">
   <h4 id="title" class="fs-lgxx fw-4">
-    編輯題目: {{ this.data.title }}
+    {{this.modeText}}題目: {{ (this.data.question?.title ? this.data.question?.title : '')}}
   </h4>
   <form id="body" class="w-100 d-flex flex-wrap px-3" [formGroup]="this.questionForm">
     <div class="w-100 d-flex align-items-center mr-2 mb-3">
@@ -30,14 +30,14 @@
     </div>
     <div class="w-100 mr-3 mb-3" *ngIf="this.showOptionField">
       <p class="mb-2">選項</p>
-      <app-dynamic-input-list formControlName="options" [list]="this.data.SubQuestionGroup[0].optionsForNormal" [hideMemo]="this.hideMemo" (onAddEmptyItem)="this.onAddEmptyItem()"></app-dynamic-input-list>
+      <app-dynamic-input-list formControlName="options" [list]="this.data.question ? this.data.question.SubQuestionGroup[0].optionsForNormal : []" [hideMemo]="this.hideMemo" (onAddEmptyItem)="this.onAddEmptyItem()"></app-dynamic-input-list>
     </div>
   </form>
   <div id="footer" class="w-100 d-flex justify-content-end mt-2">
     <!-- <app-borderless-button [icon]="'icon-check'" (click)="this.submit()">儲存</app-borderless-button> -->
-    <button class="btn-flat bg-primary-color text-white ml-2" (click)="this.submit()" [disabled]="this.questionForm.invalid">
-      <em class="icon-check fs-xsm mr-1"></em>
+    <app-button class="text-white ml-2" (click)="this.submit()" [bgColor]="'primary-color'" [icon]="'check'" [disabled]="this.questionForm.invalid">
+      <!-- <em class="icon-check fs-xsm mr-1"></em> -->
       儲存
-    </button>
+    </app-button>
   </div>
 </app-dialog-container>

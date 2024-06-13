@@ -6,25 +6,9 @@
           {{ this.dynamic?.projectName ?? 'common.page-name' | translate }}
         </p>
       </div>
-      <p>* 可編輯題目。</p>
+      <p>* 基於 reactiveForm 即時進行 編修 · 新增 · 刪除 。</p>
       <p>* 按下 [ 完成 ] ，觸發驗證與錯誤訊息。</p>
     </div>
-    <!-- <form class="w-100p d-flex">
-      <div class="d-flex flex-row flex-wrap align-items-center justify-content-start w-100">
-        <button type="button"
-          class="btn-flat-line border-green-middle w-42_5 d-flex flex-row justify-content-center align-items-center my-2 text-nowrap"
-          (click)="this.onTempSave()">
-          {{
-          (this.dynamic &&
-          this.dynamic.status &&
-          +this.dynamic.status === this.progressStatus.Draft
-          ? 'cab.save-temp'
-          : 'cab.save-supplement-temp'
-          ) | translate
-          }}
-        </button>
-      </div>
-    </form> -->
   </div>
 </div>
 
@@ -33,26 +17,11 @@
   <h5 class="fs-lgx" *ngIf="
       this.dynamic && +this.dynamic!.status! !== this.progressStatus.RequiredForApprove
     ">
-    <span class="fw-3 fs-lg">{{ 'cab.undone-1' | translate
+    <span class="fw-3 fs-lg">{{ 'df.undone-1' | translate
     }} </span><span class="text-red-middle mx-0_5">{{ this.unfinishedFieldCount }}</span> / {{ this.totalFieldCount }}
   </h5>
   <div class="d-flex align-items-center">
-    <!-- <h5 class="fs-lgx">{{ 'cab.question-title' | translate }}</h5> -->
-    <!-- <div class="d-flex align-items-center ml-3" *ngIf="
-        this.dynamic?.form?.invalid &&
-        this.dynamic?.form?.touched &&
-        this.isCompleteClicked
-      "> -->
-      <!-- <em class="page-icon icon-exclamation d-flex align-items-center justify-content-center text-white"></em> -->
-      <!-- <p class="text-red-middle fs-xsm ml-1">
-        {{ 'cab.form-undone-error' | translate }}
-      </p> -->
-    <!-- </div> -->
-    <app-button [bgColor]="'primary-color'" [icon]="'circle'" (click)="this.submit()"></app-button>
-    <!-- <button class="btn-flat bg-green-middle w-30 h-10 fs-xsm px-5 ml-2" (click)="this.submit()">
-      <em class="icon-circle text-white mr-3"></em>
-      {{ 'common.complete' | translate }}
-    </button> -->
+    <app-button [bgColor]="'primary-color'" [icon]="'circle'" (click)="this.submit()"> {{ 'common.complete' | translate }}</app-button>
   </div>
 </div>
 <div *ngIf="this.dynamic?.form" class="background-section pb-2" [formGroup]="this.dynamic!.form">
@@ -71,14 +40,13 @@
             +this.dynamic.status === this.progressStatus.Draft
               ? this.answerStatus.Draft
               : this.answerStatus.RequiredForApprove
-          " [submitBody]="this.getBody" (valueChange)="this.onFormValeChange($event)"
+          " (valueChange)="this.onFormValeChange($event)"
           (remarkValueChange)="this.onRemarkValueChange($event)"></app-dynamic-form-group-type>
 
         <!-- tab : 基本資料樣式 -->
         <app-dynamic-form-basic-type *ngSwitchCase="+this.pagType.BasicInfo" [page]="page" [form]="this.dynamic?.form"
           [isCompleteClicked]="this.isCompleteClicked" [pageIndex]="pageIndex"
-          [model]="this.dynamic"
-          (valueChange)="this.onFormValeChange($event)"></app-dynamic-form-basic-type>
+          [model]="this.dynamic"></app-dynamic-form-basic-type>
       </ng-container>
       <!-- 檔案卡 -->
       <!-- <section class="question-card mt-6 py-6 bg-white" *ngIf="
@@ -96,18 +64,18 @@
               this.question_pages![pageIndex].groups.length - 1
               ].order + 1
               }}</em>
-            <h4>{{ 'cab.upload-ppt' | translate }}</h4>
+            <h4>{{ 'df.upload-ppt' | translate }}</h4>
           </div>
         </div> -->
         <!-- 檔案卡 : 草稿 -->
-        <!-- <app-cab-upload-field *ngIf="
+        <!-- <app-df-upload-field *ngIf="
             +this.dynamic!.status! !== this.progressStatus.RequiredForApprove;
             else tRequiredTemp
           " class="my-6 mx-8" [question_pages]="this.question_pages" [pageIndex]="pageIndex"
           [fileControl]="this.fileControl" [isCompleteClicked]="this.isCompleteClicked"
-          [isLastFileError]="this.isLastFileError" [isFileSavedLocal]="this.isFileSavedLocal" [cabForm]="this.dynamic!.form"
+          [isLastFileError]="this.isLastFileError" [isFileSavedLocal]="this.isFileSavedLocal" [dfForm]="this.dynamic!.form"
           (onDownloadTempFile)="this.downloadFileTemp()" (onDownloadFile)="this.downloadFile($event)"
-          (onUpload)="this.upload($event)" (onClearFile)="this.clearFile()"></app-cab-upload-field> -->
+          (onUpload)="this.upload($event)" (onClearFile)="this.clearFile()"></app-df-upload-field> -->
 
         <!-- 檔案卡 : 補件 -->
         <!-- <ng-template #tRequiredTemp>
@@ -120,7 +88,7 @@
             ">
             <div class="w-100 d-flex flex-column">
               <p class="w-100 text-start text-grey-black fs-md mb-2">
-                {{ 'cab.upload-result' | translate }}
+                {{ 'df.upload-result' | translate }}
               </p>
               <ul class="mb-3">
                 <li class="d-flex flex-column" *ngFor="let file of this.dynamic?.form?.get('attachment')?.value">
@@ -144,8 +112,8 @@
                             : 'grey-dark'
                         }} fs-xs mr-2 py-0_5 px-1 mb-0_5">{{
                         (+file.type === this.answerStatus.Draft
-                        ? 'cab.answer-status-draft'
-                        : 'cab.answer-status-supplement'
+                        ? 'df.answer-status-draft'
+                        : 'df.answer-status-supplement'
                         ) | translate
                         }}</label>
                       <div class="d-flex align-items-center">
@@ -190,18 +158,18 @@
                   !this.isAlreadyHasFile(this.latestFile.value)
                 " (click)="this.openSupplementUpload()">
                 <em class="icon-add mr-1"></em>
-                {{ 'cab.add-supplement-des' | translate }}
+                {{ 'df.add-supplement-des' | translate }}
               </button> -->
               <!-- <div class="w-100" *ngIf="this.isFileInputting">
                 <p class="w-100 text-start text-grey-black mb-2">
-                  {{ 'cab.remark-supplement' | translate }}
+                  {{ 'df.remark-supplement' | translate }}
                 </p> -->
-                <!-- <app-cab-upload-field [question_pages]="this.question_pages" [pageIndex]="pageIndex"
+                <!-- <app-df-upload-field [question_pages]="this.question_pages" [pageIndex]="pageIndex"
                   [fileControl]="this.fileControl" [isCompleteClicked]="this.isCompleteClicked"
                   [isLastFileError]="this.isLastFileError" [isFileSavedLocal]="this.isFileSavedLocal"
-                  [cabForm]="this.dynamic!.form" (onDownloadTempFile)="this.downloadFileTemp()"
+                  [dfForm]="this.dynamic!.form" (onDownloadTempFile)="this.downloadFileTemp()"
                   (onDownloadFile)="this.downloadFile($event)" (onUpload)="this.upload($event)"
-                  (onClearFile)="this.clearFile()"></app-cab-upload-field> -->
+                  (onClearFile)="this.clearFile()"></app-df-upload-field> -->
                 <!-- <div class="w-100 d-flex justify-content-end mt-2">
                   <button class="btn-flat btn-normal  text-green-middle border-green-middle w-30 h-10" (click)="this.cancel()">{{"common.cancel" | translate}}</button>
                   <button class="btn-flat bg-green-middle text-white w-30 h-10 ml-3" (click)="this.putFileWithProject()">{{"common.send" | translate}}</button>

@@ -79,7 +79,6 @@ export class HomeComponent extends UnSubOnDestroy implements OnInit {
         window.location.reload();
       }
     });
-    this.http.get<any>('assets/mock-data/cab-answer.json').subscribe((res) => console.log('aa-home-innit', res));
     this.$window.mainScroll$
       .pipe(takeUntil(this.onDestroy$))
       .subscribe(scroll => {

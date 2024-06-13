@@ -232,7 +232,7 @@ export class SidebarComponent
       {
         callback: {
           confirm: () => this.router.navigateByUrl(path),
-          cancel: () => {console.log('aa-cancel');this.menuForm.setValue(this.router.url)},
+          cancel: () => this.menuForm.setValue(this.router.url),
         },
       }
     );

@@ -6,13 +6,13 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { CabService } from '@core/services/cab-api.service';
+import { DFService } from '@core/services/df-api.service';
 import { ITab } from '@shared/components/tab/tabs.component';
 import { LayoutService } from '@shared/service/layout.service';
 import { OverlayService } from '@shared/service/overlay.service';
 import { UnSubOnDestroy } from '@utilities/abstract/unSubOnDestroy.abstract';
 import {
-  ECabFormProcess,
+  EFDProcess,
   EContent,
   EFieldStatus,
   EFileType,
@@ -21,43 +21,38 @@ import {
   ERole,
 } from '@utilities/enum/common.enum';
 import {
-  ICabApplicationAnswerRes,
-  ICabFile,
-  ICabQuestionHideExpressionView,
-  ICabRemark,
-  ICabSupplementReq,
-  ICabTemplateRes,
-} from '@utilities/interface/api/cab-api.interface';
+  IDFApplicationAnswerRes,
+  IDFFile,
+  IDFQuestionHideExpressionView,
+  IDFRemark,
+  IDFSupplementReq,
+  IDFTemplateRes,
+} from '@utilities/interface/api/df-api.interface';
 import { Subscription, catchError, forkJoin, takeUntil, throwError } from 'rxjs';
 import {
-  ICabQuestionGroupView,
-  ICabRecordInfo,
+  IDFQuestionGroupView,
+  IDFRecordInfo,
 } from './shared/interface/dynamic-form.interface';
 import { TranslateService } from '@ngx-translate/core';
 import {
-  ECab,
-  ECabAnswerStatus,
-  ECabFormSubmitType,
-  ECabPageFormStyleType,
-} from './shared/enum/cab.enum';
+  EDFAnswerStatus, EDFPageFormStyleType
+} from './shared/enum/df.enum';
 import { WindowService } from '@shared/service/window.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { cabProcessLabelMap, cabQuestionFormMap } from './shared/map/cab.map';
+import { dfProcessLabelMap, dfQuestionFormMap } from './shared/map/df.map';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 // import { saveAs } from 'file-saver';
 import { UsersService } from '@core/services/users.service';
 import { DatePipe } from '@angular/common';
-import { CabRecordDialogComponent } from './components/cab-record-dialog/cab-record-dialog.component';
 import { IAccordionListCard } from '@shared/components/accordion/accordion-list-card/accordion-list-card.component';
 import { IUser } from '@utilities/interface/api/auth-api.interface';
 import { ILabel } from '@utilities/interface/common.interface';
-import { WarnDialogComponent } from '@shared/components/overlay/warn-dialog/warn-dialog.component';
 import { DynamicForm } from './shared/model/dynamic-form.model';
-import { ICabFormPage } from './shared/interface/dynamic-form.interface';
+import { IDFFormPage } from './shared/interface/dynamic-form.interface';
 import { HttpClient } from '@angular/common/http';
 import { EFieldType } from '@utilities/enum/form.enum';
 import { DynamicFormValidatorsService } from '@core/dynamic-form-validators.service';
-import { fadeSlideInAndHideSlideOut, slideEnter } from '@utilities/helper/animations.helper';
+import { slideEnter } from '@utilities/helper/animations.helper';
 
 @Component({
   selector: 'app-dynamic-form-page',
@@ -71,7 +66,7 @@ export class DynamicFormPageComponent extends UnSubOnDestroy
     public $window: WindowService,
     private $layout: LayoutService,
     private $overlay: OverlayService,
-    private $cab: CabService,
+    private $df: DFService,
     private $user: UsersService,
     private fb: FormBuilder,
     private router: Router,
@@ -86,20 +81,20 @@ export class DynamicFormPageComponent extends UnSubOnDestroy
   }
 
   /** 補件資料 Supplementary Documents */
-  public supplementaryData: ICabSupplementReq = {
+  public supplementaryData: IDFSupplementReq = {
     projectId: '',
-    cabId: '',
+    dfId: '',
     remark: null,
     attachment: null,
   };
   public dynamic?: DynamicForm;
-  public record?: IAccordionListCard<ICabRecordInfo>;
+  public record?: IAccordionListCard<IDFRecordInfo>;
   public user?: IUser;
   public formValueForCompare: any;
-  public question_pages?: ICabFormPage[];
+  public question_pages?: IDFFormPage[];
   public tabs: ITab[] = [];
   public tabForm = new FormControl(0);
-  public fileTemp?: ICabFile;
+  public fileTemp?: IDFFile;
   public formMode?: EFormMode;
   public infoTooltipHtml?: string;
   public isCreator?: boolean;
@@ -109,12 +104,11 @@ export class DynamicFormPageComponent extends UnSubOnDestroy
   public unfinishedFieldCount = 0;
   public totalFieldCount = 0;
   public subscription = new Subscription();
-  private hideExpressions: ICabQuestionHideExpressionView[][] = [];
+  private hideExpressions: IDFQuestionHideExpressionView[][] = [];
   private projectId = '';
-  private cabType?: ECab;
   public progressLabel?: ILabel;
   private questionVersion = '';
-  public cabId = '';
+  public dfId = '';
   private docId = '';
   public isFileReEditMode = false;
   private preReServeFileControl = new FormGroup({});
@@ -147,37 +141,11 @@ export class DynamicFormPageComponent extends UnSubOnDestroy
   }
   get isSupplementStatus(): boolean {
     return this.dynamic?.status
-      ? +this.dynamic.status === ECabFormProcess.RequiredForApprove
+      ? +this.dynamic.status === EFDProcess.RequiredForApprove
       : false;
   }
   get isFileInputting(): boolean {
     return this.latestFile.get('fieldStatus')?.value === EFieldStatus.Inputting;
-  }
-  get getBody() {
-    return {
-      ...this.dynamic?.form.getRawValue(),
-      answers: this.dynamic?.getProjectAnswers(this.dynamic?.form),
-      projectId: this.projectId,
-      docId: this.docId,
-      cabId: this.cabId,
-      cab: this.cabType,
-      questionVersion: this.questionVersion,
-      attachment: this.fileControl
-        ?.getRawValue()
-        .map((file: ICabFile) => {
-          return {
-            ...file,
-            type:
-              !!file.type || file.type === 0
-                ? file.type
-                : +this.dynamic!.status! === ECabFormProcess.Draft
-                  ? ECabAnswerStatus.Draft
-                  : ECabAnswerStatus.RequiredForApprove,
-            fileName: encodeURI(file.fileName),
-          };
-        })
-        .filter(file => file.fileName),
-    };
   }
 
   get fileControl() {
@@ -196,13 +164,13 @@ export class DynamicFormPageComponent extends UnSubOnDestroy
     return EFieldStatus;
   }
   get pagType() {
-    return ECabPageFormStyleType;
+    return EDFPageFormStyleType;
   }
   get progressStatus() {
-    return ECabFormProcess;
+    return EFDProcess;
   }
   get answerStatus() {
-    return ECabAnswerStatus;
+    return EDFAnswerStatus;
   }
   get fieldStatus() {
     return EFieldStatus;
@@ -217,50 +185,47 @@ export class DynamicFormPageComponent extends UnSubOnDestroy
   /** @param noApi 不需要打api */
   private init(noApi?: boolean): void {
     this.projectId = this.activateRouter.snapshot.params['projectId'];
-    this.cabId = this.activateRouter.snapshot.params['cabId'];
+    this.dfId = this.activateRouter.snapshot.params['dfId'];
     this.questionVersion =
       this.activateRouter.snapshot.params['questionVersion'];
-    this.cabType = this.activateRouter.snapshot.params['cab'] as ECab;
     this.docId = this.activateRouter.snapshot.params['docId'];
     this.formMode = this.activateRouter.snapshot.params[
       'formMode'
     ] as EFormMode;
     const status = this.activateRouter.snapshot.params[
       'status'
-    ] as ECabFormProcess;
+    ] as EFDProcess;
     if (!noApi) {
       forkJoin([
-        this.http.get<ICabApplicationAnswerRes[] | ICabApplicationAnswerRes | undefined>('../../../../assets/mock-data/cab-answer.json')
+        this.http.get<IDFApplicationAnswerRes[] | IDFApplicationAnswerRes | undefined>('../../../../assets/mock-data/df-answer.json')
           .pipe(
             catchError(err => {
               this.handleApiError(err, 'common.get-fail');
               return throwError(() => err);
             })
           ),
-        this.http.get<ICabTemplateRes>('../../../../assets/mock-data/cab-template.json'),
+        this.http.get<IDFTemplateRes>('../../../../assets/mock-data/df-template.json'),
         this.http.get<IUser>('../../../../assets/mock-data/user-data.json'),
-        this.http.get<ICabApplicationAnswerRes[]>('../../../../assets/mock-data/cab-records.json'),
       ]).subscribe({
-        next: ([resProject, question, user, records]: [
-          ICabApplicationAnswerRes[] | ICabApplicationAnswerRes | undefined,
-          ICabTemplateRes,
+        next: ([resProject, question, user]: [
+          IDFApplicationAnswerRes[] | IDFApplicationAnswerRes | undefined,
+          IDFTemplateRes,
           IUser,
-          ICabApplicationAnswerRes[],
         ]) => {
           this.subscription.unsubscribe();
-          const project = resProject as ICabApplicationAnswerRes;
+          const project = resProject as IDFApplicationAnswerRes;
           if (
             user.userId !== project.creator.id
               ? true
-              : +status !== ECabFormProcess.Draft &&
-              +status !== ECabFormProcess.RequiredForApprove
+              : +status !== EFDProcess.Draft &&
+              +status !== EFDProcess.RequiredForApprove
           ) {
             this.$overlay.addToast(EContent.Info, {
               title: 'common.no-edit-permission',
             });
             this.toReview();
           }
-          this.progressLabel = cabProcessLabelMap.get(+project.status);
+          this.progressLabel = dfProcessLabelMap.get(+project.status);
           this.formMode =
             project.answers && project.attachment
               ? this.formMode
@@ -273,17 +238,17 @@ export class DynamicFormPageComponent extends UnSubOnDestroy
             project,
             this.fb
           );
-          if (+this.dynamic.status! === ECabFormProcess.RequiredForApprove) {
+          if (+this.dynamic.status! === EFDProcess.RequiredForApprove) {
             this.supplementaryData = this.getSupplementaryData(
-              resProject as ICabApplicationAnswerRes
+              resProject as IDFApplicationAnswerRes
             );
           }
           this.user = user;
           this.isCreator =
-            user.userId === (project as ICabApplicationAnswerRes).creator.id;
+            user.userId === (project as IDFApplicationAnswerRes).creator.id;
           this.formValueForCompare = JSON.parse(
             JSON.stringify(
-              +this.dynamic.status! === ECabFormProcess.RequiredForApprove
+              +this.dynamic.status! === EFDProcess.RequiredForApprove
                 ? this.supplementaryData
                 : this.dynamic?.form.getRawValue()
             )
@@ -298,8 +263,8 @@ export class DynamicFormPageComponent extends UnSubOnDestroy
               return {
                 titleI18n:
                   index === 0
-                    ? this.$translate.instant('cab.basic-info')
-                    : this.$translate.instant('cab.group-type'),
+                    ? this.$translate.instant('df.basic-info')
+                    : this.$translate.instant('df.group-type'),
                 iconClasses: '',
                 value: index,
               };
@@ -315,63 +280,38 @@ export class DynamicFormPageComponent extends UnSubOnDestroy
     }
   }
 
-  public showRecord(): void {
-    this.$overlay.addDialog(CabRecordDialogComponent, { card: this.record });
-  }
-
   public onTempSave(): void {
     if (!this.isChanged()) {
       this.$overlay.addToast(EContent.Info, { title: 'common.no-update' });
       return;
     } else {
-      const draftBody = { ...this.getBody, type: ECabFormSubmitType.Draft };
-      const supplementBody = {
-        ...this.supplementaryData,
-        projectId: this.dynamic!.projectId!,
-        cabId: this.dynamic!.cabId!,
-      };
-      (+this.dynamic!.status! === ECabFormProcess.RequiredForApprove
-        ? this.$cab.putSupplementDraft(supplementBody)
-        : this.formMode === EFormMode.Add
-          ? this.$cab.postApplicationFormDraft(draftBody)
-          : this.$cab.putApplicationFormDraft(draftBody)
-      ).subscribe({
-        next: project => {
           this.$overlay.addToast(EContent.Success, {
             title: 'common.update-success',
           });
           this.formValueForCompare = JSON.parse(
             JSON.stringify(
-              +this.dynamic!.status! === ECabFormProcess.RequiredForApprove
+              +this.dynamic!.status! === EFDProcess.RequiredForApprove
                 ? this.supplementaryData
                 : this.dynamic?.form.getRawValue()
             )
           );
           if (this.formMode === EFormMode.Add) {
-            // this.router.navigateByUrl(
-            //   `${EModule.Cab}/${ECabPages.Detail}/${EFormMode.Edit}/${project.projectId}/${project.cab}/${project.cabId}/${project.questionVersion}/${project.docId}/${project.status}`
-            // );
             this.init(true);
           }
-          if (+this.dynamic!.status! === ECabFormProcess.RequiredForApprove) {
+          if (+this.dynamic!.status! === EFDProcess.RequiredForApprove) {
             this.init();
           }
-        },
-        error: err => {
-          this.handleSubmitError(err);
-        },
-      });
-    }
+        }
   }
 
   /** 此答案所屬階段與目前階段相同 */
-  public isOnProgressAnswer(type: ECabAnswerStatus) {
-    return +this.progressStatus! === ECabFormProcess.Draft
-      ? +type === ECabAnswerStatus.Draft
-      : +type === ECabAnswerStatus.RequiredForApprove;
+  public isOnProgressAnswer(type: EDFAnswerStatus) {
+    return +this.progressStatus! === EFDProcess.Draft
+      ? +type === EDFAnswerStatus.Draft
+      : +type === EDFAnswerStatus.RequiredForApprove;
   }
 
-  public getEditorInfo(file: ICabFile): string {
+  public getEditorInfo(file: IDFFile): string {
     return `${file?.uploadDate ?? ''} ${(this.$translate.currentLang === ELang.Cn
       ? file?.departmentCn
       : file?.departmentEn) ?? ''
@@ -381,7 +321,7 @@ export class DynamicFormPageComponent extends UnSubOnDestroy
       } ${file?.userName ?? ''}`;
   }
 
-  public reEdit(file: ICabFile) {
+  public reEdit(file: IDFFile) {
     this.isFileReEditMode = true;
     file.fieldStatus = EFieldStatus.Inputting;
     this.preReServeFileControl = this.latestFile as FormGroup;
@@ -394,31 +334,14 @@ export class DynamicFormPageComponent extends UnSubOnDestroy
     );
   }
 
-  public toRecords(): void {
-    if (this.isChanged()) {
-      this.$overlay.addDialog(
-        WarnDialogComponent,
-        { title: this.warningBeforeNavigate },
-        {
-          callback: {
-            confirm: () => this.toRecordsPage(),
-          },
-        }
-      );
-      return;
-    } else {
-      this.toRecordsPage();
-    }
-  }
-
   public onRemarkValueChange({
     remark,
     questionId,
   }: {
-    remark: ICabRemark;
+    remark: IDFRemark;
     questionId: string;
   }): void {
-    if (+this.dynamic!.status! === ECabFormProcess.RequiredForApprove) {
+    if (+this.dynamic!.status! === EFDProcess.RequiredForApprove) {
       if (
         this.supplementaryData.remark === null ||
         this.supplementaryData.remark.findIndex(
@@ -428,12 +351,12 @@ export class DynamicFormPageComponent extends UnSubOnDestroy
         if (this.supplementaryData.remark === null) {
           this.supplementaryData.remark = [];
         }
-        const newRemark: { [key: string]: ICabRemark } = {};
+        const newRemark: { [key: string]: IDFRemark } = {};
         newRemark[questionId] = {
           type:
-            +this.dynamic!.status! === ECabFormProcess.Draft
-              ? ECabAnswerStatus.Draft
-              : ECabAnswerStatus.RequiredForApprove,
+            +this.dynamic!.status! === EFDProcess.Draft
+              ? EDFAnswerStatus.Draft
+              : EDFAnswerStatus.RequiredForApprove,
           fieldStatus: EFieldStatus.Inputting,
           content: null,
           department: '',
@@ -448,7 +371,7 @@ export class DynamicFormPageComponent extends UnSubOnDestroy
       const targetIndex = this.supplementaryData.remark.findIndex(
         item => Object.keys(item)[0] === questionId
       );
-      const targetRemark: { [key: string]: ICabRemark } = {};
+      const targetRemark: { [key: string]: IDFRemark } = {};
       targetRemark[questionId] = {
         ...remark,
         type: remark.type,
@@ -458,13 +381,7 @@ export class DynamicFormPageComponent extends UnSubOnDestroy
     }
   }
 
-  private toRecordsPage(): void {
-    // this.router.navigateByUrl(
-    //   `${EModule.Cab}/${ECabPages.Record}/${this.dynamic?.projectId}/${this.dynamic?.docId}`
-    // );
-  }
-
-  public toReview(project?: ICabApplicationAnswerRes): void {
+  public toReview(project?: IDFApplicationAnswerRes): void {
     if (this.dynamic?.form.invalid) {
       this.dynamic?.form.markAllAsTouched();
       this.isCompleteClicked = true;
@@ -476,24 +393,24 @@ export class DynamicFormPageComponent extends UnSubOnDestroy
     } else {
       if (project) {
         // this.router.navigateByUrl(
-        //   `${EModule.Cab}/${ECabPages.Review}/${project.projectId}/${project.cab}/${project.cabId}/${project.questionVersion}/${project.docId}/${project.status}`
+        //   `${EModule.DF}/${EDFPages.Review}/${project.projectId}/${project.df}/${project.dfId}/${project.questionVersion}/${project.docId}/${project.status}`
         // );
       } else {
         // this.router.navigateByUrl(
-        //   `${EModule.Cab}/${ECabPages.Review}/${this.projectId}/${this.cabType}/${this.cabId}/${this.questionVersion}/${this.docId}/${this.dynamic?.status}`
+        //   `${EModule.DF}/${EDFPages.Review}/${this.projectId}/${this.dfType}/${this.dfId}/${this.questionVersion}/${this.docId}/${this.dynamic?.status}`
         // );
       }
     }
   }
 
-  public isAlreadyHasFile(file: ICabFile) {
+  public isAlreadyHasFile(file: IDFFile) {
     return (
       file.type &&
       this.dynamic &&
-      ((+file.type === ECabAnswerStatus.Draft &&
-        +this.dynamic.status! === ECabFormProcess.Draft) ||
-        (+file.type === ECabAnswerStatus.RequiredForApprove &&
-          +this.dynamic.status! === ECabFormProcess.RequiredForApprove))
+      ((+file.type === EDFAnswerStatus.Draft &&
+        +this.dynamic.status! === EFDProcess.Draft) ||
+        (+file.type === EDFAnswerStatus.RequiredForApprove &&
+          +this.dynamic.status! === EFDProcess.RequiredForApprove))
     );
   }
 
@@ -532,38 +449,13 @@ export class DynamicFormPageComponent extends UnSubOnDestroy
     }
   }
 
-  public putFileWithProject() {
-    this.$cab.putApplicationForm(this.getBody).subscribe({
-      next: () => {
-        this.$overlay.addToast(EContent.Success, {
-          title: 'common.post-success',
-        });
-        this.formValueForCompare = JSON.parse(
-          JSON.stringify(
-            +this.dynamic!.status! === ECabFormProcess.RequiredForApprove
-              ? this.supplementaryData
-              : this.dynamic?.form.getRawValue()
-          )
-        );
-        this.latestFile.get('fieldStatus')?.setValue(EFieldStatus.Complete);
-        this.latestFile
-          .get('type')
-          ?.setValue(`${ECabAnswerStatus.RequiredForApprove}`);
-      },
-      error: err => {
-        this.handleSubmitError(err);
-      },
-    });
-  }
-
   public submit(): void {
-    console.log('aa-form-0', this.question_pages![1], this.dynamic?.form)
     // if (!this.isChanged()) {
     //   this.toReview(this.dynamic!.project_origin!);
     //   return;
     // }
     // if (
-    //   +this.dynamic!.status! === ECabFormProcess.RequiredForApprove &&
+    //   +this.dynamic!.status! === EFDProcess.RequiredForApprove &&
     //   this.supplementaryData.attachment === null &&
     //   (this.supplementaryData.remark === null
     //     ? true
@@ -572,65 +464,45 @@ export class DynamicFormPageComponent extends UnSubOnDestroy
     //     ).length === 0)
     // ) {
     //   this.$overlay.addToast(EContent.Info, {
-    //     title: 'cab.no-supplement-provide',
+    //     title: 'df.no-supplement-provide',
     //   });
     //   return;
     // }
     if (this.dynamic?.form.invalid) {
       this.isCompleteClicked = true;
       this.dynamic?.form.markAllAsTouched();
-      console.log('aa-form-1', this.dynamic?.form)
       this.showPageIcon();
       this.toErrorTab();
     } else {
-      const draftBody = { ...this.getBody, type: ECabFormSubmitType.Complete };
-      const supplementBody = {
-        ...this.supplementaryData,
-        projectId: this.dynamic!.projectId!,
-        cabId: this.dynamic!.cabId!,
-      };
-      (+this.dynamic!.status! === ECabFormProcess.RequiredForApprove
-        ? this.$cab.putSupplementDraft(supplementBody)
-        : this.formMode === EFormMode.Add
-          ? this.$cab.postApplicationFormDraft(draftBody)
-          : this.$cab.putApplicationFormDraft(draftBody)
-      ).subscribe({
-        next: project => {
           this.$overlay.addToast(EContent.Success, {
             title: 'common.update-success',
           });
-          this.toReview(project);
-        },
-        error: err => {
-          this.handleSubmitError(err);
-        },
-      });
     }
   }
 
   private getSupplementaryData(
-    projectRes: ICabApplicationAnswerRes
-  ): ICabSupplementReq {
-    const remarkCollection: { [questionId: string]: ICabRemark }[] = [];
+    projectRes: IDFApplicationAnswerRes
+  ): IDFSupplementReq {
+    const remarkCollection: { [questionId: string]: IDFRemark }[] = [];
     Object.entries(projectRes.answers).forEach(answer => {
       const remarks = answer[1].remark;
       if (remarks !== null) {
         const targetIndex = remarks.findIndex(
-          item => +item.type === ECabAnswerStatus.RequiredForApprove
+          item => +item.type === EDFAnswerStatus.RequiredForApprove
         );
         if (targetIndex !== -1) {
-          const newRemark: { [key: string]: ICabRemark } = {};
+          const newRemark: { [key: string]: IDFRemark } = {};
           newRemark[answer[0]] = remarks[targetIndex];
           remarkCollection.push(newRemark);
         }
       }
     });
     const targetFile = projectRes.attachment.find(
-      file => +file.type === ECabAnswerStatus.RequiredForApprove
+      file => +file.type === EDFAnswerStatus.RequiredForApprove
     );
     return {
       projectId: '',
-      cabId: '',
+      dfId: '',
       remark: remarkCollection.length === 0 ? null : remarkCollection,
       attachment: targetFile ?? null,
     };
@@ -678,7 +550,7 @@ export class DynamicFormPageComponent extends UnSubOnDestroy
       if (this.preUploadErrorHandle(File)) {
         return;
       }
-      this.$cab.upload(File[0]).subscribe({
+      this.$df.upload(File[0]).subscribe({
         next: file => {
           this.isFileSavedLocal = true;
           const trustedUrl = this.sanitizer.bypassSecurityTrustUrl(
@@ -686,7 +558,7 @@ export class DynamicFormPageComponent extends UnSubOnDestroy
           );
           this.supplementaryData.attachment = {
             ...file,
-            type: ECabAnswerStatus.RequiredForApprove,
+            type: EDFAnswerStatus.RequiredForApprove,
           };
           this.setFileControlValue(file, trustedUrl);
           this.$overlay.addToast(EContent.Success, {
@@ -735,15 +607,15 @@ export class DynamicFormPageComponent extends UnSubOnDestroy
     return this.isLastFileError;
   }
 
-  private setFileControlValue(file: ICabFile, fileUrl: SafeUrl): void {
+  private setFileControlValue(file: IDFFile, fileUrl: SafeUrl): void {
     this.latestFile?.patchValue(file);
     this.latestFile?.get('fileName')?.setValue(decodeURI(file.fileName));
     this.latestFile
       ?.get('type')
       ?.setValue(
-        +this.dynamic!.status! === ECabFormProcess.Draft
-          ? ECabAnswerStatus.Draft
-          : ECabAnswerStatus.RequiredForApprove
+        +this.dynamic!.status! === EFDProcess.Draft
+          ? EDFAnswerStatus.Draft
+          : EDFAnswerStatus.RequiredForApprove
       );
     this.latestFile?.get('file')?.setValue(file.file);
     this.latestFile?.get('uploadDate')?.setValue(file.uploadDate);
@@ -798,7 +670,7 @@ export class DynamicFormPageComponent extends UnSubOnDestroy
     if (this.isFileSavedLocal) {
       res.event.preventDefault();
     } else {
-      this.$cab
+      this.$df
         .download(res.file)
         .pipe(takeUntil(this.onDestroy$))
         .subscribe({
@@ -812,7 +684,7 @@ export class DynamicFormPageComponent extends UnSubOnDestroy
   }
 
   public downloadFileTemp(): void {
-    this.$cab
+    this.$df
       .downloadTemp()
       .pipe(takeUntil(this.onDestroy$))
       .subscribe({
@@ -836,13 +708,13 @@ export class DynamicFormPageComponent extends UnSubOnDestroy
   }
 
   private setHideExpressions(
-    hideExpression: ICabQuestionHideExpressionView[][]
+    hideExpression: IDFQuestionHideExpressionView[][]
   ): void {
     hideExpression.forEach(expressions => {
       const show =
         expressions[0].questionId !== ''
           ? expressions.some(expression => {
-            const targetValue = cabQuestionFormMap
+            const targetValue = dfQuestionFormMap
               .get(expression.questionId)
               ?.get('answers')
               ?.get(expression.answerId)?.value.value;
@@ -907,10 +779,10 @@ export class DynamicFormPageComponent extends UnSubOnDestroy
    * @param chunkCount 多少題一頁
    */
   private chunkByPage(
-    groups: ICabQuestionGroupView[],
+    groups: IDFQuestionGroupView[],
     chunkSize: number
-  ): ICabFormPage[] {
-    const pages: ICabQuestionGroupView[][] = [];
+  ): IDFFormPage[] {
+    const pages: IDFQuestionGroupView[][] = [];
     let currentPageQuestionLength = 0;
     groups.forEach(group => {
       const Questions = group.questions;
@@ -934,8 +806,8 @@ export class DynamicFormPageComponent extends UnSubOnDestroy
     return pages.map((page, index) => ({
       styleType:
         index === 0
-          ? ECabPageFormStyleType.BasicInfo
-          : ECabPageFormStyleType.Default,
+          ? EDFPageFormStyleType.BasicInfo
+          : EDFPageFormStyleType.Default,
       groups: page,
     }));
   }
@@ -952,7 +824,7 @@ export class DynamicFormPageComponent extends UnSubOnDestroy
 
   private isChanged(): boolean {
     if (this.dynamic) {
-      return +this.dynamic!.status! === ECabFormProcess.Draft
+      return +this.dynamic!.status! === EFDProcess.Draft
         ? !this.deepEqual(this.dynamic.form.getRawValue(), this.formValueForCompare)
         : !this.deepEqual(this.supplementaryData, this.formValueForCompare);
     } else {

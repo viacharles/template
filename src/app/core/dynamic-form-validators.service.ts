@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { AbstractControl } from "@angular/forms";
 import { TranslateService } from "@ngx-translate/core";
 import { EErrorMessage } from "@utilities/enum/form.enum";
-import { IDynamicFieldValue } from "@utilities/interface/api/cab-api.interface";
+import { IDynamicFieldValue } from "@utilities/interface/api/df-api.interface";
 @Injectable({
   providedIn: 'root'
 })

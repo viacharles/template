@@ -10,26 +10,23 @@ import {
   Validators,
 } from '@angular/forms';
 import {
-  ECabFormProcess,
+  EFDProcess,
   EFieldStatus,
 } from '@utilities/enum/common.enum';
 import {
-  ICabAnswer,
-  ICabApplicationAnswerRes,
-  ICabEditor,
-  ICabFile,
-  ICabQuestionSubQuestion,
-  ICabQuestionGroup,
-  ICabQuestionHideExpressionView,
-  ICabQuestionValue,
-  ICabRemark,
-  ICabTemplateRes,
-  IDynamicFromValidator,
-} from '@utilities/interface/api/cab-api.interface';
-import { ECab, ECabAnswerStatus } from '../enum/cab.enum';
+  IDFAnswer,
+  IDFApplicationAnswerRes,
+  IDFEditor,
+  IDFFile,
+  IDFQuestionSubQuestion,
+  IDFQuestionGroup,
+  IDFQuestionHideExpressionView, IDFTemplateRes,
+  IDynamicFromValidator
+} from '@utilities/interface/api/df-api.interface';
+import { EDFAnswerStatus } from '../enum/df.enum';
 import {
-  cabQuestionFormMap,
-} from '../map/cab.map';
+  dfQuestionFormMap,
+} from '../map/df.map';
 import { TranslateService } from '@ngx-translate/core';
 import { DatePipe } from '@angular/common';
 import { ValidatorHelper } from '@core/validators.helper';
@@ -37,31 +34,30 @@ import { EErrorMessage, EFieldType } from '@utilities/enum/form.enum';
 import { DynamicFormValidatorsService } from '@core/dynamic-form-validators.service';
 
 export class DynamicForm {
-  public question_origin?: ICabTemplateRes;
-  public project_origin?: ICabApplicationAnswerRes;
+  public question_origin?: IDFTemplateRes;
+  public project_origin?: IDFApplicationAnswerRes;
   public docId?: string;
-  public cabId?: string;
-  public cab?: ECab;
+  public dfId?: string;
   public projectName = '';
   public projectId?: string;
-  public status?: ECabFormProcess;
-  public creator?: ICabEditor;
-  public editor?: ICabEditor;
+  public status?: EFDProcess;
+  public creator?: IDFEditor;
+  public editor?: IDFEditor;
   public tenantCn?: string;
   public templateId?: string;
   public questionVersion?: string;
   public projectVersion?: string;
-  public hideExpressions: ICabQuestionHideExpressionView[][] = [];
+  public hideExpressions: IDFQuestionHideExpressionView[][] = [];
   /** 傳 project 和 formBuilder 進來的話會組成 form */
   public form = new UntypedFormGroup({});
   private readonly maxOptionInLine = 3;
 
   constructor(
-    question: ICabTemplateRes,
+    question: IDFTemplateRes,
     public $translate: TranslateService,
     public datePipe: DatePipe,
     private $dynamicValidator: DynamicFormValidatorsService,
-    project?: ICabApplicationAnswerRes,
+    project?: IDFApplicationAnswerRes,
     private fb?: UntypedFormBuilder,
   ) {
     this.docId = question?.docId;
@@ -69,12 +65,11 @@ export class DynamicForm {
     this.questionVersion = question?.version;
     if (project) {
       this.docId = project.docId;
-      this.cab = project.cab;
       this.status = project.status;
       this.creator = project?.creator;
       this.editor = project?.editor;
       this.tenantCn = project?.tenantCn;
-      this.cabId = project?.cabId;
+      this.dfId = project?.dfId;
       this.projectName = project?.projectName;
       this.projectId = project?.projectId;
       this.projectVersion = project.version;
@@ -84,20 +79,19 @@ export class DynamicForm {
     this.question_origin = question;
     if (this.fb) {
       this.form = this.initialForm(question, project, this.status);
-      console.log('aa-form', this.form)
     }
   }
 
   /** 如果沒傳 project 就不 patch value */
   public initialForm(
-    { id: cabId, docId, groups }: ICabTemplateRes,
-    project?: ICabApplicationAnswerRes,
-    status?: ECabFormProcess
+    { id: dfId, docId, groups }: IDFTemplateRes,
+    project?: IDFApplicationAnswerRes,
+    status?: EFDProcess
   ): UntypedFormGroup {
     let form = new UntypedFormGroup({});
     if (this.fb) {
       form = this.fb.group({});
-      form.patchValue({ cabId, docId });
+      form.patchValue({ dfId, docId });
       form.addControl(
         'answers',
         this.fb.array(groups.map(group => this.getQuestionGroupForm(group)))
@@ -106,7 +100,7 @@ export class DynamicForm {
         'attachment',
         this.fb.array([this.getEmptyFileFormGroup(this.status!)])
       );
-      if (status ? +status === ECabFormProcess.RequiredForApprove : false) {
+      if (status ? +status === EFDProcess.RequiredForApprove : false) {
         (
           (form.get('answers') as UntypedFormArray)
             ?.controls[0] as UntypedFormGroup
@@ -123,8 +117,8 @@ export class DynamicForm {
 
   public patchFormValue(
     form: UntypedFormGroup,
-    answers: ICabAnswer,
-    attachment?: ICabFile[]
+    answers: IDFAnswer,
+    attachment?: IDFFile[]
   ): void {
     Object.keys(answers).forEach(questionId => {
       const { groupId, remark, values: answerList } = answers[questionId];
@@ -142,7 +136,7 @@ export class DynamicForm {
             : remark.map(item => ({
               ...item,
               fieldStatus:
-                +this.status! === ECabFormProcess.Draft
+                +this.status! === EFDProcess.Draft
                   ? EFieldStatus.Inputting
                   : EFieldStatus.Complete,
             }))
@@ -189,13 +183,13 @@ export class DynamicForm {
               new UntypedFormGroup({
                 file: new UntypedFormControl(
                   file.file,
-                  +file.type! === ECabAnswerStatus.Draft
+                  +file.type! === EDFAnswerStatus.Draft
                     ? Validators.required
                     : null
                 ),
                 fileName: new UntypedFormControl(
                   decodeURI(file.fileName),
-                  +file.type! === ECabAnswerStatus.Draft
+                  +file.type! === EDFAnswerStatus.Draft
                     ? Validators.required
                     : null
                 ),
@@ -219,51 +213,15 @@ export class DynamicForm {
     }
   }
 
-  /** 將form的value轉換成APi需要的answer格式 */
-  public getProjectAnswers(form: UntypedFormGroup): ICabAnswer {
-    const raw = form.getRawValue();
-    const Answer: ICabAnswer = {};
-    raw.answers.forEach((group: any) => {
-      const Questions = Object.entries(group).filter(attr => attr[0] !== 'id');
-      Questions.forEach((question: [string, any]) => {
-        Object.entries(question[1].answers as ICabQuestionValue).forEach(_ => {
-          const remarkOrigin = question[1].remark;
-          let remarkResult: ICabRemark[] = [];
-          if (remarkOrigin !== null && !remarkOrigin.length) {
-            Object.values(question[1].remark).forEach(item =>
-              remarkResult.push(item as ICabRemark)
-            );
-            remarkResult = remarkResult.filter(
-              (item: ICabRemark) => item.content !== ''
-            );
-          } else {
-            remarkResult = remarkOrigin;
-          }
-          const remark =
-            remarkResult === null || remarkResult.length === 0
-              ? null
-              : remarkResult;
-          Answer[question[0]] = {
-            remark: remark,
-            values: question[1].answers,
-            groupId: group.id,
-            sectionId: '',
-          };
-        });
-      });
-    });
-    return Answer;
-  }
-
-  public getEmptyFileFormGroup(status: ECabFormProcess) {
+  public getEmptyFileFormGroup(status: EFDProcess) {
     return new UntypedFormGroup({
       file: new UntypedFormControl(
         '',
-        +status === ECabFormProcess.Draft ? Validators.required : null
+        +status === EFDProcess.Draft ? Validators.required : null
       ),
       fileName: new UntypedFormControl(
         '',
-        +status === ECabFormProcess.Draft ? Validators.required : null
+        +status === EFDProcess.Draft ? Validators.required : null
       ),
       url: new UntypedFormControl(''),
       department: new UntypedFormControl(''),
@@ -286,7 +244,7 @@ export class DynamicForm {
   private getQuestionGroupForm({
     id,
     questions,
-  }: ICabQuestionGroup): UntypedFormGroup {
+  }: IDFQuestionGroup): UntypedFormGroup {
     if (this.fb) {
       const group: UntypedFormGroup = this.fb.group({
         id: [id, [Validators.required]],
@@ -301,7 +259,7 @@ export class DynamicForm {
                 {
                   content: '',
                   fieldStatus:
-                    +this.status! === ECabFormProcess.Draft
+                    +this.status! === EFDProcess.Draft
                       ? EFieldStatus.Inputting
                       : EFieldStatus.Complete,
                 },
@@ -320,7 +278,7 @@ export class DynamicForm {
   }
 
   /** 得到子答案群組 formGroup */
-  private getSubQuestionGroup(answers: { [key: string]: ICabQuestionSubQuestion }): UntypedFormGroup {
+  private getSubQuestionGroup(answers: { [key: string]: IDFQuestionSubQuestion }): UntypedFormGroup {
     if (this.fb) {
       const group: UntypedFormGroup = this.fb.group({});
       Object.keys(answers).forEach(answerId => {
@@ -340,7 +298,6 @@ export class DynamicForm {
   }
 
   public getValidations(validations: IDynamicFromValidator[], isMulti: boolean, required: boolean) {
-    console.log('aa-getValidations', validations)
     const dynamicValidations = validations?.map(validate => this.getDynamicValidate(validate));
     const validators = [
       ...(required ? [this.DynamicRequiredValidate(isMulti)] : []),
@@ -376,8 +333,8 @@ export class DynamicForm {
     };
   }
 
-  /** 編輯頁題目資料 */
-  public getDataForQuestion(res: ICabTemplateRes): any {
+  /** 題目畫面用資料 */
+  public getDataForQuestion(res: IDFTemplateRes): any {
     return {
       ...res,
       fileForm: this.form.get('attachment'),
@@ -390,7 +347,7 @@ export class DynamicForm {
             questions: Object.entries(group.questions)
               .sort((a, b) => a[1].order - b[1].order)
               .map(question => {
-                cabQuestionFormMap.set(
+                dfQuestionFormMap.set(
                   question[0],
                   this.getQuestionForm(groupIndex, question[0])
                 );
@@ -444,8 +401,7 @@ export class DynamicForm {
     };
   }
 
-  private getValidationView(answer: ICabQuestionSubQuestion): IDynamicFromValidator[] {
-    console.log('aa-getValidationView',answer )
+  private getValidationView(answer: IDFQuestionSubQuestion): IDynamicFromValidator[] {
     return [
       ...(answer.required ? [{ type: EErrorMessage.REQUIRED } as IDynamicFromValidator] : []),
       ...(answer.validation ?? []).flatMap(item => item ? [item] : [])
