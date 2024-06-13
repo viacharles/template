@@ -12,7 +12,7 @@ import {
   CustomForm,
   getFormProvider,
 } from '@utilities/abstract/customForm.abstract';
-import { IDynamicFieldValue } from '@utilities/interface/api/cab-api.interface';
+import { IDynamicFieldValue } from '@utilities/interface/api/df-api.interface';
 import { take, timer } from 'rxjs';
 
 @Component({

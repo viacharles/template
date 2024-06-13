@@ -15,7 +15,7 @@ import {
 import { WindowService } from '@shared/service/window.service';
 import { IOption } from '@utilities/interface/common.interface';
 import { take, takeUntil, timer } from 'rxjs';
-import { IDynamicFieldValue } from '@utilities/interface/api/cab-api.interface';
+import { IDynamicFieldValue } from '@utilities/interface/api/df-api.interface';
 
 @Component({
   selector: 'app-select',

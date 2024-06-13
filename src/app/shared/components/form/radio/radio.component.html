@@ -17,7 +17,7 @@
       <input type="text" class="input"
         [(ngModel)]="this.memo"
         (ngModelChange)="this.onMemoChange($event)"
-        [placeholder]="(option.memoPlaceholder ? option.memoPlaceholder : 'cab.comment-send-placeholder') | translate"
+        [placeholder]="(option.memoPlaceholder ? option.memoPlaceholder : 'df.comment-send-placeholder') | translate"
         *ngIf="option.hasMemo"
         [disabled]="this.disabled || !tRadio.checked"
         id="otherInput" [value]="this.memo" />

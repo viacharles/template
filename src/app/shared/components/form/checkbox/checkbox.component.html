@@ -18,7 +18,7 @@
       <!-- 其他說明欄位 -->
       <input [type]="this.option.memoInputType ?? 'text'" class="input"
         [(ngModel)]="this.memo"
-        [placeholder]="(this.option.memoPlaceholder ? this.option.memoPlaceholder : 'cab.comment-send-placeholder') | translate"
+        [placeholder]="(this.option.memoPlaceholder ? this.option.memoPlaceholder : 'df.comment-send-placeholder') | translate"
         *ngIf="this.option.hasMemo"
         (input)="this.onMemoInput($event)" [disabled]="this.disabled || !tCheckbox.checked" id="otherInput"  />
     </div>

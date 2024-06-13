@@ -28,11 +28,8 @@ export class CheckboxComponent extends CustomForm {
   public onMemoInput(event: Event) {
     if (!this.disabled) {
       this.notifyValueChange(this.currentValue);
-      // console.log('aa-memo-0', this.currentValue)
       this.valueChange.emit(this.currentValue);
-      // console.log('aa-memo-1', this.currentValue)
       this.memoChange.emit(this.memo);
-      // console.log('aa-memo-2', this.currentValue)
     };
   }
 

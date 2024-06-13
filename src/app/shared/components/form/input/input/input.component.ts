@@ -1,7 +1,7 @@
-import { AfterViewInit, Component, Input, SimpleChanges } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CustomForm, getFormProvider } from '@utilities/abstract/customForm.abstract';
 import { ESize } from '@utilities/enum/common.enum';
-import { IDynamicFieldValue } from '@utilities/interface/api/cab-api.interface';
+import { IDynamicFieldValue } from '@utilities/interface/api/df-api.interface';
 
 @Component({
   selector: 'app-input',

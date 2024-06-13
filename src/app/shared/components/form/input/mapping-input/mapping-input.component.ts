@@ -1,9 +1,9 @@
-import {Component, EventEmitter, Input, OnChanges, Output} from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output } from '@angular/core';
 import {
   CustomForm,
   getFormProvider,
 } from '@utilities/abstract/customForm.abstract';
-import {IOption} from '@utilities/interface/common.interface';
+import { IOption } from '@utilities/interface/common.interface';
 
 @Component({
   selector: 'app-mapping-input',
@@ -15,7 +15,7 @@ export class MappingInputComponent extends CustomForm implements OnChanges {
   @Output() select = new EventEmitter();
   @Output() touch = new EventEmitter();
   @Input() optionSource: IOption<string>[] = [];
-  @Input() placeholder = 'cab.basic-question-placeholder';
+  @Input() placeholder = 'df.basic-question-placeholder';
   @Input() enableAll = false;
   @Input() isError = false;
 

@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { FormArray, FormControl, FormGroup } from '@angular/forms';
 import { CustomForm, getFormProvider } from '@utilities/abstract/customForm.abstract';
-import { IDynamicFieldValue } from '@utilities/interface/api/cab-api.interface';
+import { IDynamicFieldValue } from '@utilities/interface/api/df-api.interface';
 import { IOption } from '@utilities/interface/common.interface';
 import { IDynamicOption } from '@utilities/interface/form.interface';
 

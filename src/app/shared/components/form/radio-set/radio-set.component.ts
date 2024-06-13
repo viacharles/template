@@ -1,6 +1,6 @@
 import { AfterViewInit, ChangeDetectorRef, Component, Input } from '@angular/core';
 import { CustomForm, getFormProvider } from '@utilities/abstract/customForm.abstract';
-import { IDynamicFieldValue } from '@utilities/interface/api/cab-api.interface';
+import { IDynamicFieldValue } from '@utilities/interface/api/df-api.interface';
 import { IDynamicOption } from '@utilities/interface/form.interface';
 
 @Component({
