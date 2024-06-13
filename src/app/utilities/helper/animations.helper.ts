@@ -151,11 +151,11 @@ export function verticalShortenOut(): AnimationTriggerMetadata {
   return trigger('verticalShortenOut', [
     transition(':enter', [
       style({opacity: 0, height: 0}),
-      animate('100ms', style({opacity: 1, height: 'auto'})),
+      animate('500ms', style({opacity: 1, height: 'auto'})),
     ]),
     transition(':leave', [
       style({opacity: 1, height: 'auto'}),
-      animate('100ms', style({opacity: 0, height: 0})),
+      animate('500ms', style({opacity: 0, height: 0})),
     ]),
   ]);
 }
@@ -172,8 +172,8 @@ export function scaleInShortenOut(): AnimationTriggerMetadata {
       style({opacity: 1, transform: 'translate(-50%, -50%) scale(100%, 100%)'}),
       animate('100ms ease-in-out',
       keyframes ([
-        style({opacity: 0, height: '40%', transform: 'translate(-50%, -50%) scale(80%, 100%)', offset: 0.4}),
-        style({opacity: 0, height: '0', transform: 'translate(-50%, -50%) scale(70%, 100%)', offset: 1})
+        style({opacity: 0,  transform: 'translate(-50%, -50%) scale(80%, 100%)', offset: 0.4}),
+        style({opacity: 0,  transform: 'translate(-50%, -50%) scale(70%, 100%)', offset: 1})
     ])),
     ]),
   ]);
