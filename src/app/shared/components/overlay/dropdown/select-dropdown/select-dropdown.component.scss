@@ -1,0 +1,28 @@
+
+
+@import "color";
+@import "variables";
+:host {
+  display: flex;
+  position: fixed;
+  height: 100%;
+}
+.dropdown {
+  max-height: 15rem;
+  border: 1px solid $light-gray-2;
+  border-radius: 0 0 var(--form-radius-m) var(--form-radius-m);
+  filter: drop-shadow(1px 2px 2px rgba(0, 0, 0, 0.2));
+  // opacity: 0;
+
+  & li {
+    &:hover {
+      background-color: var(--primary-background-hover);
+    }
+
+    label {
+      word-break: break-all;
+      line-height: 21px;
+      color: $grey-black
+    }
+  }
+}

@@ -1,0 +1,16 @@
+<app-select-dropdown-container (closed)="this.close()">
+  <ul #tDropDown class="dropdown w-100 overflow-auto bg-white py-2">
+    <li class="w-100 px-3 py-1 mb-0 align-middle" *ngIf="this.options.length === 0">
+      {{ 'common.no-select-item' | translate }}
+    </li>
+    <li class="w-100 px-3 py-1 mb-0 align-middle" *ngIf="this.data.enableAll" [value]="" (click)="this.selectOption()">
+      {{ 'common.all' | translate }}
+    </li>
+    <li *ngFor="let option of this.options; let index = index">
+      <input type="radio" class="d-none" [value]="option.code" [id]="'select' + index" name="select"
+        (click)="this.selectOption(option)" />
+      <label [for]="'select' + index" class="w-100 px-3 py-1 mb-0 align-middle">{{ option.name | translate
+        }}</label>
+    </li>
+  </ul>
+</app-select-dropdown-container>
