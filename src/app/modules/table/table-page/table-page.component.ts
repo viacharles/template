@@ -19,7 +19,7 @@ import {
 import { ConsoleService } from '@core/services/console.service';
 import { ProjectsService } from '@core/services/projects.service';
 import { UsersService } from '@core/services/users.service';
-import { EContent, ERole } from '@utilities/enum/common.enum';
+import { EContent, ROLE } from '@utilities/enum/common.enum';
 import { OverlayService } from '@shared/service/overlay.service';
 import { TranslateService } from '@ngx-translate/core';
 import {
@@ -100,8 +100,8 @@ export class TablePageComponent extends BasePage implements OnInit, DoCheck {
     });
     this.userService.getUserData().subscribe((user: any) => {
       this.tenantId = user.tenantId;
-      this.isSiteAdmin = user.role.includes(ERole.SiteAdmin);
-      this.isReviewer = user.role.includes(ERole.Reviewer);
+      this.isSiteAdmin = user.role.includes(ROLE.SITE_ADMIN);
+      this.isReviewer = user.role.includes(ROLE.REVIEWER);
     });
   }
 

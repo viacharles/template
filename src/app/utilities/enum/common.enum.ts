@@ -1,22 +1,22 @@
 /** 角色 */
-export enum ERole {
-  SiteAdmin = 'SITE_ADMIN',
-  TenantAdmin = 'TENANT_ADMIN',
-  Reviewer = 'REVIEWER',
-  User = 'USER',
-  Consultant = 'CONSULTANT',
-  Chairman = 'CHAIRMAN',
-  Committee = 'COMMITTEE',
+export enum ROLE {
+  SITE_ADMIN = 'SITE_ADMIN',
+  TENANT_ADMIN = 'TENANT_ADMIN',
+  REVIEWER = 'REVIEWER',
+  USER = 'USER',
+  CONSULTANT = 'CONSULTANT',
+  CHAIRMAN = 'CHAIRMAN',
+  COMMITTEE = 'COMMITTEE',
   Secretary = 'SECRETARY',
 }
 
 /** 表單目的 */
-export enum EFormMode {
-  Edit = 'edit',
-  View = 'view',
-  Add = 'new',
-  Review = 'review',
-  Null = 'null',
+export enum FORM_MODE {
+  EDIT = 'edit',
+  VIEW = 'view',
+  ADD = 'new',
+  REVIEW = 'review',
+  NULL = 'null',
 }
 
 /** 行為 */
@@ -139,4 +139,12 @@ export enum ESize {
   M = 'm',
   /** Large */
   L = 'l'
+}
+
+/** 側邊位置 */
+export enum ESide {
+  Right = 'right',
+  Left = 'left',
+  Top = 'top',
+  Bottom = 'bottom',
 }

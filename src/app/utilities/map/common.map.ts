@@ -1,4 +1,4 @@
-import { EFDProcess, EFormMode } from '@utilities/enum/common.enum';
+import { EFDProcess, FORM_MODE } from '@utilities/enum/common.enum';
 import { IIcon } from '@utilities/interface/common.interface';
 
 export type EProcess = EFDProcess | null;
@@ -72,9 +72,9 @@ export const ProcessIconMap = new Map<EProcess, IIcon>([
 ]);
 
 /** 編輯模式 -> icon */
-export const formModeIconMap = new Map<EFormMode, IIcon>([
+export const formModeIconMap = new Map<FORM_MODE, IIcon>([
   [
-    EFormMode.Edit,
+    FORM_MODE.EDIT,
     {
       color: 'green-middle',
       hoverColor: 'green-hover',
@@ -83,7 +83,7 @@ export const formModeIconMap = new Map<EFormMode, IIcon>([
     },
   ],
   [
-    EFormMode.View,
+    FORM_MODE.VIEW,
     {
       color: 'green-middle',
       hoverColor: 'green-hover',
@@ -92,7 +92,7 @@ export const formModeIconMap = new Map<EFormMode, IIcon>([
     },
   ],
   [
-    EFormMode.Review,
+    FORM_MODE.REVIEW,
     {
       color: 'green-middle',
       hoverColor: 'green-hover',

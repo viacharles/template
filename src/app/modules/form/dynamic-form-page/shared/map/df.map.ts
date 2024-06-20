@@ -1,7 +1,7 @@
 import { IIcon, ILabel } from '@utilities/interface/common.interface';
 import { EDFAnswerStatus, EDFReviewerLevel } from '../enum/df.enum';
 import { UntypedFormGroup } from '@angular/forms';
-import { EFDProcess, ERole } from '@utilities/enum/common.enum';
+import { EFDProcess, ROLE } from '@utilities/enum/common.enum';
 
 export const dfReviewerLevelIconMap = new Map<EDFReviewerLevel, IIcon>([
   [
@@ -68,7 +68,7 @@ export const dfStatusMap = new Map<EFDProcess, IIcon>([
 export const dfQuestionFormMap = new Map<string, UntypedFormGroup>([]);
 
 /** 角色不可造訪的階段 */
-export const dfRoleProcessMap = new Map<EFDProcess, ERole[]>([
+export const dfRoleProcessMap = new Map<EFDProcess, ROLE[]>([
   [EFDProcess.Draft, []],
   [EFDProcess.SubmitForReview, []],
   [EFDProcess.Approved, []],
