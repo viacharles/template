@@ -1,7 +1,7 @@
 import { Component, ElementRef, EventEmitter, Output } from '@angular/core';
 import { WindowService } from '@shared/service/window.service';
 import { Base } from '@utilities/base/base';
-import { takeUntil } from 'rxjs';
+import { skip, takeUntil } from 'rxjs';
 
 export const SELECT_CONTAINER_TAG = 'app-select-dropdown-container';
 
@@ -20,21 +20,20 @@ export class SelectDropdownContainerComponent extends Base  {
   ) { super() }
 
   protected override afterViewInitBase(): void {
-    console.log('aa-afterViewInitBase',)
-    this.$window.click$.pipe(takeUntil(this.onDestroy$)).subscribe(click => {
-      console.log("🚀 aa-~ SelectDropdownContainerComponent ~ this.$window.click$.pipe ~ click:", click)
+    this.$window.click$.
+    pipe(
+      takeUntil(this.onDestroy$),
+      skip(1)
+    )
+      .subscribe(click => {
       if (!this.selfElem.nativeElement.contains(click.target as HTMLElement)) {
-        // this.onClose();
+        this.onClose();
       }
     });
   }
 
   public onClose(): void {
     this.isClose = true;
-    let closeTimer = setTimeout(() => {
-      console.log('aa-onClose', )
-      this.closed.emit(true);
-      clearTimeout(closeTimer);
-    }, 300);
+    this.closed.emit(true);
   }
 }
