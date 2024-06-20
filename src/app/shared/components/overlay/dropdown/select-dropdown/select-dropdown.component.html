@@ -1,4 +1,4 @@
-<app-select-dropdown-container (closed)="this.close()">
+<app-select-dropdown-container (closed)="this.cancel()">
   <ul #tDropDown class="dropdown w-100 overflow-auto bg-white py-2">
     <li class="w-100 px-3 py-1 mb-0 align-middle" *ngIf="this.options.length === 0">
       {{ 'common.no-select-item' | translate }}

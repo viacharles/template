@@ -7,9 +7,9 @@ import { WindowService } from '@shared/service/window.service';
 import { takeUntil } from 'rxjs';
 import { IOption, IOptionView } from '@utilities/interface/common.interface';
 import { CustomForm, getFormProvider } from '@utilities/abstract/customForm.abstract';
-import { IDynamicFieldValue } from '@utilities/interface/api/df-api.interface';
 import { objectDeepCompare } from '@utilities/helper/comparison.helper';
 import { ESize } from '@utilities/enum/common.enum';
+import { IDynamicFieldValue } from '@utilities/interface/api/df-api.interface';
 
 @Component({
   selector: 'app-multi-select',
