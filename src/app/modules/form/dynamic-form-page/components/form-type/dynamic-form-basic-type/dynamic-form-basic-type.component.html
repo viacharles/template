@@ -9,6 +9,7 @@
               *ngIf="question" [formGroup]="question.form">
               <div class="d-flex flex-column w-100">
                 <app-basic-type-question-card [question]="question" [group]="group"  [isError]="question.form.invalid && this.form?.touched"   [groupIndex]="groupIndex"
+                [model]="this.model"
                   [questionIndex]="questionIndex" [isCompleteClicked]="this.isCompleteClicked" [page]="this.page" [form]="this.form">
                 </app-basic-type-question-card>
               </div>
