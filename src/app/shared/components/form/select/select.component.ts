@@ -6,16 +6,14 @@ import {
   Component,
   ElementRef,
   EventEmitter,
-  Input,
-  OnInit,
-  Output,
-  Renderer2,
-  ViewChild,
+  Input, Output, ViewChild
 } from '@angular/core';
 import { WindowService } from '@shared/service/window.service';
 import { IOption } from '@utilities/interface/common.interface';
-import { take, takeUntil, timer } from 'rxjs';
 import { IDynamicFieldValue } from '@utilities/interface/api/df-api.interface';
+import { OverlayService } from '@shared/service/overlay.service';
+import { SelectDropdownComponent } from '@shared/components/overlay/dropdown/select-dropdown/select-dropdown.component';
+import { ISelectDropdownData } from '@utilities/interface/overlay.interface';
 
 @Component({
   selector: 'app-select',
@@ -25,7 +23,7 @@ import { IDynamicFieldValue } from '@utilities/interface/api/df-api.interface';
 })
 export class SelectComponent<T extends IOption<string>>
   extends CustomForm<string | [IDynamicFieldValue]>
-  implements OnInit {
+  {
   @ViewChild('tDropDown') tDropDown?: ElementRef<HTMLElement>;
   @Output() select = new EventEmitter<T>();
   @Input() options: T[] = [];
@@ -39,9 +37,9 @@ export class SelectComponent<T extends IOption<string>>
   @Input() isDynamic = false;
 
   constructor(
-    private selfElem: ElementRef,
-    private render: Renderer2,
-    private $window: WindowService
+    private readonly selfElem: ElementRef,
+    private readonly $window: WindowService,
+    private readonly $overlay: OverlayService
   ) {
     super();
   }
@@ -52,66 +50,44 @@ export class SelectComponent<T extends IOption<string>>
     return this.options?.find(({ code }) => this.model && code === (this.isDynamic ? (this.model[0] as IDynamicFieldValue)?.value : this.model));
   }
 
-  ngOnInit(): void {
-    this.$window.click$.pipe(takeUntil(this.onDestroy$)).subscribe(click => {
-      if (!this.selfElem.nativeElement.contains(click.target as HTMLElement)) {
-        this.isOpen = false;
-      }
-    });
-  }
-
   public open() {
+    if (!this.disabled) {
+      const self = this.selfElem.nativeElement.getBoundingClientRect() as DOMRect;
+      this.$overlay.addDialog<ISelectDropdownData>(
+        SelectDropdownComponent,
+        {
+          options: this.options,
+          width: self.width,
+          height: self.height,
+          alignTo: {
+            x: {
+              diff: self.right
+            },
+            y: {
+              diff: self.top
+            }
+          },
+        },
+        {
+          isBackDropTransparent: true,
+          callback: {
+            confirm: this.selectOption.bind(this),
+            cancel: () => this.isOpen = false,
+          }
+        }
+      )
+    }
     this.isOpen = this.disabled ? false : !this.isOpen;
-    timer(100).pipe(take(1)).subscribe(() => this.setDropdownPosition()); // 等 dropdown render 完成
   }
 
   /** 選擇選項 */
   public selectOption(option?: T): void {
     this.isOpen = false;
-    this.notifyValueChange(this.isDynamic ? [{value: option ? option.code : '', memo:''}] : option ? option.code : '');
+    this.notifyValueChange(this.isDynamic ? [{ value: option ? option.code : '', memo: '' }] : option ? option.code : '');
     this.select.emit(option);
   }
 
   public click(event: Event): void {
     this.isOpen = !this.isOpen;
-    if (!this.isOpen && this.tDropDown) {
-      this.render.setStyle(this.tDropDown.nativeElement, 'opacity', '0');
-    }
-  }
-
-  private setDropdownPosition(): void {
-    if (this.tDropDown) {
-      if (this.dropDownDirection !== undefined) {
-        this.render.setStyle(this.tDropDown.nativeElement, 'opacity', '1');
-        const isBelow = this.dropDownDirection === 'below';
-        this.render.setStyle(
-          this.tDropDown.nativeElement,
-          isBelow ? 'top' : 'bottom',
-          isBelow ? 'calc(100% + 5px)' : '2.3rem'
-        );
-        this.render.setStyle(
-          this.tDropDown.nativeElement,
-          isBelow ? 'bottom' : 'top',
-          'unset'
-        );
-      } else {
-        this.render.setStyle(this.tDropDown.nativeElement, 'opacity', '1');
-        const rect = this.tDropDown.nativeElement.getBoundingClientRect();
-        const isOffScreen =
-          rect.bottom - 120 <
-          rect?.height +
-          this.selfElem.nativeElement.getBoundingClientRect().height;
-        this.render.setStyle(
-          this.tDropDown.nativeElement,
-          isOffScreen ? 'top' : 'bottom',
-          isOffScreen ? '3.3rem' : '1.7rem'
-        );
-        this.render.setStyle(
-          this.tDropDown.nativeElement,
-          !isOffScreen ? 'top' : 'bottom',
-          'unset'
-        );
-      }
-    }
   }
 }

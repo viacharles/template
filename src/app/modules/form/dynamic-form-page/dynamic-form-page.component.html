@@ -48,142 +48,11 @@
           [isCompleteClicked]="this.isCompleteClicked" [pageIndex]="pageIndex"
           [model]="this.dynamic"></app-dynamic-form-basic-type>
       </ng-container>
-      <!-- 檔案卡 -->
-      <!-- <section class="question-card mt-6 py-6 bg-white" *ngIf="
-          this.question_pages
-            ? pageIndex === this.question_pages.length - 1
-            : false
-        "> -->
-        <!-- <div class="question-card__header">
-          <div class="d-flex align-items-center px-8 pb-3">
-            <em class="complete icon-confirmed h-8 w-8 bg-green-light mr-2_5 text-center"
-              *ngIf="this.fileControl?.valid"></em>
-            <em class="d-flex align-items-center justify-content-center mr-2_5 fs-xs fw-7"
-              *ngIf="!this.fileControl?.valid">{{
-              this.question_pages![pageIndex].groups[
-              this.question_pages![pageIndex].groups.length - 1
-              ].order + 1
-              }}</em>
-            <h4>{{ 'df.upload-ppt' | translate }}</h4>
-          </div>
-        </div> -->
-        <!-- 檔案卡 : 草稿 -->
-        <!-- <app-df-upload-field *ngIf="
-            +this.dynamic!.status! !== this.progressStatus.RequiredForApprove;
-            else tRequiredTemp
-          " class="my-6 mx-8" [question_pages]="this.question_pages" [pageIndex]="pageIndex"
-          [fileControl]="this.fileControl" [isCompleteClicked]="this.isCompleteClicked"
-          [isLastFileError]="this.isLastFileError" [isFileSavedLocal]="this.isFileSavedLocal" [dfForm]="this.dynamic!.form"
-          (onDownloadTempFile)="this.downloadFileTemp()" (onDownloadFile)="this.downloadFile($event)"
-          (onUpload)="this.upload($event)" (onClearFile)="this.clearFile()"></app-df-upload-field> -->
-
-        <!-- 檔案卡 : 補件 -->
-        <!-- <ng-template #tRequiredTemp>
-          <div
-            class="requiredForApprove question-card__upload d-flex flex-column align-items-center justify-content-center mx-8"
-            [class.error]="
-              this.fileControl.invalid &&
-              this.dynamic?.form?.touched &&
-              this.isCompleteClicked
-            ">
-            <div class="w-100 d-flex flex-column">
-              <p class="w-100 text-start text-grey-black fs-md mb-2">
-                {{ 'df.upload-result' | translate }}
-              </p>
-              <ul class="mb-3">
-                <li class="d-flex flex-column" *ngFor="let file of this.dynamic?.form?.get('attachment')?.value">
-                  <ng-container *ngIf="
-                      file.fileName &&
-                      (file.fieldStatus !== undefined
-                        ? +file.fieldStatus !== this.fieldStatus.Inputting
-                        : true) &&
-                      (this.isOnProgressAnswer(file.type)
-                        ? !this.isFileInputting
-                        : true)
-                    ">
-                    <div class="d-flex">
-                      <label class="bg-{{
-                          this.isOnProgressAnswer(file.type)
-                            ? 'green-light'
-                            : 'grey-middle'
-                        }} text-{{
-                          this.isOnProgressAnswer(file.type)
-                            ? 'green-middle'
-                            : 'grey-dark'
-                        }} fs-xs mr-2 py-0_5 px-1 mb-0_5">{{
-                        (+file.type === this.answerStatus.Draft
-                        ? 'df.answer-status-draft'
-                        : 'df.answer-status-supplement'
-                        ) | translate
-                        }}</label>
-                      <div class="d-flex align-items-center">
-                        <p class="fs-xs d-flex align-items-center">
-                          {{ this.getEditorInfo(file) }}
-                        </p>
-                        <em class="icon-trash text-green-middle ml-2 pe-pointer"
-                          *ngIf="this.isOnProgressAnswer(file.type)" (click)="this.clearFile()"></em>
-                      </div>
-                    </div>
-                    <div class="link w d-flex align-items-start text-green-middle mt-1_5 mb-1_5" *ngIf="file.fileName">
-                      <em class="icon-download fs-xs mt-1 mr-2 pe-pointer" (click)="
-                          !this.isFileSavedLocal
-                            ? this.downloadFile({
-                                event: $event,
-                                file: this.latestFile.value.file
-                              })
-                            : null
-                        "></em>
-                      <a class="text-start text-green-middle text-break fs-xsm pe-pointer" (click)="
-                          !this.isFileSavedLocal
-                            ? this.downloadFile({
-                                event: $event,
-                                file: this.latestFile.value.file
-                              })
-                            : null
-                        "
-                        [href]="
-                          this.isFileSavedLocal
-                            ? this.latestFile.value.url
-                            : 'javascript:' | safeHtml
-                        "
-                        [download]="this.latestFile.value.fileName">{{ file.fileName }}</a>
-                    </div>
-                  </ng-container>
-                </li>
-              </ul> -->
-              <!-- <button
-                class="btn-flat btn-normal h-10 d-flex align-items-center text-green-middle border-green-middle fw-7 fs-xsm mb-2"
-                *ngIf="
-                  !this.isFileInputting &&
-                  !this.isAlreadyHasFile(this.latestFile.value)
-                " (click)="this.openSupplementUpload()">
-                <em class="icon-add mr-1"></em>
-                {{ 'df.add-supplement-des' | translate }}
-              </button> -->
-              <!-- <div class="w-100" *ngIf="this.isFileInputting">
-                <p class="w-100 text-start text-grey-black mb-2">
-                  {{ 'df.remark-supplement' | translate }}
-                </p> -->
-                <!-- <app-df-upload-field [question_pages]="this.question_pages" [pageIndex]="pageIndex"
-                  [fileControl]="this.fileControl" [isCompleteClicked]="this.isCompleteClicked"
-                  [isLastFileError]="this.isLastFileError" [isFileSavedLocal]="this.isFileSavedLocal"
-                  [dfForm]="this.dynamic!.form" (onDownloadTempFile)="this.downloadFileTemp()"
-                  (onDownloadFile)="this.downloadFile($event)" (onUpload)="this.upload($event)"
-                  (onClearFile)="this.clearFile()"></app-df-upload-field> -->
-                <!-- <div class="w-100 d-flex justify-content-end mt-2">
-                  <button class="btn-flat btn-normal  text-green-middle border-green-middle w-30 h-10" (click)="this.cancel()">{{"common.cancel" | translate}}</button>
-                  <button class="btn-flat bg-green-middle text-white w-30 h-10 ml-3" (click)="this.putFileWithProject()">{{"common.send" | translate}}</button>
-                </div> -->
-              <!-- </div> -->
-            <!-- </div>
-          </div>
-        </ng-template> -->
-      <!-- </section> -->
     </ng-container>
   </div>
 
   <div class="w-100 d-flex justify-content-end mt-6">
-    <button class="btn-flat btn-normal text-green-middle border-green-middle w-30 h-10 fs-xsm px-5" *ngIf="
+    <app-button class=" h-10 fs-xsm" [bgColor]="'primary-color'" *ngIf="
         this.tabForm && this.tabForm.value !== null && +this.tabForm.value !== 0
       " (click)="
         this.tabForm &&
@@ -191,17 +60,14 @@
           this.tabForm.setValue(+this.tabForm.value - 1)
       ">
       {{ 'common.last-page' | translate }}
-    </button>
-    <button class="btn-flat bg-green-middle w-30 h-10 fs-xsm px-5 ml-2" *ngIf="!this.isLastPage" (click)="
+    </app-button>
+    <app-button class=" h-10 fs-xsm ml-2" [bgColor]="'primary-color'" *ngIf="!this.isLastPage" (click)="
         this.tabForm &&
           this.tabForm.value !== null &&
           this.tabForm.setValue(+this.tabForm.value + 1)
       ">
       {{ 'common.next-page' | translate }}
-    </button>
-    <button class="btn-flat bg-green-middle w-30 h-10 fs-xsm px-5 ml-2" *ngIf="this.isLastPage" (click)="this.submit()">
-      {{ 'common.complete' | translate }}
-    </button>
+    </app-button>
   </div>
 </div>
 

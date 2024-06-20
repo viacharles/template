@@ -1,7 +1,7 @@
-import {Component, ElementRef, EventEmitter, Injector, Input, Output, Renderer2, ViewChild} from '@angular/core';
-import {scaleInShortenOut} from '@utilities/helper/animations.helper';
-import {IDialogParams} from '@utilities/interface/overlay.interface';
-import {IDialog} from '@utilities/interface/overlay.interface';
+import { Component, EventEmitter, Injector, Input, Output } from '@angular/core';
+import { scaleInShortenOut } from '@utilities/helper/animations.helper';
+import { IDialogParams } from '@utilities/interface/overlay.interface';
+import { IDialog } from '@utilities/interface/overlay.interface';
 
 @Component({
   selector: 'app-dialog-container',
