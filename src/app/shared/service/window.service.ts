@@ -1,5 +1,5 @@
-import {Injectable} from '@angular/core';
-import {BehaviorSubject, Subject} from 'rxjs';
+import { Injectable } from '@angular/core';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -12,7 +12,7 @@ export class WindowService {
   public scrollToTop$ = this.scrollToTopSubject.asObservable();
 
   /** router-outlet scroll detect */
-  public mainScrollSubject = new Subject<Event>(); // UIEvent
+  public mainScrollSubject = new Subject<UIEvent>(); // UIEvent
   public mainScroll$ = this.mainScrollSubject.asObservable();
 
   /** 視窗 click 偵測 */
