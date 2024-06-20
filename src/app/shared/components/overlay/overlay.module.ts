@@ -12,6 +12,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { SharedModule } from '@shared/shared.module';
 import { SelectDropdownContainerComponent } from './dropdown/select-dropdown-container/select-dropdown-container.component';
 import { SelectDropdownComponent } from './dropdown/select-dropdown/select-dropdown.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,6 @@ import { SelectDropdownComponent } from './dropdown/select-dropdown/select-dropd
     SelectDropdownContainerComponent,
     SelectDropdownComponent,
   ],
-  imports: [CommonModule, CoreModule, PipeModule, SharedModule, TranslateModule],
+  imports: [CommonModule, CoreModule, PipeModule, SharedModule, TranslateModule, ReactiveFormsModule],
 })
 export class OverlayModule {}

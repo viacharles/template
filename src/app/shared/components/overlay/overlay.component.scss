@@ -12,6 +12,7 @@
 
 .dialogs {
   pointer-events: all;
+
   &__position {
     z-index: map-get($layout-level, 'dialog');
     top: 50%;
@@ -20,5 +21,8 @@
   }
   &__backdrop {
     background-color: rgba(0, 0, 0, 0.25);
+    &.transparent {
+      background-color: transparent;
+    }
   }
 }

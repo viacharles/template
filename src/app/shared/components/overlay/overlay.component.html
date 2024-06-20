@@ -1,6 +1,6 @@
 <!-- dialogs -->
 <ng-container *ngFor="let dialog of this.currentDialogs">
-  <div @fadeOut class="dialogs dialogs__backdrop position-absolute w-100 h-100">
+  <div @fadeOut class="dialogs dialogs__backdrop position-absolute w-100 h-100" [class.transparent]="dialog.params.isBackDropTransparent">
       <ng-template
       *ngComponentOutlet="dialog.component; injector: dialog.injector"
     ></ng-template>

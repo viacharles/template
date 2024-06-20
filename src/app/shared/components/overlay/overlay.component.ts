@@ -1,15 +1,15 @@
-import {Component, Injector, OnInit} from '@angular/core';
-import {OverlayService} from '@shared/service/overlay.service';
-import {IDialog} from '@utilities/interface/overlay.interface';
-import {UnSubOnDestroy} from '@utilities/abstract/unSubOnDestroy.abstract';
-import {takeUntil} from 'rxjs';
+import { Component, Injector, OnInit } from '@angular/core';
+import { OverlayService } from '@shared/service/overlay.service';
+import { IDialog } from '@utilities/interface/overlay.interface';
+import { UnSubOnDestroy } from '@utilities/abstract/unSubOnDestroy.abstract';
+import { takeUntil } from 'rxjs';
 import {
   fadeEnterAndHideOut,
   fadeSlideInAndHideSlideOut,
   scaleInShortenOut,
   fadeOut,
 } from '@utilities/helper/animations.helper';
-import {Dialog} from '@utilities/model/dialog.model';
+import { Dialog } from '@utilities/model/dialog.model';
 
 @Component({
   selector: 'app-overlay',
@@ -38,7 +38,7 @@ export class OverlayComponent extends UnSubOnDestroy implements OnInit {
     srcDialogs.forEach(srcDialog => {
       if (!this.currentDialogs.some(({id}) => srcDialog.id === id)) {
         this.currentDialogs.push(new Dialog(srcDialog, this.injector));
-      }
+      };
     });
     this.currentDialogs = this.currentDialogs.filter(dialog =>
       srcDialogs.some(srcDialog => srcDialog.id === dialog.id)
