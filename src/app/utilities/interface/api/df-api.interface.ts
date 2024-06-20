@@ -1,6 +1,6 @@
 import {
   EFDProcess,
-  ERole,
+  ROLE,
   EUserStatus,
   EFieldStatus,
 } from '@utilities/enum/common.enum';
@@ -285,7 +285,7 @@ export type ICommitteeRole = 'admin' | 'security' | 'arch' | 'devops' | 'sre';
 export interface IDFCommentReq {
   projectId: string;
   dfId: string;
-  role: ERole;
+  role: ROLE;
   status: EFDProcess;
   comment: string;
 }

@@ -1,5 +1,5 @@
-import {HttpHeaders} from '@angular/common/http';
-import {ELoadingStatus, ESort} from '@utilities/enum/common.enum';
+import { HttpHeaders } from '@angular/common/http';
+import { ELoadingStatus, ESide, ESort } from '@utilities/enum/common.enum';
 
 export interface IArticle {
   title: string;
@@ -124,4 +124,18 @@ export interface IRangeDate {
 export interface ISortResult<T> {
   data: T[],
   type: ESort,
+}
+
+/** 對齊位置 */
+export interface IAlign {
+  /** 水平 */
+  x: {
+    side?: ESide.Left | ESide.Right,
+    diff?: number
+  };
+  /** 垂直 */
+  y: {
+    side?: ESide.Top | ESide.Bottom,
+    diff?: number
+  };
 }

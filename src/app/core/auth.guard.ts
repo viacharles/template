@@ -9,7 +9,7 @@ import { Observable, take, timer } from 'rxjs';
 
 import { AuthenticationService } from './services/authentication.service';
 import { UsersService } from './services/users.service';
-import { EContent, ERole } from '@utilities/enum/common.enum';
+import { EContent, ROLE } from '@utilities/enum/common.enum';
 import { RouterService } from '@shared/service/router.service';
 import { environment } from 'src/environments/environment.prod';
 import { StorageMap } from '@ngx-pwa/local-storage';
@@ -19,14 +19,14 @@ import { OverlayService } from '@shared/service/overlay.service';
 @Injectable({ providedIn: 'root' })
 export class AuthGuard {
   mustHaveSpecificRole: any = {
-    '/admin/project-access': [ERole.TenantAdmin],
-    '/admin/invite': [ERole.TenantAdmin, ERole.SiteAdmin],
+    '/admin/project-access': [ROLE.TENANT_ADMIN],
+    '/admin/invite': [ROLE.TENANT_ADMIN, ROLE.SITE_ADMIN],
 
-    '/admin/authConfig': [ERole.SiteAdmin, ERole.TenantAdmin, ERole.Consultant],
-    '/admin/tenantConfig': [ERole.SiteAdmin, ERole.Consultant],
+    '/admin/authConfig': [ROLE.SITE_ADMIN, ROLE.TENANT_ADMIN, ROLE.CONSULTANT],
+    '/admin/tenantConfig': [ROLE.SITE_ADMIN, ROLE.CONSULTANT],
 
-    // '/portfolio/overview': [ERole.Reviewer, ERole.SiteAdmin, ERole.TenantAdmin], // Dashboard 全角色都看得到
-    '/portfolio/analytic': [ERole.Reviewer, ERole.SiteAdmin, ERole.TenantAdmin],
+    // '/portfolio/overview': [ROLE.REVIEWER, ROLE.SITE_ADMIN, ROLE.TENANT_ADMIN], // Dashboard 全角色都看得到
+    '/portfolio/analytic': [ROLE.REVIEWER, ROLE.SITE_ADMIN, ROLE.TENANT_ADMIN],
   };
 
   constructor(
@@ -74,7 +74,7 @@ export class AuthGuard {
                     });
                 } else {
                   // check special-permissions
-                  const roleRequired = (this.mustHaveSpecificRole as any)[state.url as any] as ERole;
+                  const roleRequired = (this.mustHaveSpecificRole as any)[state.url as any] as ROLE;
 
                   if (!!roleRequired) {
                     if (

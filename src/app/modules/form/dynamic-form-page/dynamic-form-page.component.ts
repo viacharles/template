@@ -16,9 +16,9 @@ import {
   EContent,
   EFieldStatus,
   EFileType,
-  EFormMode,
+  FORM_MODE,
   ELang,
-  ERole,
+  ROLE,
 } from '@utilities/enum/common.enum';
 import {
   IDFApplicationAnswerRes,
@@ -95,7 +95,7 @@ export class DynamicFormPageComponent extends UnSubOnDestroy
   public tabs: ITab[] = [];
   public tabForm = new FormControl(0);
   public fileTemp?: IDFFile;
-  public formMode?: EFormMode;
+  public formMode?: FORM_MODE;
   public infoTooltipHtml?: string;
   public isCreator?: boolean;
   public isFileSavedLocal = false;
@@ -121,10 +121,10 @@ export class DynamicFormPageComponent extends UnSubOnDestroy
   private readonly warningBeforeNavigate = 'common.cancel-edit-no-save-draft';
 
   get isChairman(): boolean {
-    return !!this.user?.role.includes(ERole.Chairman);
+    return !!this.user?.role.includes(ROLE.CHAIRMAN);
   }
   get isCommittee(): boolean {
-    return !!this.user?.role.includes(ERole.Committee);
+    return !!this.user?.role.includes(ROLE.COMMITTEE);
   }
   get isLastPage(): boolean {
     const tabValue =
@@ -155,7 +155,7 @@ export class DynamicFormPageComponent extends UnSubOnDestroy
     return this.fileControl.controls[this.fileControl.controls.length - 1];
   }
   get mode() {
-    return EFormMode;
+    return FORM_MODE;
   }
   get fieldType() {
     return EFieldType;
@@ -191,7 +191,7 @@ export class DynamicFormPageComponent extends UnSubOnDestroy
     this.docId = this.activateRouter.snapshot.params['docId'];
     this.formMode = this.activateRouter.snapshot.params[
       'formMode'
-    ] as EFormMode;
+    ] as FORM_MODE;
     const status = this.activateRouter.snapshot.params[
       'status'
     ] as EFDProcess;
@@ -229,7 +229,7 @@ export class DynamicFormPageComponent extends UnSubOnDestroy
           this.formMode =
             project.answers && project.attachment
               ? this.formMode
-              : EFormMode.Add;
+              : FORM_MODE.ADD;
           this.dynamic = new DynamicForm(
             question,
             this.$translate,
@@ -295,7 +295,7 @@ export class DynamicFormPageComponent extends UnSubOnDestroy
                 : this.dynamic?.form.getRawValue()
             )
           );
-          if (this.formMode === EFormMode.Add) {
+          if (this.formMode === FORM_MODE.ADD) {
             this.init(true);
           }
           if (+this.dynamic!.status! === EFDProcess.RequiredForApprove) {
@@ -468,6 +468,7 @@ export class DynamicFormPageComponent extends UnSubOnDestroy
     //   });
     //   return;
     // }
+    console.log('submit', this.dynamic?.form)
     if (this.dynamic?.form.invalid) {
       this.isCompleteClicked = true;
       this.dynamic?.form.markAllAsTouched();

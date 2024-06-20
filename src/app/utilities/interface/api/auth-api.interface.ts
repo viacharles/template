@@ -1,5 +1,5 @@
-import {ERole, EUserStatus} from '@utilities/enum/common.enum';
-import {ITenant} from '../tenant.interface';
+import { ROLE, EUserStatus } from '@utilities/enum/common.enum';
+import { ITenant } from '../tenant.interface';
 
 export interface IUser {
   createdTime: string;
@@ -8,7 +8,7 @@ export interface IUser {
   lastLogin: string | null;
   lastUpdated: string | null;
   name: string;
-  role: ERole[];
+  role: ROLE[];
   status: EUserStatus;
   tenantId: string;
   userId: string;

@@ -10,11 +10,11 @@ import { IEditDynamicForm } from '../../interface/dynamic-form-form.interface';
 import { verticalShortenOut } from '@utilities/helper/animations.helper';
 import { takeUntil } from 'rxjs';
 import { IDFQuestionView } from '../../interface/dynamic-form.interface';
-import { EFormMode } from '@utilities/enum/common.enum';
+import { FORM_MODE } from '@utilities/enum/common.enum';
 
 export interface IDynamicFormEditDialog {
   question?: IDFQuestionView,
-  mode: EFormMode
+  mode: FORM_MODE
 }
 @Component({
   selector: 'app-dynamic-field-edit-dialog',
@@ -69,7 +69,7 @@ export class DynamicFieldEditDialogComponent extends BaseDialog<IDynamicFormEdit
   /** 隱藏 memo 欄位 */
   public hideMemo = false;
 
-  get modeText() { return this.data.mode === EFormMode.Edit ? '編輯' : '新增'};
+  get modeText() { return this.data.mode === FORM_MODE.EDIT ? '編輯' : '新增'};
 
   protected override onInit() {
     this.reCreateValidationForm();

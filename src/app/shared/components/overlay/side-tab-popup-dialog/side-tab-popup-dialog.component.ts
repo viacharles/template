@@ -1,5 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {EFormMode} from '@utilities/enum/common.enum';
+import { Component, Input, OnInit } from '@angular/core';
+import { FORM_MODE } from '@utilities/enum/common.enum';
 
 @Component({
   selector: 'app-side-tab-popup-dialog',
@@ -12,10 +12,10 @@ export class SideTabPopupDialogComponent implements OnInit {
 
   constructor() {}
 
-  public formMode?: EFormMode;
+  public formMode?: FORM_MODE;
 
   get mode() {
-    return EFormMode;
+    return FORM_MODE;
   }
 
   ngOnInit(): void {}

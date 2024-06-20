@@ -15,7 +15,7 @@ import {
   IDFSupplementReq,
 } from '@utilities/interface/api/df-api.interface';
 import { Observable } from 'rxjs';
-import { ERole } from '@utilities/enum/common.enum';
+import { ROLE } from '@utilities/enum/common.enum';
 
 @Injectable({
   providedIn: 'root',
@@ -203,7 +203,7 @@ export class DFService {
 
   /** 查詢 使用者DF角色 */
   public getDFRoles() {
-    return this.http.get<ERole[]>(this.baseUrl + `/roles`);
+    return this.http.get<ROLE[]>(this.baseUrl + `/roles`);
   }
 
   /** 更新 使用者DF角色 */

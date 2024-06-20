@@ -1,10 +1,10 @@
-import {HttpClient} from '@angular/common/http';
-import {Injectable} from '@angular/core';
-import {StorageMap} from '@ngx-pwa/local-storage';
-import {ERole} from '@utilities/enum/common.enum';
-import {IUser} from '@utilities/interface/api/auth-api.interface';
-import {Observable, forkJoin, map, take, tap} from 'rxjs';
-import {INewUserInfo} from '@utilities/interface/api/user-api.interface';
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { StorageMap } from '@ngx-pwa/local-storage';
+import { ROLE } from '@utilities/enum/common.enum';
+import { IUser } from '@utilities/interface/api/auth-api.interface';
+import { Observable, forkJoin, map, take, tap } from 'rxjs';
+import { INewUserInfo } from '@utilities/interface/api/user-api.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -19,7 +19,7 @@ export class UsersService {
     return this.storage.get('userData').pipe(map((val: any) => val?.userId));
   }
 
-  getUserRoles(): Observable<ERole[]> {
+  getUserRoles(): Observable<ROLE[]> {
     return this.storage.get('userData').pipe(map((val: any) => val?.role));
   }
 
@@ -67,8 +67,8 @@ export class UsersService {
   }
 
   /** 獲得 角色列表 */
-  public getRoleList(): Observable<ERole[]> {
-    return this.http.get<ERole[]>(`api/users/role/list`);
+  public getRoleList(): Observable<ROLE[]> {
+    return this.http.get<ROLE[]>(`api/users/role/list`);
   }
 
   /**  used by admins to get a list of all available users */
