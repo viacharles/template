@@ -1,10 +1,10 @@
 @import 'animation';
 @import 'color';
 :host {
-  display: flex;
+  display: none;
   position: fixed;
-  bottom: 20px;
-  animation: rightIn 2s forwards;
+  bottom: 30%;
+  animation: rightIn 1s forwards;
 }
 button {
   display: flex;
