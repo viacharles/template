@@ -54,7 +54,7 @@
           margin-top: 0.8rem;
           font-size: 0.875rem;
           color: $white;
-          background-color: $green-middle;
+          background-color: var(--primary-color);
           border-radius: 15px 15px 0 15px;
         }
       }
@@ -74,10 +74,10 @@
       &__options {
         div {
           max-width: 95%;
-          color: $green-middle;
+          color: var(--primary-color);
           font-size: 0.875rem;
           background-color: transparent;
-          border: 1px solid $green-middle;
+          border: 1px solid var(--primary-color);
           border-radius: 15px;
           &:hover {
             opacity: 0.8;

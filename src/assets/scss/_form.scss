@@ -87,15 +87,15 @@
     }
 
     &-green {
-      color: $green-middle;
+      color: var(--primary-color);
       background-color: $white;
-      border: 1px solid $green-middle;
+      border: 1px solid var(--primary-color);
     }
   }
 
   &-main {
     color: $white;
-    background-color: $green-middle;
+    background-color: var(--primary-color);
   }
 }
 
@@ -178,7 +178,7 @@ input {
   }
 
   &:checked+label.toggle {
-    background-color: $green-middle;
+    background-color: var(--primary-color);
 
     span {
       left: unset;

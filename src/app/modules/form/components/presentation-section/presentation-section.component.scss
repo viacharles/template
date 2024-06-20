@@ -17,9 +17,9 @@
 
 .title {
   p {
-    border-left: 1px solid $green-middle;
-    border-top: 1px solid $green-middle;
-    border-bottom: 1px solid $green-middle;
+    border-left: 1px solid var(--primary-color);
+    border-top: 1px solid var(--primary-color);
+    border-bottom: 1px solid var(--primary-color);
     background-color: $white;
   }
 }

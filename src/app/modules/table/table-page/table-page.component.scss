@@ -91,7 +91,7 @@ p {
 
 div.page-tools {
   display: flex;
-  color: $green-middle;
+  color: var(--primary-color);
   width: 100%;
   justify-content: space-between;
   margin-bottom: 10px;
@@ -157,7 +157,7 @@ section.cards {
 }
 
 .btn-flat {
-  background-color: $green-middle;
+  background-color: var(--primary-color);
 }
 
 .admin {

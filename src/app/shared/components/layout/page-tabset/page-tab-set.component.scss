@@ -19,7 +19,7 @@
     }
 
     input:checked + label {
-      background-color: $green-middle;
+      background-color: var(--primary-color);
       color: $white;
     }
   }

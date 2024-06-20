@@ -46,7 +46,7 @@
 
   &.isCollapse {
     width: 15px;
-    background: $green-middle;
+    background: var(--primary-color);
     transition: background 0.2s 0.1s;
 
     .expand-button {
@@ -214,8 +214,8 @@
 
     &:hover {
       transition: 0.1s;
-      background-color: $green-middle;
-      border: $green-middle;
+      background-color: var(--primary-color);
+      border: var(--primary-color);
 
       &>em {
         transition: 0.2s ease;

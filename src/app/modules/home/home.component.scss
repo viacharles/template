@@ -156,7 +156,7 @@ section > div {
     letter-spacing: 1.4px;
     &:hover {
       opacity: 0.8;
-      color: $green-middle;
+      color: var(--primary-color);
     }
   }
 

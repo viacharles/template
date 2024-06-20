@@ -13,7 +13,7 @@
   animation: fade-up-in 0.3s ease forwards;
   filter:  brightness(0.99);
   &.success {
-    background-color: $green-middle;
+    background-color: var(--primary-color);
   }
   &.error {
     background-color: $red-middle;

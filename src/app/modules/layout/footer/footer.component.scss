@@ -58,7 +58,7 @@
   cursor: pointer;
   &:hover {
     text-decoration: none;
-    color: $green-middle;
+    color: var(--primary-color);
   }
 }
 

@@ -100,7 +100,7 @@
               display: none;
 
               &:checked+label {
-                background-color: $green-middle;
+                background-color: var(--primary-color);
               }
             }
 
@@ -274,7 +274,7 @@
                 display: none;
 
                 &:checked+label {
-                  background-color: $green-middle;
+                  background-color: var(--primary-color);
                 }
               }
 

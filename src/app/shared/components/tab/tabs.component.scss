@@ -13,8 +13,8 @@
         left: 0;
         height: 3px;
         width: 100%;
-        color: $green-middle;
-        background-color: $green-middle;
+        color: var(--primary-color);
+        background-color: var(--primary-color);
         transition: 0.025s;
       }
     }
@@ -49,7 +49,7 @@
       &:hover {
         background-color: $grey-light;
         ::ng-deep p {
-          color: $green-middle !important;
+          color: var(--primary-color) !important;
         }
       }
       &:first-of-type {

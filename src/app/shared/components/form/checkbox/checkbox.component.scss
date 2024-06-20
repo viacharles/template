@@ -96,7 +96,7 @@ input {
       background-color: var(--primary-background-hover);
 
       & .checkbox {
-        border: 1.5px solid $green-middle;
+        border: 1.5px solid var(--primary-color);
       }
     }
   }

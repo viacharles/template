@@ -37,7 +37,7 @@
           display: flex;
           align-items: center;
           justify-content: center;
-          color: $green-middle;
+          color: var(--primary-color);
           border: 1px solid $green-light;
           font-size: 16px;
 
@@ -88,7 +88,7 @@
       color: $grey-dark;
       text-decoration: underline;
       &:hover {
-        color: $green-middle;
+        color: var(--primary-color);
       }
     }
   }
@@ -121,7 +121,7 @@ pre {
 a {
   &:hover {
     text-decoration: none;
-    color: $green-middle;
+    color: var(--primary-color);
   }
 }
 
@@ -134,7 +134,7 @@ button {
 .requiredForApprove {
   .link {
     a {
-      color: $green-middle;
+      color: var(--primary-color);
       text-decoration: underline;
     }
     &:hover {
