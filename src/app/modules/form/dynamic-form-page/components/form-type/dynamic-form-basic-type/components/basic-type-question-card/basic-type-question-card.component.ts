@@ -4,7 +4,7 @@ import { IDFFormPage, IDFQuestionGroupView, IDFQuestionView } from 'src/app/modu
 import { Base } from '@utilities/base/base';
 import { OverlayService } from '@shared/service/overlay.service';
 import { DynamicFieldEditDialogComponent } from 'src/app/modules/form/dynamic-form-page/shared/components/dynamic-field-edit-dialog/dynamic-field-edit-dialog.component';
-import { EFormMode } from '@utilities/enum/common.enum';
+import { FORM_MODE } from '@utilities/enum/common.enum';
 import { IEditDynamicForm } from 'src/app/modules/form/dynamic-form-page/shared/interface/dynamic-form-form.interface';
 import { EErrorMessage, EFieldType } from '@utilities/enum/form.enum';
 import { IDynamicFieldValue, IDynamicFromValidator } from '@utilities/interface/api/df-api.interface';
@@ -12,11 +12,13 @@ import { IDynamicOption } from '@utilities/interface/form.interface';
 import { take, timer } from 'rxjs';
 import { WarnDialogComponent } from '@shared/components/overlay/warn-dialog/warn-dialog.component';
 import { DynamicForm } from 'src/app/modules/form/dynamic-form-page/shared/model/dynamic-form.model';
+import { downFadeInAndCompressOut } from '@utilities/helper/animations.helper';
 
 @Component({
   selector: 'app-basic-type-question-card',
   templateUrl: './basic-type-question-card.component.html',
-  styleUrl: './basic-type-question-card.component.scss'
+  styleUrl: './basic-type-question-card.component.scss',
+  animations: [downFadeInAndCompressOut()]
 })
 export class BasicTypeQuestionCardComponent extends Base {
   @Input() group!: IDFQuestionGroupView;
@@ -25,7 +27,7 @@ export class BasicTypeQuestionCardComponent extends Base {
   @Input() questionIndex!: number;
   @Input() isCompleteClicked = false;
   @Input() form?: FormGroup;
-  @Input() model!: DynamicForm;
+  @Input() model?: DynamicForm;
   @Input() page?: IDFFormPage;
   @Input() isError? = false;
 
@@ -34,6 +36,11 @@ export class BasicTypeQuestionCardComponent extends Base {
     private self: ElementRef,
   ) { super() }
 
+  private readonly defaultEmpty = {
+    input: [{ value: '', memo: '' }],
+    option: []
+  }
+
   get fieldType() { return EFieldType };
 
    /** 編輯題目 */
@@ -41,7 +48,7 @@ export class BasicTypeQuestionCardComponent extends Base {
     this.$overlay.addDialog(
       DynamicFieldEditDialogComponent,
       {
-        mode: EFormMode.Edit,
+        mode: FORM_MODE.EDIT,
         question: SubQuestion
       },
       {
@@ -57,9 +64,7 @@ export class BasicTypeQuestionCardComponent extends Base {
               const validators = this.model ?
               this.model.getValidations(validationView ?? [], isMulti, !!update.required) : null;
             question.setValidators(validators);
-            if (!question.value.length) {
-              question.setValue([{ value: '', memo: '' }])
-            };
+            question.setValue(isMulti ? this.defaultEmpty.option : this.defaultEmpty.input);
             };
             // 替換資料
             this.page!.groups[groupIndex]!.questions[questionIndex]! = {
@@ -92,7 +97,7 @@ export class BasicTypeQuestionCardComponent extends Base {
     this.$overlay.addDialog(
       DynamicFieldEditDialogComponent,
       {
-        mode: EFormMode.Add,
+        mode: FORM_MODE.ADD,
       },
       {
         callback: {
@@ -106,7 +111,7 @@ export class BasicTypeQuestionCardComponent extends Base {
               id,
               new FormGroup({
                 answers: new FormGroup({
-                  A: new FormControl([{ value: '', memo: ''}], validators)
+                  A: new FormControl(isMulti ? this.defaultEmpty.option : this.defaultEmpty.input, validators)
                 }),
                 remark: new FormArray([])
             }));
@@ -120,7 +125,7 @@ export class BasicTypeQuestionCardComponent extends Base {
               description: add.des ?? '',
               title: add.title,
               disabled: false,
-              SubQuestionGroupForm: firstGroup.controls[SubQuestion.questionId] as FormGroup,
+              SubQuestionGroupForm: firstGroup.controls[id] as FormGroup,
               SubQuestionGroup: [{
                 answerId: 'A',
                 form: (questionForm.controls['answers'] as FormGroup).controls['A'] as FormControl,

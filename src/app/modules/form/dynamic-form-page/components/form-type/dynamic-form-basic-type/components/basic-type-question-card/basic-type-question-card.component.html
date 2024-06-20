@@ -32,7 +32,7 @@
                 [isError]="SubQuestion.form.invalid && this.form!.touched && this.isCompleteClicked"></app-select>
               <!-- 多選 checkbox -->
               <app-checkbox-set *ngSwitchCase="this.fieldType.Checkbox" class="w-80p"
-                [formControl]="SubQuestion.form" [options]="SubQuestion.optionsForNormal"
+                [formControl]="SubQuestion.form" [options]="SubQuestion.optionsForNormal" [name]="this.question.questionId"
                 [isError]="SubQuestion.form.invalid && this.form!.touched && this.isCompleteClicked"></app-checkbox-set>
               <!-- 多選 multi select -->
               <app-multi-select *ngSwitchCase="this.fieldType.MultiSelect" class="w-40p"
@@ -64,7 +64,7 @@
             <!-- 錯誤訊息 -->
             <ul class="d-flex mt-1" *ngIf="SubQuestion.form.invalid && this.form!.touched && this.isCompleteClicked">
               <ng-container *ngFor="let item of SubQuestion.validationView; let SubQuestionIndex = index">
-                <li @downInCompressOut class="error-message mr-3"
+                <li  class="error-message mr-3"
                 *ngIf="SubQuestion.form.errors ? SubQuestion.form.errors[item.type] : false">
                   <span >
                     {{SubQuestion.form.errors ? SubQuestion.form.errors[item.type] : ''}}
