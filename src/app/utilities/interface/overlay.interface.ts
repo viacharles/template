@@ -1,6 +1,6 @@
-import {EAction, EContent} from '@utilities/enum/common.enum';
-import {IArticle} from './common.interface';
-import {Injector} from '@angular/core';
+import { EAction, EContent } from '@utilities/enum/common.enum';
+import { IAlign, IArticle, IOption } from './common.interface';
+import { Injector } from '@angular/core';
 
 /** overlay 事件 */
 export interface IOverlayEvent<T = any> {
@@ -26,6 +26,7 @@ export interface IDialog<T = any> {
 export interface IDialogParams {
   hasCloseBtn?: boolean;
   hasBackDrop?: boolean;
+  isBackDropTransparent?: boolean;
   isBackDropClose?: boolean;
   isHideAnim?: boolean;
   callback?: IOverlayCallBack;
@@ -36,6 +37,7 @@ export interface IOverlayCallBack {
   confirm?: (param: any) => void;
   cancel?: (param: any) => void;
   close?: (param: any) => void;
+  emit?: (param: any) => void;
 }
 
 /** toast 事件 */
@@ -67,4 +69,21 @@ export interface IButton {
   text?: string;
   classes?: string;
   bgColor?: string;
+}
+
+export interface ISelectDropdownData {
+  width?: number;
+  height: number;
+  options: IOption[];
+  alignTo: IAlign;
+  inputHeight?: string;
+  /** 有全選項目 */
+  enableAll?: boolean;
+}
+
+export interface IMultiSelectDropdownData extends ISelectDropdownData {
+  hasFilter: boolean,
+  filterPlaceholder: string;
+  /** 用在 checkbox form 元件上 */
+  id: string
 }
