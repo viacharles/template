@@ -1,12 +1,7 @@
-import {environment} from 'src/environments/environment';
-import {UnSubOnDestroy} from '@utilities/abstract/unSubOnDestroy.abstract';
-import {
-  EIndividualPages,
-  ELogin,
-  EMenuItemFunctionMark,
-} from '@utilities/enum/router.enum';
-import {FormGroup, UntypedFormControl} from '@angular/forms';
-import {MenuMap, LoginMap} from '@utilities/map/router.map';
+import { environment } from 'src/environments/environment';
+import { ELogin, EMenuItemFunctionMark } from '@utilities/enum/router.enum';
+import { FormGroup, UntypedFormControl } from '@angular/forms';
+import { MenuMap, LoginMap } from '@utilities/map/router.map';
 import {
   AfterViewInit,
   Component,
@@ -16,24 +11,24 @@ import {
   Output,
   Renderer2,
 } from '@angular/core';
-import {ActivatedRoute, Event, NavigationEnd, Router} from '@angular/router';
-import {filter, forkJoin, take, takeUntil, timer} from 'rxjs';
-import {StorageMap} from '@ngx-pwa/local-storage';
-import {AuthenticationService} from '@core/services/authentication.service';
-import {EModule} from '@utilities/enum/router.enum';
-import {WindowService} from '@shared/service/window.service';
-import {IMenuParams} from '@utilities/interface/router.interface';
-import {LayoutService} from '@shared/service/layout.service';
-import {HttpHelper} from '@utilities/helper/http.helper';
-import {OverlayService} from '@shared/service/overlay.service';
-import {WarnDialogComponent} from '@shared/components/overlay/warn-dialog/warn-dialog.component';
+import { ActivatedRoute, Event, NavigationEnd, Router } from '@angular/router';
+import { filter, forkJoin, takeUntil, timer } from 'rxjs';
+import { StorageMap } from '@ngx-pwa/local-storage';
+import { AuthenticationService } from '@core/services/authentication.service';
+import { EModule } from '@utilities/enum/router.enum';
+import { WindowService } from '@shared/service/window.service';
+import { IMenuParams } from '@utilities/interface/router.interface';
+import { LayoutService } from '@shared/service/layout.service';
+import { HttpHelper } from '@utilities/helper/http.helper';
+import { OverlayService } from '@shared/service/overlay.service';
+import { WarnDialogComponent } from '@shared/components/overlay/warn-dialog/warn-dialog.component';
 import { KeyValue } from '@angular/common';
 import { Base } from '@utilities/base/base';
 
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.scss'],
+  styleUrls: ['./sidebar.component.scss', './components/trigger-area.scss'],
 })
 export class SidebarComponent
   extends Base

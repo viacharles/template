@@ -186,50 +186,7 @@
   }
 }
 
-.expand-trigger-area {
-  position: absolute;
-  top: 0;
-  right: 0;
-  transform: translate(100%, 0);
 
-  &:hover {
-    .expand-button {
-      opacity: 1;
-    }
-  }
-
-  .expand-button {
-    transition: 0.3s;
-    position: absolute;
-    top: 4.5rem;
-    left: 0;
-    transform: translate(-50%, 0);
-    height: 1.5rem;
-    width: 1.5rem;
-    padding-top: 1px;
-    opacity: 0;
-    border: 1px solid $light-gray-2;
-    background-color: $white;
-    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.15);
-
-    &:hover {
-      transition: 0.1s;
-      background-color: var(--primary-color);
-      border: var(--primary-color);
-
-      &>em {
-        transition: 0.2s ease;
-        color: $white;
-      }
-    }
-
-    em {
-      // color: $light-gray-1;
-      font-size: 0.75rem;
-      transform: scale(80%);
-    }
-  }
-}
 
 .menu {
   &>ul {
@@ -293,7 +250,6 @@
     &:hover+label.enable {
       transition: 0.3s ease;
       background-color: $grey-light;
-      // box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.15);
     }
   }
 
@@ -322,8 +278,6 @@
         transition: 0;
         opacity: 1;
       }
-
-      // animation: subExpand 0.2s ease-in forwards;
     }
   }
 }

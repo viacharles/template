@@ -1,0 +1,79 @@
+@import "color";
+@import "variables";
+
+.head {
+  transition: 0.5s;
+  position: fixed;
+  z-index: map-get($layout-level, 'fixed');
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0.9rem 4% 1rem 4%;
+
+  &.entity {
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.05);
+  }
+
+  img {
+    height: 37px;
+  }
+
+  ul:not(.dropdown-menu) {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    gap: 0.5em;
+    justify-content: flex-end;
+  }
+
+  .lang-select {
+    display: none;
+    position: relative;
+  }
+
+  ul.dropdown-menu {
+    display: block;
+    position: absolute;
+  }
+
+  li {
+    text-decoration: none;
+    list-style: none;
+
+    &:last-of-type {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      em {
+        margin-left: 4px;
+        margin-bottom: 3px;
+      }
+    }
+  }
+}
+
+.head-nav {
+  a {
+    text-decoration: none;
+    margin-right: 8px;
+    letter-spacing: 1.4px;
+    &:hover {
+      opacity: 0.8;
+      color: var(--primary-color);
+    }
+  }
+
+  button {
+    padding: 8px 22px;
+    border: none;
+  }
+
+  .btn-projects {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+}

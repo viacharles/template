@@ -15,14 +15,14 @@ import {
   SimpleChanges,
   Renderer2,
 } from '@angular/core';
-import {BehaviorSubject, Observable, Subscription, take, timer} from 'rxjs';
-import {IColorString} from '@utilities/interface/common.interface';
-import {DomSanitizer, SafeHtml} from '@angular/platform-browser';
-import {animate, style, transition, trigger} from '@angular/animations';
+import { BehaviorSubject, Observable, Subscription, take, timer } from 'rxjs';
+import { IColorString } from '@utilities/interface/common.interface';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { animate, style, transition, trigger } from '@angular/animations';
 @Component({
   selector: 'app-data-table',
   templateUrl: './data-table.component.html',
-  styleUrls: ['./data-table.component.scss'],
+  styleUrls: ['./data-table.component.scss', './scss/table.container.scss'],
   animations: [
     trigger('upInCompressOut', [
       transition(':enter', [

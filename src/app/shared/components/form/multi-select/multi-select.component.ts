@@ -14,7 +14,7 @@ import { IDynamicFieldValue } from '@utilities/interface/api/df-api.interface';
 @Component({
   selector: 'app-multi-select',
   templateUrl: './multi-select.component.html',
-  styleUrls: ['./multi-select.component.scss'],
+  styleUrls: ['./multi-select.component.scss', './components/dropdown.scss', './components/multi-select-input.scss'],
   providers: [getFormProvider(MultiSelectComponent)]
 })
 export class MultiSelectComponent extends CustomForm<(string | number)[] | IDynamicFieldValue[] | null> implements OnInit, OnChanges, AfterViewInit {

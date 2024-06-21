@@ -1,0 +1,120 @@
+.cover {
+  overflow: hidden;
+  height: 753px;
+
+  &__text {
+    position: absolute;
+    z-index: map-get($layout-level, 'cover');
+    top: 200px;
+    left: calc(4% + 60px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 474px;
+    height: 435px;
+
+    button {
+      border: none;
+      width: fit-content;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    top: 11px;
+    left: calc(458px - 3%);
+    width: 70%;
+    height: 670px;
+
+    img {
+      position: absolute;
+      opacity: 0;
+    }
+
+    &__1 {
+      top: 495px;
+      right: 456px;
+      animation: fade-up-in 1.5s ease-out 1.5s forwards;
+    }
+
+    &__2 {
+      top: 427px;
+      right: 73px;
+      animation: floatPopIn 2s ease-in-out 0.3s forwards;
+    }
+
+    &__3 {
+      top: 342px;
+      right: -57px;
+      animation: fade-up-in 1.5s ease-out 1.5s forwards;
+    }
+
+    &__4 {
+      top: 503px;
+      right: 71px;
+      animation: fade-up-in 1.5s ease-out 1.5s forwards;
+    }
+
+    &__5 {
+      top: 85px;
+      right: 305px;
+      animation: floatPopIn 2s ease-in-out 0.3s forwards;
+    }
+
+    &__6 {
+      top: 188px;
+      right: 101px;
+      animation: floatPopIn 1.5s ease-in-out 1.3s forwards;
+    }
+
+    &__7 {
+      top: 37px;
+      right: -17px;
+      animation: floatPopIn 1.5s ease-in-out 1.3s forwards;
+    }
+
+    &__8 {
+      top: -24px;
+      right: 328px;
+      animation: fade-up-in 2.5s ease-out 1.5s forwards;
+    }
+
+    &__9 {
+      top: 596px;
+      right: 190px;
+      animation: fade-in 0.8s ease-in 2.3s forwards;
+    }
+
+    &__10 {
+      top: 441px;
+      right: 482px;
+      animation: fade-in 0.8s ease-in 1.8s forwards;
+    }
+
+    &__11 {
+      top: 216px;
+      right: 219px;
+      animation: fade-in 0.8s ease-in 1.8s forwards;
+    }
+  }
+
+  div:first-of-type {
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  .img-container {
+    height: 485px;
+
+    img {
+      height: 100%;
+    }
+  }
+
+  button {
+    text-transform: uppercase;
+    border-color: #eeeff2;
+    font-weight: 700;
+  }
+}
