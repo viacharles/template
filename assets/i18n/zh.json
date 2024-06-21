@@ -129,11 +129,11 @@
     "project-list": "架構決策列表",
     "systems": "架構決策紀錄",
     "architecture": "架構決策紀錄",
-    "cab": "行事曆",
-    "cab-overview": "變更審查委員會",
-    "cab-basic": "變更審查申請",
-    "cab-review": "變更審查委員會",
-    "cab-edit": "編輯簽核單",
+    "df": "行事曆",
+    "df-overview": "變更審查委員會",
+    "df-basic": "變更審查申請",
+    "df-review": "變更審查委員會",
+    "df-edit": "編輯簽核單",
     "portfolio-architecture-list": "專案總覽",
     "portfolio-analytic": "參數分析",
     "settings": "設定",
@@ -180,7 +180,7 @@
   "error": {
     "required": "必填"
   },
-  "cab": {
+  "df": {
     "group-type": "分組樣式",
     "docId": "簽核單號",
     "templateVersion": "問卷版本號",
@@ -192,10 +192,6 @@
     "basic-question-department": "專案負責科",
     "basic-question-owner": "專案負責人",
     "basic-question-type": "申請項目",
-    "basic-question-type-1": "系統上線CAB1",
-    "basic-question-type-2": "系統變更CAB1",
-    "basic-question-type-3": "系統上線CAB2",
-    "basic-question-type-4": "系統變更CAB2",
     "basic-question-placeholder": "請輸入內容文字",
     "basic-question-change-item": "變更項目",
     "basic-question-change-item-1": "韌體變更",
@@ -262,15 +258,15 @@
     "chairman-send-warn": "提醒您，送出後無法修改審核結果",
     "delete-file": "刪除檔案",
     "list-subtitle": "狀態總覽",
-    "table-cab": "申請項目",
+    "table-df": "申請項目",
     "table-projectName": "關聯專案",
     "table-status": "狀態",
-    "table-cabId": "審核單號",
+    "table-dfId": "審核單號",
     "table-tenantCn": "專案負責科",
     "table-name": "專案負責人",
     "table-sendDate": "送審日期",
     "table-reviewDate": "委員會日期",
-    "no-cab": "目前無專案",
+    "no-df": "目前無專案",
     "add-new": "新增簽核單",
     "warn-delete-schedule-1": "提醒你清除排程後，專案狀態將返回「申請中」",
     "warn-delete-schedule-2": "請至申請中總覽查看",
@@ -292,6 +288,9 @@
     "also-editing": "還有問卷正在編輯",
     "back-to-supplement": "編輯補件",
     "no-supplement-provide": "沒有提供補件資料"
+  },
+  "custom-form": {
+    "question-delete-warn": "確定刪除此題目？"
   },
   "project": {
     "tenant": "租戶網域",

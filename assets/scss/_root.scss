@@ -84,10 +84,10 @@ em {
     transition: 0.2s;
 
     a {
-      color: $green-middle;
+      color: var(--primary-color);
 
       &:hover {
-        color: $green-middle;
+        color: var(--primary-color);
         opacity: 0.8;
       }
     }
@@ -148,10 +148,10 @@ em {
     }
 
     a {
-      color: $green-middle;
+      color: var(--primary-color);
 
       &:hover {
-        color: $green-middle;
+        color: var(--primary-color);
         opacity: 0.5;
       }
     }
@@ -233,10 +233,10 @@ app-bread-crumbs {
 }
 
 a {
-  color: $green-middle;
+  color: var(--primary-color);
 
   &:hover {
-    color: $green-middle;
+    color: var(--primary-color);
     opacity: 0.5;
   }
 }
