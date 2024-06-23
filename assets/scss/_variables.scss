@@ -205,10 +205,9 @@ $list-style: 'decimal', 'disc';
 
 $grid-gutter-width: 16px;
 
-// $grid-breakpoints: (
-//   xs: 0px,
-//   sm: 768px,
-//   md: 1280px,
-//   lg: 1440px,
-//   xl: 1920px
-// );
+$grid-breakpoints: (
+  xs: 0,
+  sm: 430px,
+  md: 768px,
+  lg: 1440px,
+);
