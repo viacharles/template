@@ -99,7 +99,8 @@
     "job-title": "職稱",
     "need-register": "需先註冊",
     "page-name": "頁面名稱",
-    "no-auth-redirect-home": "無權限造訪，將跳轉至首頁"
+    "no-auth-redirect-home": "無權限造訪，將跳轉至首頁",
+    "welcome": "請開始嘗試編輯～"
   },
   "nav": {
     "home": "首頁",
