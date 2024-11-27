@@ -1,36 +1,33 @@
-import {EModule} from '@utilities/enum/router.enum';
+import { IndividualPages, Modules } from '@utilities/enum/router.enum';
 // angular
-import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
 // core
-import {AuthGuard, DefaultGuard} from './core/auth.guard';
-import {AuthenticationService} from './core/services/authentication.service';
-
-// components
-import { PageNotFoundComponent } from './modules/layout/page-not-found/page-not-found.component';
+import { AuthGuard, DefaultGuard } from './core/auth.guard';
+import { AuthenticationService } from './core/services/authentication.service';
 
 export const baseRoutes: Routes = [
-  {path: '', redirectTo: 'home', pathMatch: 'full'},
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   {
-    path: 'home',
+    path: IndividualPages.Home,
     canActivateChild: [DefaultGuard],
     loadChildren: () =>
       import('./modules/home/home.module').then(m => m.HomeModule),
   },
   {
-    path: `${EModule.Form}`,
+    path: `${Modules.Form}`,
     canActivateChild: [AuthGuard],
     loadChildren: () =>
-    import('./modules/form/form-elements.module').then(m => m.FormElementsModule),
+      import('./modules/form/form-elements.module').then(m => m.FormElementsModule),
   },
   {
-    path: `${EModule.Table}`,
+    path: `${Modules.Table}`,
     canActivateChild: [AuthGuard],
     loadChildren: () =>
-    import('./modules/table/table-page.module').then(m => m.TablePageModule),
+      import('./modules/table/table-page.module').then(m => m.TablePageModule),
   },
-  {path: '**', component: PageNotFoundComponent},
+  { path: '**', redirectTo: IndividualPages.Home, pathMatch: 'full' },
 ];
 
 @NgModule({
@@ -39,10 +36,10 @@ export const baseRoutes: Routes = [
       baseRoutes,
       // { preloadingStrategy: PreloadAllModules }
       // TODO: this is for Production-Release only. unfortunately, no way to do this dynamically at the moment
-      {onSameUrlNavigation: 'reload'}
+      { onSameUrlNavigation: 'reload' }
     ),
   ],
   exports: [RouterModule],
   providers: [AuthenticationService],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

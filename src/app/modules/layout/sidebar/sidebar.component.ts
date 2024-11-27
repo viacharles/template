@@ -1,5 +1,5 @@
 import { environment } from 'src/environments/environment';
-import { ELogin, EMenuItemFunctionMark } from '@utilities/enum/router.enum';
+import { LoginPages, MenuItemFunctionMark } from '@utilities/enum/router.enum';
 import { FormGroup, UntypedFormControl } from '@angular/forms';
 import { MenuMap, LoginMap } from '@utilities/map/router.map';
 import {
@@ -15,7 +15,7 @@ import { ActivatedRoute, Event, NavigationEnd, Router } from '@angular/router';
 import { filter, forkJoin, takeUntil, timer } from 'rxjs';
 import { StorageMap } from '@ngx-pwa/local-storage';
 import { AuthenticationService } from '@core/services/authentication.service';
-import { EModule } from '@utilities/enum/router.enum';
+import { Modules } from '@utilities/enum/router.enum';
 import { WindowService } from '@shared/service/window.service';
 import { IMenuParams } from '@utilities/interface/router.interface';
 import { LayoutService } from '@shared/service/layout.service';
@@ -32,8 +32,7 @@ import { Base } from '@utilities/base/base';
 })
 export class SidebarComponent
   extends Base
-  implements OnInit, AfterViewInit
-{
+  implements OnInit, AfterViewInit {
   @Output() resize = new EventEmitter<number>();
   hasRole(val?: string[]) {
     if (val === undefined) {
@@ -126,7 +125,7 @@ export class SidebarComponent
     this.resizeObserver?.disconnect();
   }
 
-  public isEnable(keyValue: KeyValue<EModule | string, IMenuParams>): boolean {
+  public isEnable(keyValue: KeyValue<Modules | string, IMenuParams>): boolean {
     return keyValue.value.path !== undefined || keyValue.value.functionMark !== undefined
   }
 
@@ -142,7 +141,7 @@ export class SidebarComponent
 
   /** menu 項目是否為當前頁面path */
   public isCurrentPage(path?: string): boolean {
-    return '/'+path === this.activeRoute;
+    return '/' + path === this.activeRoute;
   }
 
   private changeBackgroundColor(): void {
@@ -155,8 +154,8 @@ export class SidebarComponent
       !!parentItem.path ||
       (parentItem.subMenu
         ? Array.from(parentItem.subMenu!.values()).some(sub =>
-            this.hasRole(sub.roles)
-          )
+          this.hasRole(sub.roles)
+        )
         : false)
     );
   }
@@ -168,14 +167,14 @@ export class SidebarComponent
   public toggleMenu(
     mainKey: string,
     subKey?: string,
-    mark?: EMenuItemFunctionMark
+    mark?: MenuItemFunctionMark
   ): void {
     const Target =
-      mainKey === ELogin.Login || mainKey === ELogin.Register
-        ? this.loginMenu.get(mainKey as ELogin)
+      mainKey === LoginPages.Login || mainKey === LoginPages.Register
+        ? this.loginMenu.get(mainKey as LoginPages)
         : subKey !== undefined
-          ? this.mainMenu.get(mainKey as EModule)?.subMenu?.get(subKey)
-          : this.mainMenu.get(mainKey as EModule);
+          ? this.mainMenu.get(mainKey as Modules)?.subMenu?.get(subKey)
+          : this.mainMenu.get(mainKey as Modules);
     if (Target?.isExpand !== undefined) {
       Target!.isExpand = !Target!.isExpand;
     }
@@ -192,19 +191,19 @@ export class SidebarComponent
   }
 
   /** menu項目自訂功能 */
-  public customFunction(mark?: EMenuItemFunctionMark): void {
+  public customFunction(mark?: MenuItemFunctionMark): void {
     const isSamlTest =
       this.activatedRouter.snapshot.queryParams['isSamlLogoutTest'];
     switch (mark) {
-      case EMenuItemFunctionMark.Logout:
+      case MenuItemFunctionMark.Logout:
         this.authService.doLogout(
           undefined,
           isSamlTest === undefined ? undefined : isSamlTest
         );
         break;
-      case EMenuItemFunctionMark.PortfolioOverview:
+      case MenuItemFunctionMark.PortfolioOverview:
         this.router.navigateByUrl(
-          `${EModule.Table}`
+          `${Modules.Table}`
         );
     }
   }
@@ -278,9 +277,9 @@ export class SidebarComponent
 
   /** 頁面切換後 */
   private afterPageChanged(): void {
-    // if (this.router.url.split('?')[0] === `/${EModule.ProjectDashboard}`) {
-    //   const dashboard = this.mainMenu.get(EModule.ProjectDashboard)!;
-    //   this.mainMenu.set(EModule.ProjectDashboard, {
+    // if (this.router.url.split('?')[0] === `/${Modules.ProjectDashboard}`) {
+    //   const dashboard = this.mainMenu.get(Modules.ProjectDashboard)!;
+    //   this.mainMenu.set(Modules.ProjectDashboard, {
     //     ...dashboard,
     //     isExpand: true,
     //   });

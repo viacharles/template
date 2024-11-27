@@ -1,5 +1,5 @@
-import {Clipboard} from '@angular/cdk/clipboard';
-import {HttpClient} from '@angular/common/http';
+import { Clipboard } from '@angular/cdk/clipboard';
+import { HttpClient } from '@angular/common/http';
 import {
   Component,
   OnInit,
@@ -8,13 +8,13 @@ import {
   ElementRef,
   Renderer2,
 } from '@angular/core';
-import {ActivatedRoute, Router, Event, NavigationEnd} from '@angular/router';
-import {TranslateService} from '@core/services/translate.service';
-import {UsersService} from '@core/services/users.service';
-import {environment} from 'src/environments/environment';
-import {MatLegacySnackBar as MatSnackBar} from '@angular/material/legacy-snack-bar';
-import {OverlayService} from '@shared/service/overlay.service';
-import { EIndividualPages} from '@utilities/enum/router.enum';
+import { ActivatedRoute, Router, Event, NavigationEnd } from '@angular/router';
+import { TranslateService } from '@core/services/translate.service';
+import { UsersService } from '@core/services/users.service';
+import { environment } from 'src/environments/environment';
+import { MatLegacySnackBar as MatSnackBar } from '@angular/material/legacy-snack-bar';
+import { OverlayService } from '@shared/service/overlay.service';
+import { IndividualPages } from '@utilities/enum/router.enum';
 import { take, takeUntil, timer } from 'rxjs';
 import { UnSubOnDestroy } from '@utilities/abstract/unSubOnDestroy.abstract';
 
@@ -72,14 +72,14 @@ export class FooterComponent extends UnSubOnDestroy implements OnInit {
     }
 
     this.ghostConsoleStr += e.key;
-      this.translateService.toggleLang();
-      this.ghostConsoleStr = '';
+    this.translateService.toggleLang();
+    this.ghostConsoleStr = '';
   }
 
   /** 更換背景色 */
   private setStyleByPath(path: string): void {
     switch (path) {
-      case EIndividualPages.Home:
+      case IndividualPages.Home:
         this.renderer.setStyle(
           this.selfElem?.nativeElement,
           'backgroundColor',

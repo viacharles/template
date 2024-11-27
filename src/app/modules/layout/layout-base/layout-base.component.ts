@@ -1,18 +1,10 @@
-import {
-  AfterViewInit,
-  Component,
-  DoCheck,
-  ElementRef,
-  OnInit,
-  Renderer2,
-  ViewChild,
-} from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { Event, NavigationEnd, Router } from '@angular/router';
 import { LayoutService } from '@shared/service/layout.service';
 import { OverlayService } from '@shared/service/overlay.service';
 import { WindowService } from '@shared/service/window.service';
 import { UnSubOnDestroy } from '@utilities/abstract/unSubOnDestroy.abstract';
-import { EAssistantPages, EFormPages, EIndividualPages, EModule } from '@utilities/enum/router.enum';
+import { AssistantPages, FormPages, IndividualPages, Modules } from '@utilities/enum/router.enum';
 import { IToast } from '@utilities/interface/overlay.interface';
 import { Toast } from '@utilities/model/toast.model';
 import { takeUntil } from 'rxjs';
@@ -33,10 +25,10 @@ export class LayoutBaseComponent
 
   /** 需隱藏 sidebar 的頁面列表 */
   private readonly sidebarHidePages: string[] = [
-    `${EIndividualPages.Home}`,
+    `${IndividualPages.Home}`,
   ]
   /** 需隱藏 footer 的頁面 */
-  private hideFooterList = [`${EAssistantPages.Chat}`, `${EModule.Form}/${EFormPages.CustomComponent}`];
+  private hideFooterList = [`${AssistantPages.Chat}`, `${Modules.Form}/${FormPages.CustomComponent}`];
 
   public showSidebar = false;
   public hideFooter = false;
@@ -105,7 +97,7 @@ export class LayoutBaseComponent
   }
   /** 依頁面隱藏 sidebar */
   private hideSidebarByPath(path: string): void {
-      this.$layout.hideSidebarSubject.next(this.sidebarHidePages.some(pagePath => pagePath === path))
+    this.$layout.hideSidebarSubject.next(this.sidebarHidePages.some(pagePath => pagePath === path))
   }
   /** 訂閱 hideSidebar$ */
   private subscribeHideSidebar(): void {
@@ -138,9 +130,9 @@ export class LayoutBaseComponent
       srcToasts.some(srcToast => srcToast.id === toast.id)
     );
     srcToasts
-      // .filter(
-      //   srcToast => !this.currentToasts.some(toast => srcToast.id === toast.id)
-      // )
+      .filter(
+        srcToast => !this.currentToasts.some(toast => srcToast.id === toast.id)
+      )
       .forEach(toast =>
         this.currentToasts.unshift(new Toast(toast, this.overlayService))
       );

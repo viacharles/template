@@ -13,7 +13,7 @@ import { EContent, ROLE } from '@utilities/enum/common.enum';
 import { RouterService } from '@shared/service/router.service';
 import { environment } from 'src/environments/environment.prod';
 import { StorageMap } from '@ngx-pwa/local-storage';
-import { ELogin } from '@utilities/enum/router.enum';
+import { LoginPages } from '@utilities/enum/router.enum';
 import { OverlayService } from '@shared/service/overlay.service';
 
 @Injectable({ providedIn: 'root' })
@@ -54,7 +54,7 @@ export class AuthGuard {
             this.$overlay.addToast(EContent.Info, {
               title: 'common.need-register',
             });
-            this.router.navigateByUrl(`login/${ELogin.UserBasicInfo}`);
+            this.router.navigateByUrl(`login/${LoginPages.UserBasicInfo}`);
             return observer.next(false);
           } else {
             // KL: for some reason, the runtime doesn't like forkJoin here...
@@ -112,7 +112,7 @@ export class AuthGuard {
             this.$overlay.addToast(EContent.Info, {
               title: 'common.need-register',
             });
-            this.router.navigateByUrl(`login/${ELogin.UserBasicInfo}`);
+            this.router.navigateByUrl(`login/${LoginPages.UserBasicInfo}`);
             return observer.next(false);
           } else {
             this.auth
@@ -203,7 +203,7 @@ export class NoAuthGuard {
           this.auth.doLogout('quiet');
           if (!environment.production)
             console.log(`path: ${state.url}, LOGOUT`);
-            timer(100).pipe(take(1)).subscribe(() => window.location.reload());
+          timer(100).pipe(take(1)).subscribe(() => window.location.reload());
           return observer.next(true);
         }
 
@@ -219,7 +219,7 @@ export class NoAuthGuard {
           this.auth.doLogout('quiet');
           if (!environment.production)
             console.log(`path: ${state.url}, LOGOUT`);
-            timer(100).pipe(take(1)).subscribe(() => window.location.reload());
+          timer(100).pipe(take(1)).subscribe(() => window.location.reload());
           return observer.next(true);
         }
 

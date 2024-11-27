@@ -1,4 +1,4 @@
-import {LayoutService} from '@shared/service/layout.service';
+import { LayoutService } from '@shared/service/layout.service';
 import {
   Component,
   ElementRef,
@@ -7,16 +7,16 @@ import {
   Renderer2,
   ViewChild,
 } from '@angular/core';
-import {TranslateService} from '@ngx-translate/core';
-import {StorageMap} from '@ngx-pwa/local-storage';
-import {setTheme} from 'ngx-bootstrap/utils';
-import {LoaderService} from './core/services/loader.service';
-import {Title} from '@angular/platform-browser';
-import {ActivatedRoute, NavigationEnd, Router} from '@angular/router';
-import {Subscription, filter, map, takeUntil, tap} from 'rxjs';
-import {WindowService} from '@shared/service/window.service';
-import {UnSubOnDestroy} from '@utilities/abstract/unSubOnDestroy.abstract';
-import {EIndividualPages} from '@utilities/enum/router.enum';
+import { TranslateService } from '@ngx-translate/core';
+import { StorageMap } from '@ngx-pwa/local-storage';
+import { setTheme } from 'ngx-bootstrap/utils';
+import { LoaderService } from './core/services/loader.service';
+import { Title } from '@angular/platform-browser';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { Subscription, filter, map, takeUntil, tap } from 'rxjs';
+import { WindowService } from '@shared/service/window.service';
+import { UnSubOnDestroy } from '@utilities/abstract/unSubOnDestroy.abstract';
+import { IndividualPages } from '@utilities/enum/router.enum';
 
 @Component({
   selector: 'app-root',
@@ -72,7 +72,7 @@ export class AppComponent extends UnSubOnDestroy implements OnInit {
         map((event: any) => event as NavigationEnd),
         tap(event => {
           if (
-            event.url !== `/${EIndividualPages.Home}` &&
+            event.url !== `/${IndividualPages.Home}` &&
             !this.pageIsSubscribed
           ) {
             this.overlayWidthResponseWithSidebar();
@@ -95,7 +95,7 @@ export class AppComponent extends UnSubOnDestroy implements OnInit {
   }
 
   protected override onDestroy(): void {
-    this.setTimeouts.forEach((s: any) => clearTimeout(s)) ;
+    this.setTimeouts.forEach((s: any) => clearTimeout(s));
   }
 
   @HostListener('click', ['$event']) windowClick(event: Event) {

@@ -2,7 +2,7 @@ import {
   ITableConfig,
   ITableData,
 } from '@shared/components/data-table/data-table.component';
-import { EModule, ETablePages } from '@utilities/enum/router.enum';
+import { Modules, TablePages } from '@utilities/enum/router.enum';
 import { Component, OnInit, DoCheck } from '@angular/core';
 import { FormControl, FormGroup, UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -205,14 +205,14 @@ export class TablePageComponent extends BasePage implements OnInit, DoCheck {
       this.projectList.find(project => project.projectId === projectId)
         ?.tenantId === this.tenantId;
     this.router.navigateByUrl(
-      `${EModule.Table}/${projectId
+      `${Modules.Table}/${projectId
         ? (IsTenant || this.isSiteAdmin ? 'edit/' : 'view/') +
         projectId +
         '/' +
         TempId +
         '/' +
         TenantId
-        : ETablePages.New
+        : TablePages.New
       }`
     );
   }

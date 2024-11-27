@@ -11,39 +11,14 @@
       <a tabindex="-1" class="pe-pointer" (click)="this.router.navigateByUrl('home')"><img
           [src]="'assets/img/template-icon.png'" alt=""></a>
     </div>
-    <!-- 登入頁 menu -->
-    <ul class="pt-{{ this.tenantName && this.userName ? '2' : '5' }}"
-      *ngIf="!(this.authService.isLoggedIn$ | async); else tNaveMenu">
-      <ng-container *ngFor="
-          let section of this.loginMenu | keyvalue: asIsOrder;
-          let index = index
-        ">
-        <li>
-          <div>
-            <input #tInput class="d-none" type="radio" [formControl]="this.menuForm"
-              [value]="this.getUrlWithVersion('/' + section.value.path)" [id]="'sidebar-'+index" />
-            <label class="d-flex flex-row align-items-center justify-content-between w-100 h-12 pl-7 fw-6 pe-pointer"
-              [for]="'sidebar-'+index" [class.hasPath]="this.isEnable(section)"
-              (click)="this.toggleMenu(section.key)">
-              <div class="flex-row-start">
-                <em *ngIf="section.value.icon" class="{{ section.value.icon }} mr-2_5"></em>
-                <p class="text-grey-dark text-break fs-xsm">
-                  {{ section.value.title | translate }}
-                </p>
-              </div>
-            </label>
-          </div>
-        </li>
-      </ng-container>
-    </ul>
     <!-- nav menu -->
-    <ng-template #tNaveMenu>
+    <div #tNaveMenu>
       <ul class="main scroll-bar text-grey-dark" *ngIf="this.authService.isLoggedIn$ | async">
         <ng-container *ngFor="
             let section of this.mainMenu | keyvalue: asIsOrder;
             let index = index
           ">
-          <li *ngIf="this.showParentItem(section.value)">
+          <li [appClickRipple]="this.isEnable(section)" *ngIf="this.showParentItem(section.value)">
             <div>
               <input #input class="d-none" type="radio" [formControl]="this.menuForm" [value]="
                   this.getUrlWithVersion(
@@ -69,7 +44,7 @@
                   let item of section.value.subMenu | keyvalue: asIsOrder;
                   let subIndex = index
                 ">
-                <li *ngIf="hasRole(item.value.roles)" class="menu-item {{
+                <li [appClickRipple]="this.isEnable(item)" *ngIf="hasRole(item.value.roles)" class="menu-item {{
                     section.value.isExpand ? 'expand' : 'collapse'
                   }}">
                   <input #check class="d-none" type="radio" [formControl]="this.menuForm"
@@ -93,6 +68,6 @@
           </li>
         </ng-container>
       </ul>
-    </ng-template>
+    </div>
   </div>
 </div>

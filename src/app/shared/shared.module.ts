@@ -15,6 +15,7 @@ import { TabsComponent } from './components/tab/tabs.component';
 import { SideTabPopupDialogComponent } from './components/overlay/side-tab-popup-dialog/side-tab-popup-dialog.component';
 import { AccordionListCardComponent } from './components/accordion/accordion-list-card/accordion-list-card.component';
 import { ButtonsModule } from './components/buttons/buttons.module';
+import { DirectiveModule } from './directives/directive.module';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,7 @@ import { ButtonsModule } from './components/buttons/buttons.module';
     SideTabPopupDialogComponent,
     AccordionListCardComponent,
     PipeModule,
-    ButtonsModule
+    ButtonsModule,
   ],
   imports: [
     CommonModule,
@@ -51,7 +52,8 @@ import { ButtonsModule } from './components/buttons/buttons.module';
     FormsModule,
     ReactiveFormsModule,
     PipeModule,
-    ButtonsModule
+    ButtonsModule,
+    DirectiveModule
   ],
 })
 export class SharedModule {}

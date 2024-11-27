@@ -1,6 +1,9 @@
+import { OverlayService } from '@shared/service/overlay.service';
 import {
   AbstractControl,
+  FormArray,
   FormControl,
+  FormGroup,
   UntypedFormArray,
   UntypedFormBuilder,
   UntypedFormControl,
@@ -12,6 +15,7 @@ import {
 import {
   EFDProcess,
   EFieldStatus,
+  FORM_MODE,
 } from '@utilities/enum/common.enum';
 import {
   IDFAnswer,
@@ -21,7 +25,8 @@ import {
   IDFQuestionSubQuestion,
   IDFQuestionGroup,
   IDFQuestionHideExpressionView, IDFTemplateRes,
-  IDynamicFromValidator
+  IDynamicFromValidator,
+  IDynamicFieldValue
 } from '@utilities/interface/api/df-api.interface';
 import { EDFAnswerStatus } from '../enum/df.enum';
 import {
@@ -32,6 +37,10 @@ import { DatePipe } from '@angular/common';
 import { ValidatorHelper } from '@core/validators.helper';
 import { EErrorMessage, EFieldType } from '@utilities/enum/form.enum';
 import { DynamicFormValidatorsService } from '@core/dynamic-form-validators.service';
+import { IDFQuestionGroupView, IDFQuestionView } from '../interface/dynamic-form.interface';
+import { DynamicFieldEditDialogComponent } from '../components/dynamic-field-edit-dialog/dynamic-field-edit-dialog.component';
+import { IEditDynamicForm } from '../interface/dynamic-form-form.interface';
+import { IDynamicOption } from '@utilities/interface/form.interface';
 
 export class DynamicForm {
   public question_origin?: IDFTemplateRes;
@@ -50,6 +59,10 @@ export class DynamicForm {
   public hideExpressions: IDFQuestionHideExpressionView[][] = [];
   /** 傳 project 和 formBuilder 進來的話會組成 form */
   public form = new UntypedFormGroup({});
+  public readonly defaultEmpty = {
+    input: [{ value: '', memo: '' }],
+    option: []
+  }
   private readonly maxOptionInLine = 3;
 
   constructor(
@@ -57,6 +70,7 @@ export class DynamicForm {
     public $translate: TranslateService,
     public datePipe: DatePipe,
     private $dynamicValidator: DynamicFormValidatorsService,
+    private $overlay: OverlayService,
     project?: IDFApplicationAnswerRes,
     private fb?: UntypedFormBuilder,
   ) {
@@ -286,7 +300,7 @@ export class DynamicForm {
         const isMulti = type === EFieldType.MultiSelect || type === EFieldType.Checkbox;
         group.addControl(
           answerId,
-          this.fb!.control([], this.getValidations(answers[answerId].validation??[], isMulti, required))
+          this.fb!.control([], this.getValidations(answers[answerId].validation ?? [], isMulti, required))
         );
         if (disabled) {
           group.controls[answerId].disable();
@@ -297,7 +311,7 @@ export class DynamicForm {
     return new UntypedFormGroup({});
   }
 
-  public getValidations(validations: IDynamicFromValidator[], isMulti: boolean, required: boolean) {
+  public getValidations(validations: IDynamicFromValidator[], isMulti: boolean, required: boolean): ValidatorFn[] {
     const dynamicValidations = validations?.map(validate => this.getDynamicValidate(validate));
     const validators = [
       ...(required ? [this.DynamicRequiredValidate(isMulti)] : []),
@@ -310,7 +324,7 @@ export class DynamicForm {
     return (control: AbstractControl): ValidationErrors | null => {
       const value = validation.value!;
       switch (validation.type) {
-        case EErrorMessage.EMAIL_ERROR:return this.$dynamicValidator.DynamicEmail(control); break;;
+        case EErrorMessage.EMAIL_ERROR: return this.$dynamicValidator.DynamicEmail(control); break;;
         case EErrorMessage.EN_NUMBER_ONLY: return this.$dynamicValidator.DynamicEnNumberOnly(control); break;
         case EErrorMessage.MAX_ITEMS: return this.$dynamicValidator.DynamicMaxItems(control, +value as number); break;
         case EErrorMessage.MIN_ITEMS: return this.$dynamicValidator.DynamicMinItems(control, +value as number); break;
@@ -326,11 +340,81 @@ export class DynamicForm {
 
   private DynamicRequiredValidate(isMulti = false) {
     return ({ value }: AbstractControl): ValidationErrors | null => {
-      const isValid = isMulti ? value.length > 0 :( value[0] ? `${value[0].value}`.length : false);
+      const isValid = isMulti ? value.length > 0 : (value[0] ? `${value[0].value}`.length : false);
       const error: any = {};
       error[`${EErrorMessage.REQUIRED}`] = this.$translate.instant(EErrorMessage.REQUIRED);
       return isValid ? null : error;
     };
+  }
+
+  public getDynamicFromValidator(validations: IDynamicFieldValue[], require: boolean): IDynamicFromValidator[] {
+    const validation = validations.map(validation => ({
+      type: validation.value as EErrorMessage,
+      ...(!!validation.memo ? { value: [+validation.memo as number] } : {})
+    }));
+    return [...validation, ...((require && !validation.some(v => v.type === EErrorMessage.REQUIRED)) ? [{ type: EErrorMessage.REQUIRED }] : [])];
+  }
+
+  /** 新增題目
+   * @param insertFront 是否插入在前面
+   */
+  public addNewSubQuestion(group: IDFQuestionGroupView, SubQuestion: IDFQuestionView, questionIndex: number, insertIndex: number): void {
+    this.$overlay.addDialog(
+      DynamicFieldEditDialogComponent,
+      {
+        mode: FORM_MODE.ADD,
+      },
+      {
+        callback: {
+          confirm: (add: IEditDynamicForm) => {
+            const firstGroup = (this.form?.controls['answers'] as FormArray).controls[0] as FormGroup;
+            const id = Math.random().toString(36).substring(2, 32);
+            const isMulti = add.fieldType === EFieldType.MultiSelect || add.fieldType === EFieldType.Checkbox;
+            const validatorsView = this.getDynamicFromValidator(add.validation as any, !!add.required);
+            const validators = this.getValidations(validatorsView ?? [], isMulti, !!add.required);
+            firstGroup.addControl(
+              id,
+              new FormGroup({
+                answers: new FormGroup({
+                  A: new FormControl(isMulti ? this.defaultEmpty.option : this.defaultEmpty.input, validators)
+                }),
+                remark: new FormArray([])
+              }));
+            const questionForm = firstGroup.controls[id] as FormGroup
+            const questionView: IDFQuestionView = {
+              questionId: id,
+              form: questionForm,
+              order: insertIndex,
+              show: true,
+              description: add.des ?? '',
+              title: add.title,
+              disabled: false,
+              SubQuestionGroupForm: firstGroup.controls[id] as FormGroup,
+              SubQuestionGroup: [{
+                answerId: 'A',
+                form: (questionForm.controls['answers'] as FormGroup).controls['A'] as FormControl,
+                type: add.fieldType,
+                show: true,
+                required: !!add.required,
+                disabled: false,
+                title: null,
+                placeholder: add.placeholder ?? null,
+                options: add.options ?? null,
+                optionsForNormal: add.options?.map((option, index) => ({ code: `${index + 1}`, name: option.name, hasMemo: option.hasMemo })) as IDynamicOption<string>[],
+                validationView: validatorsView,
+              }]
+            };
+
+            const questionsView = group.questions;
+            group.questions = [
+              ...questionsView.slice(0, insertIndex),
+              questionView,
+              ...questionsView.slice(insertIndex)
+            ];
+          }
+        }
+      }
+    );
   }
 
   /** 題目畫面用資料 */

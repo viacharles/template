@@ -16,13 +16,13 @@ import { OverlayService } from '@shared/service/overlay.service';
 import { LayoutService } from '@shared/service/layout.service';
 import { UsersService } from '@core/services/users.service';
 import { HttpClient } from '@angular/common/http';
-import { EFormPages, EModule } from '@utilities/enum/router.enum';
+import { FormPages, Modules } from '@utilities/enum/router.enum';
 import { IUser } from '@utilities/interface/api/auth-api.interface';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
+  styleUrls: ['./home.component.scss', './components/home-header.scss'],
 })
 export class HomeComponent extends UnSubOnDestroy implements OnInit {
   @ViewChild('tHead') tHead?: ElementRef<HTMLElement>;
@@ -74,7 +74,7 @@ export class HomeComponent extends UnSubOnDestroy implements OnInit {
 
   ngOnInit() {
     this.http.get('assets/version.json').subscribe((res: any) => {
-      if(localStorage.getItem('version') !== res.version) {
+      if (localStorage.getItem('version') !== res.version) {
         localStorage.setItem('version', res.version);
         window.location.reload();
       }
@@ -117,7 +117,7 @@ export class HomeComponent extends UnSubOnDestroy implements OnInit {
     if (!this.isLogin) {
       this.callSso();
     } else {
-      this.router.navigateByUrl(`${EModule.Table}`);
+      this.router.navigateByUrl(`${Modules.Table}`);
     };
   }
 
@@ -137,7 +137,7 @@ export class HomeComponent extends UnSubOnDestroy implements OnInit {
           "samlLogoutPath": "https://tw3.cath"
         }),
       ]).pipe(take(1)).subscribe(() => {
-        this.router.navigateByUrl(`${EModule.Form}/${EFormPages.DynamicForm}`)
+        this.router.navigateByUrl(`${Modules.Form}/${FormPages.DynamicForm}`)
       })
     })
   }

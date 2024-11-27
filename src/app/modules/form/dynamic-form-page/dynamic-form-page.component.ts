@@ -38,15 +38,12 @@ import {
   EDFAnswerStatus, EDFPageFormStyleType
 } from './shared/enum/df.enum';
 import { WindowService } from '@shared/service/window.service';
-import { ActivatedRoute, Router } from '@angular/router';
-import { dfProcessLabelMap, dfQuestionFormMap } from './shared/map/df.map';
+import { ActivatedRoute } from '@angular/router';
+import { dfQuestionFormMap } from './shared/map/df.map';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
-// import { saveAs } from 'file-saver';
-import { UsersService } from '@core/services/users.service';
 import { DatePipe } from '@angular/common';
 import { IAccordionListCard } from '@shared/components/accordion/accordion-list-card/accordion-list-card.component';
 import { IUser } from '@utilities/interface/api/auth-api.interface';
-import { ILabel } from '@utilities/interface/common.interface';
 import { DynamicForm } from './shared/model/dynamic-form.model';
 import { IDFFormPage } from './shared/interface/dynamic-form.interface';
 import { HttpClient } from '@angular/common/http';
@@ -67,9 +64,7 @@ export class DynamicFormPageComponent extends UnSubOnDestroy
     private $layout: LayoutService,
     private $overlay: OverlayService,
     private $df: DFService,
-    private $user: UsersService,
     private fb: FormBuilder,
-    private router: Router,
     private activateRouter: ActivatedRoute,
     private $translate: TranslateService,
     private sanitizer: DomSanitizer,
@@ -105,18 +100,13 @@ export class DynamicFormPageComponent extends UnSubOnDestroy
   public totalFieldCount = 0;
   public subscription = new Subscription();
   private hideExpressions: IDFQuestionHideExpressionView[][] = [];
-  private projectId = '';
-  public progressLabel?: ILabel;
-  private questionVersion = '';
-  public dfId = '';
-  private docId = '';
   public isFileReEditMode = false;
   private preReServeFileControl = new FormGroup({});
   private readonly fileSizeLimitMb = 30;
   private readonly iconClass = {
-    valid: 'icon-confirmed-round text-green-middle ml-12 fs-lgx',
+    valid: 'icon-confirmed-round text-green-middle ml-12 fs-lgxx',
     invalid:
-      'page-icon icon-exclamation d-flex align-items-center justify-content-center text-white ml-11 fw-9 fs-lg',
+      'page-icon d-flex align-items-center justify-content-center text-white ml-11 fw-9 fs-lgxx',
   };
   private readonly warningBeforeNavigate = 'common.cancel-edit-no-save-draft';
 
@@ -177,18 +167,12 @@ export class DynamicFormPageComponent extends UnSubOnDestroy
   }
 
   ngOnInit(): void {
-    this.$layout.doSidebarExpandSubject.next(false);
     this.$layout.warningBeforeNavigateSubject.next(this.warningBeforeNavigate);
     this.init();
   }
 
   /** @param noApi 不需要打api */
   private init(noApi?: boolean): void {
-    this.projectId = this.activateRouter.snapshot.params['projectId'];
-    this.dfId = this.activateRouter.snapshot.params['dfId'];
-    this.questionVersion =
-      this.activateRouter.snapshot.params['questionVersion'];
-    this.docId = this.activateRouter.snapshot.params['docId'];
     this.formMode = this.activateRouter.snapshot.params[
       'formMode'
     ] as FORM_MODE;
@@ -197,15 +181,15 @@ export class DynamicFormPageComponent extends UnSubOnDestroy
     ] as EFDProcess;
     if (!noApi) {
       forkJoin([
-        this.http.get<IDFApplicationAnswerRes[] | IDFApplicationAnswerRes | undefined>('../../../../assets/mock-data/df-answer.json')
+        this.http.get<IDFApplicationAnswerRes[] | IDFApplicationAnswerRes | undefined>('assets/mock-data/df-answer.json')
           .pipe(
             catchError(err => {
               this.handleApiError(err, 'common.get-fail');
               return throwError(() => err);
             })
           ),
-        this.http.get<IDFTemplateRes>('../../../../assets/mock-data/df-template.json'),
-        this.http.get<IUser>('../../../../assets/mock-data/user-data.json'),
+        this.http.get<IDFTemplateRes>('assets/mock-data/df-template.json'),
+        this.http.get<IUser>('assets/mock-data/user-data.json'),
       ]).subscribe({
         next: ([resProject, question, user]: [
           IDFApplicationAnswerRes[] | IDFApplicationAnswerRes | undefined,
@@ -214,18 +198,7 @@ export class DynamicFormPageComponent extends UnSubOnDestroy
         ]) => {
           this.subscription.unsubscribe();
           const project = resProject as IDFApplicationAnswerRes;
-          if (
-            user.userId !== project.creator.id
-              ? true
-              : +status !== EFDProcess.Draft &&
-              +status !== EFDProcess.RequiredForApprove
-          ) {
-            this.$overlay.addToast(EContent.Info, {
-              title: 'common.no-edit-permission',
-            });
-            this.toReview();
-          }
-          this.progressLabel = dfProcessLabelMap.get(+project.status);
+          this.$overlay.addToast(EContent.Success, { title: 'common.welcome' });
           this.formMode =
             project.answers && project.attachment
               ? this.formMode
@@ -235,6 +208,7 @@ export class DynamicFormPageComponent extends UnSubOnDestroy
             this.$translate,
             this.datePipe,
             this.$dynamicValidator,
+            this.$overlay,
             project,
             this.fb
           );
@@ -242,7 +216,7 @@ export class DynamicFormPageComponent extends UnSubOnDestroy
             this.supplementaryData = this.getSupplementaryData(
               resProject as IDFApplicationAnswerRes
             );
-          }
+          };
           this.user = user;
           this.isCreator =
             user.userId === (project as IDFApplicationAnswerRes).creator.id;
@@ -285,23 +259,23 @@ export class DynamicFormPageComponent extends UnSubOnDestroy
       this.$overlay.addToast(EContent.Info, { title: 'common.no-update' });
       return;
     } else {
-          this.$overlay.addToast(EContent.Success, {
-            title: 'common.update-success',
-          });
-          this.formValueForCompare = JSON.parse(
-            JSON.stringify(
-              +this.dynamic!.status! === EFDProcess.RequiredForApprove
-                ? this.supplementaryData
-                : this.dynamic?.form.getRawValue()
-            )
-          );
-          if (this.formMode === FORM_MODE.ADD) {
-            this.init(true);
-          }
-          if (+this.dynamic!.status! === EFDProcess.RequiredForApprove) {
-            this.init();
-          }
-        }
+      this.$overlay.addToast(EContent.Success, {
+        title: 'common.update-success',
+      });
+      this.formValueForCompare = JSON.parse(
+        JSON.stringify(
+          +this.dynamic!.status! === EFDProcess.RequiredForApprove
+            ? this.supplementaryData
+            : this.dynamic?.form.getRawValue()
+        )
+      );
+      if (this.formMode === FORM_MODE.ADD) {
+        this.init(true);
+      }
+      if (+this.dynamic!.status! === EFDProcess.RequiredForApprove) {
+        this.init();
+      }
+    }
   }
 
   /** 此答案所屬階段與目前階段相同 */
@@ -381,103 +355,20 @@ export class DynamicFormPageComponent extends UnSubOnDestroy
     }
   }
 
-  public toReview(project?: IDFApplicationAnswerRes): void {
-    if (this.dynamic?.form.invalid) {
-      this.dynamic?.form.markAllAsTouched();
-      this.isCompleteClicked = true;
-      this.showPageIcon();
-      this.toErrorTab();
-      this.$overlay.addToast(EContent.Warn, {
-        title: 'validators.form-invalid',
-      });
-    } else {
-      if (project) {
-        // this.router.navigateByUrl(
-        //   `${EModule.DF}/${EDFPages.Review}/${project.projectId}/${project.df}/${project.dfId}/${project.questionVersion}/${project.docId}/${project.status}`
-        // );
-      } else {
-        // this.router.navigateByUrl(
-        //   `${EModule.DF}/${EDFPages.Review}/${this.projectId}/${this.dfType}/${this.dfId}/${this.questionVersion}/${this.docId}/${this.dynamic?.status}`
-        // );
-      }
-    }
-  }
-
-  public isAlreadyHasFile(file: IDFFile) {
-    return (
-      file.type &&
-      this.dynamic &&
-      ((+file.type === EDFAnswerStatus.Draft &&
-        +this.dynamic.status! === EFDProcess.Draft) ||
-        (+file.type === EDFAnswerStatus.RequiredForApprove &&
-          +this.dynamic.status! === EFDProcess.RequiredForApprove))
-    );
-  }
-
-  public openSupplementUpload() {
-    if (this.dynamic?.getEmptyFileFormGroup(this.dynamic.status!)) {
-      this.fileControl.push(
-        new FormGroup({
-          file: new FormControl(''),
-          fileName: new FormControl(''),
-          url: new FormControl(''),
-          department: new FormControl(''),
-          departmentCn: new FormControl(''),
-          departmentEn: new FormControl(''),
-          section: new FormControl(''),
-          sectionCn: new FormControl(''),
-          sectionEn: new FormControl(''),
-          userId: new FormControl(''),
-          userName: new FormControl(''),
-          email: new FormControl(''),
-          isSizeError: new FormControl(false),
-          isTypeError: new FormControl(false),
-          uploadDate: new FormControl(''),
-          type: new FormControl(''),
-          fieldStatus: new FormControl(EFieldStatus.Inputting),
-        })
-      );
-    }
-  }
-
-  public cancel() {
-    this.latestFile.get('fieldStatus')?.setValue(EFieldStatus.Complete);
-    if (!this.isFileReEditMode) {
-      this.fileControl.controls.pop();
-    } else {
-      this.latestFile.patchValue(this.preReServeFileControl);
-    }
-  }
-
   public submit(): void {
-    // if (!this.isChanged()) {
-    //   this.toReview(this.dynamic!.project_origin!);
-    //   return;
-    // }
-    // if (
-    //   +this.dynamic!.status! === EFDProcess.RequiredForApprove &&
-    //   this.supplementaryData.attachment === null &&
-    //   (this.supplementaryData.remark === null
-    //     ? true
-    //     : this.supplementaryData.remark?.filter(
-    //       item => Object.values(item)[0].content
-    //     ).length === 0)
-    // ) {
-    //   this.$overlay.addToast(EContent.Info, {
-    //     title: 'df.no-supplement-provide',
-    //   });
-    //   return;
-    // }
     console.log('submit', this.dynamic?.form)
     if (this.dynamic?.form.invalid) {
       this.isCompleteClicked = true;
       this.dynamic?.form.markAllAsTouched();
       this.showPageIcon();
       this.toErrorTab();
+      this.$overlay.addToast(EContent.Error, {
+        title: '請檢查紅色區塊',
+      });
     } else {
-          this.$overlay.addToast(EContent.Success, {
-            title: 'common.update-success',
-          });
+      this.$overlay.addToast(EContent.Success, {
+        title: 'common.update-success',
+      });
     }
   }
 

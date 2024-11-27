@@ -1,13 +1,13 @@
-import { Component, ElementRef, Input } from '@angular/core';
-import { FormArray, FormControl, FormGroup } from '@angular/forms';
+import { Component, ElementRef, EventEmitter, Input, Output } from '@angular/core';
+import { FormArray, FormGroup } from '@angular/forms';
 import { IDFFormPage, IDFQuestionGroupView, IDFQuestionView } from 'src/app/modules/form/dynamic-form-page/shared/interface/dynamic-form.interface';
 import { Base } from '@utilities/base/base';
 import { OverlayService } from '@shared/service/overlay.service';
 import { DynamicFieldEditDialogComponent } from 'src/app/modules/form/dynamic-form-page/shared/components/dynamic-field-edit-dialog/dynamic-field-edit-dialog.component';
 import { FORM_MODE } from '@utilities/enum/common.enum';
 import { IEditDynamicForm } from 'src/app/modules/form/dynamic-form-page/shared/interface/dynamic-form-form.interface';
-import { EErrorMessage, EFieldType } from '@utilities/enum/form.enum';
-import { IDynamicFieldValue, IDynamicFromValidator } from '@utilities/interface/api/df-api.interface';
+import { EFieldType } from '@utilities/enum/form.enum';
+import { IDynamicFromValidator } from '@utilities/interface/api/df-api.interface';
 import { IDynamicOption } from '@utilities/interface/form.interface';
 import { take, timer } from 'rxjs';
 import { WarnDialogComponent } from '@shared/components/overlay/warn-dialog/warn-dialog.component';
@@ -29,21 +29,17 @@ export class BasicTypeQuestionCardComponent extends Base {
   @Input() form?: FormGroup;
   @Input() model?: DynamicForm;
   @Input() page?: IDFFormPage;
-  @Input() isError? = false;
+  @Input() isError?= false;
+  @Output() edit = new EventEmitter<{ question: IDFQuestionView, groupIndex: number, questionIndex: number }>();
 
   constructor(
     private $overlay: OverlayService,
     private self: ElementRef,
   ) { super() }
 
-  private readonly defaultEmpty = {
-    input: [{ value: '', memo: '' }],
-    option: []
-  }
-
   get fieldType() { return EFieldType };
 
-   /** 編輯題目 */
+  /** 編輯題目 */
   public editSubQuestion(SubQuestion: IDFQuestionView, groupIndex: number, questionIndex: number): void {
     this.$overlay.addDialog(
       DynamicFieldEditDialogComponent,
@@ -59,12 +55,12 @@ export class BasicTypeQuestionCardComponent extends Base {
             const question = ((firstGroup.controls[SubQuestion.questionId] as FormGroup).controls['answers'] as FormGroup).controls['A'];
             const isMulti = update.fieldType === EFieldType.MultiSelect || update.fieldType === EFieldType.Checkbox;
             // 設定 validators
-            const validationView = this.getDynamicFromValidator(update.validation as any, !!update.required);
+            const validationView = this.model?.getDynamicFromValidator(update.validation as any, !!update.required);
             if (update.validation) {
               const validators = this.model ?
-              this.model.getValidations(validationView ?? [], isMulti, !!update.required) : null;
-            question.setValidators(validators);
-            question.setValue(isMulti ? this.defaultEmpty.option : this.defaultEmpty.input);
+                this.model.getValidations(validationView ?? [], isMulti, !!update.required) : null;
+              question.setValidators(validators);
+              question.setValue(isMulti ? this.model?.defaultEmpty.option : this.model?.defaultEmpty.input);
             };
             // 替換資料
             this.page!.groups[groupIndex]!.questions[questionIndex]! = {
@@ -90,78 +86,6 @@ export class BasicTypeQuestionCardComponent extends Base {
     )
   }
 
-  /** 新增題目
-   * @param insertFront 是否插入在前面
-   */
-  public addNewSubQuestion(group: IDFQuestionGroupView, SubQuestion: IDFQuestionView, questionIndex: number, insertIndex: number): void {
-    this.$overlay.addDialog(
-      DynamicFieldEditDialogComponent,
-      {
-        mode: FORM_MODE.ADD,
-      },
-      {
-        callback: {
-          confirm: (add: IEditDynamicForm) => {
-            const firstGroup = (this.form?.controls['answers'] as FormArray).controls[0] as FormGroup;
-            const id = Math.random().toString(36).substring(2, 32);
-            const isMulti = add.fieldType === EFieldType.MultiSelect || add.fieldType === EFieldType.Checkbox;
-            const validatorsView = this.getDynamicFromValidator(add.validation as any, !!add.required);
-            const validators = this.model ? this.model.getValidations(validatorsView ?? [], isMulti, !!add.required) : null;
-            firstGroup.addControl(
-              id,
-              new FormGroup({
-                answers: new FormGroup({
-                  A: new FormControl(isMulti ? this.defaultEmpty.option : this.defaultEmpty.input, validators)
-                }),
-                remark: new FormArray([])
-            }));
-            const questionForm = firstGroup.controls[id] as FormGroup
-            const questionView: IDFQuestionView = {
-              questionId: id,
-              form: questionForm,
-              order: insertIndex,
-              // df: 0,
-              show: true,
-              description: add.des ?? '',
-              title: add.title,
-              disabled: false,
-              SubQuestionGroupForm: firstGroup.controls[id] as FormGroup,
-              SubQuestionGroup: [{
-                answerId: 'A',
-                form: (questionForm.controls['answers'] as FormGroup).controls['A'] as FormControl,
-                type: add.fieldType,
-                show: true,
-                required: !!add.required,
-                disabled: false,
-                title: null,
-                placeholder: add.placeholder ?? null,
-                options: add.options ?? null,
-                optionsForNormal: add.options?.map((option, index) => ({ code: `${index + 1}`, name: option.name, hasMemo: option.hasMemo })) as IDynamicOption<string>[],
-                validationView: validatorsView,
-              }]
-            };
-
-            const questionsView = group.questions;
-            group.questions = [
-              ...questionsView.slice(0, insertIndex),
-              questionView,
-              ...questionsView.slice(insertIndex)
-            ];
-          }
-        }
-      }
-    );
-  }
-
-
-  private getDynamicFromValidator(validations: IDynamicFieldValue[], require: boolean): IDynamicFromValidator[] {
-    const validation = validations.map(validation => ({
-      type: validation.value as EErrorMessage,
-      ...( !!validation.memo ? {value: [+validation.memo as number]} : {})
-    }));
-    return [...validation, ...((require && !validation.some(v=> v.type === EErrorMessage.REQUIRED)) ? [{ type: EErrorMessage.REQUIRED }] : [])];
-  }
-
   /** 刪除題目 */
   public deleteSubQuestion(groupIndex: number, questionIndex: number): void {
     this.$overlay.addDialog(
@@ -182,7 +106,7 @@ export class BasicTypeQuestionCardComponent extends Base {
             const questions = this.page?.groups[groupIndex].questions.filter((q, index) => index !== questionIndex);
             this.page!.groups[groupIndex].questions = questions ?? [];
           },
-          cancel: () => {},
+          cancel: () => { },
         },
       }
     )
