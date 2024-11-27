@@ -1,10 +1,14 @@
 @import 'color';
+
 .question-card {
   border-radius: 10px;
-  box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.04);
+  box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.2);
+
   &__question {
-    & > li {
-        min-height: 96px;
+    &>li {
+      padding-bottom: 0;
+      min-height: 96px;
+
       &::before {
         position: fixed;
         top: 50%;
@@ -12,12 +16,14 @@
         transform: translateY(-50%);
         content: '';
         position: absolute;
+        transition: 0.6s;
         width: 0;
         height: 85%;
         border-left: 5px solid var(--primary-background-hover);
         border-top: 4px solid transparent;
         border-bottom: 4px solid transparent;
       }
+
       &.error {
         &::before {
           border-left: 4px solid var(--warn-color);
@@ -34,4 +40,3 @@ ul,
 label {
   margin-bottom: 0;
 }
-

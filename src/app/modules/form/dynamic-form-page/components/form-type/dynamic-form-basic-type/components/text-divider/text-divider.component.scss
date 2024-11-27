@@ -1,14 +1,13 @@
 @import 'color';
 :host {
-  opacity: 0;
   cursor: pointer;
   display: flex;
   align-items: center;
-  position: absolute;
-  top: -13px;
-  width: 95%;
-  left: 50%;
-  transform: translateX(-50%);
+  // position: absolute;
+  // top: -13px;
+  // width: 95%;
+  // left: 50%;
+  // transform: translateX(-50%);
   &.bottom {
     top: unset;
     bottom: -13px

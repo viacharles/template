@@ -1,8 +1,5 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {
-  CustomForm,
-  getFormProvider,
-} from '@utilities/abstract/customForm.abstract';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { CustomForm, getFormProvider } from '@utilities/abstract/customForm.abstract';
 
 @Component({
   selector: 'app-search-input',

@@ -1,6 +1,7 @@
 @import "color";
 :host {
-  display: inline-block;
+  display: flex;
+  height: auto;
 }
 button {
   color: $grey-dark;

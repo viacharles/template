@@ -3,9 +3,12 @@
 
 .multi-select {
 
-
   &>label:first-of-type {
     min-height: 44px;
+
+    &.disabled {
+      border: 1px solid $grey-iron;
+    }
 
     .select-label {
       padding: 0 0.3rem 0.15rem 0.3rem;
@@ -14,10 +17,12 @@
       margin: 0.1rem;
       border-radius: 6px 0 6px 6px;
       background-color: $white;
+
       &:hover {
         border-color: var(--primary-color);
         background-color: var(--primary-background-hover);
         color: var(--primary-background-hover);
+
         span {
           display: flex;
         }
@@ -32,7 +37,7 @@
 
       span {
         display: none;
-        z-index: map-get($layout-level, 'cover' );
+        z-index: map-get($layout-level, 'cover');
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -43,4 +48,3 @@
     }
   }
 }
-

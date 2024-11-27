@@ -5,6 +5,7 @@
 :host {
   display: flex;
   position: fixed;
+  z-index: map-get($layout-level , 'dropdown' );
   height: 100%;
 }
 .dropdown {

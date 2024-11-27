@@ -1,4 +1,4 @@
-import { EMenuItemFunctionMark } from '@utilities/enum/router.enum';
+import { MenuItemFunctionMark } from '@utilities/enum/router.enum';
 import { ROLE } from '../enum/common.enum';
 
 export interface IMenuParams {
@@ -8,5 +8,5 @@ export interface IMenuParams {
   isExpand?: boolean;
   roles?: ROLE[];
   subMenu?: Map<string, IMenuParams>;
-  functionMark?: EMenuItemFunctionMark;
+  functionMark?: MenuItemFunctionMark;
 }

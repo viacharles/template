@@ -1,7 +1,7 @@
-import {Injectable} from '@angular/core';
-import {IParagraph} from '@shared/components/overlay/assistant-chat/assistant-chat.component';
-import {EAction, EContent} from '@utilities/enum/common.enum';
-import {IArticle} from '@utilities/interface/common.interface';
+import { Injectable } from '@angular/core';
+import { IParagraph } from '@shared/components/overlay/assistant-chat/assistant-chat.component';
+import { EAction, EContent } from '@utilities/enum/common.enum';
+import { IArticle } from '@utilities/interface/common.interface';
 import {
   IDialog,
   IOverlayEvent,
@@ -9,7 +9,7 @@ import {
   IToast,
   IToastEvent,
 } from '@utilities/interface/overlay.interface';
-import {BehaviorSubject, filter, scan, timer} from 'rxjs';
+import { BehaviorSubject, filter, scan, timer } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',

@@ -15,7 +15,7 @@
       <app-button
       *ngIf="this.data.buttons?.cancel"
         (click)="this.cancel()"
-        [bgColor]="this.data.buttons?.cancel?.bgColor ?? 'btn-flat btn-normal'" [height]="'1.9rem'"
+        [bgColor]="this.data.buttons?.cancel?.bgColor ?? ' btn-normal'" [height]="'1.9rem'"
         [classes]="'mr-3 px-3'" >
         {{ (this.data.buttons?.cancel?.text ?? 'common.cancel') | translate }}
       </app-button>

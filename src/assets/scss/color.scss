@@ -17,10 +17,12 @@ $color-select: var(--primary-select-color);
 
 // B/W
 $grey-black: #2c2c2c;
+$grey-text-dark: #303233;
 $grey-dark: #6d6d6d;
 $grey-middle: #e7e7e7;
 $grey-light: #f4f4f4;
 $grey-iron: #a4a4a4;
+$grey-deep: #5f5656;
 $light-black: #333;
 $grey-iron-deep: #7e7e7e;
 $deep-gray: #635d5d;
@@ -39,7 +41,7 @@ $green-background-hover: #f1fcf7;
 $green-light: #d0ede1;
 $green-hover: #56dda5;
 $green-light-icon: #a1dbc3;
-$green-middle: #44b787;
+$green-middle: #02c993;
 $green-text-color: #0c8553;
 // Orange
 $orange-light: #ffe3cf;
@@ -96,6 +98,7 @@ $theme-color: (
   grey-light: $grey-light,
   grey-iron: $grey-iron,
   grey-iron-deep: $grey-iron-deep,
+  grey-deep: $grey-deep,
   bootstrap-deep-gray: $bootstrap-deep-gray,
   light-gray-1: $light-gray-1,
   light-gray-2: $light-gray-2,

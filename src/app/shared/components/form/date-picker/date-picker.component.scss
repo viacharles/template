@@ -6,39 +6,47 @@
   align-items: center;
   justify-content: center;
 }
+
 .input {
   cursor: pointer;
   width: 140px;
   height: 3rem;
   padding: 0.375rem 0.4rem 0.375rem 0.75rem;
-  border: 1px solid $grey-iron;
+  border: 1px solid $grey-deep;
   border-radius: var(--form-radius-m);
 
   &.disabled {
     cursor: auto;
     background-color: $grey-light;
+
     em {
       color: $grey-iron;
     }
   }
+
   &.focus {
     border-width: 2px;
     border-bottom-color: var(--primary-color);
   }
+
   &.error {
     border: 1px solid $red-middle;
+
     &:hover {
       background-color: var(--warn-background-hover);
       border-width: 1.5px;
     }
+
     em {
       color: $red-middle;
     }
   }
+
   em {
     font-size: 1.2rem;
     color: $grey-black;
     transition: 0.3s;
+
     &.cancel {
       display: flex;
       align-items: center;
@@ -59,6 +67,7 @@
     }
   }
 }
+
 .calendar-container {
   z-index: 70;
   top: 36px;
@@ -70,6 +79,7 @@
   box-sizing: content-box;
   transition: border 0.2s;
   border: 1.5px solid transparent;
+
   &:hover {
     border: 1.5px solid var(--primary-color);
   }

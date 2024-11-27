@@ -6,15 +6,15 @@ import {
   OnChanges,
   OnInit,
   Output,
+  QueryList,
   Renderer2,
-  SimpleChanges,
-  ViewChild,
+  SimpleChanges, ViewChildren
 } from '@angular/core';
 import {
   CustomForm,
   getFormProvider,
 } from '@utilities/abstract/customForm.abstract';
-import {upFadeInAndCompressOut} from '@utilities/helper/animations.helper';
+import { upFadeInAndCompressOut } from '@utilities/helper/animations.helper';
 export interface ITab {
   titleI18n: string;
   iconClasses?: string;
@@ -33,7 +33,7 @@ export class TabsComponent
   extends CustomForm<number | string>
   implements OnInit, OnChanges
 {
-  @ViewChild('tUl') tUl?: ElementRef<HTMLElement>;
+  @ViewChildren('tContent') tContent?: QueryList<ElementRef>;
   @Input() tabs: ITab[] = [];
   /** 是否標籤寬度平均容器寬度 */
   @Input() isEvenlyDistribute = true;
@@ -57,7 +57,12 @@ export class TabsComponent
   }
 
   ngOnInit(): void {
-    const timer = setTimeout(() => {this.renderer.addClass(this.tUl?.nativeElement, 'fade-in')}, 200)
+    const timer = setTimeout(() => {
+      this.tContent?.forEach(d => {
+        this.renderer.addClass(d?.nativeElement, 'fade-in');
+      });
+      clearTimeout(timer);
+    }, 200)
   }
 
   ngOnChanges({defaultTab}: SimpleChanges): void {

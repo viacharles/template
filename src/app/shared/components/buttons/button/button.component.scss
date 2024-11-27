@@ -1,5 +1,10 @@
 @import "animation";
 
+:host {
+  display: flex;
+  height: auto;
+}
+
 .clicked {
   animation: press 0.3s;
 }

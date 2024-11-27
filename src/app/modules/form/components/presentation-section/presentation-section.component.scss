@@ -1,16 +1,17 @@
 @import"color";
+
 :host {
   display: flex;
   flex-direction: column;
   padding: 1rem 1rem 3rem 1rem;
-  /* border: 1px solid #44b788; */
   border-radius: 10px;
   margin-bottom: 2rem;
   background: $white;
-  border: 1px solid var(--primary-select-color);
+  border: 2px solid var(--primary-select-color);
+
   &:hover {
     box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.05);
-    border: 1px solid var(--primary-color);
+    border-color: var(--primary-color);
 
   }
 }
@@ -28,4 +29,3 @@ button {
   height: 26px;
   border-radius: 0 4px 4px 0;
 }
-

@@ -19,7 +19,7 @@
 :root {
   // color
   // --primary-color: #44b787;
-  --primary-color: #31d4a8;
+  --primary-color: #02c993;
   --primary-text-color: #0c8553;
   --primary-select-color: #cde3c5;
   --primary-background-hover: #e4efea;
@@ -45,10 +45,11 @@ html {
 
 p,
 label {
-  color: $grey-dark;
+  color: $grey-text-dark;
 }
 
-ul, ol {
+ul,
+ol {
   padding-left: 0;
 }
 
@@ -79,5 +80,3 @@ body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
 }
-
-

@@ -7,7 +7,7 @@
     "build": "ng build --configuration production --base-href https://viacharles.github.io/template-sample/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "deploy": "ngh --dir dist/template-sample"
+    "deploy": "ngh --dir dist/template-sample --repo https://github.com/viacharles/template-sample.git"
   },
   "private": true,
   "dependencies": {

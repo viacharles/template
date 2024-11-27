@@ -1,73 +1,73 @@
-import {IMenuParams} from '../interface/router.interface';
+import { IMenuParams } from '../interface/router.interface';
 import {
-  EModule,
-  EIndividualPages,
-  ELogin,
-  ESettingPages,
-  EMenuItemFunctionMark,
-  EFormPages,
+  Modules,
+  IndividualPages,
+  LoginPages,
+  SettingPages,
+  MenuItemFunctionMark,
+  FormPages,
 } from './../enum/router.enum';
 
 /** 主Menu：設定 */
-export const SettingMenuMap = new Map<ESettingPages, IMenuParams>([
+export const SettingMenuMap = new Map<SettingPages, IMenuParams>([
   [
-    ESettingPages.Logout,
+    SettingPages.Logout,
     {
       title: 'nav.logout',
       icon: 'icon-logout',
-      functionMark: EMenuItemFunctionMark.Logout,
+      functionMark: MenuItemFunctionMark.Logout,
     },
   ],
 ]);
 
 /** 主Menu：表單元件組 */
-export const FormMenuMap = new Map<EFormPages, IMenuParams>([
+export const FormMenuMap = new Map<FormPages, IMenuParams>([
   [
-    EFormPages.CustomComponent,
+    FormPages.CustomComponent,
     {
       title: 'nav.custom-component',
       icon: 'icon-input',
-      path: `${EModule.Form}/${EFormPages.CustomComponent}`,
+      path: `${Modules.Form}/${FormPages.CustomComponent}`,
     },
   ],
   // [
-  //   EFormPages.Button,
+  //   FormPages.Button,
   //   {
   //     title: 'nav.button',
   //     icon: 'icon-inpu t',
-  //     path: `${EModule.Form}/${EFormPages.Button}`,
+  //     path: `${Modules.Form}/${FormPages.Button}`,
   //   },
   // ],
   // [
-  //   EFormPages.Input,
+  //   FormPages.Input,
   //   {
   //     title: 'nav.input',
   //     icon: 'icon-input',
-  //     path: `${EModule.Form}/${EFormPages.Input}`,
+  //     path: `${Modules.Form}/${FormPages.Input}`,
   //   },
   // ],
   // [
-  //   EFormPages.File,
+  //   FormPages.File,
   //   {
   //     title: 'nav.file',
   //     icon: 'icon-upload',
-  //     path: `${EModule.Form}/${EFormPages.File}`,
+  //     path: `${Modules.Form}/${FormPages.File}`,
   //   },
   // ],
   [
-    EFormPages.DynamicForm,
+    FormPages.DynamicForm,
     {
       title: 'nav.data-driven-form',
       icon: 'icon-questionnaire',
-      path: `${EModule.Form}/${EFormPages.DynamicForm}`,
+      path: `${Modules.Form}/${FormPages.DynamicForm}`,
     },
   ],
 ]);
 
 /** 主Menu */
-export const MenuMap = new Map<EModule, IMenuParams>([
+export const MenuMap = new Map<Modules, IMenuParams>([
   [
-    EModule.Form,
+    Modules.Form,
     {
       title: 'nav.form',
       isExpand: false,
@@ -75,15 +75,15 @@ export const MenuMap = new Map<EModule, IMenuParams>([
     },
   ],
   [
-    EModule.Table,
+    Modules.Table,
     {
       title: 'nav.data-table',
       isExpand: false,
-      path: `${EModule.Table}`
+      path: `${Modules.Table}`
     },
   ],
   [
-    EModule.Setting,
+    Modules.Setting,
     {
       title: 'nav.settings',
       isExpand: false,
@@ -93,35 +93,35 @@ export const MenuMap = new Map<EModule, IMenuParams>([
 ]);
 
 /** login menu */
-export const LoginMap = new Map<ELogin, IMenuParams>([
+export const LoginMap = new Map<LoginPages, IMenuParams>([
   [
-    ELogin.Login,
+    LoginPages.Login,
     {
       title: 'nav.login',
       icon: 'icon-login',
       isExpand: false,
-      path: ELogin.Login,
+      path: LoginPages.Login,
     },
   ],
   [
-    ELogin.Register,
+    LoginPages.Register,
     {
       title: 'nav.register',
       icon: 'fa fa-registered',
       isExpand: false,
-      path: ELogin.Register,
+      path: LoginPages.Register,
     },
   ],
 ]);
 
-export const IndividualPageMap = new Map<EIndividualPages, IMenuParams>([
+export const IndividualPageMap = new Map<IndividualPages, IMenuParams>([
   [
-    EIndividualPages.Home,
+    IndividualPages.Home,
     {
       title: 'nav.home',
       icon: '',
       isExpand: false,
-      path: EIndividualPages.Home,
+      path: IndividualPages.Home,
     },
   ],
 ]);

@@ -17,13 +17,13 @@
     white-space: nowrap;
     transition: 0.1s;
 
-    &:hover:not(:disabled) {
+    &:hover:not(:disabled):not(.disabled) {
       filter: brightness(90%) contrast(130%);
-      border-color: var(--primary-color) !important;
       box-shadow: 0 0 4px 0 $light-gray-1 !important;
     }
 
-    &:disabled {
+    &:disabled,
+    .disabled {
       color: $grey-dark !important;
       background-color: $grey-light;
       opacity: 1;
@@ -109,10 +109,10 @@
   outline: none;
   box-sizing: border-box;
   border-radius: var(--form-radius-m);
-  border: 1px solid $grey-iron;
+  border: 1px solid $grey-deep;
   background-color: $white;
 
-  &:not(:disabled):not(.error) {
+  &:not(:disabled):not(.disabled):not(.error) {
     &:hover {
       border-bottom-width: 2px;
     }
@@ -125,14 +125,17 @@
 
   &.error {
     border: 1px solid $red-middle;
+
     &:hover {
       background-color: var(--warn-background-hover);
-      border-width: 1.5px ;
+      border-width: 1.5px;
     }
   }
 
-  &:disabled {
+  &:disabled,
+  .disabled {
     color: $grey-iron;
+    border: 1px solid $grey-iron;
     background-color: $grey-light;
     border: none;
   }
@@ -171,7 +174,7 @@ input {
     }
   }
 
-  &:not(:disabled):hover+label.toggle {
+  &:not(:disabled):not(.disabled):hover+label.toggle {
     span {
       border: 1px solid var(--primary-color);
     }
@@ -186,9 +189,12 @@ input {
       background-color: $green-light;
     }
   }
-  &:disabled+label.toggle {
+
+  &:disabled+label.toggle,
+  .disabled+label.toggle {
     cursor: default;
     background-color: $grey-middle;
+
     span {
       background-color: $grey-middle;
     }
@@ -205,7 +211,8 @@ input {
   border: 1px solid $grey-iron;
   outline: none;
   background-color: $white;
-  &:not(:disabled):not(.error):hover {
+
+  &:not(:disabled):not(.disabled):not(.error):hover {
     border-bottom-width: 2px;
   }
 
@@ -215,12 +222,16 @@ input {
 
   &.error {
     border: 1px solid $red-middle;
+
     &:hover {
       background-color: var(--warn-background-hover);
-      border-width: 1.5px ;
+      border-width: 1.5px;
     }
   }
-  &:disabled {
+
+  &:disabled,
+  .disabled {
+    border: 1px solid $grey-iron;
     color: $grey-iron;
     background-color: $grey-light;
   }
@@ -231,7 +242,8 @@ button {
     color: inherit;
   }
 
-  &:disabled {
+  &:disabled,
+  .disabled {
     color: $grey-iron;
     background-color: $grey-middle;
 

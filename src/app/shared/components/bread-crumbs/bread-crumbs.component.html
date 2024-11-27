@@ -1,8 +1,5 @@
 <ul class="d-flex">
-  <li
-    *ngFor="let crumb of this.pathList; let index = index"
-    class="fw-4 fs-sm text-grey-iron pe-pointer"
-  >
+  <li *ngFor="let crumb of this.pathList; let index = index" class="fw-4 fs-sm pe-pointer">
     <a (click)="this.goTo(crumb.path)">
       {{ 'nav.' + crumb.textI18n | translate }}
     </a>

@@ -113,6 +113,7 @@ $spacing: (
   80p: 80%,
   90p: 90%,
   95p: 95%,
+  100p: 100%,
   fit: fit-content,
   auto: auto,
   none: none,
@@ -189,7 +190,8 @@ $layout-level: (
   sidebar: 20,
   overlay: 20,
   dialog: 70,
-  tooltip: 80,
+  dropdown: 80,
+  tooltip: 90,
   loaderContainer: 99,
   toast: 100,
 );
@@ -205,10 +207,9 @@ $list-style: 'decimal', 'disc';
 
 $grid-gutter-width: 16px;
 
-// $grid-breakpoints: (
-//   xs: 0px,
-//   sm: 768px,
-//   md: 1280px,
-//   lg: 1440px,
-//   xl: 1920px
-// );
+$grid-breakpoints: (
+  xs: 0,
+  sm: 430px,
+  md: 768px,
+  lg: 1440px,
+);

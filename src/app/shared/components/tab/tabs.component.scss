@@ -1,10 +1,15 @@
 @import 'color';
+@import 'variables';
 @import 'animation';
+
 .tab-container {
+  position: relative;
   border-bottom: 1px solid $grey-middle;
-  height: 2.26rem;
+  height: auto;
+  background-color: $white;
+
   input {
-    & + label {
+    &+label {
       &::after {
         opacity: 0;
         content: '';
@@ -18,53 +23,106 @@
         transition: 0.025s;
       }
     }
+
     &:checked {
-      & + label {
+      &+label {
+        border-right-color: $grey-iron;
+        transition: 0.6s;
+
         &:hover {
           background-color: var(--primary-background-hover);
         }
+
         & p,
         div {
           color: var(--primary-text-color) !important;
         }
+
         &::after {
           opacity: 1;
         }
       }
     }
-    }
+  }
 
   ul {
-    overflow: hidden;
-    height: 0;
-    transition: 0.6s ease;
+    height: auto;
   }
+
   li {
+    display: flex;
+    align-items: flex-end;
+    transition: 0.6s;
+    height: 2.6rem;
+
     &.isEvenly {
       flex: 1;
     }
+
     label {
       position: relative;
       width: auto;
+      height: 2.6rem;
+      border-top: 1px solid $grey-iron;
+      border-right: 1px solid $grey-iron;
+      border-left: 1px solid $grey-iron;
+      border-radius: 6px 6px 0 0;
+
       &:hover {
         background-color: $grey-light;
+
         ::ng-deep p {
           color: var(--primary-color) !important;
         }
       }
+
       &:first-of-type {
         margin-left: 0 !important;
       }
+
+      &>div {
+        height: 2.6rem;
+        transition: 0.6s;
+      }
+
       em {
         border-radius: 50%;
+
+        &.page-icon {
+          min-height: 10px;
+          min-width: 10px;
+        }
       }
     }
   }
+
+  .shadow {
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    height: 1px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5) !important;
+  }
 }
+
 p {
   margin: 0;
 }
 
 .fade-in {
-  height: 2.6rem !important;
+  animation: fadeIn 0.6s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    height: 0;
+    opacity: 0;
+  }
+
+  to {
+    height: 2.6rem;
+    opacity: 1;
+  }
 }

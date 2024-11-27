@@ -1,12 +1,13 @@
 <div class="multi-select p-relative">
-  <input #tInput class="d-none" type="checkbox" [id]="this.id" [(ngModel)]="this.showDropdown" [disabled]="this.disabled">
-  <label class="w-100 h-auto input d-flex pe-pointer" [class.error]="this.isError" [class.focus]="this.showDropdown" [for]="this.id" >
-    <div class="w-100 h-auto overflow-auto d-flex flex-wrap"
-    *ngIf="!!this.checkedOptions?.length; else tPlaceholder">
-    <!-- 已選取的項目 -->
-      <div class="select-label p-relative d-flex align-items-end text-grey-black border-grey-iron w-fit ml-1 text-nowrap"
-      *ngFor="let label of this.checkedOptions"
-      (click)="this.cancelSelect(label, $event)">
+  <input #tInput class="d-none" type="checkbox" [id]="this.id" [(ngModel)]="this.showDropdown"
+    [disabled]="this.disabled">
+  <label class="w-100 h-auto input d-flex pe-pointer" [class.error]="this.isError" [class.disabled]="this.disabled"
+    [class.focus]="this.showDropdown" [for]="this.id">
+    <div class="w-100 h-auto overflow-auto d-flex flex-wrap" *ngIf="!!this.checkedOptions?.length; else tPlaceholder">
+      <!-- 已選取的項目 -->
+      <div
+        class="select-label p-relative d-flex align-items-end text-grey-black border-grey-iron w-fit ml-1 text-nowrap"
+        *ngFor="let label of this.checkedOptions" (click)="this.cancelSelect(label, $event)">
         {{label.name}}
         <span class="p-absolute">移除</span>
       </div>
@@ -16,14 +17,15 @@
     </ng-template>
     <em class="fas fa-caret-down p-absolute text-grey-black" [class.up]="this.checkedOptions?.length"></em>
     <em class="icon-cancel-thick p-absolute text-grey-black fs-xs" *ngIf="this.checkedOptions?.length"
-    (click)="this.cancelAll($event)"></em>
+      (click)="this.cancelAll($event)"></em>
   </label>
   <!-- dropdown -->
   <form [formGroup]="this.form">
-    <div #tOptions *ngIf="this.showDropdown" class="dropdown p-absolute overflow-hide w-100 bg-white {{!this.optionsInDropdown?.length ? 'py-2' : ''}}">
+    <div #tOptions *ngIf="this.showDropdown"
+      class="dropdown p-absolute overflow-hide w-100 bg-white {{!this.optionsInDropdown?.length ? 'py-2' : ''}}">
       <label class="w-100 p-1" *ngIf="!!this.optionsInDropdown?.length && this.hasFilter">
-        <input class="input w-100" type="text" [placeholder]="this.filterPlaceholder"
-          (blur)="this.filter($event)" (keyup)="this.filter($event)">
+        <input class="input w-100" type="text" [placeholder]="this.filterPlaceholder" (blur)="this.filter($event)"
+          (keyup)="this.filter($event)">
       </label>
       <div #tOptionContainer class="options overflow-auto" formArrayName="checks">
         <!-- 無選項 -->
@@ -32,8 +34,10 @@
         </div>
         <!-- 選項組 -->
         <ng-container *ngFor="let option of this.optionsInDropdown;let index = index">
-          <label class=" {{option.show ? 'd-flex': 'd-none'}} flex-row align-items-center pe-pointer" [for]="this.id + index">
-            <app-checkbox [id]="this.id + index" [name]="this.id" [formControlName]="index" [option]="option" [checked]="option.isSelect"></app-checkbox>
+          <label class=" {{option.show ? 'd-flex': 'd-none'}} flex-row align-items-center pe-pointer"
+            [for]="this.id + index">
+            <app-checkbox [id]="this.id + index" [name]="this.id" [formControlName]="index" [option]="option"
+              [checked]="option.isSelect"></app-checkbox>
           </label>
         </ng-container>
       </div>
